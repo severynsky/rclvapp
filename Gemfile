@@ -14,6 +14,8 @@ gem 'pry', '~> 0.10.1'
 gem 'bootstrap_form'
 
 gem 'bower-rails'
+gem 'angular-rails-templates'
+
 # gem 'therubyracer', platforms: :ruby
 
 
