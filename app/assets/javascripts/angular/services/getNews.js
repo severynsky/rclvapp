@@ -1,4 +1,4 @@
-rclvapp.factory('getNews', function($resource){
+rclvapp.factory('getNews', [ '$resource',function($resource){
     return $resource('/newsitems/:id.json', {id: '@id'},{
         update: {
             method: "PUT"
@@ -8,4 +8,4 @@ rclvapp.factory('getNews', function($resource){
             isArray: false
         }
     });
-});
+}]);
