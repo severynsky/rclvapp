@@ -1,5 +1,5 @@
 rclvapp.factory('getNews', function($resource){
-    return $resource('/news_items/:id.json', {id: '@id'},{
+    return $resource('/newsitems/:id.json', {id: '@id'},{
         update: {
             method: "PUT"
         },
