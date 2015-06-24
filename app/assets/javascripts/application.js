@@ -13,3 +13,14 @@
 
 
 console.log('hello app')
+
+$initialFunction = function(){
+  $('.right').fadeIn(900);
+  $('.left').animate({
+    marginLeft: 0
+  }, 700, "linear");
+
+    $( window ).resize(function() {
+
+    });
+};

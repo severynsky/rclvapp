@@ -1,2 +1,43 @@
-%h1
-  hello i`m in angular
+%div.logo
+  %img{src: "/images/rotary-logo.png"}
+  %h3.tagline
+    Rotary Club Lviv-Center
+  %div.clear
+%section.container
+  %div.content#scene
+    %div.left
+      %a.item#news{"ng-href" => "#/news_items"}
+        %span
+          rotary
+        %p
+          news
+      %div.item#projects
+        %p
+          projects
+        %span
+          &general info
+      %div.item#photos
+    %div.right
+      %div.items
+        %div.item#about
+          %p
+            about rotary
+      %div.item#members
+        %p
+          rotary members
+      %div.item#events
+        %p.header
+          events
+        %div.events
+          %p
+            upcomming event:
+          %div.event-body
+            %p.title
+              Meeting Danish guests and some more
+            %p.place
+              Cytadel Inn Some str 5
+      %div.item#contacts
+        %img{src: "/images/icons/envelope.png"}
+        %p
+          contacts
+
