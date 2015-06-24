@@ -16,8 +16,9 @@ gem 'bootstrap_form'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
-# gem 'therubyracer', platforms: :ruby
 
+
+# gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
 # gem 'turbolinks'

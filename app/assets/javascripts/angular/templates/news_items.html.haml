@@ -1,0 +1,21 @@
+%section.popup
+  .news-items-container
+    .header
+      %h1
+        Новини
+    .news-item{"ng-repeat" => "newsItem in news.news"}
+      .image
+        %img(src="{{newsItem.image}}")
+      %a.text-container{"ng-href" => "#/news_items/{{ newsItem.id }}"}
+        %h1
+          {{ newsItem.title | limitTo: 38 }}..
+        .utilities
+          %span
+            {{ newsItem.created_at | date: fullDate }}
+          %span.category{"ng-show" => "newsItem.category"}
+            {{ newsItem.category.title }}
+        %p
+          {{ newsItem.intro }}
+    .clear
+
+%a.fadeout{"ng-href" => "#/"}

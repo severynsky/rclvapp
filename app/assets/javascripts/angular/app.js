@@ -1,6 +1,7 @@
 rclvapp = angular.module('rclvapp', [
   'templates',
-  'ngRoute'
+  'ngRoute',
+  'ngResource'
 ]);
 
 

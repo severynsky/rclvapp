@@ -1,0 +1,116 @@
+.popup{
+  position: absolute;
+  background-color: rgba(40, 40, 40, 0.6);
+  z-index: 999;
+  width: 60%;
+  height: 95vh;
+  overflow-y: scroll;
+  margin: 20px auto;
+//  top: 20px;
+  left: 20%;
+  .header{
+    width: 100%;
+    border-top: 1px solid #FFF;
+    border-bottom: 1px solid #FFF;
+    h1{
+      text-align: center;
+      color: #FFF;
+      margin: 5px 0;
+      font-weight: 200;
+      font-size: 1.7em;
+    }
+  }
+}
+.news-items-container{
+  padding: 15px 15px;
+  .news-item{
+    margin: 0.5em auto;
+    padding: 5px;
+    background-color: rgba(40, 40, 40, 0.6);
+    border: 1px solid rgba(220,220,200,0.2);
+    box-shadow: 1px 1px 15px rgba(40,40,40,0.1);
+    color: #FFF;
+    min-height: 180px;
+    -webkit-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+    .image{
+      height: 160px;
+      width: 160px;
+      overflow: hidden;
+      background-color: white;
+      border: 2px solid #E6E6E6;
+      margin-right: 0.5em;
+      float: left;
+      margin-top: 4px;
+      margin-left: 4px;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .text-container{
+      h1{
+        line-height: 1em;
+        margin: 4px 0 4px 0;
+        font-size: 1.6em;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: #F4F4F4;
+      }
+      .utilities{
+        margin: 0.2em 0;
+        padding: 0 0 0 5px;
+        display: inline-block;
+        border-left: 4px solid darkorange;
+//        border-top: 1px solid darkorange;
+//        border-bottom: 1px solid darkorange;
+        span{
+          font-size: 1.1em;
+          color: #e8e8e8;
+          letter-spacing: 1px;
+          font-weight: 200;
+          margin: 0px;
+        }
+        .category{
+          background-color: darkorange;
+          color: #FFF;
+          padding: 1px 5px 2px;
+        }
+      }
+      p{
+        font-size: 1em;
+        width: 100%;
+        font-weight: 200;
+        letter-spacing: 1px;
+        color: #FFF;
+        line-height: 1.3em;
+        /*text-overflow: ellipsis;*/
+        /*white-space: nowrap;*/
+        /*overflow: hidden;*/
+      }
+    }
+  }
+}
+
+.news-item:hover{
+  border: 1px solid darkorange;
+  background-color: rgba(40,40,40,0.8);
+  h1{
+    color: #249792;
+  }
+}
+.fadeout{
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,14,27,0.3);
+  z-index: -1;
+}
+
+

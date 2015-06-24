@@ -4,7 +4,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
-//= require angular-route/angular-route
+//= require angular-route
+//= require angular-resource
 //= require angular-rails-templates
 //= require bootstrap-sprockets
 //= require_tree ./angular
