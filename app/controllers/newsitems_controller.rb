@@ -12,6 +12,7 @@ class NewsitemsController < ApplicationController
   end
 
   def create
+    binding.pry
     @newsItem = NewsItem.new(permit_params)
     if @newsItem.save
       redirect_to '/news_items'
