@@ -18,6 +18,7 @@ gem 'devise'
 gem "paperclip", "~> 4.2"
 gem 'activeadmin', github: 'activeadmin'
 
+
 gem 'bower-rails'
 gem 'angular-rails-templates'
 
