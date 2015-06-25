@@ -15,6 +15,7 @@ gem 'pry', '~> 0.10.1'
 gem 'bootstrap_form'
 
 gem "paperclip", "~> 4.2"
+gem 'activeadmin', github: 'activeadmin'
 
 gem 'bower-rails'
 gem 'angular-rails-templates'
