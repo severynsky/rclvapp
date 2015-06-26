@@ -13,7 +13,7 @@ ActiveAdmin.register NewsItem do
       f.input :title
       f.input :category
       f.input :intro_text
-      f.input :body
+      f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
     end
     f.inputs "images", for: [:image, f.object.image || Image.new] do |img|
       img.input :picture

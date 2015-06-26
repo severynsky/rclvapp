@@ -12,10 +12,10 @@
       %p.intro-text
         {{ print.intro }}
       %hr
-      %p.intro-text
-        {{ print.category }}
-      %hr
-      %p
-        {{print.body}}
+      / %p.intro-text
+      / {{ print.category }}
+      / %hr
+      %p{"ng-bind-html" => "print.body"}
+        / {{print.body}}
       %hr
 %a.fadeout{"ng-href" => "#/news_items"}

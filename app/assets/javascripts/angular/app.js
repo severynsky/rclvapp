@@ -1,7 +1,8 @@
 rclvapp = angular.module('rclvapp', [
   'templates',
   'ngRoute',
-  'ngResource'
+  'ngResource',
+  'ngSanitize'
 ]);
 
 
