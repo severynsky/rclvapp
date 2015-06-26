@@ -13,6 +13,8 @@ class NewsitemsController < ApplicationController
 
   def create
     @newsItem = NewsItem.new(permit_params)
+    @newsItem.build_image
+    binding.pry
     if @newsItem.save
       redirect_to '/news_items'
     end
@@ -24,8 +26,8 @@ class NewsitemsController < ApplicationController
 
   def update
      if @newsItem.update(permit_params)
-       flash[:notice] = "item has been updated"
-       redirect_to '/news_items'
+      flash[:notice] = "item has been updated"
+      redirect_to '/news_items'
      end
   end
 

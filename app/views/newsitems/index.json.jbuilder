@@ -5,4 +5,7 @@ json.news @news do |news_item|
   json.body news_item.body
   json.created_at news_item.created_at
   json.category news_item.category
+  if news_item.image
+    json.image news_item.image.picture.url(:thumb)
+  end
 end
