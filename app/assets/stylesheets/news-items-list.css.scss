@@ -6,8 +6,8 @@
   height: 95vh;
   overflow-y: scroll;
   margin: 20px auto;
-//  top: 20px;
   left: 20%;
+
   .header{
     width: 100%;
     border-top: 1px solid #FFF;
@@ -111,6 +111,29 @@
   height: 100vh;
   background-color: rgba(0,14,27,0.3);
   z-index: -1;
+  .close-btn{
+    position: absolute;
+    opacity: 0.5;
+    top: 20px;
+    left: 20px;
+    height: 100px;
+    width: 100px;
+    background-size: 100px;
+    background-image: url(/images/close-btn.png);
+    -webkit-transition: 0.1s;
+    -ms-transition: 0.1s;
+    -moz-transition: 0.1s;
+    -o-transition: 0.1s;
+    transition: 0.1s;
+  }
+}
+.fadeout:hover .close-btn{
+    opacity: 1;
+  -ms-transform: translate(0, -5px); /* IE 9 */
+  -webkit-transform: translate(0, -5px); /* Safari */
+  -moz-transform: translate(0, -5px); /* Mozilla */
+  -o-transform: translate(0, -5px); /* Opera */
+  transform: translate(0, -5px);
 }
 
 
