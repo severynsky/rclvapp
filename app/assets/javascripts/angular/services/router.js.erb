@@ -17,7 +17,11 @@ rclvapp.config(['$routeProvider',
     }).
     when('/projects', {
         templateUrl: "<%=asset_path 'angular/templates/projects.html' %>",
-        controller: 'projectsContr'
+        controller: 'projectsListContr'
+    }).
+    when('/projects/:projectId', {
+        templateUrl: "<%=asset_path 'angular/templates/projectpage.html' %>",
+        controller: 'projectPageContr'
     }).
     otherwise({
         redirectTo: '#/'

@@ -1,3 +1,47 @@
-// Place all the styles related to the Projects controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.projects-container{
+  .header{
+    h1{
+
+    }
+  }
+  .project-container{
+    // border-right: 1px solid #95a5a6;
+    margin-top: 20px;
+     h3{
+      color: #FFF;
+      border-bottom: 1px solid #b2b2b2;
+      font-weight: 300;
+      span{
+        background: url(/images/icons/project.png);
+        height: 26px;
+        width: 34px;
+        background-size: 40px;
+        float: right;
+      }
+    }
+    .project-item{
+      padding: 5px;
+      p{
+        color: #FFF;
+        border-right: 3px solid #bdc3c7;
+        padding-right: 4px;
+        margin-left: 5px;
+      }
+    }
+    .project-item:hover p{
+      border-right: 3px solid #e67e22;
+    } 
+  }
+}
+.cooperation{
+    h1{
+      color: #FFF;
+      border-bottom: 1px solid #B2B2B2;
+      text-align: right;
+    }
+    .text-container{
+      p{
+        color: #FFF;
+      }
+    }
+  }

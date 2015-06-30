@@ -1,20 +1,47 @@
 %section.popup
-  .news-items-container
+  .projects-container
     .header
       %h1
         Проекти
-    .project-item{"ng-repeat" => "project in projects.projects"}
-      %div{"ng-switch" => "project.status"}
-        .col-xs-4{"ng-switch-when" => "new"}
+    
+    .col-xs-4.project-container
+      %h3
+        Нові
+        %span.projects-icon 
+      .project-item{"ng-repeat" => "projects in projects.new_projects"} 
+        %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
           %p
-            {{project.title}}
-        .col-xs-4{"ng-switch-when" => "running"}
+            {{ projects.title}}
+    
+    .col-xs-4.project-container
+      %h3
+        Діючі
+        %span.projects-icon
+      .project-item{"ng-repeat" => "projects in projects.running_projects"}
+        %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
           %p
-            {{project.title}}
-        .col-xs-4{"ng-switch-when" => "completed"}
+            {{ projects.title}}
+    
+    .col-xs-4.project-container
+      %h3
+        Завершені
+        %span.projects-icon
+      .project-item{"ng-repeat" => "projects in projects.completed_projects"}
+        %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
           %p
-            {{project.title}}
+            {{ projects.title}}
     .clear
+
+  %br/
+  %br/
+  .col-xs-10.col-xs-offset-1.cooperation
+    %h1
+      Cooperation
+    .text-container
+      %p
+        Marfa selvage yr, post-ironic ennui stumptown fashion axe meggings seitan chia four loko tousled synth. Street art leggings Shoreditch farm-to-table chillwave, meggings freegan roof party fingerstache Pitchfork. Tattooed Williamsburg art party lumbersexual readymade, meh irony taxidermy blog PBR&B roof party street art <b>Odd Future cliche</b>. Sartorial beard authentic small batch, cold-pressed mustache irony 8-bit cornhole deep v Intelligentsia brunch next level kale chips. Locavore salvia you probably haven't heard of them, direct trade mixtape sriracha dreamcatcher try-hard. IPhone twee Marfa try-hard, tilde brunch keytar cronut. Drinking vinegar tote bag kale chips, XOXO Intelligentsia trust fund DIY 3 wolf moon umami single-origin coffee you probably haven't heard of them crucifix artisan.
+
+
 
 %a.fadeout{"ng-href" => "#/"}
   .close-btn
