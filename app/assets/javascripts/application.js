@@ -7,6 +7,8 @@
 //= require angular-route
 //= require angular-resource
 //= require angular-sanitize
+//= require angular-devise
+//= require angular-devise/lib/devise
 //= require angular-rails-templates
 //= require bootstrap-sprockets
 //= require ckeditor/init
@@ -33,4 +35,16 @@ $(document).ready(function(){
     CKEDITOR.replace( 'ckeditor' );
   if ( $('#ckeditor').prev('label').length ) 
     $('#ckeditor').prev('label').css('float','none');
+
+    hideAlert = function(){
+        if($('.alert').length > 0){
+            console.log('hello alert');
+            setTimeout(function(){$('.alert').fadeOut(200)}, 1500);
+        }else{
+            console.info('no alert')
+        }
+    };
+
+    hideAlert();
+
 });

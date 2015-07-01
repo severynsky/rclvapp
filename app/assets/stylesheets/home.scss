@@ -8,7 +8,18 @@
 a, a:hover{
   text-decoration: none !important;
 }
-
+.login-field{
+  position: absolute;
+  right: 0;
+  top: 0;
+  a{
+    color: #f1c40f;
+    opacity: 0.8;
+  }
+  a:hover{
+    opacity: 1;
+  }
+}
 .logo{
   margin: 35px auto 10px;
   width: 340px;

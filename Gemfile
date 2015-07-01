@@ -18,6 +18,11 @@ gem 'devise'
 gem "paperclip", "~> 4.2"
 gem 'ckeditor'
 
+source "https://rails-assets.org" do
+  gem "rails-assets-angular-devise"
+end
+gem 'angular_rails_csrf'
+
 gem 'activeadmin', github: 'activeadmin'
 
 
