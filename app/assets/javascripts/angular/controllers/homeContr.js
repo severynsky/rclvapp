@@ -19,8 +19,8 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route',
 
     $timeout(function() {
       Auth.logout();
-      alert('It`s OK, website logged out in mind of secureness!');
-    }, 1200000);
+      console.info('It`s OK, website logged out in mind of secureness!');
+    }, 1800000);
   
   }
 ]);
