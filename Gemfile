@@ -15,7 +15,8 @@ gem 'pry', '~> 0.10.1'
 gem 'bootstrap_form'
 
 gem 'devise'
-gem "paperclip", "~> 4.2"
+gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '< 2.0'
 gem 'ckeditor'
 
 source "https://rails-assets.org" do
