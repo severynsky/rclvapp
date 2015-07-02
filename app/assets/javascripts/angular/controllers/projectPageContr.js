@@ -3,6 +3,7 @@ rclvapp.controller('projectPageContr', ['$scope', '$http', '$routeParams', 'getP
     projectItem = getProjects.get({id: $routeParams.projectId}, function(){
         $scope.print = {
             title: projectItem.title,
+            created_at: projectItem.created_at,
             description: projectItem.description,
             status: projectItem.status,
         };

@@ -8,7 +8,7 @@
       %h3
         {{print.title}}
       %p.date
-        {{ print.date | date: fullDate }}
+        {{ print.created_at | date: fullDate }}
       %br
       %p.intro-text
         {{ print.status }}

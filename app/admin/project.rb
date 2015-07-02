@@ -5,6 +5,14 @@ ActiveAdmin.register Project do
   menu priority: 3
   menu label: "Projects"
 
+  index do
+    column :id
+    column :title
+    column :status
+    column :created_at
+    actions
+  end
+
   form do |f|
     f.inputs do
       f.input :title
