@@ -15,3 +15,4 @@ rclvapp.config([
 rclvapp.run(function(){
     console.log('angular app is running')
 });
+

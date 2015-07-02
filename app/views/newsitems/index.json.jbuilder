@@ -8,4 +8,9 @@ json.news @news do |news_item|
   if news_item.image
     json.image news_item.image.picture.url(:thumb)
   end
+  if news_item.seotool
+    json.seotitle news_item.seotool.title
+    json.seodescription news_item.seotool.description
+    json.seokeywords news_item.seotool.keywords
+  end
 end

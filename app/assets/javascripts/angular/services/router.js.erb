@@ -1,7 +1,10 @@
 'use strict'
 
-rclvapp.config(['$routeProvider',
-  function($routeProvider){
+rclvapp.config(['$routeProvider', '$locationProvider',
+  function($routeProvider, $locationProvider){
+    // $locationProvider
+    //   .html5Mode(true)
+    //   .hashPrefix('!');
     $routeProvider.
     when("/", {
       templateUrl: "<%=asset_path 'angular/templates/home.html' %>",
@@ -27,4 +30,5 @@ rclvapp.config(['$routeProvider',
         redirectTo: '#/'
     });
   }
+
 ])
