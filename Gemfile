@@ -17,6 +17,8 @@ gem 'bootstrap_form'
 gem 'devise'
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
+
+gem "figaro"
 gem 'ckeditor'
 
 source "https://rails-assets.org" do
