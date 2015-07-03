@@ -26,6 +26,10 @@ rclvapp.config(['$routeProvider', '$locationProvider',
         templateUrl: "<%=asset_path 'angular/templates/projectpage.html' %>",
         controller: 'projectPageContr'
     }).
+    when('/members', {
+        templateUrl: "<%=asset_path 'angular/templates/members.html' %>",
+        controller: 'membersListContr'
+    }).
     otherwise({
         redirectTo: '#/'
     });

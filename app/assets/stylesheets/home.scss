@@ -4,7 +4,10 @@
 .clear{
   clear: both;
 }
-
+.center{
+  margin: 0 auto !important;
+  float: none !important;
+}
 a, a:hover{
   text-decoration: none !important;
 }

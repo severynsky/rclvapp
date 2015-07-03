@@ -1,0 +1,41 @@
+%section.popup
+  .resource-container
+    .header
+      %a{"class" => "page-logo", "href" =>  "#/"}
+        %img{src: "/images/rotary-logo.png"}
+      %h1.tagline
+        Members
+    .members-container
+      %h3
+        President
+      .member-item.center{"ng-repeat" => "member in members.members | filter: {role: 'president'} "}
+        .image
+          %img(src="{{member.image}}")
+        %p.name
+          {{member.name}}
+        .clear
+      .clear
+    .members-container
+      %h3
+        Committies
+      .member-items.center
+        .member-item{"ng-repeat" => "member in members.members | filter: {role: 'committies'} "}
+          .image
+            %img(src="{{member.image}}")
+          %p.name
+            {{member.name}}
+          .clear
+        .clear
+    .members-container
+      %h3
+        Regular
+      .member-item{"ng-repeat" => "member in members.members | filter: {role: 'regular'} "}
+        .image
+          %img(src="{{member.image}}")
+        %p.name
+          {{member.name}}
+        .clear
+      .clear
+
+%a.fadeout{"ng-href" => "#/"}
+  .close-btn

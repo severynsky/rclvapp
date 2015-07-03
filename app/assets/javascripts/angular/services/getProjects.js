@@ -5,5 +5,4 @@ rclvapp.factory('getProjects', [ '$resource', function($resource){
             isArray: false
         }
     });
-    console.info('hello from get projects')
 }]);
