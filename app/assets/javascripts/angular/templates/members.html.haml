@@ -8,32 +8,54 @@
     .members-container
       %h3
         President
-      .member-item.center{"ng-repeat" => "member in members.members | filter: {role: 'president'} "}
+      .member-item.center{"ng-repeat" => "member in members.members | filter: {role: 'president'} ", "ng-click" => "showDetails = ! showDetails"}
         .image
           %img(src="{{member.image}}")
         %p.name
           {{member.name}}
+        .hide-container{"ng-show" => "showDetails"}
+          %p
+            {{member.phone}}
+          %p
+            {{member.email}}
+          %p
+            {{member.address}}
+
         .clear
       .clear
     .members-container
       %h3
         Committies
       .member-items.center
-        .member-item{"ng-repeat" => "member in members.members | filter: {role: 'committies'} "}
+        .member-item{"ng-repeat" => "member in members.members | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
           .image
             %img(src="{{member.image}}")
           %p.name
             {{member.name}}
+          .hide-container{"ng-show" => "showDetails"}
+            %p
+              {{member.phone}}
+            %p
+              {{member.email}}
+            %p
+              {{member.address}}
           .clear
         .clear
     .members-container
       %h3
         Regular
-      .member-item{"ng-repeat" => "member in members.members | filter: {role: 'regular'} "}
+      .member-item{"ng-repeat" => "member in members.members | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image
           %img(src="{{member.image}}")
         %p.name
           {{member.name}}
+        .hide-container{"ng-show" => "showDetails"}
+          %p
+            {{member.phone}}
+          %p
+            {{member.email}}
+          %p
+            {{member.address}}
         .clear
       .clear
 

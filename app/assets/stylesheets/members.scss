@@ -13,6 +13,8 @@
     height: 80px;
     float: left;
     margin: 10px 4px;
+    cursor: pointer;
+    position: relative;
     -webkit-transition: 0.2s ease;
     -moz-transition: 0.2s ease;
     -o-transition: 0.2s ease;
@@ -30,8 +32,18 @@
       color: #545454;
       padding: 10px 0 0 15px;
     }
+    .hide-container{  
+      position: absolute;
+      height: 150px;
+      width: 250px;
+      background-color: #d4d4d4;
+      top: 95px;
+      z-index: 999;
+      padding: 10px;
+      // display: none;
+    }
   }
   .member-item:hover{
-    border-right: 5px solid darkorange;
+    border-right: 15px solid darkorange;
   }
 }

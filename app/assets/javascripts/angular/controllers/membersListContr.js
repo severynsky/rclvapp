@@ -9,4 +9,8 @@ rclvapp.controller('membersListContr', ['$scope', '$http', 'getMembers', functio
 
     loadMembers();
 
+    $scope.toggleInfo = function(){
+      debugger;
+    };
+
 }]);
