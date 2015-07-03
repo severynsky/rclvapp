@@ -10,15 +10,21 @@
 
   .header{
     width: 60%;
-    // border-top: 1px solid #FFF;
-    border-bottom: 1px solid #FFF;
-    margin: 0 auto;
+    margin: 0 auto 15px;
+    .page-logo img{
+      width: 56px;
+      height: auto;
+      margin-left: 190px;
+    }
     h1{
       text-align: center;
-      color: #FFF;
-      margin: 5px 0;
+      border-top: 1px solid #FFF;
+      border-bottom: 1px solid #FFF;
+      margin: 13px 0 7px;
+      padding: 12px 0;
       font-weight: 200;
-      font-size: 2.1em;
+      font-size: 30px;
+      color: #FFF;
     }
   }
 }
@@ -28,15 +34,15 @@
     margin: 0.5em auto;
     padding: 5px;
     background-color: rgba(40, 40, 40, 0.6);
-    border: 1px solid rgba(220,220,200,0.2);
+    border-right: 3px solid rgba(220,220,200,0.2);
     box-shadow: 1px 1px 15px rgba(40,40,40,0.1);
     color: #FFF;
     min-height: 180px;
-    -webkit-transition: 0.1s;
-    -moz-transition: 0.1s;
-    -ms-transition: 0.1s;
-    -o-transition: 0.1s;
-    transition: 0.1s;
+    -webkit-transition: 0.2s ease;
+    -moz-transition: 0.2s ease;
+    -o-transition: 0.2s ease;
+    -ms-transition: 0.2s ease;
+    transition: 0.2s ease;
     .image{
       height: 160px;
       width: 160px;
@@ -97,8 +103,8 @@
 }
 
 .news-item:hover{
-  border: 1px solid darkorange;
-  background-color: rgba(40,40,40,0.8);
+  border-right: 20px solid darkorange;
+  background-color: rgba(150,150,150,0.6);
   h1{
     color: #249792;
   }

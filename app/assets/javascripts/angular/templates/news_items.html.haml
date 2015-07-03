@@ -1,7 +1,9 @@
 %section.popup
   .news-items-container
     .header
-      %h1
+      %a{"class" => "page-logo", "href" =>  "#/"}
+        %img{src: "/images/rotary-logo.png"}
+      %h1.tagline
         Новини
     .news-item{"ng-repeat" => "newsItem in news.news"}
       .image
