@@ -15,8 +15,6 @@ ActiveAdmin.register NewsItem do
 
   menu priority: 2
   menu label: "Новини"
-  
-  # @newsitem.build_image
 
   form :html => { multipart: true } do |f|
     
@@ -32,7 +30,10 @@ ActiveAdmin.register NewsItem do
       seo.input :keywords
     end
     f.inputs "images", for: [:image, f.object.image || Image.new] do |img|
-      img.input :picture
+
+      img.input :picture, :as => :file, :hint => img.object.picture.present? \
+        ? image_tag(img.object.picture.url(:thumb))
+        : content_tag(:span, "no cover page yet")
     end
 
     f.actions

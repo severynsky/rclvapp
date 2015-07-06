@@ -1,23 +1,24 @@
 %section.popup
-  .news-item-page
-    .image
-      %img(src="{{print.image}}")
-      
+  .resource-container
+    .news-item-page
+      .image
+        %img(src="{{print.image}}")
+        
 
-    .text-container{"id" => "bind-html-with-trust"}
-      %h3
-        {{print.title}}
-      %p.date
-        {{ print.created_at | date: fullDate }}
-      %br
-      %p.intro-text
-        {{ print.status }}
-      %hr
-      / %p.intro-text
-      / {{ print.category }}
-      / %hr
-      %p{"ng-bind-html" => "print.description"}
-        / {{print.body}}
-      %hr
+      .text-container{"id" => "bind-html-with-trust"}
+        %h3
+          {{print.title}}
+        %p.date
+          {{ print.created_at | date: fullDate }}
+        %br
+        %p.intro-text
+          {{ print.status }}
+        %hr
+        / %p.intro-text
+        / {{ print.category }}
+        / %hr
+        %p{"ng-bind-html" => "print.description"}
+          / {{print.body}}
+        %hr
 %a.fadeout{"ng-href" => "#/projects"}
   .close-btn

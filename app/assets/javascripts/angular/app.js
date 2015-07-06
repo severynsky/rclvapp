@@ -3,6 +3,7 @@ rclvapp = angular.module('rclvapp', [
   'ngRoute',
   'ngResource',
   'ngSanitize',
+  'ngAnimate',
   'Devise'
 ]);
 

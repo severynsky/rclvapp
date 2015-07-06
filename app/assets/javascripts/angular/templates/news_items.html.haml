@@ -1,19 +1,23 @@
 %section.popup
-  .news-items-container
+  .resource-container
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         Новини
     .news-item{"ng-repeat" => "newsItem in news.news"}
+      %span.date
+        %span.month
+          {{ newsItem.created_at | date: "MMM" }}
+        %br/
+        %span.day
+          {{ newsItem.created_at | date: "d" }}
       .image
         %img(src="{{newsItem.image}}")
       %a.text-container{"ng-href" => "#/news_items/{{ newsItem.id }}"}
         %h1
           {{ newsItem.title | limitTo: 38 }}..
         .utilities
-          %span
-            {{ newsItem.created_at | date: fullDate }}
           %span.category{"ng-show" => "newsItem.category"}
             {{ newsItem.category.title }}
         %p

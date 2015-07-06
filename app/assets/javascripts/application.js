@@ -7,6 +7,7 @@
 //= require angular-route
 //= require angular-resource
 //= require angular-sanitize
+//= require angular-animate
 //= require angular-devise
 //= require angular-devise/lib/devise
 //= require angular-rails-templates

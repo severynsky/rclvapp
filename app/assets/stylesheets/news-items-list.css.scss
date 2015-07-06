@@ -1,12 +1,12 @@
 .popup{
   position: absolute;
-  background-color: rgba(40, 40, 40, 0.6);
+  // background-color: rgba(40, 40, 40, 0.01);
   z-index: 999;
-  width: 60%;
+  width: 70%;
   height: 95vh;
   overflow-y: scroll;
   margin: 20px auto;
-  left: 20%;
+  left: 15%;
 
   .header{
     width: 60%;
@@ -28,16 +28,17 @@
     }
   }
 }
-.news-items-container{
+.resource-container{
   padding: 15px 15px;
   .news-item{
-    margin: 0.5em auto;
-    padding: 5px;
+    margin: 1.2em auto;
+    width: 750px;
+    // padding: 5px;
     background-color: rgba(40, 40, 40, 0.6);
     border-right: 3px solid rgba(220,220,200,0.2);
     box-shadow: 1px 1px 15px rgba(40,40,40,0.1);
     color: #FFF;
-    min-height: 180px;
+    min-height: 160px;
     -webkit-transition: 0.2s ease;
     -moz-transition: 0.2s ease;
     -o-transition: 0.2s ease;
@@ -46,19 +47,32 @@
     .image{
       height: 160px;
       width: 160px;
+      opacity: 0.65;
       overflow: hidden;
       background-color: white;
-      border: 2px solid #E6E6E6;
+      // border: 2px solid #E6E6E6;
       margin-right: 0.5em;
       float: left;
-      margin-top: 4px;
-      margin-left: 4px;
+      // margin-top: 4px;
+      // margin-left: 4px;
       img{
         width: 100%;
         height: auto;
       }
     }
+    .date{
+      position: absolute;
+      right: 20px;
+      // /* margin-right: -10px; */
+      width: 35px;
+      text-align: center;
+      .month{
+        font-size: 1.4em;
+        border-bottom: 2px solid #FFF;
+      }
+    }
     .text-container{
+      position: relative;
       h1{
         line-height: 1em;
         margin: 4px 0 4px 0;
@@ -66,6 +80,7 @@
         font-weight: 600;
         letter-spacing: 1px;
         color: #F4F4F4;
+        padding: 10px 0 5px;
       }
       .utilities{
         margin: 0.2em 0;
@@ -107,6 +122,13 @@
   background-color: rgba(150,150,150,0.6);
   h1{
     color: #249792;
+  }
+  .month{
+    font-size: 2.4em;
+    border-bottom: 2px solid orange;
+  }
+  .image{
+    opacity: 1;
   }
 }
 .fadeout{
