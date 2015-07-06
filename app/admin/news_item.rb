@@ -1,7 +1,10 @@
 ActiveAdmin.register NewsItem do
   includes :image, :category
-  permit_params :title, :intro_text, :body, :category_id, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
 
+  controller do
+  end
+
+  permit_params :title, :intro_text, :body, :category_id, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
   index do 
     column "Image" do |image|
         image_tag image.image.picture.url(:small)
@@ -34,6 +37,8 @@ ActiveAdmin.register NewsItem do
       img.input :picture, :as => :file, :hint => img.object.picture.present? \
         ? image_tag(img.object.picture.url(:thumb))
         : content_tag(:span, "no cover page yet")
+        # img.input :_destroy, label: "Remove image?", as: :radio
+        img.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove image'
     end
 
     f.actions

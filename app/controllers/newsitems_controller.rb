@@ -14,7 +14,6 @@ class NewsitemsController < ApplicationController
   def create
     @newsItem = NewsItem.new(permit_params)
     @newsItem.build_image
-    binding.pry
     if @newsItem.save
       redirect_to '/news_items'
     end
