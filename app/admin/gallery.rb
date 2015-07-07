@@ -17,7 +17,7 @@ ActiveAdmin.register Gallery do
   form :html => { multipart: true } do |f|
     
     f.inputs "Gallery" do
-      f.input :title
+      f.input :title, :placeholder => "2015-07-21, name of gallery"
       # f.inputs "images", for: [:image, f.object.image || Image.new] do |img|
       #   img.input :picture, :as => :file, :hint => img.object.picture.present? \
       #     ? image_tag(img.object.picture.url(:thumb))
