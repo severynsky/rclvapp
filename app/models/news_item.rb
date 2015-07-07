@@ -1,7 +1,7 @@
 class NewsItem < ActiveRecord::Base
   
   belongs_to :category
-  has_one :image, as: :imageable, dependent: :destroy
+  has_one :image,   as: :imageable,   dependent: :destroy
   has_one :seotool, as: :seotoolable, dependent: :destroy
   has_one :gallery, as: :galleryable, dependent: :destroy
 

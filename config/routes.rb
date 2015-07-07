@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :members
     resources :projects
     resources :images
+    resources :galleries
 
   # Example resource route with options:
   #   resources :products do

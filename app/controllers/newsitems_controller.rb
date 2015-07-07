@@ -9,6 +9,7 @@ class NewsitemsController < ApplicationController
   def new
     @newsItem = NewsItem.new
     @newsItem.build_image
+    @newsItem.build_gallery
   end
 
   def create
@@ -21,6 +22,7 @@ class NewsitemsController < ApplicationController
 
   def edit
     @newsItem.build_image if @newsItem.image == nil
+    @newsItem.build_gallery if @newsItem.gallery == nil
   end
 
   def update
