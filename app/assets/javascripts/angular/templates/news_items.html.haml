@@ -5,23 +5,24 @@
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         Новини
-    .news-item{"ng-repeat" => "newsItem in news.news"}
-      %span.date
-        %span.month
-          {{ newsItem.created_at | date: "MMM" }}
-        %br/
-        %span.day
-          {{ newsItem.created_at | date: "d" }}
-      .image
-        %img(src="{{newsItem.image}}")
-      %a.text-container{"ng-href" => "#/news_items/{{ newsItem.id }}"}
-        %h1
-          {{ newsItem.title | limitTo: 38 }}..
-        .utilities
-          %span.category{"ng-show" => "newsItem.category"}
-            {{ newsItem.category.title }}
-        %p
-          {{ newsItem.intro }}
+    .news-item-container{"ng-repeat" => "newsItem in news.news"}
+      .news-item
+        %span.date
+          %span.month
+            {{ newsItem.created_at | date: "MMM" }}
+          %br/
+          %span.day
+            {{ newsItem.created_at | date: "d" }}
+        .image
+          %img(src="{{newsItem.image}}")
+        %a.text-container{"ng-href" => "#/news_items/{{ newsItem.id }}"}
+          %h1
+            {{ newsItem.title | limitTo: 38 }}
+          .utilities
+            %span.category{"ng-show" => "newsItem.category"}
+              {{ newsItem.category.title }}
+          %p
+            {{ newsItem.intro }}
     .clear
 
 %a.fadeout{"ng-href" => "#/"}

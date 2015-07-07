@@ -11,7 +11,7 @@ class NewsItem < ActiveRecord::Base
   accepts_nested_attributes_for :gallery, :reject_if => lambda {|a| a[:image].blank?}, allow_destroy: true
 
   validates :title, presence: true, length: { minimum: 8 }
-  validates :intro_text, presence: true, length: { minimum: 90 }
+  validates :intro_text, presence: true, length: { minimum: 90, maximum: 200 }
   validates :body, presence: true, length: { minimum: 150 }
   validates :category_id, presence: true
 

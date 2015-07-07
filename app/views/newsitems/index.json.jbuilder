@@ -13,4 +13,9 @@ json.news @news do |news_item|
     json.seodescription news_item.seotool.description
     json.seokeywords news_item.seotool.keywords
   end
+  if news_item.gallery
+    json.gallery news_item.gallery.images do |img|
+      json.image img.picture.path
+    end
+  end
 end
