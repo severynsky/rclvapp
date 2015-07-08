@@ -49,6 +49,14 @@
     to      { opacity: 0; transform: translateY(-30%); }
 }
 
-.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }
-homePage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 7777; }
+/*.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }*/
+
+.homePage.ng-enter { }
+.homePage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 9999; }
+
+.newsList.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }
+.newsList.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 9999; }
+
+.newsPage.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }
+.newsPage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 9999; }
 

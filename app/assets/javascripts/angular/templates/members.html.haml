@@ -8,18 +8,22 @@
     .members-container
       %h3
         President
-      .member-item.center{"ng-repeat" => "member in members.members | filter: {role: 'president'} ", "ng-click" => "showDetails = ! showDetails"}
+      .member-item.center{"ng-repeat" => "member in members.members | filter: {role: 'president'} "}
         .image
           %img(src="{{member.image}}")
         %p.name
           {{member.name}}
-        .hide-container{"ng-show" => "showDetails"}
-          %p
-            {{member.phone}}
-          %p
-            {{member.email}}
-          %p
-            {{member.address}}
+        %div{ "ng-if" => "user_logged_in"}
+          .btn-container
+            .to-page
+            .to-popup{"ng-click" => "showDetails = ! showDetails"}
+              .hide-container{"ng-show" => "showDetails"}
+                %p
+                  {{member.phone}}
+                %p
+                  {{member.email}}
+                %p
+                  {{member.address}}
 
         .clear
       .clear
@@ -32,13 +36,17 @@
             %img(src="{{member.image}}")
           %p.name
             {{member.name}}
-          .hide-container{"ng-show" => "showDetails"}
-            %p
-              {{member.phone}}
-            %p
-              {{member.email}}
-            %p
-              {{member.address}}
+          %div{ "ng-if" => "user_logged_in"}
+            .btn-container
+              .to-page
+              .to-popup{"ng-click" => "showDetails = ! showDetails"}
+                .hide-container{"ng-show" => "showDetails"}
+                  %p
+                    {{member.phone}}
+                  %p
+                    {{member.email}}
+                  %p
+                    {{member.address}}
           .clear
         .clear
     .members-container
@@ -49,13 +57,17 @@
           %img(src="{{member.image}}")
         %p.name
           {{member.name}}
-        .hide-container{"ng-show" => "showDetails"}
-          %p
-            {{member.phone}}
-          %p
-            {{member.email}}
-          %p
-            {{member.address}}
+        %div{ "ng-if" => "user_logged_in"}
+          .btn-container
+            .to-page
+            .to-popup{"ng-click" => "showDetails = ! showDetails"}
+              .hide-container{"ng-show" => "showDetails"}
+                %p
+                  {{member.phone}}
+                %p
+                  {{member.email}}
+                %p
+                  {{member.address}}
         .clear
       .clear
 

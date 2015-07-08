@@ -4,12 +4,11 @@
     text-align: center;
   }
   .member-items{
-    width: 71%;
+    width: 78%;
   }
   .member-item{
-    border-right: 2px solid #B4B4B4;
     background-color: #d4d4d4; 
-    width: 240px;
+    width: 280px;
     height: 80px;
     float: left;
     margin: 10px 4px;
@@ -31,19 +30,35 @@
     p.name{
       color: #545454;
       padding: 10px 0 0 15px;
+      float: left;
     }
-    .hide-container{  
-      position: absolute;
-      height: 150px;
-      width: 250px;
-      background-color: #d4d4d4;
-      top: 95px;
-      z-index: 999;
-      padding: 10px;
-      // display: none;
+    .btn-container{
+      // position: absolute;
+      // right: 0;
+      float: right;
+      .to-page{
+        height: 40px;
+        width: 40px;
+        background-color: orange;
+      }
+      .to-popup{
+        height: 40px;
+        width: 40px;
+        background-color: #FFF;
+        .hide-container{  
+          position: absolute;
+          height: 150px;
+          width: 280px;
+          background-color: #d4d4d4;
+          top: 95px;
+          z-index: 999;
+          padding: 10px;
+          left: 0;
+        }
+      }
     }
   }
   .member-item:hover{
-    border-right: 15px solid darkorange;
+    // border-right: 15px solid darkorange;
   }
 }
