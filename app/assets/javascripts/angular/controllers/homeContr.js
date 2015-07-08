@@ -3,7 +3,7 @@
 rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route',
   function($scope, Auth, $timeout, $route){
     console.info("hello from home cotnroller");
-
+    $scope.pageClass = "homePage";
     angular.element(document).ready(
       $initialFunction());
 

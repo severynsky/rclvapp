@@ -1,4 +1,5 @@
 rclvapp.controller('projectPageContr', ['$scope', '$http', '$routeParams', 'getProjects', function($scope, $http, $routeParams, getProjects){
+    $scope.pageClass = "projectPage";
 
     projectItem = getProjects.get({id: $routeParams.projectId}, function(){
         $scope.print = {

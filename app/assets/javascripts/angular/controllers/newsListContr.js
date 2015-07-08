@@ -5,6 +5,7 @@ rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', function($sco
     var loadNews = function(){
         $scope.news = getNews.query();
     };
+    $scope.pageClass = "newsList";
 
     loadNews();
 
