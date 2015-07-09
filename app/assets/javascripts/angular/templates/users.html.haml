@@ -5,69 +5,69 @@
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         Members
-    .members-container
+    .users-container
       %h3
         President
-      .member-item.center{"ng-repeat" => "member in members.members | filter: {role: 'president'} "}
+      .user-item.center{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
         .image
-          %img(src="{{member.image}}")
+          %img(src="{{user.image}}")
         %p.name
-          {{member.name}}
+          {{user.name}}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
             .to-page
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %p
-                  {{member.phone}}
+                  {{user.phone}}
                 %p
-                  {{member.email}}
+                  {{user.email}}
                 %p
-                  {{member.address}}
+                  {{user.address}}
 
         .clear
       .clear
-    .members-container
+    .users-container
       %h3
         Committies
-      .member-items.center
-        .member-item{"ng-repeat" => "member in members.members | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
+      .user-items.center
+        .user-item{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
           .image
-            %img(src="{{member.image}}")
+            %img(src="{{user.image}}")
           %p.name
-            {{member.name}}
+            {{user.name}}
           %div{ "ng-if" => "user_logged_in"}
             .btn-container
               .to-page
               .to-popup{"ng-click" => "showDetails = ! showDetails"}
                 .hide-container{"ng-show" => "showDetails"}
                   %p
-                    {{member.phone}}
+                    {{user.phone}}
                   %p
-                    {{member.email}}
+                    {{user.email}}
                   %p
-                    {{member.address}}
+                    {{user.address}}
           .clear
         .clear
-    .members-container
+    .users-container
       %h3
         Regular
-      .member-item{"ng-repeat" => "member in members.members | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
+      .user-item{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image
-          %img(src="{{member.image}}")
+          %img(src="{{user.image}}")
         %p.name
-          {{member.name}}
+          {{user.name}}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
             .to-page
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %p
-                  {{member.phone}}
+                  {{user.phone}}
                 %p
-                  {{member.email}}
+                  {{user.email}}
                 %p
-                  {{member.address}}
+                  {{user.address}}
         .clear
       .clear
 

@@ -1,12 +1,12 @@
-.members-container{
+.users-container{
   h3{
     color: #FFF;
     text-align: center;
   }
-  .member-items{
+  .user-items{
     width: 78%;
   }
-  .member-item{
+  .user-item{
     background-color: #d4d4d4; 
     width: 280px;
     height: 80px;
@@ -58,7 +58,7 @@
       }
     }
   }
-  .member-item:hover{
+  .user-item:hover{
     // border-right: 15px solid darkorange;
   }
 }
