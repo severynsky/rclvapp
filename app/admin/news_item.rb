@@ -7,7 +7,9 @@ ActiveAdmin.register NewsItem do
   permit_params :title, :intro_text, :body, :category_id, :gallery_id, :id, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
   index do 
     column "Image" do |image|
-        image_tag image.image.picture.url(:small)
+      if image.image != nil
+        image_tag image.image.picture.url(:small) 
+      end
     end
     column :title
     column :category

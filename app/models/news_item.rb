@@ -1,4 +1,5 @@
 class NewsItem < ActiveRecord::Base
+  before_save :check_img
   
   belongs_to :category
   has_one :image, as: :imageable, dependent: :destroy
@@ -14,5 +15,10 @@ class NewsItem < ActiveRecord::Base
   validates :intro_text, presence: true, length: { minimum: 90, maximum: 200 }
   validates :body, presence: true, length: { minimum: 150 }
   validates :category_id, presence: true
+  validates :image, presence: true
+
+  def check_img
+    # binding.pry
+  end
 
 end
