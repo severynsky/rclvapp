@@ -15,7 +15,7 @@
           {{user.name}}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
-            .to-page
+            %a.to-page{"ng-href" => "#/users/{{ user.id }}"}
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %p
@@ -32,13 +32,13 @@
         Committies
       .user-items.center
         .user-item{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
-          .image
+          .image{"ng-href" => "#/users/{{ user.id }}"}
             %img(src="{{user.image}}")
           %p.name
             {{user.name}}
           %div{ "ng-if" => "user_logged_in"}
             .btn-container
-              .to-page
+              %a.to-page{"ng-href" => "#/users/{{ user.id }}"}
               .to-popup{"ng-click" => "showDetails = ! showDetails"}
                 .hide-container{"ng-show" => "showDetails"}
                   %p
@@ -59,7 +59,7 @@
           {{user.name}}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
-            .to-page
+            %a.to-page{"ng-href" => "#/users/{{ user.id }}"}
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %p

@@ -40,6 +40,7 @@
         height: 40px;
         width: 40px;
         background-color: orange;
+        display: block;
       }
       .to-popup{
         height: 40px;
@@ -60,5 +61,16 @@
   }
   .user-item:hover{
     // border-right: 15px solid darkorange;
+  }
+}
+
+.user-page{
+  padding: 20px;
+  background-color: #ecf0f1;
+  .user-page-header{
+    .user-image-container{
+      float: left;
+      margin: -40px 10px 10px -20px;
+    } 
   }
 }

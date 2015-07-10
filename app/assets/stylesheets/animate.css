@@ -35,7 +35,7 @@
 
 /* slide in from the bottom */
 @keyframes slideInUp {
-    from    { transform:translateY(100%); }
+    from    { transform:translateY(-100%); }
     to      { transform: translateY(0); }
 }
 /* fade in */
@@ -52,11 +52,13 @@
 /*.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }*/
 
 .homePage.ng-enter { }
-.homePage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 9999; }
+.homePage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 999; }
 
-.newsList.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }
-.newsList.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 9999; }
+.newsList.ng-enter { animation: fadeIn 0.5s both ease-in; z-index: 888; }
+.newsList.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 999; }
 
-.newsPage.ng-enter { animation: fadeIn 0.4s both ease-in; z-index: 8888; }
-.newsPage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 9999; }
+.newsPage.ng-enter { animation: fadeIn 0.5s both ease-in; z-index: 888; }
+.newsPage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 999; }
+.userPage.ng-enter { animation: fadeIn 0.2s both ease-in; z-index: 1000; }
+.userPage.ng-leave { animation: fadeOut 0.2s both ease-in; z-index: 999; }
 

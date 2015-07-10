@@ -1,5 +1,6 @@
 json.id @user.id
 json.name @user.name
+json.image @user.image.picture(:thumb)
 json.role @user.role
 json.email @user.email
 json.phone @user.phone
