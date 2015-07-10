@@ -7,7 +7,8 @@ json.created_at @newsItem.created_at
 json.image @newsItem.image.picture.url(:cover)
 if @newsItem.gallery
   json.gallery @newsItem.gallery.images do |img|
-    json.image img.picture.path
+    json.image img.picture.url(:thumb)
+    json.description img.description
   end
 end
 if @newsItem.seotool

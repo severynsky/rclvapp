@@ -61,4 +61,24 @@
       width: auto;
     }
   }
+  .gallery{
+    margin: 0 auto;
+    width: 90%;
+    h2{
+      color: #FFF;
+      text-align: right;
+    }
+    .gallery-item{
+      float: left;
+      img{
+        width: 200px;
+        height: auto;
+        margin: 0 5px;
+      }
+      p{
+        text-align: center;
+        color: #FFF;
+      }
+    }
+  }
 }

@@ -8,7 +8,8 @@ rclvapp.controller('newsPageContr', ['$scope', '$http', '$routeParams', 'getNews
             body: newsItem.body,
             date: newsItem.created_at,
             category: newsItem.Category,
-            image: newsItem.image
+            image: newsItem.image,
+            gallery: newsItem.gallery
         };
 
     });

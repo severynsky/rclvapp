@@ -18,6 +18,16 @@
         / %hr
         %p{"ng-bind-html" => "print.body"}
           / {{print.body}}
-        %hr
+      .gallery
+        %h2
+          Gallery 
+        %hr 
+        .gallery-item{"ng-repeat" => "img in print.gallery"}
+          %img{:src => "{{img.image}}", :alt => ""}/
+          %p
+            {{img.description}}
+        .clear
+        %hr 
+
 %a.fadeout{"ng-href" => "#/news_items"}
   .close-btn
