@@ -21,6 +21,8 @@ gem 'aws-sdk', '< 2.0'
 gem "figaro"
 gem 'ckeditor'
 
+gem "geocoder"
+
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"
 end
