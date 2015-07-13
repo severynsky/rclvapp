@@ -26,6 +26,14 @@ rclvapp.config(['$routeProvider', '$locationProvider',
         templateUrl: "<%=asset_path 'angular/templates/projectpage.html' %>",
         controller: 'projectPageContr'
     }).
+    when('/events', {
+        templateUrl: "<%=asset_path 'angular/templates/events.html' %>",
+        controller: 'eventsContr'
+    }).
+    when('/events/:eventId', {
+        templateUrl: "<%=asset_path 'angular/templates/eventpage.html' %>",
+        controller: 'eventPageContr'
+    }).
     when('/users', {
         templateUrl: "<%=asset_path 'angular/templates/users.html' %>",
         controller: 'usersListContr'

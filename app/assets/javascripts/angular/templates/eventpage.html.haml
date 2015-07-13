@@ -1,0 +1,21 @@
+%section.popup
+  .resource-container
+    .event-page
+      .map
+        %h2
+          map goes here
+      .text-container{"id" => "bind-html-with-trust"}
+        %h3
+          {{print.title}}
+        %p.date
+          {{ print.date | date: date }}
+        %br
+        %p.intro-text
+          {{ print.address }}
+          {{ print.place }}
+        %hr
+        %p{"ng-bind-html" => "print.description"}
+          / {{print.body}}
+        %hr
+%a.fadeout{"ng-href" => "#/events"}
+  .close-btn
