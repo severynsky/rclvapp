@@ -30,12 +30,12 @@
       %div.item#photos
     %div.right
       %div.items
-        %div.item#about
+        %a.item#about{"ng-href" => "#/about"}
           %p
             about rotary
-      %a.item#members{"ng-href" => "#/users"}
-        %p
-          rotary members
+        %a.item#members{"ng-href" => "#/users"}
+          %p
+            rotary members
       %div.item#events
         %p.header
           events
@@ -47,8 +47,6 @@
               Meeting Danish guests and some more
             %p.place
               Cytadel Inn Some str 5
-      %div.item#contacts
+      %a.item#contacts{"ng-href" => "#/contact"}
         %img{src: "/images/icons/envelope.png"}
-        %p
-          contacts
 

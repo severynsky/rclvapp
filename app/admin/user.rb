@@ -16,7 +16,7 @@ ActiveAdmin.register User do
   end
 
   menu priority: 3
-  menu label: "Members"
+  menu label: "Users"
 
   form :html => { multipart: true } do |f|
     

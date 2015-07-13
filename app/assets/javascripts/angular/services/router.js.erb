@@ -34,6 +34,14 @@ rclvapp.config(['$routeProvider', '$locationProvider',
         templateUrl: "<%=asset_path 'angular/templates/userpage.html' %>",
         controller: 'userPageContr'
     }).
+    when('/contact', {
+        templateUrl: "<%=asset_path 'angular/templates/contact.html' %>",
+        controller: 'contactContr'
+    }).
+    when('/about', {
+        templateUrl: "<%=asset_path 'angular/templates/about.html' %>",
+        controller: 'aboutContr'
+    }).
     otherwise({
         redirectTo: '#/'
     });

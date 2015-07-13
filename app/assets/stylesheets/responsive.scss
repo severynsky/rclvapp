@@ -1,0 +1,38 @@
+@media screen and (max-width: 1330px), screen and (max-height: 650px) {
+  .content{
+    width: 80%;
+    #news{
+      width: 190px;
+      height: 155px;
+      p{
+        font-size: 4em;
+      }
+    }
+    #projects{
+      width: 260px;
+      height: 170px;
+      background-size: 260px 170px;
+    }
+    #photos{
+      width: 160px;
+      height: 160px;
+      background-size: 160px;
+    }
+    #about{
+      width: 175px;
+      height: 145px;
+    }
+    #members{
+      width: 118px;
+      height: 118px;
+      margin-top: 32px;
+    }
+    #events{
+      width: 250px;
+    }
+  }
+  .popup{
+    width: 80%;
+    left: 10%;
+  }
+}
