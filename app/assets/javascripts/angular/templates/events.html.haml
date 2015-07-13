@@ -10,6 +10,8 @@
         %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
           %p
             {{ event.title}}
+            %span.pull-right
+              planned to: {{ event.date | date: "d-MMMM" }}
 
     .clear
 

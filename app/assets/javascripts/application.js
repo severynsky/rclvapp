@@ -3,6 +3,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require underscore
 //= require angular
 //= require angular-route
 //= require angular-resource
@@ -13,6 +14,7 @@
 //= require angular-rails-templates
 //= require bootstrap-sprockets
 //= require ckeditor/init
+//= require angular-google-maps
 //= require_tree ./angular
 //= require_tree ./angular/controllers
 //= require_tree .

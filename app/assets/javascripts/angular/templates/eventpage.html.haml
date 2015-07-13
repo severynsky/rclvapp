@@ -2,14 +2,14 @@
   .resource-container
     .event-page
       .map
-        %h2
-          map goes here
+        %ui-gmap-google-map{"center" => " print.center ", "zoom" => "print.zoom"}
+          %ui-gmap-marker{"idKey" => "print.marker.id", "coords" => "print.marker.coords", "options" => "print.options"}
       .text-container{"id" => "bind-html-with-trust"}
         %h3
           {{print.title}}
-        %p.date
-          {{ print.date | date: date }}
         %br
+        %p.date
+          {{ print.date | date: 'd-MMMM' }}
         %p.intro-text
           {{ print.address }}
           {{ print.place }}
