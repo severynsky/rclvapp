@@ -8,6 +8,8 @@ rclvapp.controller('newsPageContr', ['$scope', '$http', '$routeParams', 'getNews
             body: newsItem.body,
             date: newsItem.created_at,
             category: newsItem.Category,
+            status: newsItem.status,
+            publish_date: newsItem.publish_date,
             image: newsItem.image,
             gallery: newsItem.gallery
         };

@@ -1,5 +1,5 @@
 class NewsItem < ActiveRecord::Base
-  before_save :check_img
+  before_save :set_publish_date_and_status
   
   belongs_to :category
   has_one :image, as: :imageable, dependent: :destroy
@@ -19,6 +19,11 @@ class NewsItem < ActiveRecord::Base
 
   def check_img
     # binding.pry
+  end
+
+  def set_publish_date_and_status
+    self.publish_date = DateTime.now if self.publish_date == nil
+    self.status = "published" if self.status == nil
   end
 
 end

@@ -11,10 +11,10 @@
       .news-item
         %span.date
           %span.month
-            {{ newsItem.created_at | date: "MMM" }}
+            {{ newsItem.publish_date | date: "MMM" }}
           %br/
           %span.day
-            {{ newsItem.created_at | date: "d" }}
+            {{ newsItem.publish_date | date: "d" }}
         .image
           %img(src="{{newsItem.image}}")
         %a.text-container{"ng-href" => "#/news_items/{{ newsItem.id }}"}

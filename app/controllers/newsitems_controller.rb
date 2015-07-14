@@ -3,7 +3,7 @@ class NewsitemsController < ApplicationController
   before_action :find_newsitem, only:[:edit, :show, :update, :destroy]
   before_action :find_categories
   def index
-    @news = NewsItem.order('created_at DESC').all
+    @news = NewsItem.order('publish_date DESC').all
   end
 
   def new

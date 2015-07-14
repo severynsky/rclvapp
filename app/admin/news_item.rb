@@ -4,7 +4,7 @@ ActiveAdmin.register NewsItem do
   controller do
   end
 
-  permit_params :title, :intro_text, :body, :category_id, :gallery_id, :id, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
+  permit_params :title, :intro_text, :body, :category_id, :gallery_id, :id, :publish_date, :status, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
   index do 
     column "Image" do |image|
       if image.image != nil
@@ -13,8 +13,9 @@ ActiveAdmin.register NewsItem do
     end
     column :title
     column :category
-    column :created_at
+    column :publish_date
     column :gallery
+    column :created_at
     actions
   end
 
@@ -27,6 +28,8 @@ ActiveAdmin.register NewsItem do
       f.input :title
       f.input :category
       f.input :intro_text
+      f.input :publish_date
+      f.input :status, :as => :select, collection: %w[draft publish archive deleted]
       f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
     end
 

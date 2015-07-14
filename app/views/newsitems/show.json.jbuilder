@@ -4,6 +4,8 @@ json.intro @newsItem.intro_text
 json.body @newsItem.body
 json.сategory @newsItem.category.title
 json.created_at @newsItem.created_at
+json.publish_date @newsItem.publish_date
+json.status @newsItem.status
 json.image @newsItem.image.picture.url(:cover)
 if @newsItem.gallery
   json.gallery @newsItem.gallery.images do |img|
