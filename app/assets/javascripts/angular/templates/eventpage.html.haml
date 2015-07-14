@@ -1,0 +1,21 @@
+%section.popup
+  .resource-container
+    .event-page
+      .map
+        %ui-gmap-google-map{"center" => " print.center ", "zoom" => "print.zoom"}
+          %ui-gmap-marker{"idKey" => "print.marker.id", "coords" => "print.marker.coords", "options" => "print.options"}
+      .text-container{"id" => "bind-html-with-trust"}
+        %h3
+          {{print.title}}
+        %br
+        %p.date
+          {{ print.date | date: 'd-MMMM' }}
+        %p.intro-text
+          {{ print.address }}
+          {{ print.place }}
+        %hr
+        %p{"ng-bind-html" => "print.description"}
+          / {{print.body}}
+        %hr
+%a.fadeout{"ng-href" => "#/events"}
+  .close-btn

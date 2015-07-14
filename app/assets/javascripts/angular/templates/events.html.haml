@@ -1,0 +1,19 @@
+%section.popup
+  .resource-container
+    .header
+      %a{"class" => "page-logo", "href" =>  "#/"}
+        %img{src: "/images/rotary-logo.png"}
+      %h1.tagline
+        Events
+    .col-xs-8.col-xs-offset-2.events-container
+      .project-item{"ng-repeat" => "event in events.events"}
+        %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
+          %p
+            {{ event.title}}
+            %span.pull-right
+              planned to: {{ event.date | date: "d-MMMM" }}
+
+    .clear
+
+%a.fadeout{"ng-href" => "#/"}
+  .close-btn

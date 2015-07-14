@@ -13,6 +13,7 @@ gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'pry', '~> 0.10.1'
 gem 'bootstrap_form'
+gem 'underscore-rails'
 
 gem 'devise'
 gem 'paperclip', '~> 4.2'
@@ -20,6 +21,8 @@ gem 'aws-sdk', '< 2.0'
 
 gem "figaro"
 gem 'ckeditor'
+
+gem "geocoder"
 
 source "https://rails-assets.org" do
   gem "rails-assets-angular-devise"

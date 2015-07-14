@@ -24,8 +24,8 @@
           {{print.nationality}}
         %h4
           {{print.languages}}
-        %p
-          {{print.full_data}}
+        %p{"ng-bind-html" => "print.full_data"}
+          / {{print.}}
 
 
 %a.fadeout{"ng-href" => "#/users"}
