@@ -4,11 +4,11 @@
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
-        Проекти
+        {{ "PROJECTS.title" | translate }}
     
     .col-xs-4.project-container
       %h3
-        Нові
+        {{ "PROJECTS.new" | translate }}
         %span.projects-icon 
       .project-item{"ng-repeat" => "projects in projects.new_projects"} 
         %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
@@ -17,7 +17,7 @@
     
     .col-xs-4.project-container
       %h3
-        Діючі
+        {{ "PROJECTS.running" | translate }}
         %span.projects-icon
       .project-item{"ng-repeat" => "projects in projects.running_projects"}
         %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
@@ -26,7 +26,7 @@
     
     .col-xs-4.project-container
       %h3
-        Завершені
+        {{ "PROJECTS.ended" | translate }}
         %span.projects-icon
       .project-item{"ng-repeat" => "projects in projects.completed_projects"}
         %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
@@ -38,7 +38,7 @@
   %br/
   .col-xs-10.col-xs-offset-1.cooperation
     %h1
-      Cooperation
+      {{ "PROJECTS.cooperation" | translate }}
     .text-container
       %p
         Marfa selvage yr, post-ironic ennui stumptown fashion axe meggings seitan chia four loko tousled synth. Street art leggings Shoreditch farm-to-table chillwave, meggings freegan roof party fingerstache Pitchfork. Tattooed Williamsburg art party lumbersexual readymade, meh irony taxidermy blog PBR&B roof party street art <b>Odd Future cliche</b>. Sartorial beard authentic small batch, cold-pressed mustache irony 8-bit cornhole deep v Intelligentsia brunch next level kale chips. Locavore salvia you probably haven't heard of them, direct trade mixtape sriracha dreamcatcher try-hard. IPhone twee Marfa try-hard, tilde brunch keytar cronut. Drinking vinegar tote bag kale chips, XOXO Intelligentsia trust fund DIY 3 wolf moon umami single-origin coffee you probably haven't heard of them crucifix artisan.

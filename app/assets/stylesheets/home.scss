@@ -11,10 +11,22 @@
 a, a:hover{
   text-decoration: none !important;
 }
-.login-field{
+.language-field{
   position: absolute;
   right: 0;
   top: 0;
+  btn{
+    color: #f1c40f;
+    opacity: 0.8;
+  }
+  btn:hover{
+    opacity: 1;
+  }
+}
+.login-field{
+  position: absolute;
+  right: 0;
+  top: 16px;
   a{
     color: #f1c40f;
     opacity: 0.8;

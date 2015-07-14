@@ -4,7 +4,7 @@
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
-        Events
+        {{ "EVENTS.title" | translate }}
     .col-xs-8.col-xs-offset-2.events-container
       .project-item{"ng-repeat" => "event in events.events"}
         %a.text-container{"ng-href" => "#/events/{{ event.id }}"}

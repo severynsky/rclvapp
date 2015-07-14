@@ -1,11 +1,15 @@
 'use strict'
 
-rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route',
-  function($scope, Auth, $timeout, $route){
+rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$translate',
+  function($scope, Auth, $timeout, $route, $translate){
     console.info("hello from home cotnroller");
     $scope.pageClass = "homePage";
     angular.element(document).ready(
       $initialFunction());
+
+    $scope.changeLanguage = function(langKey){
+      $translate.use(langKey);
+    };
 
     Auth.currentUser().then(function(user) {
       $scope.user = user;

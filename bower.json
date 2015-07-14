@@ -8,7 +8,8 @@
       "angular-sanitize": "latest",
       "angular-devise": "latest",
       "angular-animate": "latest",
-      "angular-google-maps": "latest"
+      "angular-google-maps": "latest",
+      "angular-translate": "latest"
       // "threex"      : "git@github.com:rharriso/threex.git",
       // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
     }

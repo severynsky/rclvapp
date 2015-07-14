@@ -4,10 +4,10 @@
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
-        Members
+        {{ "MEMBERS.title" | translate }}
     .users-container
       %h3
-        President
+        {{ "MEMBERS.president" | translate }}
       .user-item.center{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
         .image
           %img(src="{{user.image}}")
@@ -29,7 +29,7 @@
       .clear
     .users-container
       %h3
-        Committies
+        {{ "MEMBERS.сommitties" | translate }}
       .user-items.center
         .user-item{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
           .image{"ng-href" => "#/users/{{ user.id }}"}
@@ -51,7 +51,7 @@
         .clear
     .users-container
       %h3
-        Regular
+        {{ "MEMBERS.regular" | translate }}
       .user-item{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image
           %img(src="{{user.image}}")

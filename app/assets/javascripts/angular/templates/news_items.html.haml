@@ -4,7 +4,7 @@
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
-        Новини
+        {{ "NEWS" | translate }}
     .spinner-container{"ng-show" => "loading"}
       %img{src: "/images/spinner.gif"}
     .news-item-container{"ng-repeat" => "newsItem in news.news"}
