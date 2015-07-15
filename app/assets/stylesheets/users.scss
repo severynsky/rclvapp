@@ -29,7 +29,9 @@
     }
     p.name{
       color: #545454;
-      padding: 10px 0 0 15px;
+      letter-spacing: 1px;
+      font-size: 1.1em;
+      padding: 25px 0 0 0px;
       float: left;
     }
     .btn-container{
@@ -41,11 +43,19 @@
         width: 40px;
         background-color: orange;
         display: block;
+        background: url("/images/icons/user_profile.png"), orange;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
       }
       .to-popup{
         height: 40px;
         width: 40px;
-        background-color: #FFF;
+        // background-color: ;
+        background: url("/images/icons/triangle_normal.png"), #FFF;
+        background-size: 30px 14px;
+        background-position: center;
+        background-repeat: no-repeat;
         .hide-container{  
           position: absolute;
           height: 150px;
@@ -57,6 +67,12 @@
           left: 0;
         }
       }
+      .to-popup:hover{
+        background: url("/images/icons/triangle_hover.png"), #FFF;
+        background-size: 30px 14px;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
     }
   }
   .user-item:hover{
@@ -65,12 +81,61 @@
 }
 
 .user-page{
-  padding: 20px;
+  // padding: 20px;
   background-color: #ecf0f1;
   .user-page-header{
     .user-image-container{
       float: left;
-      margin: -40px 10px 10px -20px;
-    } 
+      margin: 0 10px 10px 0;
+    }
+    .user-text-container{
+      .user-page-logo{
+        
+        img{
+          width: 80px;
+          height: auto;
+        }
+      }
+    }
   }
+  .user-page-body{
+    padding: 20px;
+    table{
+      td.table-label{
+        width: 210px;
+        padding-bottom: 10px;
+        vertical-align: top;
+        color: #939393;
+      }
+    }
+    .user-data-field{
+      border-bottom: 1px solid #b2b2b2;
+      span{
+        float: left;
+      }
+      p{
+        float: right;
+      }
+    }
+  }
+}
+.user-item .flag {
+  position: absolute;
+  margin-left: -40px;
+  transform: rotate(-90deg);
+  left: -5px;
+  top: 15px;
+}
+.flag{
+  width: 60px;
+  height: 30px;
+  background-size: 900px !important;
+}
+.Danish{background: url(/images/icons/flags.png) -120px -870px;
+}
+.Ukrainian{
+  background: url(/images/icons/flags.png) -120px 30px;
+}
+.German{
+  background: url(/images/icons/flags.png) -300px -120px;
 }

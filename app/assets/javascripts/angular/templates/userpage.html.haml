@@ -1,31 +1,70 @@
 %section.popup
   .resource-container
     .user-page
-      .logo
-        %img{src: "/images/rotary-logo.png"}
       .user-page-header
         .user-image-container
           %img(src="{{print.image}}")
-        %h2
-          {{print.name}}
-        %h4
-          {{print.role}}
-        %h4
-          {{print.email}}
-        %h4
-          {{print.date_of_birth}}
-        %h4
-          {{print.phone}}
+        .user-text-container
+          .user-page-logo
+            %img{src: "/images/rotary-logo.png"}  
+          %h2
+            {{print.name}}
+          %div{"class" => "flag {{print.nationality}}"} 
+          %h4
+            {{print.role}}
+          %h4
+            {{print.email}}
+          %h4
+            {{print.date_of_birth}}
+          %h4
+            {{print.phone}}
       .clear
       .user-page-body
-        %h4
-          {{print.address}}
-        %h4
-          {{print.nationality}}
-        %h4
-          {{print.languages}}
-        %p{"ng-bind-html" => "print.full_data"}
-          / {{print.}}
+        %table
+          %tr
+            %td.table-label
+              member address
+            %td
+              {{print.address}}
+          %tr
+            %td.table-label
+              member nationality
+            %td
+              {{print.nationality}}  
+          %tr
+            %td.table-label
+              language spoken
+            %td
+              {{print.languages}}
+          %tr 
+            %td.table-label
+              full information
+            %td{"ng-bind-html" => "print.full_data"}
+            
+                
+        / .user-data-field
+        /   %span
+        /     member address
+        /   %p
+        /     {{print.address}} 
+        /   .clear
+        / .user-data-field
+        /   %span
+        /     member nationality
+        /   %p
+        /     {{print.nationality}}
+        /   .clear
+        / .user-data-field
+        /   %span
+        /     language spoken
+        /   %p
+        /     {{print.languages}} 
+        /   .clear
+        / .user-data-field
+        /   %span
+        /     full information
+        /   %p{"ng-bind-html" => "print.full_data"}
+        /   .clear
 
 
 %a.fadeout{"ng-href" => "#/users"}

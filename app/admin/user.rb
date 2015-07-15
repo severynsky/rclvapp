@@ -28,7 +28,8 @@ ActiveAdmin.register User do
       f.input :phone, :placeholder => "+3 (8) 099 99 99"
       f.input :address, :placeholder => "79000, Ukraine, Lviv, Some str 11/9"
       f.input :languages, :placeholder => "First goes native, fluent, good, basic"
-      f.input :nationality, :placeholder => "Ukrainian, English, Danish"
+      # f.input :nationality, :placeholder => "Ukrainian, English, Danish"
+      f.input :nationality, :as => :select, collection: %w[ Ukrainian English Austrian Belarusian Belgian Bulgarian Croat Cyprian Czech Danish Estonian Finn French German Greek Hungarian Irish Italian Latvian Lithuanian Luxembourger Moldavian Netherlander Norwegian Polish Portuguese Romanian Russian Swiss Swede Spaniard Slovenian Slovak Serb  Slovac ]
       f.input :date_of_birth, :as => :datepicker, :placeholder => "1970-05-21 as (YYYY-MM-DD)"
       f.inputs "images", for: [:image, f.object.image || Image.new] do |img|
         img.input :picture
