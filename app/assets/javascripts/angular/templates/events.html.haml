@@ -6,12 +6,16 @@
       %h1.tagline
         {{ "EVENTS.title" | translate }}
     .col-xs-8.col-xs-offset-2.events-container
-      .project-item{"ng-repeat" => "event in events.events"}
+      .event-item{"ng-repeat" => "event in events.events"}
         %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
-          %p
-            {{ event.title}}
-            %span.pull-right
-              planned to: {{ event.date | date: "d-MMMM" }}
+          {{ event.title}}
+          %span.pull-right.date
+            %span.day
+              {{ event.date | date: "d" }}
+            %span.month
+              {{ event.date | date: "MMMM" }}
+        / .event-popup
+        /   {{event.place}}
 
     .clear
 

@@ -1,5 +1,74 @@
+.events-container{
+  .event-item{
+    background-color: #FFF;
+    padding: 8px;
+    margin-top: 6px;
+    position: relative;
+    border-bottom: 2px solid #FFF;
+    -webkit-transition: 0.15s;
+    -ms-transition: 0.15s;
+    -moz-transition: 0.15s;
+    -o-transition: 0.15s;
+    transition: 0.15s;
+    a{
+      color: #545454;
+      width: 100%;
+    }
+    .date{
+      .day{
+        color: orange;
+        font-size: 1.2em;
+      }
+      .month{
+        color: #959595;
+      }
+    }
+    .event-popup{
+      // position: absolute;
+      // bottom:  0px;
+      // left: 0;
+      // margin-top: 50px;
+      background-color: orange;
+    }
+  }
+  .event-item:hover{
+    border-bottom: 2px solid orange;
+  }
+}
+
 .event-page{
   background-color: #FFF; 
+  .map{
+    position: relative;
+    border-bottom: 3px solid orange;
+    h3{
+      text-align: right;
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      background-color: purple;
+      padding: 5px 11px;
+      max-width: 80%;
+      color: #E6E6E6;
+    }
+
+  }
+  .text-container{
+    padding: 20px;
+    table{
+      td{
+        padding-bottom: 12px;
+      }
+      td.table-label{
+        width: 350px;
+        vertical-align: top;
+        color: #939393;
+      }
+      td.date{
+        font-weight: bold;
+      }
+    }
+  }
 }
 .angular-google-map-container{
   height: 400px;

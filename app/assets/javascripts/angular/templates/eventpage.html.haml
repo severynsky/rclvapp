@@ -4,18 +4,30 @@
       .map
         %ui-gmap-google-map{"center" => " print.center ", "zoom" => "print.zoom"}
           %ui-gmap-marker{"idKey" => "print.marker.id", "coords" => "print.marker.coords", "options" => "print.options"}
-      .text-container{"id" => "bind-html-with-trust"}
         %h3
           {{print.title}}
+      .text-container{"id" => "bind-html-with-trust"}
         %br
-        %p.date
-          {{ print.date | date: 'd-MMMM' }}
-        %p.intro-text
-          {{ print.address }}
-          {{ print.place }}
-        %hr
-        %p{"ng-bind-html" => "print.description"}
-          / {{print.body}}
-        %hr
+        %table
+          %tr
+            %td.table-label
+              date:
+            %td.date
+              {{ print.date | date: '' }}
+          %tr
+            %td.table-label
+              address:
+            %td
+              {{ print.address }}
+          %tr
+            %td.table-label
+              place:
+            %td
+              {{ print.place }}
+          %tr
+            %td.table-label
+              additional info
+            %td{"ng-bind-html" => "print.description"}
+
 %a.fadeout{"ng-href" => "#/events"}
   .close-btn

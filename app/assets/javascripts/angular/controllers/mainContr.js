@@ -1,5 +1,4 @@
 rclvapp.controller('mainContr', ['$scope', 'Auth', function($scope, Auth){
-  console.log('main Ctrl');
 
   Auth.currentUser().then(function(user) {
     $scope.user = user;

@@ -76,7 +76,20 @@
     }
   }
   .user-item:hover{
-    // border-right: 15px solid darkorange;
+    .flag{
+    }
+  }
+  .user-item .flag {
+    position: absolute;
+    margin-left: -40px;
+    transform: rotate(-90deg);
+    left: -5px;
+    top: 15px;
+  }
+  .flag{
+    width: 60px;
+    height: 30px;
+    background-size: 900px !important;
   }
 }
 
@@ -129,18 +142,6 @@
       }
     }
   }
-}
-.user-item .flag {
-  position: absolute;
-  margin-left: -40px;
-  transform: rotate(-90deg);
-  left: -5px;
-  top: 15px;
-}
-.flag{
-  width: 60px;
-  height: 30px;
-  background-size: 900px !important;
 }
 .Danish{background: url(/images/icons/flags.png) -120px -870px;
 }

@@ -4,7 +4,6 @@ rclvapp.controller('eventsContr', ['$scope', '$http', 'getEvents', function($sco
 
     var loadEvents = function(){
         $scope.events = getEvents.query({}, function(u, getResponseHeaders){
-          console.info('loaded');
         });
     };
     $scope.pageClass = "eventsList";

@@ -1,4 +1,12 @@
 @media screen and (max-width: 1330px), screen and (max-height: 650px) {
+  .logo{
+    margin: 20px auto 10px;
+    img{
+      width: 60px;
+      height: auto;
+      margin-left: 140px;
+    }
+  }
   .content{
     width: 70%;
     #news{

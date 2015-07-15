@@ -26,12 +26,12 @@ rclvapp.controller('eventPageContr', ['$scope', '$http', '$routeParams', 'getEve
                 longitude: eventItem.longitude 
               }
             },
-            zoom: 18
+            zoom: 17
         };
     });
 
     uiGmapGoogleMapApi.then(function(maps) {
-        console.log("gmaps is ready");
+
     });
 
 }]);

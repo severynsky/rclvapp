@@ -18,7 +18,10 @@
         / %hr
         %p{"ng-bind-html" => "print.body"}
           / {{print.body}}
-      .gallery
+        %hr{"ng-hide" => "print.gallery"} 
+          %br/
+          
+      .gallery{"ng-show" => "print.gallery"}
         %h2
           Gallery 
         %hr 
@@ -28,6 +31,7 @@
             {{img.description}}
         .clear
         %hr 
+        %br/
 
 %a.fadeout{"ng-href" => "#/news_items"}
   .close-btn

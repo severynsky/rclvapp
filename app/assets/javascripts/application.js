@@ -21,8 +21,6 @@
 //= require_tree .
 
 
-console.log('hello app')
-
 $initialFunction = function(){
   $('.right').fadeIn(900);
   $('.left').animate({
