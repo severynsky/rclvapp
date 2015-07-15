@@ -7,15 +7,14 @@
         .user-text-container
           .user-page-logo
             %img{src: "/images/rotary-logo.png"}  
-          %h2
+          %h2.name
             {{print.name}}
-          %div{"class" => "flag {{print.nationality}}"} 
+            .flag-container
+              %div{"class" => "flag {{print.nationality}}"} 
           %h4
             {{print.role}}
           %h4
             {{print.email}}
-          %h4
-            {{print.date_of_birth}}
           %h4
             {{print.phone}}
       .clear
@@ -26,6 +25,11 @@
               member address
             %td
               {{print.address}}
+          %tr
+            %td.table-label
+              date of birth
+            %td
+              {{print.date_of_birth}}  
           %tr
             %td.table-label
               member nationality

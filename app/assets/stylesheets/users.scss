@@ -90,20 +90,31 @@
     }
     .user-text-container{
       .user-page-logo{
-        
+        display: inline-block;
+        width: 400px;
         img{
           width: 80px;
           height: auto;
+          margin-left: 37%;
+          margin-top: 20px;
         }
+      }
+      .name{
+        font-size: 2.4em;
+      }
+      .flag-container{
+        display: inline-block;
       }
     }
   }
   .user-page-body{
     padding: 20px;
     table{
+      td{
+        padding-bottom: 12px;
+      }
       td.table-label{
         width: 210px;
-        padding-bottom: 10px;
         vertical-align: top;
         color: #939393;
       }
