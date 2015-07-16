@@ -34,6 +34,27 @@ a, a:hover{
   a:hover{
     opacity: 1;
   }
+  .login-container{
+    .login-form{
+      padding: 10px;
+      border: 1px solid orange;
+      border-radius: 4px;
+      background-color: #FFF;
+      position: absolute;
+      right: 0;
+      width: 200px;
+      input{
+        margin-top: 8px; 
+        border: 1px solid orange;
+      }
+      input[type="submit"]{
+        border-radius: 3px;
+        background-color: #FFF;
+        border: 1px solid orange;
+        color: orange
+      }
+    }
+  }
 }
 .logo{
   margin: 35px auto 10px;

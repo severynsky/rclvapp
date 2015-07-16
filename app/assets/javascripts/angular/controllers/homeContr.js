@@ -4,8 +4,14 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
   function($scope, Auth, $timeout, $route, $translate){
     console.info("hello from home cotnroller");
     $scope.pageClass = "homePage";
+    
     angular.element(document).ready(
-      $initialFunction());
+      $initialFunction()
+    );
+
+    var config = {
+      headers: {'X-HTTP-Method-Override': 'POST'}
+    };
 
     $scope.changeLanguage = function(langKey){
       $translate.use(langKey);
@@ -16,10 +22,22 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
       $scope.user_logged_in = Auth.isAuthenticated();
     }); 
 
+    $scope.login = function(email, pass){
+      var credentials = {email: email, password: pass};
+      Auth.login(credentials, config).then(function(user){console.info(user);});
+    };
+
     $scope.logout = function(){
       console.info('logged out');
       Auth.logout();
     };
+
+    $scope.$on('devise:new-session', function(event, currentUser) {
+      $route.reload();
+    });
+    $scope.$on('devise:logout', function(event, currentUser) {
+      $route.reload();
+    });
 
     $timeout(function() {
       Auth.logout();

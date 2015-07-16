@@ -11,9 +11,17 @@
       logout
     %a{:href => "/admin"}
       admin page
-  %div{"ng-if" => "!user_logged_in"}
-    %a{:href => "/users/sign_in"}
+
+  %div{"ng-if" => "!user_logged_in", "class" => "login-container"}
+    %a{"ng-click" => "showLogin = !showLogin"}
       login
+
+    %form.login-form{"ng-show" => "showLogin", "ng-submit" => "login(email, password)"}
+      %input.form-control{"type" => "text", "ng-model" => "email", "placeHolder" => "Your email", "name" => "email"}
+      %input.form-control{"type" => "text", "ng-model" => "password", "type"=> "password", "placeHolder" => "Your password", "name" => "password"}
+      %input{:type => "submit", "class" => "pull-right"}
+      .clear
+
 %div.logo
   %img{src: "/images/rotary-logo.png", href: '/'}
   %h3.tagline

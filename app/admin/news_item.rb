@@ -27,7 +27,7 @@ ActiveAdmin.register NewsItem do
     f.inputs "News" do
       f.input :title
       f.input :category
-      f.input :intro_text
+      f.input :intro_text, :placeholder => "1-2 short sentences"
       f.input :publish_date
       f.input :status, :as => :select, collection: %w[draft publish archive deleted]
       f.input :body, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
