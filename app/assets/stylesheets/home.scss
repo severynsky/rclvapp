@@ -17,51 +17,98 @@ a, a:hover{
   bottom: 0;
   color: red;
 }
-.language-field{
+/******************************************
+*           utility styling               *
+******************************************/
+.utility-fields{
   position: absolute;
-  right: 0;
-  top: 0;
-  btn{
-    color: #f1c40f;
-    opacity: 0.8;
-  }
-  btn:hover{
-    opacity: 1;
-  }
-}
-.login-field{
-  position: absolute;
-  right: 0;
+  right: 10px;
   top: 16px;
-  a{
-    color: #f1c40f;
-    opacity: 0.8;
-  }
-  a:hover{
-    opacity: 1;
-  }
-  .login-container{
-    .login-form{
-      padding: 10px;
-      border: 1px solid orange;
-      border-radius: 4px;
-      background-color: #FFF;
-      position: absolute;
-      right: 0;
-      width: 200px;
-      input{
-        margin-top: 8px; 
-        border: 1px solid orange;
-      }
-      input[type="submit"]{
-        border-radius: 3px;
-        background-color: #FFF;
-        border: 1px solid orange;
-        color: orange
-      }
+  width: 350px;
+  .language-field{
+    float: right;
+    btn{
+      color: #f1c40f;
+      opacity: 0.8;
+      border: 1px solid #f1c40f;
+      padding: 7px;
+      margin-left: -1px;
+      cursor: pointer;
+    }
+    btn:hover{
+      opacity: 1;
+      background-color: #f1c40f;
+      color: #FFF;
     }
   }
+  .login-field{
+    float: right;
+    // position: absolute;
+    // top: 30px;
+    // right: 30px;
+    // z-index: 999;
+    span{
+      color: #FEBD11;
+      opacity: 0.8;
+      font-weight: 300;
+      font-size: 0.9em;
+    }
+    div{
+      display: inline-block;
+    }
+    a{
+      color: #f1c40f;
+      opacity: 0.8;
+      border: 1px solid #f1c40f;
+      padding: 7px;
+      margin-left: 5px;
+      cursor: pointer;
+      margin-right: -5px;
+    }
+    a:hover{
+      opacity: 1;
+    }
+
+    .login-container{
+      .login-form{
+        padding: 10px;
+        border: 1px solid #f1c40f;
+        background-color: rgba(240, 240, 240, 0.7);
+        position: absolute;
+        right: 88px;
+        width: 200px;
+        top: 27px;
+        z-index: 999;
+        box-shadow: 1px 1px 20px rgba(40,40,40,0.8);
+        input{
+          margin: 8px 0 10px; 
+          border: 1px solid orange;
+        }
+        input[type="submit"]{
+          ackground-color: rgba(240, 240, 240, 0.7);
+          border: 1px solid #f1c40f;
+          color: black;
+          position: absolute;
+          padding: 6px 27px;
+          right: -1px;
+          bottom: -46px
+        }
+        input[type="submit"]:hover{
+          background-color: #f1c40f;
+          color: #FFF;
+        }
+      }
+    }
+  }  
 }
+
+.login-field p span:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+/******************************************
+*             logo styling                *
+******************************************/
 .logo{
   margin: 35px auto 10px;
   width: 340px;
@@ -80,23 +127,7 @@ a, a:hover{
   letter-spacing: 2px;
   font-weight: 100;
 }
-.login-field{
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 999;
-}
-.login-field p, .login-field p span{
-  color: #FEBD11;
-  opacity: 0.8;
-  font-weight: 300;
-  font-size: 0.9em;
-  cursor: pointer;
-}
-.login-field p span:hover{
-  opacity: 1;
-  text-decoration: underline;
-}
+
 
 .resource-container{
   width: 780px;

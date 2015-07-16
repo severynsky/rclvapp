@@ -19,6 +19,7 @@
             %a.to-page{"ng-href" => "#/users/{{ user.id }}"}
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
+                %img{:src => "/images/icons/triangle_hover.png"}
                 %p
                   {{user.phone}}
                 %p
@@ -43,6 +44,7 @@
               %a.to-page{"ng-href" => "#/users/{{ user.id }}"}
               .to-popup{"ng-click" => "showDetails = ! showDetails"}
                 .hide-container{"ng-show" => "showDetails"}
+                  %img{:src => "/images/icons/triangle_hover.png"}
                   %p
                     {{user.phone}}
                   %p
@@ -65,6 +67,7 @@
             %a.to-page{"ng-href" => "#/users/{{ user.id }}"}
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
+                %img{:src => "/images/icons/triangle_hover.png"}
                 %p
                   {{user.phone}}
                 %p

@@ -60,11 +60,20 @@
           position: absolute;
           height: 150px;
           width: 280px;
-          background-color: #d4d4d4;
-          top: 95px;
+          background-color: rgba(240,240,240,0.9);
+          top: 100px;
           z-index: 999;
           padding: 10px;
           left: 0;
+          border: 1px solid orange;
+          img{
+            transform: rotate(180deg);
+            position: absolute;
+            top: 0;
+            right: 4px;
+            width: 29px;
+            margin-top: -12px;
+          }
         }
       }
       .to-popup:hover{

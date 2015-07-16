@@ -1,29 +1,32 @@
 .changes-field
   %p
-    beta version/testing. Last changes 2015-07-16 13:50
-.language-field
-  %btn{"ng-click" => "changeLanguage('uk')"}
-    укр
-  %btn{"ng-click" => "changeLanguage('en')"}
-    eng
-.login-field
-  %div{"ng-if" => "user_logged_in"}
-    %p
-      hello {{ user.email}}
-    %a{"ng-click" => "logout()"}
-      logout
-    %a{:href => "/admin"}
-      admin page
+    beta version/testing. Last changes 2015-07-16 17:50
+  / %div{"class" => "fb-like", "data-share" => "true", "data-width" => "450", "data-show-faces" => "true"}
+.utility-fields
+  .language-field
+    %btn{"ng-click" => "changeLanguage('uk')"}
+      укр
+    %btn{"ng-click" => "changeLanguage('en')"}
+      eng
+  .login-field
+    %div{"ng-if" => "user_logged_in"}
+      %span
+        hello {{ user.email}}
+      %a{"ng-click" => "logout()"}
+        logout
 
-  %div{"ng-if" => "!user_logged_in", "class" => "login-container"}
-    %a{"ng-click" => "showLogin = !showLogin"}
-      login
+    %div{"ng-if" => "!user_logged_in", "class" => "login-container"}
+      %a{"ng-click" => "showLogin = !showLogin"}
+        login
 
-    %form.login-form{"ng-show" => "showLogin", "ng-submit" => "login(email, password)"}
-      %input.form-control{"type" => "text", "ng-model" => "email", "placeHolder" => "Your email", "name" => "email"}
-      %input.form-control{"type" => "text", "ng-model" => "password", "type"=> "password", "placeHolder" => "Your password", "name" => "password"}
-      %input{:type => "submit", "class" => "pull-right"}
-      .clear
+      %form.login-form{"ng-show" => "showLogin", "ng-submit" => "login(email, password)"}
+        Your email:
+        %input.form-control{"type" => "text", "ng-model" => "email", "placeHolder" => "Your email", "name" => "email"}
+        Your password:
+        %input.form-control{"type" => "text", "ng-model" => "password", "type"=> "password", "placeHolder" => "Your password", "name" => "password"}
+        %input{:type => "submit", "class" => "pull-right", "value" => "Login"}
+        .clear
+    .clear
 
 %div.logo
   %img{src: "/images/rotary-logo.png", href: '/'}
@@ -65,4 +68,6 @@
               Cytadel Inn Some str 5
       %a.item#contacts{"ng-href" => "#/contact"}
         %img{src: "/images/icons/envelope.png"}
+
+
 

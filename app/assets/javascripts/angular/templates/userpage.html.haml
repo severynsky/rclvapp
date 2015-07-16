@@ -22,54 +22,28 @@
         %table
           %tr
             %td.table-label
-              member address
+              member address:
             %td
               {{print.address}}
           %tr
             %td.table-label
-              date of birth
+              date of birth:
             %td
               {{print.date_of_birth}}  
           %tr
             %td.table-label
-              member nationality
+              member nationality:
             %td
               {{print.nationality}}  
           %tr
             %td.table-label
-              language spoken
+              language spoken:
             %td
               {{print.languages}}
           %tr 
             %td.table-label
-              full information
+              full information:
             %td{"ng-bind-html" => "print.full_data"}
-            
-                
-        / .user-data-field
-        /   %span
-        /     member address
-        /   %p
-        /     {{print.address}} 
-        /   .clear
-        / .user-data-field
-        /   %span
-        /     member nationality
-        /   %p
-        /     {{print.nationality}}
-        /   .clear
-        / .user-data-field
-        /   %span
-        /     language spoken
-        /   %p
-        /     {{print.languages}} 
-        /   .clear
-        / .user-data-field
-        /   %span
-        /     full information
-        /   %p{"ng-bind-html" => "print.full_data"}
-        /   .clear
-
 
 %a.fadeout{"ng-href" => "#/users"}
   .close-btn
