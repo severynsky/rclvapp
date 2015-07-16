@@ -27,16 +27,20 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
       Auth.login(credentials, config).then(function(user){console.info(user);});
     };
 
+    $scope.$on('devise:new-session', function(event, currentUser) {
+      // $route.reload();
+      window.location = "/"
+    });
+
     $scope.logout = function(){
       console.info('logged out');
       Auth.logout();
     };
 
-    $scope.$on('devise:new-session', function(event, currentUser) {
-      $route.reload();
-    });
+
     $scope.$on('devise:logout', function(event, currentUser) {
-      $route.reload();
+      // $route.reload();
+      window.location = "/"
     });
 
     $timeout(function() {
