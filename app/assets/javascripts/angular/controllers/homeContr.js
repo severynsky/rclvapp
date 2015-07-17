@@ -2,7 +2,7 @@
 
 rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$translate',
   function($scope, Auth, $timeout, $route, $translate){
-    console.info("hello from home cotnroller");
+
     $scope.pageClass = "homePage";
     
     angular.element(document).ready(
@@ -49,6 +49,15 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
         success_message: "Reset instructions have been sent to your e-mail address.",
         error_entity: $scope.login_error});
     };
+
+    // FB = null;
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+        // if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.4&appId=591757474261298";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
     $timeout(function() {
       Auth.logout();

@@ -10,6 +10,4 @@ rclvapp.controller('projectsListContr', ['$scope', '$http', 'getProjects', funct
 
     loadProjects();
 
-    console.info('hello from projects ctrl')
-
 }]);

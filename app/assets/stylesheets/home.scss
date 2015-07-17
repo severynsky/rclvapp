@@ -25,6 +25,36 @@ a, a:hover{
   right: 10px;
   top: 16px;
   width: 350px;
+  -webkit-transition: 0.15s;
+  -ms-transition: 0.15s;
+  -moz-transition: 0.15s;
+  -o-transition: 0.15s;
+  transition: 0.15s;
+  .fb-field{
+    position: absolute;
+    top: 33px;
+    right: 0px;
+    a{  
+      color: #FFF;
+      background-color: #3b5998;
+      opacity: 1;
+      border: 1px solid #f1c40f;
+      padding: 7px 13px 7px 14px;
+      margin-left: -1px;
+      cursor: pointer;
+    }
+    a:hover{
+      background-color: #3b5998;
+      opacity: 1;
+      color: #f1c40f;
+    }
+    .fb-page{
+      position: absolute;
+      right: 0;
+      top: 40px;
+      z-index: 999;
+    }
+  }
   .language-field{
     float: right;
     btn{
