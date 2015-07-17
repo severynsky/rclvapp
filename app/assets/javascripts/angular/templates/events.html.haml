@@ -6,7 +6,9 @@
       %h1.tagline
         {{ "EVENTS.title" | translate }}
     .col-xs-8.col-xs-offset-2.events-container
-      .event-item{"ng-repeat" => "event in events.events"}
+      %h3
+        {{ "EVENTS.upcomming" | translate }}
+      .event-item{"ng-repeat" => "event in events.events | upComming"}
         %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
           {{ event.title}}
           %span.pull-right.date
@@ -14,8 +16,18 @@
               {{ event.date | date: "d" }}
             %span.month
               {{ event.date | date: "MMMM" }}
-        / .event-popup
-        /   {{event.place}}
+
+    .col-xs-8.col-xs-offset-2.events-container
+      %h3
+        {{ "EVENTS.passed" | translate }}
+      .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}
+        %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
+          {{ event.title}}
+          %span.pull-right.date
+            %span.day
+              {{ event.date | date: "d" }}
+            %span.month
+              {{ event.date | date: "MMMM" }}
 
     .clear
 

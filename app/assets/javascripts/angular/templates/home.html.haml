@@ -1,6 +1,6 @@
 .changes-field
   %p
-    beta version/testing. Last changes 2015-07-16 17:50
+    beta version/testing. Last changes 2015-07-17 15:00
   / %div{"class" => "fb-like", "data-share" => "true", "data-width" => "450", "data-show-faces" => "true"}
 .utility-fields
   .language-field
@@ -11,19 +11,22 @@
   .login-field
     %div{"ng-if" => "user_logged_in"}
       %span
-        hello {{ user.email}}
+        {{ "buttons.greeting" | translate }}, {{ user.email}}
       %a{"ng-click" => "logout()"}
-        logout
+        {{ "buttons.logout" | translate }}
 
     %div{"ng-if" => "!user_logged_in", "class" => "login-container"}
       %a{"ng-click" => "showLogin = !showLogin"}
-        login
+        {{ "buttons.login" | translate }}
 
       %form.login-form{"ng-show" => "showLogin", "ng-submit" => "login(email, password)"}
-        Your email:
+        %p
+          {{ "buttons.email" | translate }}:
         %input.form-control{"type" => "text", "ng-model" => "email", "placeHolder" => "Your email", "name" => "email"}
-        Your password:
+        %p
+          {{ "buttons.password" | translate }}:
         %input.form-control{"type" => "text", "ng-model" => "password", "type"=> "password", "placeHolder" => "Your password", "name" => "password"}
+
         %input{:type => "submit", "class" => "pull-right", "value" => "Login"}
         .clear
     .clear

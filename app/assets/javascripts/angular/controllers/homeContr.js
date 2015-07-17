@@ -28,7 +28,6 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
     };
 
     $scope.$on('devise:new-session', function(event, currentUser) {
-      // $route.reload();
       window.location = "/"
     });
 
@@ -37,11 +36,19 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
       Auth.logout();
     };
 
-
     $scope.$on('devise:logout', function(event, currentUser) {
-      // $route.reload();
       window.location = "/"
     });
+
+    $scope.password_reset = function(){
+      console.info('pressed');
+      debugger;
+      $scope.submit({method: 'POST', 
+        url: '../users/password.json',
+        data: {user: {email: $scope.email}},
+        success_message: "Reset instructions have been sent to your e-mail address.",
+        error_entity: $scope.login_error});
+    };
 
     $timeout(function() {
       Auth.logout();

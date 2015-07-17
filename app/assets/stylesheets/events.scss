@@ -1,4 +1,11 @@
 .events-container{
+  h3{
+    text-align: right;
+    color: #FFF;
+    font-weight: 300;
+    border-bottom: 1px solid #FFF;
+    padding-bottom: 5px;
+  }
   .event-item{
     background-color: #FFF;
     padding: 8px;
@@ -33,6 +40,12 @@
   }
   .event-item:hover{
     border-bottom: 2px solid orange;
+  }
+  .passed-event{
+    opacity: 0.8;
+  }
+  .passed-event:hover{
+    opacity: 1;
   }
 }
 

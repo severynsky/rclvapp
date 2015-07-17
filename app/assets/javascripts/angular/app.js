@@ -27,11 +27,13 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         new: "Нові",
         running: "Діючі",
         ended: "Звершені",
-        cooperation: "Співпраця",
+        cooperation: "Співпраця"
 
       },
       EVENTS: {
-        title: "Події"
+        title: "Події",
+        upcomming: "майбутні",
+        passed: "минулі"
       },
       MEMBERS: {
         title: "Ротарійці",
@@ -41,7 +43,13 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       buttons: {
         ua: "укр",
-        en: "eng"
+        en: "eng",
+        greeting: "Вітаємо",
+        login: "увійти",
+        logout: "вийти",
+        email: "Ваший емейл",
+        password: "Ваший пароль",
+        forgot_password: "забули пароль?"
       }
     };
     var translationsEN = {
@@ -51,11 +59,13 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         new: "New",
         running: "Running",
         ended: "Completed",
-        cooperation: "Cooperation",
+        cooperation: "Cooperation"
 
       },
       EVENTS: {
-        title: "Events"
+        title: "Events",
+        upcomming: "upcomming",
+        passed: "passed"
       },
       MEMBERS: {
         title: "Members",
@@ -65,7 +75,13 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       buttons: {
         ua: "укр",
-        en: "eng"
+        en: "eng",
+        greeting: "Hello",
+        login: "login",
+        logout: "logout",
+        email: "Your email",
+        password: "Your password",
+        forgot_password: "forgot password?"
       }
     };
 
