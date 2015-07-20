@@ -6,11 +6,12 @@ rclvapp = angular.module('rclvapp', [
   'ngAnimate',
   'Devise',
   'uiGmapgoogle-maps',
-  'pascalprecht.translate'
+  'pascalprecht.translate',
+  'ezfb'
 ]);
 
-rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvider', 
-  function($httpProvider, uiGmapGoogleMapApiProvider, $translateProvider) {
+rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvider', 'ezfbProvider',
+  function($httpProvider, uiGmapGoogleMapApiProvider, $translateProvider, ezfbProvider) {
 
     uiGmapGoogleMapApiProvider.configure({
         //    key: 'your api key',
@@ -19,6 +20,12 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
     });
 
     $httpProvider.defaults.withCredentials = true;
+
+    ezfbProvider.setInitParams({
+      appId: '591757474261298',
+      xfbml: true,
+      version: 'v2.0'
+    });
 
     var translationsUK = {
       NEWS: "Новини",
@@ -91,7 +98,13 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
     $translateProvider.preferredLanguage('en');
   }
 ]);
-rclvapp.run(function(){
+rclvapp.run(['ezfb', function(ezfb){
     console.log('angular app is running')
-});
+
+    ezfb.init({
+    // This is my FB app id for plunker demo app
+    appId: '591757474261298'
+  });
+
+}]);
 

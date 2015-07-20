@@ -10,6 +10,7 @@
 //= require angular-sanitize
 //= require angular-animate
 //= require angular-devise
+//= require angular-easyfb
 //= require angular-translate
 //= require angular-devise/lib/devise
 //= require angular-rails-templates
