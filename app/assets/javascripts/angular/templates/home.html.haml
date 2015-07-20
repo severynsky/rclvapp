@@ -1,6 +1,6 @@
 .changes-field
   %p
-    beta version/testing. Last changes 2015-07-20 14:40
+    beta version/testing. Last changes 2015-07-20 15:50
   / %div{"class" => "fb-like", "data-share" => "true", "data-width" => "450", "data-show-faces" => "true"}
 .utility-fields
   .fb-field
@@ -11,9 +11,9 @@
     %div{"ng-show" => "showFb", "ng-mouseLeave" => "showFb = !showFb", "class"=>"fb-page", "data-href"=>"https://www.facebook.com/pages/Rotary-Club-Lviv-Centre/1427543187512091?ref=hl", "data-small-header" => "false", "data-adapt-container-width"=>"true", "data-hide-cover" => "false", "data-show-facepile" => "true", "data-show-posts" => "true"}
 
   .language-field
-    %btn{"ng-click" => "changeLanguage('uk')"}
+    %btn{"ng-click" => "changeLanguage('uk')", "ng-class" =>""}
       укр
-    %btn{"ng-click" => "changeLanguage('en')"}
+    %btn{"ng-click" => "changeLanguage('en')", "ng-class" =>""}
       eng
   .login-field
     %div{"ng-if" => "user_logged_in"}
@@ -41,36 +41,36 @@
 %div.logo
   %img{src: "/images/rotary-logo.png", href: '/'}
   %h3.tagline
-    Rotary Club Lviv-Center
+    {{ "mainpage.title" | translate }}
   %div.clear
 %section.container
   %div.content#scene
     %div.left
       %a.item#news{"ng-href" => "#/news_items"}
         %span
-          rotary
+          {{ "mainpage.rotary" | translate }}
         %p
-          news
+          {{ "mainpage.news" | translate }}
       %a.item#projects{"ng-href" => "#/projects"}
         %p
-          projects
+          {{ "mainpage.projects" | translate }}
         %span
-          &general info
+          &{{ "mainpage.general_info" | translate }}
       %div.item#photos
     %div.right
       %div.items
         %a.item#about{"ng-href" => "#/about"}
           %p
-            about rotary
+            {{ "mainpage.about_rotary" | translate }}
         %a.item#members{"ng-href" => "#/users"}
           %p
-            rotary members
+            {{ "mainpage.rotary_members" | translate }}
       %a.item#events{"ng-href" => "#/events"}
         %p.header
-          events
+          {{ "mainpage.events" | translate }}
         %div.events
           %p
-            upcomming event:
+            {{ "mainpage.upcomming_event" | translate }}:
           %div.event-body
             %p.title
               Meeting Danish guests and some more

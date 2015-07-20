@@ -17,6 +17,9 @@ a, a:hover{
   bottom: 0;
   color: red;
 }
+.active{
+  background-color: red;
+}
 /******************************************
 *           utility styling               *
 ******************************************/
@@ -216,7 +219,7 @@ a, a:hover{
   background-color: rgba(255,255,255,0.9);
 }
 #news p{
-  font-size: 5em;
+  font-size: 4.7em;
   font-weight: 100;
   color: orange;
 }
