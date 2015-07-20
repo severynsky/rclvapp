@@ -1,12 +1,9 @@
 'use strict'
 
-rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', function($scope, $http, getNews){
-
+rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', '$translate', 'langSetter', function($scope, $http, getNews, $translate, langSetter){
     var loadNews = function(){
         $scope.news = getNews.query({}, function(u, getResponseHeaders){
-          console.info('loaded');
           $scope.loading = false;
-          window.loading = false;
         });
     };
     $scope.pageClass = "newsList";

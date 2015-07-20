@@ -1,7 +1,6 @@
 'use strict'
 
-rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$translate',
-  function($scope, Auth, $timeout, $route, $translate){
+rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$translate', function($scope, Auth, $timeout, $route, $translate ){
 
     $scope.pageClass = "homePage";
     
@@ -9,12 +8,13 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
       $initialFunction()
     );
 
-    var config = {
-      headers: {'X-HTTP-Method-Override': 'POST'}
-    };
-
     $scope.changeLanguage = function(langKey){
       $translate.use(langKey);
+      if(langKey == "en"){
+        langSetter.setLang('eng')
+      }else{
+        langSetter.setLang('ukr')
+      }
     };
 
     Auth.currentUser().then(function(user) {
@@ -22,6 +22,9 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
       $scope.user_logged_in = Auth.isAuthenticated();
     }); 
 
+    var config = {
+      headers: {'X-HTTP-Method-Override': 'POST'}
+    };
     $scope.login = function(email, pass){
       var credentials = {email: email, password: pass};
       Auth.login(credentials, config).then(function(user){console.info(user);});
@@ -42,7 +45,6 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
 
     $scope.password_reset = function(){
       console.info('pressed');
-      debugger;
       $scope.submit({method: 'POST', 
         url: '../users/password.json',
         data: {user: {email: $scope.email}},
@@ -53,7 +55,7 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
     // FB = null;
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
-        // if (d.getElementById(id)) return;
+        if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
         js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.4&appId=591757474261298";
         fjs.parentNode.insertBefore(js, fjs);
