@@ -12,15 +12,12 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
 
     $scope.changeLanguage = function(langKey){
       $translate.use(langKey);
-        debugger;
       if(langKey == "en"){
         $localStorage.lang = 'eng'
       }else{
         $localStorage.lang = 'ukr'
       }
     };
-
-
 
     Auth.currentUser().then(function(user) {
       $scope.user = user;

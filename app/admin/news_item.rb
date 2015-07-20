@@ -4,7 +4,7 @@ ActiveAdmin.register NewsItem do
   controller do
   end
 
-  permit_params :title, :intro_text, :body, :category_id, :gallery_id, :id, :publish_date, :status, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
+  permit_params :title, :intro_text, :body, :category_id, :gallery_id, :id, :publish_date, :status, :language, image_attributes:[:picture, :is_main, :_destroy, :id], seotool_attributes:[:title, :description, :keywords]
   index do 
     column "Image" do |image|
       if image.image != nil
@@ -13,6 +13,7 @@ ActiveAdmin.register NewsItem do
     end
     column :title
     column :category
+    column :language
     column :publish_date
     column :gallery
     column :created_at
@@ -25,6 +26,7 @@ ActiveAdmin.register NewsItem do
   form :html => { multipart: true } do |f|
     
     f.inputs "News" do
+      f.input :language, :as => :select, collection: %w[ukr eng]
       f.input :title
       f.input :category
       f.input :intro_text, :placeholder => "1-2 short sentences"

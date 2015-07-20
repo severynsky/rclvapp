@@ -8,9 +8,7 @@ rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', '$translate',
         window.news = getNews.query({});
 
     };
-    // $localStorage.lang = "some title";
     $scope.lang = $localStorage.lang;
-    debugger;
     $scope.pageClass = "newsList";
     loadNews();
 

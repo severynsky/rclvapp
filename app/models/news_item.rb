@@ -16,6 +16,7 @@ class NewsItem < ActiveRecord::Base
   validates :body, presence: true, length: { minimum: 150 }
   validates :category_id, presence: true
   validates :image, presence: true
+  validates :language, presence: true
 
   def check_img
     # binding.pry
