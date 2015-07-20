@@ -7,7 +7,8 @@ rclvapp = angular.module('rclvapp', [
   'Devise',
   'uiGmapgoogle-maps',
   'pascalprecht.translate',
-  'ezfb'
+  'ezfb',
+  'ngStorage'
 ]);
 
 rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvider', 'ezfbProvider',

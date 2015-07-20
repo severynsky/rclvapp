@@ -1,6 +1,6 @@
 'use strict'
 
-rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$translate', 'ezfb', function($scope, Auth, $timeout, $route, $translate, ezfb ){
+rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$translate', 'ezfb', '$localStorage', '$sessionStorage', function($scope, Auth, $timeout, $route, $translate, ezfb, $localStorage, $sessionStorage ){
 
     $scope.pageClass = "homePage";
     
@@ -8,14 +8,19 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
       $initialFunction()
     );
 
+    $scope.$storage = $localStorage;
+
     $scope.changeLanguage = function(langKey){
       $translate.use(langKey);
+        debugger;
       if(langKey == "en"){
-        langSetter.setLang('eng')
+        $localStorage.lang = 'eng'
       }else{
-        langSetter.setLang('ukr')
+        $localStorage.lang = 'ukr'
       }
     };
+
+
 
     Auth.currentUser().then(function(user) {
       $scope.user = user;

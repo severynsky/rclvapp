@@ -10,7 +10,8 @@
       "angular-animate": "latest",
       "angular-google-maps": "latest",
       "angular-translate": "latest",
-      "angular-easyfb": "latest"
+      "angular-easyfb": "latest",
+      "ngstorage": "latest"
       // "threex"      : "git@github.com:rharriso/threex.git",
       // "gsvpano.js"  : "https://github.com/rharriso/GSVPano.js/blob/master/src/GSVPano.js"
     }
