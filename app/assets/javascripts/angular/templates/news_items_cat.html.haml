@@ -12,7 +12,7 @@
       %p
         sort by:
       .sort-item{"ng-repeat" => "cat in categories.categories"}
-        %a.category{"ng-href" => "#/{{ cat.title }}"}
+        %a.category{"ng-href" => "#/news/{{ cat.title }}"}
           {{cat.title}}
     .clear
 

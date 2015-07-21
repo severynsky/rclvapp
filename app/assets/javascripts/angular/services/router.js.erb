@@ -18,7 +18,7 @@ rclvapp.config(['$routeProvider', '$locationProvider',
         templateUrl: "<%=asset_path 'angular/templates/newspage.html' %>",
         controller: 'newsPageContr'
     }).
-    when('/:newsCat', {
+    when('/news/:newsCat', {
         templateUrl: "<%=asset_path 'angular/templates/news_items_cat.html' %>",
         controller: 'newsListContr'
     }).
