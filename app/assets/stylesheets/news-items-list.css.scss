@@ -38,6 +38,25 @@
       height: auto;
     }
   }
+  .sorter{
+    p{
+      color: #FFF;
+      letter-spacing: 1px;
+      display: inline-block;
+    }
+    .sort-item{
+      display: inline-block;
+      margin: 0.1em 0 5px 0.3em;
+      padding: 0 0 0 5px;
+      display: inline-block;
+      a{
+        background-color: darkorange;
+        color: #FFF;
+        padding: 1px 5px 2px;
+        z-index: 9999;
+      }
+    }
+  }
 }
 .resource-container{
   padding: 15px 15px;
@@ -122,6 +141,7 @@
             background-color: darkorange;
             color: #FFF;
             padding: 1px 5px 2px;
+            z-index: 9999;
           }
         }
         p{

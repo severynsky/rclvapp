@@ -4,10 +4,10 @@
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
-        {{ "NEWS" | translate }}
+        {{categoryTitle}} {{ "NEWS" | translate }} 
     .spinner-container{"ng-show" => "loading"}
       %img{src: "/images/spinner.gif"}
-    
+
     .sorter.pull-right
       %p
         sort by:
@@ -15,9 +15,9 @@
         %a.category{"ng-href" => "#/{{ cat.title }}"}
           {{cat.title}}
     .clear
-          
+
     .news-item-container{"ng-repeat" => "newsItem in news.news | filter: {language: lang}"}
-      .news-item
+      .news-item{"ng-if" => "newsItem.category.title == categoryTitle"}
         %span.date
           %span.month
             {{ newsItem.publish_date | date: "MMM" }}
@@ -30,11 +30,11 @@
           %h1
             {{ newsItem.title | limitTo: 38 }}
           .utilities
-            %span.category{"ng-show" => "newsItem.category","ng-href" => "#/news_items/{{ newsItem.category.title }}"}
+            %span.category{"ng-show" => "newsItem.category","ng-href" => "#/{{ newsItem.category.title }}"}
               {{ newsItem.category.title }}
           %p
             {{ newsItem.intro }}
     .clear
 
-%a.fadeout{"ng-href" => "#/"}
+%a.fadeout{"ng-href" => "#/news_items"}
   .close-btn
