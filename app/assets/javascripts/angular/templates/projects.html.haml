@@ -1,12 +1,12 @@
 %section.popup
-  .resource-container
+  .resource-container.col-xs-10.col-xs-offset-1
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         {{ "PROJECTS.title" | translate }}
     
-    .col-xs-4.project-container
+    .col-md-4.col-xs-12.project-container
       %h3
         {{ "PROJECTS.new" | translate }}
         %span.projects-icon 
@@ -15,7 +15,7 @@
           %p
             {{ projects.title}}
     
-    .col-xs-4.project-container
+    .col-md-4.col-xs-12.project-container
       %h3
         {{ "PROJECTS.running" | translate }}
         %span.projects-icon
@@ -24,7 +24,7 @@
           %p
             {{ projects.title}}
     
-    .col-xs-4.project-container
+    .col-md-4.col-xs-12.project-container
       %h3
         {{ "PROJECTS.ended" | translate }}
         %span.projects-icon

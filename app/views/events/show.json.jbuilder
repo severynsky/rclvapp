@@ -4,5 +4,6 @@ json.description @event.description
 json.address @event.address
 json.place @event.place
 json.date @event.date
+json.time @event.meeting_time
 json.latitude @event.latitude
 json.longitude @event.longitude

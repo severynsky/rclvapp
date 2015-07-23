@@ -1,16 +1,16 @@
 %section.popup
-  .resource-container
+  .resource-container.col-xs-10.col-xs-offset-1
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
-        {{ "NEWS" | translate }}
+        {{ "NEWS.news" | translate }}
     .spinner-container{"ng-show" => "loading"}
       %img{src: "/images/spinner.gif"}
     
     .sorter.pull-right
       %p
-        sort by:
+        {{ "NEWS.sort_by" | translate }}:
       .sort-item{"ng-repeat" => "cat in categories.categories"}
         %a.category{"ng-href" => "#/news/{{ cat.title }}"}
           {{cat.title}}

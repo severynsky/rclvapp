@@ -23,3 +23,9 @@ en:
   hello: "Hello world"
   newsitem:
     title: "News"
+  date:
+    formats:
+      long: "%Y-%m-%d"
+  time:
+    formats:
+      long: "%Y-%m-%d %H:%M:%S"

@@ -5,7 +5,7 @@
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         {{ "EVENTS.title" | translate }}
-    .col-xs-8.col-xs-offset-2.events-container
+    .col-sm-4.col-sm-offset-2.events-container
       %h3
         {{ "EVENTS.upcomming" | translate }}
       .event-item{"ng-repeat" => "event in events.events | upComming"}
@@ -17,7 +17,7 @@
             %span.month
               {{ event.date | date: "MMMM" }}
 
-    .col-xs-8.col-xs-offset-2.events-container
+    .col-sm-4.events-container
       %h3
         {{ "EVENTS.passed" | translate }}
       .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}

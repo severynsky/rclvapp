@@ -40,7 +40,10 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         upcomming_event: "найближчим часом",
         events: "події",
       },
-      NEWS: "Новини",
+      NEWS: {
+        news: "Новини",
+        sort_by: "Сортувати за",
+      },
       PROJECTS: {
         title: "Проекти",
         new: "Нові",
@@ -51,7 +54,12 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       EVENTS: {
         title: "Події",
         upcomming: "майбутні",
-        passed: "минулі"
+        passed: "минулі",
+        date: "дата події",
+        time: "час події",
+        place: "місце",
+        address: "адреса",
+        additional_info: "додаткова інформація"
       },
       MEMBERS: {
         title: "Ротарійці",
@@ -82,9 +90,12 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         upcomming_event: "upcomming event",
         events: "events",
       },
-      NEWS: "News",
+      NEWS: {
+        news: "News",
+        sort_by: "sort by",
+      },
       PROJECTS: {
-        title: "Projecrs",
+        title: "Projects",
         new: "New",
         running: "Running",
         ended: "Completed",
@@ -94,7 +105,12 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       EVENTS: {
         title: "Events",
         upcomming: "upcomming",
-        passed: "passed"
+        passed: "passed",
+        date: "date",
+        time: "time",
+        place: "place",
+        address: "address",
+        additional_info: "additional info"
       },
       MEMBERS: {
         title: "Members",

@@ -1,5 +1,5 @@
 %section.popup
-  .resource-container
+  .resource-container.col-xs-10.col-xs-offset-1
     .event-page
       .map
         %ui-gmap-google-map{"center" => " print.center ", "zoom" => "print.zoom"}
@@ -11,22 +11,27 @@
         %table
           %tr
             %td.table-label
-              date:
+              {{ "EVENTS.date" | translate }}:
             %td.date
-              {{ print.date | date: '' }}
+              {{ print.date }}
           %tr
             %td.table-label
-              address:
+              {{ "EVENTS.time" | translate }}:
+            %td.date
+              {{ print.time | date: "HH:mm": "+0000" }}
+          %tr
+            %td.table-label
+              {{ "EVENTS.address" | translate }}:
             %td
               {{ print.address }}
           %tr
             %td.table-label
-              place:
+              {{ "EVENTS.place" | translate }}:
             %td
               {{ print.place }}
           %tr
             %td.table-label
-              additional info
+              {{ "EVENTS.additional_info" | translate }}:
             %td{"ng-bind-html" => "print.description"}
 
 %a.fadeout{"ng-href" => "#/events"}
