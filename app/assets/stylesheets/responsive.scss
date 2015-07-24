@@ -57,13 +57,14 @@
     left: 0;
     background-color: #5D2D6E;
     .device-header-backbtn{
-      // background-color: #FFF;
-      width: 50px;
-      height: 50px;
       position: absolute;
-      top: 0;
-      left: 0;
+      width: 4.2rem;
+      height: 4.2rem;
+      top: 2.2rem;
+      left: 2.2rem;
       display: inline-block;
+      background-color: red;
+      border-radius: 50%;
       img{
         margin: 5px 0 0 5px;
         width: 40px;
