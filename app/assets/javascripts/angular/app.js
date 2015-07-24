@@ -53,6 +53,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       EVENTS: {
         title: "Події",
+        today: "сьогодні",
         upcomming: "майбутні",
         passed: "минулі",
         date: "дата події",
@@ -104,6 +105,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       EVENTS: {
         title: "Events",
+        today: "today",
         upcomming: "upcomming",
         passed: "passed",
         date: "date",

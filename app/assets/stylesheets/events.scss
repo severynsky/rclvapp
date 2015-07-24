@@ -6,6 +6,25 @@
     border-bottom: 1px solid #FFF;
     padding-bottom: 5px;
   }
+
+  .event-container{
+    h3{
+      text-align: center;
+      margin: 2px 0 7px;
+      letter-spacing: 1px;
+      font-weight: 400;
+      background-color: darkorange;
+      color: #FFF;
+      padding: 8px 0;
+    }
+    .table-preview{
+      width: 70%;
+      margin-left: 15%;
+      .table-label{
+        width: 280px;
+      }
+    }
+  }
   .event-item{
     background-color: #FFF;
     padding: 8px;

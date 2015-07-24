@@ -5,51 +5,51 @@ rclvapp.config(['$routeProvider', '$locationProvider',
     // $locationProvider.html5Mode(true).hashPrefix('!');
     $routeProvider.
     when("/", {
-      templateUrl: "<%=asset_path 'angular/templates/home.html' %>",
+      templateUrl: "<%=asset_path 'templates/home.html' %>",
       controller: "homeContr"
     }).
     when('/news_items', {
-      templateUrl: "<%=asset_path 'angular/templates/news_items.html' %>",
+      templateUrl: "<%=asset_path 'templates/news_items.html' %>",
       controller: 'newsListContr'
     }).
     when('/news_items/:newsId', {
-        templateUrl: "<%=asset_path 'angular/templates/newspage.html' %>",
+        templateUrl: "<%=asset_path 'templates/newspage.html' %>",
         controller: 'newsPageContr'
     }).
     when('/news/:newsCat', {
-        templateUrl: "<%=asset_path 'angular/templates/news_items_cat.html' %>",
+        templateUrl: "<%=asset_path 'templates/news_items_cat.html' %>",
         controller: 'newsListContr'
     }).
     when('/projects', {
-        templateUrl: "<%=asset_path 'angular/templates/projects.html' %>",
+        templateUrl: "<%=asset_path 'templates/projects.html' %>",
         controller: 'projectsListContr'
     }).
     when('/projects/:projectId', {
-        templateUrl: "<%=asset_path 'angular/templates/projectpage.html' %>",
+        templateUrl: "<%=asset_path 'templates/projectpage.html' %>",
         controller: 'projectPageContr'
     }).
     when('/events', {
-        templateUrl: "<%=asset_path 'angular/templates/events.html' %>",
+        templateUrl: "<%=asset_path 'templates/events.html' %>",
         controller: 'eventsContr'
     }).
     when('/events/:eventId', {
-        templateUrl: "<%=asset_path 'angular/templates/eventpage.html' %>",
+        templateUrl: "<%=asset_path 'templates/eventpage.html' %>",
         controller: 'eventPageContr'
     }).
     when('/users', {
-        templateUrl: "<%=asset_path 'angular/templates/users.html' %>",
+        templateUrl: "<%=asset_path 'templates/users.html' %>",
         controller: 'usersListContr'
     }).
     when('/users/:userId', {
-        templateUrl: "<%=asset_path 'angular/templates/userpage.html' %>",
+        templateUrl: "<%=asset_path 'templates/userpage.html' %>",
         controller: 'userPageContr'
     }).
     when('/contact', {
-        templateUrl: "<%=asset_path 'angular/templates/contact.html' %>",
+        templateUrl: "<%=asset_path 'templates/contact.html' %>",
         controller: 'contactContr'
     }).
     when('/about', {
-        templateUrl: "<%=asset_path 'angular/templates/about.html' %>",
+        templateUrl: "<%=asset_path 'templates/about.html' %>",
         controller: 'aboutContr'
     }).
     otherwise({

@@ -43,4 +43,63 @@
     width: 80%;
     left: 10%;
   }
+  .device-header{
+    display: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .device-header{
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    height: 50px;
+    width: 100%;
+    left: 0;
+    background-color: #5D2D6E;
+    .device-header-backbtn{
+      // background-color: #FFF;
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: inline-block;
+      img{
+        margin: 5px 0 0 5px;
+        width: 40px;
+        opacity: 0.8;
+      }
+    }
+    .device-header-logo:hover img{
+      opacity: 1;
+    }
+    .device-header-logo{
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      img{
+        margin: 5px 0 0 5px;
+        width: 40px;
+      }
+    }
+    .title-container{
+  
+      h2{
+        text-align: center;
+        margin: 9px 0;
+        color: #FEBD11;
+      }
+    }
+  }
+  .popup{
+    width: 94%;
+    left: 3%;
+    margin-top: 40px
+  }
+  .page-logo, .fadeout, .header{
+    display: none;
+  }
 }

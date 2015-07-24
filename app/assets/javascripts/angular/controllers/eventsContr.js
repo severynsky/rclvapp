@@ -10,6 +10,9 @@ rclvapp.controller('eventsContr', ['$scope', '$http', 'getEvents',  function($sc
     $scope.pageClass = "eventsList";
 
     $scope.date = new Date();
+    $scope.options = {
+              scrollwheel: false
+            };
 
     loadEvents();
 

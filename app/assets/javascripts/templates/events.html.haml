@@ -1,0 +1,73 @@
+/ %div{"ng-include" => "'deviceheader'"}
+.device-header
+  %a{"class" => "device-header-backbtn", "href" =>  "#/"}
+    %img{src: "/images/close-btn.png"}
+  %a{"class" => "device-header-logo", "href" =>  "#/"}
+    %img{src: "/images/rotary-logo.png"}
+  .title-container
+    %h2
+      {{ "EVENTS.title" | translate }}
+
+%section.popup
+  .resource-container
+    .header
+      %a{"class" => "page-logo", "href" =>  "#/"}
+        %img{src: "/images/rotary-logo.png"}
+      %h1.tagline
+        {{ "EVENTS.title" | translate }}
+    .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.events-container
+      .event-item{"ng-repeat" => "event in events.events | today"}
+        .event-container{"ng-show"=>"event"}
+          %h3
+            {{ "EVENTS.today" | translate }}
+          .event-page
+            .map
+              %ui-gmap-google-map{"center" => "{latitude: event.latitude, longitude: event.longitude }", "zoom" => "17", "options" => "options"}
+                %ui-gmap-marker{"idKey" => "0", "coords" => "{latitude: event.latitude, longitude: event.longitude }"}
+              %h3
+                {{event.title}}
+            %a.text-container{"id" => "bind-html-with-trust", "ng-href" => "#/events/{{ event.id }}"}
+              %br
+              %table.table-preview
+                %tr
+                  %td.table-label
+                    {{ "EVENTS.time" | translate }}:
+                  %td.date
+                    {{ event.time | date: "HH:mm": "+0000" }}
+                %tr
+                  %td.table-label
+                    {{ "EVENTS.place" | translate }}:
+                  %td
+                    {{ event.place }}
+    .clear
+
+    .col-md-4.col-md-offset-2.col-sm-5.col-sm-offset-1.events-container
+      %h3
+        {{ "EVENTS.upcomming" | translate }}
+      .event-item{"ng-repeat" => "event in events.events | upComming"}
+        %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
+          {{ event.title}}
+          %span.pull-right.date
+            %span.day
+              {{ event.date | date: "d" }}
+            %span.month
+              {{ event.date | date: "MMMM" }}
+      .event-item{"hide" => "event"}
+        no events
+
+    .col-md-4.col-sm-5.events-container
+      %h3
+        {{ "EVENTS.passed" | translate }}
+      .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}
+        %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
+          {{ event.title}}
+          %span.pull-right.date
+            %span.day
+              {{ event.date | date: "d" }}
+            %span.month
+              {{ event.date | date: "MMMM" }}
+
+    .clear
+
+%a.fadeout{"ng-href" => "#/"}
+  .close-btn
