@@ -47,7 +47,10 @@
     display: none;
   }
 }
-@media screen and (max-width: 769px) {
+@media (max-width: 769px) {
+  .body{
+    font-size: 14px;
+  }
   .device-header{
     display: block;
     position: fixed;
