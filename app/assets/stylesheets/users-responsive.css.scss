@@ -1,0 +1,53 @@
+@media (max-width: 769px) {
+    .user-item{
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      p{
+        font-size: 1em;
+        width: 12rem;
+        padding-top: 1.5rem
+      }
+    }
+    .userPage{
+      .user-page{
+        margin-top: 2rem;
+        position: relative;
+        .user-page-header{
+          .user-image-container{
+            float: none;
+            margin: 0;
+            width: 100%;
+            img{
+              width: 100%;
+            }
+          }
+          .user-text-container{
+            padding: 0.5rem;
+            h2{
+              font-size: 1.6em;
+              margin-top: 1rem;
+            }
+            .user-page-logo{
+              display: none;
+              // position: absolute;
+              top: 2rem;
+              // right: 0;
+              // width: 0;
+            }
+          }
+        }
+        .user-page-body{
+          table{
+            .label-device{
+              display: block;
+              font-weight: 400;
+              color: grey;
+            }
+            .table-label{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }

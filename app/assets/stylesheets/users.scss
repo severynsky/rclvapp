@@ -31,8 +31,9 @@
       color: #545454;
       letter-spacing: 1px;
       font-size: 1.1em;
-      padding: 25px 0 0 0px;
+      padding: 20px 0 0 0px;
       float: left;
+      width: 12rem;
     }
     .btn-container{
       // position: absolute;
@@ -117,7 +118,7 @@
     .user-text-container{
       .user-page-logo{
         display: inline-block;
-        width: 400px;
+        // width: 400px;
         img{
           width: 80px;
           height: auto;
@@ -136,6 +137,9 @@
   .user-page-body{
     padding: 20px;
     table{
+      .label-device{
+        display: none;
+      }
       td{
         padding-bottom: 12px;
       }

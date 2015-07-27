@@ -1,3 +1,12 @@
+.device-header
+  %a{"class" => "device-header-backbtn", "href" =>  "#/users"}
+    / %img{src: "/images/close-btn.png"}
+  %a{"class" => "device-header-logo", "href" =>  "#/"}
+    %img{src: "/images/rotary-logo.png"}
+  .title-container
+    %h2
+      {{ "MEMBERS.title" | translate }}
+
 %section.popup
   .resource-container.col-xs-10.col-xs-offset-1
     .user-page
@@ -20,26 +29,41 @@
       .clear
       .user-page-body
         %table
+          %tr.label-device
+            %td
+              member address:  
           %tr
             %td.table-label
               member address:
             %td
               {{print.address}}
+          %tr.label-device
+            %td
+              date of birth:  
           %tr
             %td.table-label
               date of birth:
             %td
               {{print.date_of_birth}}  
+          %tr.label-device
+            %td
+              member nationality:  
           %tr
             %td.table-label
               member nationality:
             %td
               {{print.nationality}}  
+          %tr.label-device
+            %td
+              language spoken:  
           %tr
             %td.table-label
               language spoken:
             %td
               {{print.languages}}
+          %tr.label-device
+            %td
+              full information:  
           %tr 
             %td.table-label
               full information:

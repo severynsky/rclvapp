@@ -18,7 +18,7 @@
     .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.events-container
       .event-item{"ng-repeat" => "event in events.events | today"}
         .event-container{"ng-show"=>"event"}
-          %h3
+          %h2
             {{ "EVENTS.today" | translate }}
           .event-page
             .map
@@ -41,7 +41,7 @@
                     {{ event.place }}
     .clear
 
-    .col-md-4.col-md-offset-2.col-sm-5.col-sm-offset-1.events-container
+    .col-md-6.col-md-offset-0.col-sm-12.events-container
       %h3
         {{ "EVENTS.upcomming" | translate }}
       .event-item{"ng-repeat" => "event in events.events | upComming"}
@@ -55,7 +55,7 @@
       .event-item{"hide" => "event"}
         no events
 
-    .col-md-4.col-sm-5.events-container
+    .col-md-6.col-sm-12.events-container
       %h3
         {{ "EVENTS.passed" | translate }}
       .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}

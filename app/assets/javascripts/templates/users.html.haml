@@ -1,3 +1,12 @@
+.device-header
+  %a{"class" => "device-header-backbtn", "href" =>  "#/"}
+    / %img{src: "/images/close-btn.png"}
+  %a{"class" => "device-header-logo", "href" =>  "#/"}
+    %img{src: "/images/rotary-logo.png"}
+  .title-container
+    %h2
+      {{ "MEMBERS.title" | translate }}
+
 %section.popup
   .resource-container
     .header
@@ -5,10 +14,11 @@
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         {{ "MEMBERS.title" | translate }}
+
     .users-container
       %h3
         {{ "MEMBERS.president" | translate }}
-      .user-item.col-xs-4.col-xs-offset-4{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
+      .user-item.col-sm-6.col-sm-offset-3.col-xs-10.col-xs-offset-1{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         %p.name
@@ -32,7 +42,7 @@
     .users-container
       %h3
         {{ "MEMBERS.сommitties" | translate }}
-      .user-item.col-xs-4.col-xs-offset-1{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
+      .user-item.col-sm-5.col-sm-offset-1.col-xs-10.col-xs-offset-1{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         %p.name

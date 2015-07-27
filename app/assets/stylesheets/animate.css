@@ -59,6 +59,10 @@
 
 .newsPage.ng-enter { animation: fadeIn 0.5s both ease-in; z-index: 888; }
 .newsPage.ng-leave { animation: fadeOut 0.4s both ease-in; z-index: 999; }
+
 .userPage.ng-enter { animation: fadeIn 0.2s both ease-in; z-index: 1000; }
 .userPage.ng-leave { animation: fadeOut 0.2s both ease-in; z-index: 999; }
+
+.eventsList.ng-enter, .eventPage.ng-enter  { animation: fadeIn 0.2s both ease-in; z-index: 1000; }
+.eventsList.ng-leave, .eventPage.ng-leave { animation: fadeOut 0.2s both ease-in; z-index: 999; }
 

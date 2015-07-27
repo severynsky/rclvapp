@@ -1,0 +1,53 @@
+@media (max-width: 769px) {
+  .events-container{
+    h3{
+      font-size: 1.5em;
+    }
+    .event-item{
+      margin-top: 2rem;    
+      .event-container{
+        .event-page{
+          .map{
+            h3{
+            }
+          }
+          .text-container{
+            .table-preview{
+              width: 90%;
+              margin-left: 5%;
+              .table-label{
+                width: 130px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.event-page{
+  margin-top: 2rem;
+  .map{
+    h3{
+      font-size: 1.4em;
+      text-align: right;
+      right: 0.5rem;       
+      max-width: 85%; 
+      font-size: 1.4em;
+    }
+  }
+  .text-container{
+    table{
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0.5rem;
+      .table-label{
+        width: 110px !important;
+        text-align: left;
+      }
+      td{
+        text-align: right;
+      }
+    }
+  }
+}

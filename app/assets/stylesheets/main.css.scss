@@ -1,0 +1,43 @@
+
+$dakr-puple: #5D2D6E;
+
+body {
+  font-size: 16px;
+  background-color: $dakr-puple;
+  background: url(/images/people.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+.popup{
+  position: absolute;
+  // background-color: rgba(40, 40, 40, 0.01);
+  z-index: 999;
+  width: 60%;
+  height: 95vh;
+  overflow-y: scroll;
+  margin: 20px auto;
+  left: 20%;
+
+  .header{
+    width: 60%;
+    margin: 0 auto 15px;
+    .page-logo img{
+      width: 56px;
+      height: auto;
+      margin-left: 190px;
+    }
+    h1{
+      text-align: center;
+      border-top: 1px solid #FFF;
+      border-bottom: 1px solid #FFF;
+      margin: 13px 0 7px;
+      padding: 12px 0;
+      font-weight: 200;
+      font-size: 1.8em;
+      color: #FFF;
+    }
+  }
+}

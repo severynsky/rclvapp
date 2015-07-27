@@ -48,8 +48,8 @@
   }
 }
 @media (max-width: 769px) {
-  .body{
-    font-size: 14px;
+  body{
+    // font-size: 14px !important;
   }
   .device-header{
     display: block;
@@ -66,13 +66,20 @@
       top: 2.2rem;
       left: 2.2rem;
       display: inline-block;
-      background-color: red;
+      background-color: orange;
       border-radius: 50%;
+      background-image: url(/images/back.png);
+      background-size: 18px;
+      background-repeat: no-repeat;
+      background-position: 9px 8px;
       img{
         margin: 5px 0 0 5px;
         width: 40px;
         opacity: 0.8;
       }
+    }
+    .device-header-backbtn:hover{
+      box-shadow: 1px 1px 15px rgba(40,40,40,0.6);
     }
     .device-header-logo:hover img{
       opacity: 1;
