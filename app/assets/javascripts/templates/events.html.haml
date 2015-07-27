@@ -41,7 +41,7 @@
                     {{ event.place }}
     .clear
 
-    .col-md-6.col-md-offset-0.col-sm-12.events-container
+    .col-sm-8.col-sm-offset-2.events-container
       %h3
         {{ "EVENTS.upcomming" | translate }}
       .event-item{"ng-repeat" => "event in events.events | upComming"}
@@ -55,7 +55,7 @@
       .event-item{"hide" => "event"}
         no events
 
-    .col-md-6.col-sm-12.events-container
+    .col-sm-8.col-sm-offset-2.events-container
       %h3
         {{ "EVENTS.passed" | translate }}
       .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}

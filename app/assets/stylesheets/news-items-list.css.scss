@@ -68,7 +68,8 @@
         right: 0px;
         width: 70px;
         text-align: center;
-        min-height: 160px;
+        // min-height: 160px;
+        height: 100%;
         // background-color: rgba(225, 225, 225, 0.43);
         background-color: rgba(20, 20, 20, 0.83);
         color: #FFF;
@@ -95,6 +96,10 @@
           letter-spacing: 1px;
           color: #2c3e50;
           padding: 10px 0 0px;
+          text-overflow: ellipsis;
+          width: 48rem;
+          white-space: nowrap;
+          overflow: hidden;
         }
         
         .utilities{
