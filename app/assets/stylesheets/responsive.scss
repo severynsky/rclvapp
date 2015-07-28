@@ -51,6 +51,52 @@
   body{
     // font-size: 14px !important;
     height: 100%;
+    .homePage{
+      height: 100vh;
+      .logo{
+        display: none;
+      }
+    }
+    .container{
+      margin-top: 1rem;
+      padding: 0;
+      .content{
+        width: 100vw;
+        height: 100vh;
+        overflow-y: scroll;
+        .left{
+          margin-left: 0;
+          width: 47vw;
+          margin: 0.5rem 0;
+          // float: none;
+        }
+        .right{
+          display: block;
+          width: 47vw;
+          margin: 0.5rem 0;
+          // float: none;
+        }
+        #news{
+          p{
+          }
+        }
+        .item{
+          width: 100% !important;
+          float: left;
+          margin: 0.5rem 0;
+        }
+        #projects{
+        }
+        #photos{
+        }
+        #about{
+        }
+        #members{
+        }
+        #events{
+        }
+      }
+    }
   }
   .device-header{
     display: block;
