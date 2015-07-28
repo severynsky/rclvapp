@@ -20,7 +20,7 @@ ActiveAdmin.register Event do
       f.input :address, :placeholder => "Львів, Староєврейська 12"
       f.input :place, :placeholder => "Готель Жорж"
       f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
-      f.input :meeting_time, :as => :time_picker
+      f.input :meeting_time
       f.input :date, :as => :datepicker, :placeholder => "1970-05-21 as (YYYY-MM-DD)"
     end
     f.actions
