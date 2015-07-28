@@ -90,7 +90,7 @@
         position: relative;
         h1{
           line-height: 1.2em;
-          margin: 4px 0 4px 0;
+          margin: 4px 0 4px 5px;
           font-size: 1.4em;
           font-weight: 600;
           letter-spacing: 1px;
@@ -98,8 +98,8 @@
           padding: 10px 0 0px;
           text-overflow: ellipsis;
           width: 48rem;
-          white-space: nowrap;
-          overflow: hidden;
+          // white-space: nowrap;
+          // overflow: hidden;
         }
         
         .utilities{
