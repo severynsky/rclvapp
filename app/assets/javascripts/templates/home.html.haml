@@ -43,29 +43,31 @@
   %h3.tagline
     {{ "mainpage.title" | translate }}
   %div.clear
+
+
 %section.container
-  %div.content#scene
-    %div.left
-      %a.item#news{"ng-href" => "#/news_items"}
+  %div.col-md-8.col-md-offset-2#scene
+    %div.left.col-md-6.col-xs-12
+      %a.item.col-md-7.col-xs-12#news{"ng-href" => "#/news_items"}
         %span
           {{ "mainpage.rotary" | translate }}
         %p
           {{ "mainpage.news" | translate }}
-      %a.item#projects{"ng-href" => "#/projects"}
+      %a.item.col-md-11.col-xs-12#projects{"ng-href" => "#/projects"}
         %p
           {{ "mainpage.projects" | translate }}
         %span
           &{{ "mainpage.general_info" | translate }}
       %div.item#photos
-    %div.right
+    %div.right.col-md-6.col-xs-12
       %div.items
-        %a.item#about{"ng-href" => "#/about"}
+        %a.item.col-sm-7.col-xs-6#about{"ng-href" => "#/about"}
           %p
             {{ "mainpage.about_rotary" | translate }}
-        %a.item#members{"ng-href" => "#/users"}
+        %a.col-sm-4.col-sm-offset-1.col-xs-6#members{"ng-href" => "#/users"}
           %p
             {{ "mainpage.rotary_members" | translate }}
-      %a.item#events{"ng-href" => "#/events"}
+      %a.item.col-sm-10.col-xs-12#events{"ng-href" => "#/events"}
         %p.header
           {{ "mainpage.events" | translate }}
         %div.events
@@ -76,7 +78,7 @@
               Meeting Danish guests and some more
             %p.place
               Cytadel Inn Some str 5
-      %a.item#contacts{"ng-href" => "#/contact"}
+      %a.item.col-sm-7.col-xs-12#contacts{"ng-href" => "#/contact"}
         %img{src: "/images/icons/envelope.png"}
 
 

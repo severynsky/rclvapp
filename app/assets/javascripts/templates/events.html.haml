@@ -9,13 +9,13 @@
       {{ "EVENTS.title" | translate }}
 
 %section.popup
-  .resource-container
+  .resource-container.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         {{ "EVENTS.title" | translate }}
-    .col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12.events-container
+    .events-container
       .event-item{"ng-repeat" => "event in events.events | today"}
         .event-container{"ng-show"=>"event"}
           %h2

@@ -1,4 +1,4 @@
-@media screen and (max-width: 1330px), screen and (max-height: 650px) {
+@media (max-width: 1366px){
   .logo{
     margin: 20px auto 10px;
     img{
@@ -7,19 +7,22 @@
       margin-left: 145px;
     }
   }
-  .content{
-    width: 70%;
     #news{
-      width: 190px;
+      // width: 190px;
       height: 155px;
+      background-size: 250px;
       p{
         font-size: 3.5em;
       }
     }
+    #scene{
+      overflow-y: scroll;
+      height: 90vh;
+    }
     #projects{
-      width: 260px;
+      // width: 260px;
       height: 170px;
-      background-size: 260px 170px;
+      background-size: 350px;
     }
     #photos{
       width: 160px;
@@ -27,7 +30,7 @@
       background-size: 160px;
     }
     #about{
-      width: 175px;
+      // width: 175px;
       height: 145px;
     }
     #members{
@@ -36,7 +39,7 @@
       margin-top: 32px;
     }
     #events{
-      width: 250px;
+      // width: 250px;
     }
   }
   .popup{
@@ -46,18 +49,39 @@
   .device-header{
     display: none;
   }
-}
 @media (max-width: 769px) {
   body{
     // font-size: 14px !important;
+    background-image: none;
+    background-color: #5D2D6E;
     height: 100%;
+
     .homePage{
       height: 100vh;
       .logo{
         display: none;
       }
+      .container{
+        padding: 0;
+      }
     }
-    .container{
+    #scene{
+      margin-top: 80px
+    }
+    .left{
+      margin: 0;
+    }
+    .left .item{
+      margin: 5px 0;
+      // float: none;
+      text-align: right;
+    }
+    .right{
+      display: block;
+      width: 100%;
+      margin: 0.5rem 0;
+      // float: none;
+    }
       margin-top: 1rem;
       padding: 0;
       .content{
@@ -68,36 +92,42 @@
           margin-left: 0;
           width: 47vw;
           margin: 0.5rem 0;
-          // float: none;
-        }
-        .right{
-          display: block;
-          width: 47vw;
-          margin: 0.5rem 0;
-          // float: none;
-        }
-        #news{
-          p{
-          }
-        }
-        .item{
-          width: 100% !important;
-          float: left;
-          margin: 0.5rem 0;
-        }
-        #projects{
-        }
-        #photos{
-        }
-        #about{
-        }
-        #members{
-        }
-        #events{
+          float: none;
         }
       }
+        
+    #news{
+      height: 90px;
+      p{
+      }
+      span{
+        float: left;
+      }
+    }
+    .item{
+      // width: 100% !important;
+      // float: left;
+      margin: 0.5rem 0;
+    }
+    #projects{
+      height: 90px;
+      p{
+        margin-top: 17px;
+      }
+    }
+    #photos{
+    }
+    #about{
+    }
+    #members{
+      width: 50%;
+      margin-top: 0;
+      height: 145px;
+    }
+    #events{
     }
   }
+
   .device-header{
     display: block;
     position: fixed;

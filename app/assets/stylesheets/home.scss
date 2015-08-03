@@ -178,9 +178,12 @@ a, a:hover{
 
 /*************** items section *****************/
 .left{
-  width: 50%;
+  // width: 50%;
   float: left;
   margin-left: -900px;
+}
+.right, .left{
+  padding: 0;
 }
 .item{
   padding: 5px;
@@ -204,7 +207,6 @@ a, a:hover{
 }
 .left .item{
   margin: 5px 10px 5px 0;
-  /*position: absolute;*/
   float: right;
   text-align: right;
 }
@@ -213,7 +215,7 @@ a, a:hover{
 }
 #news{
   height: 180px;
-  width: 240px;
+  // width: 240px;
   opacity: 1;
   background-color: rgba(255,255,255,0.9);
 }
@@ -239,7 +241,7 @@ a, a:hover{
 }
 #projects{
   height: 200px;
-  width: 330px;
+  // width: 330px;
   position: relative;
   padding: 0;
   background-image: url(/images/project.png);
@@ -326,18 +328,19 @@ a, a:hover{
   display: none;
 }
 .right .item{
-  margin: 5px 0px 5px 10px;
-  float: left;
+  margin: 5px 0px 5px 0px;
+  // float: left;
 }
 .right .item:hover{
   background-color: #8B20F1;
 }
 .items{
   position: relative;
+  padding: 0;
 }
 #about{
   height: 170px;
-  width: 200px;
+  // width: 200px;
   font-size: 3em;
   font-weight: 800;
   color: #93251B;
@@ -357,15 +360,17 @@ a, a:hover{
   line-height: 46px;
 }
 #members{
-  height: 130px;
-  width: 130px;
-  margin-top: 45px;
+  height: 110px;
+  // width: 130px;
+  margin-top: 64px;
   background-image: url(/images/icons/contact-icon.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 80px;
   position: relative;
   padding: 0;
+  // float: right;
+  background-color: rgba(255,255,255,0.7);
 }
 #members p{
   background-color: white;
@@ -389,13 +394,13 @@ a, a:hover{
   background-color: white;
 }
 #members:hover p{
-  opacity: 1;
-  right: -110px;
-  color: orange;
+  // opacity: 1;
+  // right: -110px;
+  // color: orange;
 }
 #events{
   height: 100%;
-  width: 290px;
+  // width: 290px;
   padding: 0;
   background-color: purple;
   -webkit-transition: 0.15s;
