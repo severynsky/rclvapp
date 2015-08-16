@@ -35,7 +35,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         news: "новини",
         projects: "проекти",
         general_info: "загальна інформація",
-        about_rotary: "про ротарі",
+        about_rotary: "про Наше Ротарі",
         rotary_members: "наші Ротарійці",
         upcomming_event: "найближчим часом",
         events: "події",
@@ -86,7 +86,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         news: "news",
         projects: "projects",
         general_info: "general info",
-        about_rotary: "about rotary",
+        about_rotary: "Our Rotary Club",
         rotary_members: "rotary members",
         upcomming_event: "upcomming event",
         events: "events",
@@ -117,8 +117,8 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       MEMBERS: {
         title: "Members",
         president: "President",
-        сommitties: "Committies",
-        regular: 'Regular'
+        сommitties: "Board and Committees",
+        regular: 'Members'
       },
       buttons: {
         ua: "укр",

@@ -170,9 +170,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  // width: 100vw;
+  width: 140px;
   height: 100vh;
-  background-color: rgba(0,14,27,0.3);
+  background-color: rgba(0,14,27,0.2);
   z-index: -1;
   -webkit-transition: 0.1s;
   -ms-transition: 0.1s;

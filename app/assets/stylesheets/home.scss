@@ -220,8 +220,8 @@ a, a:hover{
   background-color: rgba(255,255,255,0.9);
 }
 #news p{
-  font-size: 4.7em;
-  font-weight: 100;
+  font-size: 3.5em;
+  font-weight: 400;
   color: orange;
 }
 #news span{
@@ -272,7 +272,8 @@ a, a:hover{
 #projects span{
   color: orange;
   padding-right: 1em;
-  font-weight: 100;
+  font-weight: 200;
+  font-size: 1.5em;
 }
 #projects:hover p, #projects:hover span{
   color: white;
@@ -482,7 +483,7 @@ a, a:hover{
   padding: 0;
   height: auto;
   width: 140px;
-  background-color: white;
+  background-color: rgba(255,255,255,0);
 }
 #contacts img{
   width: 100%;
@@ -506,6 +507,6 @@ a, a:hover{
   opacity: 1;
 }
 #contacts:hover{
-  background-color: #4CA6F1;
+  // background-color: #4CA6F1;
 }
 /*************** Popup section *****************/

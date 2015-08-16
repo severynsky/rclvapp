@@ -42,14 +42,24 @@
   }
 }
 .cooperation{
+    background-color: rgba(255,255,255,1);
+    padding: 10px 30px;
     h1{
       color: #FFF;
       border-bottom: 1px solid #B2B2B2;
       text-align: right;
+      color: #2c3e50;
     }
     .text-container{
       p{
-        color: #FFF;
+        color: #2c3e50;
       }
+    }
+  }
+
+  .projectPage{
+    .project-title{
+    color: orange;
+    padding: 51px 0 0 0;
     }
   }
