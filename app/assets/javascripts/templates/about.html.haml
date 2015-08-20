@@ -6,10 +6,117 @@
   .title-container
     %h2
       About Page
+:javascript
+  function initialize() {
+
+    var myLatLng = {lat: 49.8421894, lng: 24.0292025};
+    var mapCanvas = document.getElementById('map');
+    var mapOptions = {
+      center: myLatLng,
+      zoom: 18,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      options: {
+        scrollwheel: false,
+        marker: marker
+      }
+    }
+
+    var map = new google.maps.Map(mapCanvas, mapOptions)
+    }
+
+    var marker = new google.maps.Marker({
+      position: {lat: 49.8421894, lng: 24.0292025}
+    });
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+
 %section.popup
-  .resource-container
+  .resource-container.col-sm-10.col-sm-offset-1
     %h1
-      About Page
+      Rotary Club Lviv-Center
+    .our-rotary-container
+      %br/
+      %h2
+        introduction
+      %hr/
+      %p
+        %b
+          Rotary Club Lviv-Center was formed in 2001 by (NAMES) 
+        with the aim to support local development as well as the poor and ill people of the society.
+      %p
+        We are supporting 
+        %b
+          environmental projects
+        for healthier living conditions for people, Orphans developing education possibilities and studies abroad, the crises situation for children who lost family members in the hard time in Ukraine.
+      %quotes
+        %h3
+          I learned to Give not because I have many, but because I know exactly How it feels to have Nothing
+      %p
+        Our Club has
+        %b
+          become more and more International
+        during the last years with foreigners becoming member’s from different countries which has made our Club for another level. We have now cooperation with other Rotary Clubs all over the world which is straighten the relations in Rotary society supporting each other’s projects.
+      %quotes
+        %h3
+          Rotarians are much more favorably disposed toward action than they are toward words
+        %span.credentials
+          Paul Harris
+        %span.position
+          Rotary Club of Chicago<br/>
+          November 1912
+      %p
+        If you or your club is interested to know more about Rotary Club Lviv-Center, feel free to contact the Board individual or direct to our Club mail address for deeper knowledge.
+      %br/
+      %a{:href => "/#users", class: "user-button"}
+        members list
+      %br/
+      %h2
+        Board Members
+      %p
+        %b
+          Our Club Board of Directors consists of 7 people.
+        Every year we have new President elected who always takes a place on the Board and past president normally becomes a supporter in the Board work for new President. All other Board members can accept re-election every year. Please see the present Board
+        %a{:href => ""}here.
+      %h2
+        Committee members.
+      %p
+        Normally committees are created by interests and volunteers members with special interest and function to perform duties of such responsibility. Please see Committees and responsible person
+        %a{:href => ""}here
+        for you to get in contact with the responsible person.
+      %h2
+        Meeting and location
+      %br/
+      %p.meeting-time
+        Meetings every 
+        %b
+          Tuesdays
+        from 19:00 till 20:30
+      %br/
+      #map
+      %p.meeting-place
+        %a{:href => "http://www.leopolishotel.com/contact/location/"}
+          Leopolis Hotel,
+        Teatralna Street 16, Old Town of Lviv, Ukraine.
+      %h2
+        Dress code
+      %p
+        %b
+          The period from September 1st – June 15
+        normal meetings are presented with minimum Business Casual Click here or Business Click
+        %a{:href => ""}
+          here.
+        %b
+          Always with Rotary badges!!
+      %p
+        Our vacation time from June 15 – July 31 is free dress code, but
+        %b
+          with minimum Rotary badge.
+      %p
+        Dress codes on 
+        %b
+          outdoor activities
+        will be announced in the invitation.
 
 %a.fadeout{"ng-href" => "#/"}
   .close-btn
