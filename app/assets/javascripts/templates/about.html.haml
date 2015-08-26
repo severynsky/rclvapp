@@ -6,32 +6,7 @@
   .title-container
     %h2
       About Page
-:javascript
-  function initialize() {
-
-    var myLatLng = {lat: 49.8421894, lng: 24.0292025};
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-      center: myLatLng,
-      zoom: 18,
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      options: {
-        scrollwheel: false,
-        marker: marker
-      }
-    }
-
-    var map = new google.maps.Map(mapCanvas, mapOptions)
-    }
-
-    var marker = new google.maps.Marker({
-      position: {lat: 49.8421894, lng: 24.0292025}
-    });
-
-  google.maps.event.addDomListener(window, 'load', initialize);
-
-
-%section.popup
+%section.popup{"ng-inig" => "init()"}
   .resource-container.col-sm-10.col-sm-offset-1
     %h1
       Rotary Club Lviv-Center
@@ -50,21 +25,29 @@
           environmental projects
         for healthier living conditions for people, Orphans developing education possibilities and studies abroad, the crises situation for children who lost family members in the hard time in Ukraine.
       %quotes
-        %h3
-          I learned to Give not because I have many, but because I know exactly How it feels to have Nothing
+        .text.pull-left
+          %h3
+            I learned to Give not because I have many, but because I know exactly How it feels to have Nothing
+        .img-container.pull-right
+          %img{:src => "/images/rotary-logo.png", :alt => ""}/
+        .clear
       %p
         Our Club has
         %b
           become more and more International
         during the last years with foreigners becoming member’s from different countries which has made our Club for another level. We have now cooperation with other Rotary Clubs all over the world which is straighten the relations in Rotary society supporting each other’s projects.
       %quotes
-        %h3
-          Rotarians are much more favorably disposed toward action than they are toward words
-        %span.credentials
-          Paul Harris
-        %span.position
-          Rotary Club of Chicago<br/>
-          November 1912
+        .text.pull-left
+          %h3
+            Rotarians are much more favorably disposed toward action than they are toward words
+          %span.credentials
+            Paul Harris
+          %span.position
+            Rotary Club of Chicago<br/>
+            November 1912
+        .img-container.pull-right
+          %img{:src => "/paul_harris.jpg", :alt => ""}/
+        .clear
       %p
         If you or your club is interested to know more about Rotary Club Lviv-Center, feel free to contact the Board individual or direct to our Club mail address for deeper knowledge.
       %br/
@@ -95,9 +78,12 @@
       %br/
       #map
       %p.meeting-place
-        %a{:href => "http://www.leopolishotel.com/contact/location/"}
+        %a{:href => "http://www.leopolishotel.com/contact/location/", "target" => "_blank"}
           Leopolis Hotel,
-        Teatralna Street 16, Old Town of Lviv, Ukraine.
+        Teatralna Street
+        %b
+          16,
+        Old Town of Lviv, Ukraine.
       %h2
         Dress code
       %p
