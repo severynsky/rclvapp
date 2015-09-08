@@ -7,9 +7,10 @@
     %h2
       About Page
 %section.popup{"ng-inig" => "init()"}
-  .resource-container.col-sm-10.col-sm-offset-1
-    %h1
-      Rotary Club Lviv-Center
+  .lviv-intro
+  %h1
+    Rotary Club Lviv-Center
+  .resource-container.col-sm-8.col-sm-offset-2
     .our-rotary-container
       %br/
       %h2
@@ -17,14 +18,14 @@
       %hr/
       %p
         %b
-          Rotary Club Lviv-Center was formed in 2001 by (NAMES) 
+          Rotary Club Lviv-Center was formed in 2001 by (NAMES)
         with the aim to support local development as well as the poor and ill people of the society.
       %p
-        We are supporting 
+        We are supporting
         %b
           environmental projects
         for healthier living conditions for people, Orphans developing education possibilities and studies abroad, the crises situation for children who lost family members in the hard time in Ukraine.
-      %quotes
+      %quotes.col-xs-9.col-xs-offset-2
         .text.pull-left
           %h3
             I learned to Give not because I have many, but because I know exactly How it feels to have Nothing
@@ -36,7 +37,7 @@
         %b
           become more and more International
         during the last years with foreigners becoming member’s from different countries which has made our Club for another level. We have now cooperation with other Rotary Clubs all over the world which is straighten the relations in Rotary society supporting each other’s projects.
-      %quotes
+      %quotes.col-xs-9.col-xs-offset-2
         .text.pull-left
           %h3
             Rotarians are much more favorably disposed toward action than they are toward words
@@ -47,10 +48,15 @@
             November 1912
         .img-container.pull-right
           %img{:src => "/paul_harris.jpg", :alt => ""}/
-        .clear
+      .clearfix
       %p
         If you or your club is interested to know more about Rotary Club Lviv-Center, feel free to contact the Board individual or direct to our Club mail address for deeper knowledge.
       %br/
+  .clearfix
+  .all-members
+  .clearfix
+  .resource-container.col-sm-8.col-sm-offset-2
+    .our-rotary-container
       %a{:href => "/#users", class: "user-button"}
         members list
       %br/
@@ -76,7 +82,10 @@
           Tuesdays
         from 19:00 till 20:30
       %br/
-      #map
+      .map
+        %ui-gmap-google-map{"center" => " print.center ", "zoom" => "print.zoom", "options" => "print.options"}
+          %ui-gmap-marker{"idKey" => "print.marker.id", "coords" => "print.marker.coords"}
+
       %p.meeting-place
         %a{:href => "http://www.leopolishotel.com/contact/location/", "target" => "_blank"}
           Leopolis Hotel,
@@ -108,5 +117,4 @@
       %br/
 
 %a.fadeout{"ng-href" => "#/"}
-  .close-btn
   .close-btn

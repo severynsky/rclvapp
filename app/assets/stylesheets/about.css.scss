@@ -1,3 +1,6 @@
+body > div{
+  padding: 0 !important;
+}
 .aboutOurRotary{
   .fadeout{
     z-index: 999;
@@ -10,6 +13,26 @@
     height: 100vh;
     margin: 0;
     overflow-y: auto;
+    width: 100%;
+    left: 0;
+    .lviv-intro{
+      height: 640px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      background: url('/images/lviv-pic.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .all-members{
+      height: 710px;
+      background-color: purple;
+      width: 100%;
+      background-position: center;
+      background-image: url('/images/group-people.jpg')
+    }
     h1{
       text-align: center;
       color: #FEBD11;
@@ -59,11 +82,11 @@
       quotes{
         position: relative;
         color: #95a5a6;
-        margin: 40px 0;
+        padding: 40px 0;
           .text{
             width: 85%;
           h3{
-            font-size: 2em;
+            font-size: 1.7em;
             font-style: italic;
             font-weight: 500;
             line-height: 1.4em;
@@ -110,6 +133,12 @@
         top: 50px;
       }
 
+    }
+  }
+  a.fadeout{
+    background-color: rgba(255,255,255,0.3);
+    .close-btn{
+      background-image: url(/images/close-btn-orange.png);
     }
   }
 }
