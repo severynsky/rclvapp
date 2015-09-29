@@ -1,6 +1,7 @@
 json.events @events do |event|
   json.id event.id
   json.title event.title
+  json.title_ua event.title_ua
   json.date event.date
   json.time event.meeting_time
   json.description event.description

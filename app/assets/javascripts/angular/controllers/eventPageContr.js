@@ -5,6 +5,7 @@ rclvapp.controller('eventPageContr', ['$scope', '$http', '$routeParams', 'getEve
         $scope.print = {
             some: 'some',
             title: eventItem.title,
+            title_ua: eventItem.title_ua,
             date: eventItem.date,
             time: eventItem.time,
             created_at: eventItem.created_at,

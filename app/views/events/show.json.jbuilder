@@ -1,5 +1,6 @@
 json.id @event.id
 json.title @event.title
+json.title_ua @event.title_ua
 json.description @event.description
 json.address @event.address
 json.place @event.place

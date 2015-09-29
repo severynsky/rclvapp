@@ -26,6 +26,8 @@
                 %ui-gmap-marker{"idKey" => "0", "coords" => "{latitude: event.latitude, longitude: event.longitude }"}
               %h3
                 {{event.title}}
+              %h3
+                {{event.title_ua}}
             %a.text-container{"id" => "bind-html-with-trust", "ng-href" => "#/events/{{ event.id }}"}
               %br
               %table.table-preview
@@ -47,6 +49,8 @@
       .event-item{"ng-repeat" => "event in events.events | upComming"}
         %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
           {{ event.title}}
+          %br/
+          {{ event.title_ua}}
           %span.pull-right.date
             %span.day
               {{ event.date | date: "d" }}
@@ -61,6 +65,8 @@
       .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}
         %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
           {{ event.title}}
+          %br/
+          {{ event.title_ua}}
           %span.pull-right.date
             %span.day
               {{ event.date | date: "d" }}
