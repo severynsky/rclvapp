@@ -17,8 +17,8 @@ ActiveAdmin.register Event do
 
   form do |f|
     f.inputs do
-      f.input :title, :placeholder => "Guests meeting"
-      f.input :title_ua, :placeholder => "Зустріч гостей"
+      f.input :title, :placeholder => "Guests meeting", :required => true
+      f.input :title_ua, :placeholder => "Зустріч гостей", :required => true
       f.input :address, :placeholder => "Львів, Староєврейська 12"
       f.input :place, :placeholder => "Готель Жорж"
       f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}

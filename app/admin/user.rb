@@ -25,7 +25,7 @@ ActiveAdmin.register User do
       f.input :name, :placeholder => "Engar Allan Poe"
       f.input :role, :as => :select, collection: %w[president committies regular admin]
       f.input :email, :placeholder => "somedomain@some.com"
-      # f.input :password
+      f.input :password
       # f.input :password_confirmation
       f.input :phone, :placeholder => "+3 (8) 099 99 99"
       f.input :address, :placeholder => "79000, Ukraine, Lviv, Some str 11/9"

@@ -15,7 +15,7 @@
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         {{ "EVENTS.title" | translate }}
-    .events-container
+    .col-sm-10.col-sm-offset-1.events-container
       .event-item{"ng-repeat" => "event in events.events | today"}
         .event-container{"ng-show"=>"event"}
           %h2
@@ -26,7 +26,7 @@
                 %ui-gmap-marker{"idKey" => "0", "coords" => "{latitude: event.latitude, longitude: event.longitude }"}
               %h3
                 {{event.title}}
-              %h3
+                %br/
                 {{event.title_ua}}
             %a.text-container{"id" => "bind-html-with-trust", "ng-href" => "#/events/{{ event.id }}"}
               %br
@@ -56,8 +56,8 @@
               {{ event.date | date: "d" }}
             %span.month
               {{ event.date | date: "MMMM" }}
-      .event-item{"hide" => "event"}
-        no events
+      -# .event-item.ng-hide{"ng-hide" => "{{ event }}"}
+        -# no events
 
     .col-sm-8.col-sm-offset-2.events-container
       %h3
