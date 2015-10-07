@@ -3,7 +3,7 @@
 rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', 'getCategories', '$translate', 'langSetter', '$localStorage', '$routeParams', function($scope, $http, getNews, getCategories, $translate, langSetter, $localStorage, $routeParams){
     $scope.pageClass = "newsPage";
     $scope.categoryTitle = $routeParams.newsCat
-    
+
     var loadNews = function(){
         $scope.news = getNews.query({}, function(u, getResponseHeaders){
           $scope.loading = false;
@@ -13,7 +13,7 @@ rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', 'getCategorie
         window.news = getNews.query({});
 
     };
-
+    debugger;
     $scope.lang = $localStorage.lang;
     $scope.pageClass = "newsList";
     loadNews();

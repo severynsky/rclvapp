@@ -4,6 +4,8 @@
     %title RC Lviv-Centre
     %script{:type => "text/javascript",
         :src => "https://maps.googleapis.com/maps/api/js"}
+    %script{:type => "text/javascript",
+        :src => "http://connect.facebook.net/en_US/all.js"}
 
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
@@ -11,6 +13,7 @@
     / %base{"href" => "/" }
     = csrf_meta_tags
   %body
+    #fb-root
     .col-xs-12
       - flash.each do |name, msg|
         %br
