@@ -1,12 +1,17 @@
 rclvapp.factory('getNews', [ '$resource', function($resource){
     // return $resource('/newsitems/:id.json', {id: '@id'},{
-    // return $resource('https://www.facebook.com/RotaryClubLvivCentre/feed', {id: '@id'},{
-    return $resource('https://graph.facebook.com/v2.4/me?fields=feed%7Bfull_picture%2Cpicture%2Cmessage%2Cstory%7D&access_token=CAACEdEose0cBAAqkesZAB52kH7AQBqPafluPB6T7hEQzmUxZAOd9kOUeXepSKT3pp82ZC7G5s2XzWobydM4vvjRuvsTnDwZCSpczqrH4deKu35fORJoiSocZCkaaEI0asxcnGeJ8SJb4ZCqpL8XDoOM1Jn7dUxZBLLTwZCZA5NQc5jfUs5t0MqjIJ3hKrVWZB0m3cXO1zpQUmi9QZDZD',{
     // return $resource('https://graph.facebook.com/100008391697251/permissions',{
+    return $resource('https://graph.facebook.com/v2.4/521978191/feed?access_token=CAACEdEose0cBACyEAz5B8uzKYnNS6RIrZBO5hlmhZCvD3b5ZC8Dxn3eHoXabDMR89ZAzva0wN8j6gcImpeK1iNvpyMgcxMmtmYWCWFBDPBFjOW460vjLTH99k00QbZCgoQ5lKvJNvNGAb9LGbAKRfvBwjLZAdVD3fgabVTTOxwXwai8qck4bJX7PAJGEMX5D3K2KLZBhCNVZCAZDZD',{
         query: {
             method: 'GET',
-            isArray: true
+            isArray: true,
+            headers: {
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods' : 'POST, GET, OPTIONS, PUT',
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          }
         }
     });
-}]);
 
+}]);

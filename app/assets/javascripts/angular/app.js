@@ -143,7 +143,6 @@ rclvapp.run(['ezfb', '$rootScope', '$window', function(ezfb, $rootScope, $window
 
     $rootScope.user = {};
     $window.fbAsyncInit = function() {
-        debugger;
       FB.init({
         appId: '730303527113361',
         /* Set if you want to check the authentication status at the start up of the app */
