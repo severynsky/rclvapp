@@ -31,7 +31,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
     var translationsUK = {
       mainpage: {
         title: 'Ротарі Клуб Львів-Центр',
-        rotary: "ротарійські",
+        rotary: "ротарі",
         news: "новини",
         projects: "проекти",
         general_info: "загальна інформація",
@@ -54,6 +54,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       EVENTS: {
         title: "Події",
         today: "сьогодні",
+        regular: "чергова зустріч",
         upcomming: "майбутні",
         passed: "минулі",
         date: "дата події",
@@ -106,6 +107,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       EVENTS: {
         title: "Events",
         today: "today",
+        regular: "regular metting",
         upcomming: "upcomming",
         passed: "passed",
         date: "date",

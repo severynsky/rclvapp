@@ -1,6 +1,6 @@
 ActiveAdmin.register Event do
 
-  permit_params :title, :title_ua, :date, :place, :description, :address, :latitude, :meeting_time, :longitude
+  permit_params :title, :title_ua, :date, :event_type, :place, :description, :address, :latitude, :meeting_time, :longitude
 
   menu priority: 6
   menu label: "Events"
@@ -8,6 +8,7 @@ ActiveAdmin.register Event do
   index do
     column :title
     column :title_ua
+    column :event_type
     column :address
     column :date
     column :meeting_time
@@ -17,6 +18,7 @@ ActiveAdmin.register Event do
 
   form do |f|
     f.inputs do
+      f.input :event_type, :as => :select, collection: ["regular", "field session", "trip", "social event"], :required => true
       f.input :title, :placeholder => "Guests meeting", :required => true
       f.input :title_ua, :placeholder => "Зустріч гостей", :required => true
       f.input :address, :placeholder => "Львів, Староєврейська 12"

@@ -41,13 +41,18 @@
     a{
       color: #545454;
       width: 100%;
+      p{
+        font-size: 1.3em;
+      }
     }
     .date{
+      margin-top: 15px;
       .day{
         color: orange;
-        font-size: 1.2em;
+        font-size: 2em;
       }
       .month{
+        font-size: 1.6em;
         color: #959595;
       }
     }
@@ -94,6 +99,7 @@
     table{
       td{
         padding-bottom: 12px;
+        font-size: 1.2em;
       }
       td.table-label{
         width: 350px;

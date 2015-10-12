@@ -15,11 +15,11 @@
         %img{src: "/images/rotary-logo.png"}
       %h1.tagline
         {{ "EVENTS.title" | translate }}
-    .col-sm-10.col-sm-offset-1.events-container
-      .event-item{"ng-repeat" => "event in events.events | today"}
+    .col-sm-8.col-sm-offset-2.events-container
+      .event-item{"ng-repeat" => "event in events.events | regular"}
         .event-container{"ng-show"=>"event"}
           %h2
-            {{ "EVENTS.today" | translate }}
+            {{ "EVENTS.regular" | translate }}
           .event-page
             .map
               %ui-gmap-google-map{"center" => "{latitude: event.latitude, longitude: event.longitude }", "zoom" => "17", "options" => "options"}
@@ -42,38 +42,24 @@
                   %td
                     {{ event.place }}
     .clear
-
-    .col-sm-8.col-sm-offset-2.events-container
-      %h3
-        {{ "EVENTS.upcomming" | translate }}
-      .event-item{"ng-repeat" => "event in events.events | upComming"}
-        %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
-          {{ event.title}}
-          %br/
-          {{ event.title_ua}}
-          %span.pull-right.date
-            %span.day
-              {{ event.date | date: "d" }}
-            %span.month
-              {{ event.date | date: "MMMM" }}
-      -# .event-item.ng-hide{"ng-hide" => "{{ event }}"}
-        -# no events
-
-    .col-sm-8.col-sm-offset-2.events-container
-      %h3
-        {{ "EVENTS.passed" | translate }}
-      .event-item.passed-event{"ng-repeat" => "event in events.events | passed"}
-        %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
-          {{ event.title}}
-          %br/
-          {{ event.title_ua}}
-          %span.pull-right.date
-            %span.day
-              {{ event.date | date: "d" }}
-            %span.month
-              {{ event.date | date: "MMMM" }}
-
-    .clear
+    .row
+      .col-sm-8.col-sm-offset-2.events-container
+        %h3
+          {{ "EVENTS.upcomming" | translate }}
+        .event-item{"ng-repeat" => "event in events.events | upComming"}
+          %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
+            %p.pull-left
+              {{ event.title}}
+              %br/
+              {{ event.title_ua}}
+            %span.pull-right.date
+              %span.day
+                {{ event.date | date: "d" }}
+              %span.month
+                {{ event.date | date: "MMMM" }}
+            .clear
+          .event-item.ng-hide{"ng-hide" => "{{ event }}"}
+            no events
 
 %a.fadeout{"ng-href" => "#/"}
   .close-btn
