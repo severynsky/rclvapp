@@ -13,7 +13,6 @@ rclvapp.controller('newsListContr', ['$scope', '$http', 'getNews', 'getCategorie
         window.news = getNews.query({});
 
     };
-    debugger;
     $scope.lang = $localStorage.lang;
     $scope.pageClass = "newsList";
     loadNews();

@@ -142,13 +142,14 @@ a, a:hover{
 *             logo styling                *
 ******************************************/
 .logo{
-  margin: 35px auto 10px;
+  margin: 35px auto 4px;
   width: 340px;
 }
 .logo img{
-  width: 50px;
+  width: 56px;
   height: auto;
-  margin-left: 145px;
+  display: block;
+  margin: 0 auto;
 }
 .tagline{
   font-family: 'Droid Serif', serif;;
@@ -224,10 +225,17 @@ a, a:hover{
   font-weight: 400;
   color: orange;
 }
-#news span{
+#news > span{
   font-size: 2em;
   font-weight: 100;
   color: orange;
+}
+#news .facebook{
+  color: #425f9b;
+  font-weight: 900;
+  font-size: 0.9em;
+  letter-spacing: -1px;
+  // font-size: 2em;
 }
 #news:hover{
   background-image: url(/images/icons/lviv.jpg);

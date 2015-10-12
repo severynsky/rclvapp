@@ -8,7 +8,7 @@
       fb
     #fb-root
 
-    %div{"ng-show" => "showFb", "ng-mouseLeave" => "showFb = !showFb", "class"=>"fb-page", "data-href"=>"https://www.facebook.com/pages/Rotary-Club-Lviv-Centre/1427543187512091?ref=hl", "data-small-header" => "false", "data-adapt-container-width"=>"true", "data-hide-cover" => "false", "data-show-facepile" => "true", "data-show-posts" => "true"}
+    %div{"ng-show" => "showFb", "ng-mouseLeave" => "showFb = !showFb", "class"=>"fb-page", "data-href"=>"https://www.facebook.com/RotaryClubLvivCentre", "data-small-header" => "false", "data-adapt-container-width"=>"true", "data-hide-cover" => "false", "data-show-facepile" => "true", "data-show-posts" => "true"}
 
   .language-field
     %btn{"ng-click" => "changeLanguage('uk')", "ng-class" =>""}
@@ -48,9 +48,12 @@
 %section.container
   %div.col-md-8.col-md-offset-2#scene
     %div.left.col-md-6.col-xs-12
-      %a.item.col-md-7.col-xs-12#news{"ng-href" => "#/news_items"}
+      %a.item.col-md-7.col-xs-12#news{"ng-href" => "https://www.facebook.com/RotaryClubLvivCentre", "target" => "_blank"}
         %span
+          %span.facebook
+            facebook
           {{ "mainpage.rotary" | translate }}
+          -# %br/
         %p
           {{ "mainpage.news" | translate }}
       %a.item.col-md-11.col-xs-12#projects{"ng-href" => "#/projects"}
