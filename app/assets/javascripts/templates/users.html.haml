@@ -9,11 +9,13 @@
 
 %section.popup
   .resource-container.col-sm-8.col-sm-offset-2.col-xs-12.col-xs-offset-0
+
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
-        %img{src: "/images/rotary-logo.png"}
-      %h1.tagline
-        {{ "MEMBERS.title" | translate }}
+        %h1.tagline
+          {{ "ROTARY.rotary" | translate }}
+          %img{src: "/images/rotary-logo.png"}
+          {{ "MEMBERS.title" | translate }}
 
     .users-container
       %h3

@@ -8,11 +8,14 @@
       Contact Page
 %section.popup
   .resource-container.col-sm-8.col-sm-offset-2.col-xs-12.col-xs-offset-0
+
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
-        %img{src: "/images/rotary-logo.png"}
-      %h1.tagline
-        Contact Page
+        %h1.tagline
+          {{ "ROTARY.rotary" | translate }}
+          %img{src: "/images/rotary-logo.png"}
+          {{ "CONTACTS.contact_page" | translate }}
+
     .contact-container
       %h2
         Board members

@@ -29,6 +29,9 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
     });
 
     var translationsUK = {
+      ROTARY:{
+        rotary: "Ротарі"
+      },
       mainpage: {
         title: 'Ротарі Клуб Львів-Центр',
         rotary: "ротарі",
@@ -64,10 +67,13 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         additional_info: "додаткова інформація"
       },
       MEMBERS: {
-        title: "Ротарійці",
+        title: "Учасники",
         president: "Президент",
         сommitties: "Комітет",
         regular: 'члени Ротарі'
+      },
+      CONTACTS: {
+        contact_page: "Контакти"
       },
       buttons: {
         ua: "укр",
@@ -81,6 +87,9 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       }
     };
     var translationsEN = {
+      ROTARY:{
+        rotary: "Rotary"
+      },
       mainpage: {
         title: 'Rotary Club Lviv-Centre',
         rotary: "rotary",
@@ -121,6 +130,9 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         president: "President",
         сommitties: "Board and Committees",
         regular: 'Members'
+      },
+      CONTACTS: {
+        contact_page: "Contacts"
       },
       buttons: {
         ua: "укр",

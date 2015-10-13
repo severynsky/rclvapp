@@ -10,38 +10,48 @@
 
 %section.popup
   .resource-container.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
-        %img{src: "/images/rotary-logo.png"}
-      %h1.tagline
-        {{ "EVENTS.title" | translate }}
-    .col-sm-8.col-sm-offset-2.events-container
-      .event-item{"ng-repeat" => "event in events.events | regular"}
-        .event-container{"ng-show"=>"event"}
-          %h2
-            {{ "EVENTS.regular" | translate }}
-          .event-page
-            .map
-              %ui-gmap-google-map{"center" => "{latitude: event.latitude, longitude: event.longitude }", "zoom" => "17", "options" => "options"}
-                %ui-gmap-marker{"idKey" => "0", "coords" => "{latitude: event.latitude, longitude: event.longitude }"}
-              %h3
-                {{event.title}}
-                %br/
-                {{event.title_ua}}
-            %a.text-container{"id" => "bind-html-with-trust", "ng-href" => "#/events/{{ event.id }}"}
-              %br
-              %table.table-preview
-                %tr
-                  %td.table-label
-                    {{ "EVENTS.time" | translate }}:
-                  %td.date
+        %h1.tagline
+          {{ "ROTARY.rotary" | translate }}
+          %img{src: "/images/rotary-logo.png"}
+          {{ "EVENTS.title" | translate }}
+
+    .row
+      .col-sm-8.col-sm-offset-2.events-container
+        .event-item.regular-meeting{"ng-repeat" => "event in events.events | regular"}
+          .event-container{"ng-show"=>"event"}
+            %h2
+              {{ "EVENTS.regular" | translate }}
+            .event-page.widget
+              .map
+                %ui-gmap-google-map{"center" => "{latitude: event.latitude, longitude: event.longitude }", "zoom" => "17", "options" => "options"}
+                  %ui-gmap-marker{"idKey" => "0", "coords" => "{latitude: event.latitude, longitude: event.longitude }"}
+                %h3
+                  {{event.title}}
+                  %br/
+                  {{event.title_ua}}
+              %a.text-container{"id" => "bind-html-with-trust", "ng-href" => "#/events/{{ event.id }}"}
+                %p.widget-time.pull-left
+                  %i.fa.fa-clock-o
+                  {{ "EVENTS.time" | translate }}:
+                  %strong.orange
                     {{ event.time | date: "HH:mm": "+0000" }}
-                %tr
-                  %td.table-label
-                    {{ "EVENTS.place" | translate }}:
-                  %td
+                %p.widget-place.pull-right
+                  %i.fa.fa-map-o
+                  {{ "EVENTS.place" | translate }}:
+                  %strong.orange
                     {{ event.place }}
-    .clear
+                .clear
+                -# %table.table-preview
+                -#   %tr
+                -#     %td.table-label
+                -#     %td.date
+                -#   %tr
+                -#     %td.table-label
+                -#     %td
+
     .row
       .col-sm-8.col-sm-offset-2.events-container
         %h3
@@ -50,7 +60,7 @@
           %a.text-container{"ng-href" => "#/events/{{ event.id }}"}
             %p.pull-left
               {{ event.title}}
-              %br/
+              %span.divider
               {{ event.title_ua}}
             %span.pull-right.date
               %span.day

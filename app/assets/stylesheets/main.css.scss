@@ -1,6 +1,11 @@
 
 $dakr-puple: #5D2D6E;
-
+.orange{
+  color: orange;
+}
+.darkorange{
+  color: darkorange;
+}
 body {
   font-size: 16px;
   background-color: $dakr-puple;
@@ -23,22 +28,32 @@ body {
 
   .header{
     width: 60%;
-    margin: 0 auto 15px;
+    margin: 0 auto 10px;
+    .tagline:hover{
+      // color: #425f9b;
+    }
+    .tagline{
+      font-family: Roboto;
+      color: orange;
+    }
     .page-logo img{
-      width: 56px;
+      width: 36px;
       height: auto;
-      margin: 0 auto;
-      display: block;
+      // margin: 0 auto;
+      // display: block;
     }
     h1{
       text-align: center;
-      border-top: 1px solid #FFF;
+      // border-top: 1px solid #FFF;
       border-bottom: 1px solid #FFF;
-      margin: 13px 0 7px;
+      margin: 0px 0 7px;
       padding: 12px 0;
-      font-weight: 200;
-      font-size: 1.8em;
+      font-weight: 600;
+      font-size: 2.2em;
       color: #FFF;
     }
+  }
+  .header:hover h1{
+    border-bottom: 1px solid #425f9b;
   }
 }

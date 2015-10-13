@@ -1,20 +1,22 @@
 .events-container{
   h3{
-    text-align: right;
+    text-align: center;
     color: #FFF;
     font-weight: 300;
     border-bottom: 1px solid #FFF;
-    padding-bottom: 5px;
-    font-size: 2.2em;
+    padding: 9px;
+    font-size: 1.7em;
+    background-color: orange;
+    margin-bottom: 5px;
   }
-
   .event-container{
     h2{
       text-align: center;
       margin: 2px 0 7px;
       letter-spacing: 1px;
       font-weight: 400;
-      background-color: darkorange;
+      // background-color: #425f9b;
+      background-color: orange;
       color: #FFF;
       padding: 8px 0;
       font-size: 1.6em;
@@ -39,20 +41,35 @@
     -o-transition: 0.15s;
     transition: 0.15s;
     a{
-      color: #545454;
+      // color: #545454;
       width: 100%;
       p{
+        color: #959595;
         font-size: 1.3em;
+        margin: 0;
+        .divider{
+          display: block;
+          border-bottom: 2px solid orange;
+          width: 50px;
+          margin: 4px 0 2px 5px;
+        }
       }
     }
     .date{
-      margin-top: 15px;
+      margin-top: 2px;
+      span{
+        text-align: center;
+        display: block;
+      }
       .day{
         color: orange;
-        font-size: 2em;
+        font-size: 2.5em;
+        line-height: 1em;
+        font-weight: 400;
+        border-bottom: 1px solid #C5C5C5;
       }
       .month{
-        font-size: 1.6em;
+        font-size: 1.1em;
         color: #959595;
       }
     }
@@ -66,6 +83,13 @@
   }
   .event-item:hover{
     border-bottom: 2px solid orange;
+    -ms-transform: translate(0, -2px); /* IE 9 */
+    -webkit-transform: translate(0, -2px); /* Safari */
+    -moz-transform: translate(0, -2px); /* Mozilla */
+    -o-transform: translate(0, -2px); /* Opera */
+    transform: translate(0, -2px);
+    box-shadow: 2px 2px 10px rgba(30,30,30,1);
+
   }
   .passed-event{
     opacity: 0.8;
@@ -80,7 +104,7 @@
   background-color: #FFF;
   .map{
     position: relative;
-    border-bottom: 3px solid orange;
+    // border-bottom: 3px solid orange;
     h3{
       text-align: right;
       position: absolute;
@@ -95,7 +119,11 @@
 
   }
   .text-container{
-    padding: 20px;
+    padding: 0 20px;
+    p.widget-time, p.widget-place{
+      font-size: 1.2em;
+      padding: 13px 0 0px;
+    }
     table{
       td{
         padding-bottom: 12px;
@@ -111,6 +139,9 @@
       }
     }
   }
+}
+.events-container .event-item a{
+  display: block;
 }
 .angular-google-map-container{
   height: 400px;
