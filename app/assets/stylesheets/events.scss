@@ -45,13 +45,18 @@
       width: 100%;
       p{
         color: #959595;
-        font-size: 1.3em;
-        margin: 0;
+        font-size: 1.1em;
+      }
+      p.event-title-text{margin: 0;
+        width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         .divider{
           display: block;
-          border-bottom: 2px solid orange;
+          border-bottom: 1px solid orange;
           width: 50px;
-          margin: 4px 0 2px 5px;
+          margin: 4px 0 2px 0px;
         }
       }
     }
@@ -63,13 +68,13 @@
       }
       .day{
         color: orange;
-        font-size: 2.5em;
+        font-size: 2em;
         line-height: 1em;
         font-weight: 400;
         border-bottom: 1px solid #C5C5C5;
       }
       .month{
-        font-size: 1.1em;
+        font-size: 1em;
         color: #959595;
       }
     }

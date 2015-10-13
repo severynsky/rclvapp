@@ -52,7 +52,7 @@
         .event-item{"ng-repeat" => "event in events.events | upComming"}
           %a{"ng-href" => "#/events/{{ event.id }}", "class" => "text-container"}
             %p{"class" => "event-icon {{ event.event_type }} pull-left"}
-            %p.pull-left
+            %p.pull-left.event-title-text
               {{ event.title}}
               %span.divider
               {{ event.title_ua}}
