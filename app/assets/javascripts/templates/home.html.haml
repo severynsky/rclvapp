@@ -1,14 +1,14 @@
 .changes-field
   %p
-    beta version/testing. Last changes 2015-10-12 21:30
+    beta version/testing. Last changes 2015-10-13 14:40
   / %div{"class" => "fb-like", "data-share" => "true", "data-width" => "450", "data-show-faces" => "true"}
 .utility-fields
-  .fb-field
-    %a{"ng-click" => "showFb = !showFb"}
-      fb
-    #fb-root
+  -# .fb-field
+    -# %a{"ng-click" => "showFb = !showFb"}
+      -# fb
+    -# #fb-root
 
-    %div{"ng-show" => "showFb", "ng-mouseLeave" => "showFb = !showFb", "class"=>"fb-page", "data-href"=>"https://www.facebook.com/RotaryClubLvivCentre", "data-small-header" => "false", "data-adapt-container-width"=>"true", "data-hide-cover" => "false", "data-show-facepile" => "true", "data-show-posts" => "true"}
+    -# %div{"ng-show" => "showFb", "ng-mouseLeave" => "showFb = !showFb", "class"=>"fb-page", "data-href"=>"https://www.facebook.com/RotaryClubLvivCentre", "data-small-header" => "false", "data-adapt-container-width"=>"true", "data-hide-cover" => "false", "data-show-facepile" => "true", "data-show-posts" => "true"}
 
   .language-field
     %btn{"ng-click" => "changeLanguage('uk')", "ng-class" =>""}
@@ -39,9 +39,10 @@
     .clear
 
 %div.logo
-  %img{src: "/images/rotary-logo.png", href: '#/'}
   %h3.tagline
-    {{ "mainpage.title" | translate }}
+    {{ "mainpage.title1" | translate }}
+    %img{src: "/images/rotary-logo.png", href: '#/'}
+    {{ "mainpage.title2" | translate }}
   %div.clear
 
 

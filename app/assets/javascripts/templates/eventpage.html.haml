@@ -22,26 +22,31 @@
         %table
           %tr
             %td.table-label
+              %i.fa.fa-calendar.lightgrey
               {{ "EVENTS.date" | translate }}:
             %td.date
               {{ print.date }}
           %tr
             %td.table-label
+              %i.fa.fa-clock-o.lightgrey
               {{ "EVENTS.time" | translate }}:
             %td.date
               {{ print.time | date: "HH:mm": "+0000" }}
           %tr
             %td.table-label
+              %i.fa.fa-map-o.lightgrey
               {{ "EVENTS.address" | translate }}:
             %td
               {{ print.address }}
           %tr
             %td.table-label
+              %i.fa.fa-map-signs.lightgrey
               {{ "EVENTS.place" | translate }}:
             %td
               {{ print.place }}
           %tr
             %td.table-label
+              %i.fa.fa-info-circle.lightgrey
               {{ "EVENTS.additional_info" | translate }}:
             %td{"ng-bind-html" => "print.description"}
 

@@ -8,8 +8,11 @@
       About Page
 %section.popup{"ng-inig" => "init()"}
   .lviv-intro
-  %h1
-    Rotary Club Lviv-Centre
+  %div.logo
+    %h3.tagline
+      {{ "mainpage.title1" | translate }}
+      %img{src: "/images/rotary-logo.png", href: '#/'}
+      {{ "mainpage.title2" | translate }}
   .resource-container.col-sm-8.col-sm-offset-2
     .our-rotary-container
       %br/

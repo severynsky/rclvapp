@@ -142,23 +142,27 @@ a, a:hover{
 *             logo styling                *
 ******************************************/
 .logo{
-  margin: 35px auto 4px;
-  width: 340px;
+  margin: 35px auto 24px;
+  // width: 440px;
+  display: block;
 }
 .logo img{
   width: 56px;
   height: auto;
-  display: block;
-  margin: 0 auto;
+  // display: block;
+  // margin: 0 auto;
 }
 .tagline{
-  font-family: 'Droid Serif', serif;;
+  // font-family: 'Droid Serif', serif;;
   text-align: center;
   color: #FEBD11;
+  color: orange;
   line-height: 13px;
   margin-top: 24px;
   letter-spacing: 2px;
   font-weight: 100;
+  font-size: 2.5em;
+  font-weight: 800;
 }
 
 

@@ -33,7 +33,8 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         rotary: "Ротарі"
       },
       mainpage: {
-        title: 'Ротарі Клуб Львів-Центр',
+        title1: 'Ротарі Клуб',
+        title2: 'Львів-Центр',
         rotary: "ротарі",
         news: "новини",
         projects: "проекти",
@@ -91,7 +92,8 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
         rotary: "Rotary"
       },
       mainpage: {
-        title: 'Rotary Club Lviv-Centre',
+        title1: 'Rotary Club',
+        title2: 'Lviv-Centre',
         rotary: "rotary",
         news: "news",
         projects: "projects",
