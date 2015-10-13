@@ -154,3 +154,32 @@
     }
   }
 }
+.text-container:hover .event-icon:after{
+  color: orange;
+}
+.event-icon{
+  position:relative;
+  display: inline-block;
+  margin: 3px 14px 0 8px !important;
+  border-right: 1px solid #bdc3c7;
+  padding-right: 16px;
+}
+.event-icon:after{
+    font-family: FontAwesome;
+    font-size: 2.2em;
+    color: #bdc3c7;
+ }
+.social:after {
+    content:  "\f0c0";}
+.field:after {
+    content:  "\f0f7";
+    padding: 0 6px 0 6px;
+ }
+.trip:after {
+    content:  "\f072";
+    padding: 0 6px 0 6px;
+ }
+.regular:after {
+    content:  "\f015";
+    padding: 0 3px 0 3px;
+ }
