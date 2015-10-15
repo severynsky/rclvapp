@@ -17,7 +17,7 @@
           %img{src: "/images/rotary-logo.png"}
           {{ "MEMBERS.title" | translate }}
 
-    .users-container
+    .users-container{"ng-hide" => "{{ loaded }}"}
       %h3
         {{ "MEMBERS.president" | translate }}
       .user-item.col-lg-6.col-lg-offset-3{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}

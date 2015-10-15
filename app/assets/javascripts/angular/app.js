@@ -154,8 +154,12 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
     $translateProvider.preferredLanguage('en');
   }
 ]);
-rclvapp.run(['ezfb', '$rootScope', '$window', function(ezfb, $rootScope, $window){
+rclvapp.run(['ezfb', '$rootScope', '$window', '$timeout', function(ezfb, $rootScope, $window, $timeout){
     console.log('angular app is running')
+
+    $timeout(function(){
+      $(".square").fadeOut();
+    }, 2500);
 
     $rootScope.user = {};
     $window.fbAsyncInit = function() {

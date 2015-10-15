@@ -1,7 +1,30 @@
+@media (max-width: 1366px) {
+  .events-container{
+    .event-item{
+      a{
+        p.event-title-text{
+          font-size: 1em;
+          width: 260px;
+          width: 70%;
+        }
+      }
+    }
+    .event-icon{
+      margin: 3px 7px 0 0px !important;
+      border-right: 1px solid #bdc3c7;
+      padding-right: 5px;
+    }
+  }
+}
 @media (max-width: 769px) {
   .events-container{
     h3{
       font-size: 1.5em;
+    }
+    .event-icon{
+      margin: 3px 7px 0 0px !important;
+      border-right: 1px solid #bdc3c7;
+      padding-right: 5px;
     }
     .event-item{
       margin-top: 2rem;    

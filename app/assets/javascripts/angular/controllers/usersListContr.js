@@ -1,6 +1,6 @@
 'use strict'
 
-rclvapp.controller('usersListContr', ['$scope', '$http', 'Auth', 'getAllUsers', 'getUsers', function($scope, $http, Auth, getAllUsers, getUsers){
+rclvapp.controller('usersListContr', ['$scope', '$http', 'Auth', 'getAllUsers', 'getUsers', '$timeout', function($scope, $http, Auth, getAllUsers, getUsers, $timeout){
     $scope.pageClass = "usersList";
 
     Auth.currentUser().then(function(user) {
@@ -21,6 +21,15 @@ rclvapp.controller('usersListContr', ['$scope', '$http', 'Auth', 'getAllUsers', 
       window.users = getUsers.query();
     };
     loadUsers();
+
+    // debugger;
+    // if(users != undefined){
+    //   $scope.loaded == true;
+    //   console.log('true')
+    //   $(".square").fadeOut()
+    // };
+
+
 
     $scope.toggleInfo = function(){
       debugger;

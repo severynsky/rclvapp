@@ -142,15 +142,15 @@ a, a:hover{
 *             logo styling                *
 ******************************************/
 .logo{
-  margin: 35px auto 24px;
+  margin: 40px auto;
   // width: 440px;
   display: block;
 }
 .logo img{
-  width: 56px;
-  height: auto;
+  width: 50px;
+  height: 50px;
   // display: block;
-  // margin: 0 auto;
+  margin: 0 !important;
 }
 .tagline{
   // font-family: 'Droid Serif', serif;;
@@ -179,6 +179,9 @@ a, a:hover{
   /*position: relative;*/
   background-color: rgba(255,255,255,0.0);
   /*display: none;*/
+}
+#scene{
+  margin-top: 9vh;
 }
 
 /*************** items section *****************/

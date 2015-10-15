@@ -47,8 +47,9 @@
         color: #959595;
         font-size: 1.1em;
       }
-      p.event-title-text{margin: 0;
-        width: 300px;
+      p.event-title-text{
+        margin: 0;
+        width: 70%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -175,7 +176,9 @@
     color: #bdc3c7;
  }
 .social:after {
-    content:  "\f0c0";}
+    content:  "\f0c0";
+    font-size: 1.8em;
+  }
 .field:after {
     content:  "\f0f7";
     padding: 0 6px 0 6px;
