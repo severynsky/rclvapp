@@ -1,3 +1,19 @@
+.projectsList{
+  background: url("/images/projects-1.jpg");
+  height: 100vh;
+  .popup{
+    .header{
+      h1{
+        border-bottom: none;
+      }
+    }
+  }
+  a.fadeout{
+    .close-btn{
+      background-image: url(/images/close-btn-orange.png);
+    }
+  }
+}
 .resource-container{
   .header{
     h1{
@@ -7,16 +23,30 @@
   .project-container{
     // border-right: 1px solid #95a5a6;
     margin-top: 20px;
-     h3{
+    h3{
       color: #FFF;
-      border-bottom: 1px solid #b2b2b2;
+      border-bottom: 1px solid rgba(255,255,255,0.4);
       font-weight: 300;
       span{
-        background: url(/images/icons/project.png);
+        // background: url(/images/icons/project.png);
         height: 26px;
         width: 34px;
         background-size: 40px;
         float: right;
+      }
+      span:before{
+        font-family: FontAwesome;
+        font-size: 1em;
+        color: #FFF;
+      }
+      span.new-project:before{
+        content: "\f005";
+      }
+      span.running-project:before{
+        content: "\f1a8";
+      }
+      span.finished-project:before{
+        content: "\f11e";
       }
     }
     .project-item{
@@ -40,19 +70,72 @@
       background-color: rgba(150,150,150,0.6);
     } 
   }
+  .project-container:hover{
+    h3{
+      border-bottom-color: orange;
+    }
+    span:before{
+      color: orange;
+    }
+  }
 }
 .cooperation{
-    background-color: rgba(255,255,255,1);
+    // background-color: rgba(255,255,255,1);
     padding: 10px 30px;
     h1{
       color: #FFF;
       border-bottom: 1px solid #B2B2B2;
       text-align: right;
-      color: #2c3e50;
+      // color: #2c3e50;
     }
     .text-container{
+      color: #FFF;
+      .cooperation-step{
+        opacity: 0.8;
+      }
+      .cooperation-step:hover{
+        opacity: 1;
+        h2{
+          color: orange;
+          border-bottom: 1px solid #FFF;
+        }
+        p{
+          // border-bottom: 1px solid #FFF;
+        }
+      }
+      h3.intro{
+        // font-size: 1.3em;
+        text-align: center;
+        margin-top: 15vh;
+        line-height: 1.2em;
+        letter-spacing: 0.5px;
+        font-size: 1.6em;
+      }
+      h2{
+        font-family: "Droid";
+        text-align: center;
+        margin-top: 2vh;
+        border-bottom: 1px solid rgba(255,255,255,0);
+      }
       p{
-        color: #2c3e50;
+        // letter-spacing: 1px;
+        // font-size: 1.1em;
+        // text-indent: 2em;
+        margin: 1vh 0 4vh;
+        border-right: 1px solid rgba(255,255,255,0.4);
+        padding-right: 13px;
+      }
+      p.last{
+        border-right: 0px solid #FFF;
+      }
+      h4.ending{
+        text-align: center;
+        letter-spacing: 0.5px;
+        line-height: 1.1em;
+        font-weight: 400;
+      }
+      strong{
+        color: orange;
       }
     }
   }
@@ -63,3 +146,15 @@
     padding: 51px 0 0 0;
     }
   }
+.projects-container{
+  margin-bottom: 5vh;
+}
+.cooperation-steps-container{
+  margin-top: 5vh;
+}
+.cooperation-ending{
+  margin-top: 5vh;
+}
+.fadeout{
+  z-index: 999;
+}

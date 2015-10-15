@@ -7,7 +7,7 @@
     %h2
       {{ "PROJECTS.title" | translate }}
 %section.popup
-  .resource-container.col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1
+  .resource-container.col-sm-10.col-sm-offset-1.col-xs-10.col-xs-offset-1
 
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
@@ -16,65 +16,84 @@
           %img{src: "/images/rotary-logo.png"}
           {{ "PROJECTS.title" | translate }}
 
-    .col-md-4.col-xs-12.project-container
-      %h3
-        {{ "PROJECTS.new" | translate }}
-        %span.projects-icon
-      .project-item{"ng-repeat" => "projects in projects.new_projects"}
-        %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
-          %p
-            {{ projects.title}}
+    .col-xs-12.cooperation
+      -# %h1
+        -# {{ "PROJECTS.cooperation" | translate }}
+      .text-container
+        .row
+          .col-xs-10.col-xs-offset-1
+            %h3.intro
+              Rotary Club Lviv-Centre supports every year a number of local and international projects.
+        .row.cooperation-steps-container
+          .col-md-3.col-xs-12.cooperation-step
+            %h2
+              I
+            %p
+              When you are a
+              %strong
+                part of the Rotary Community
+              You are committed to support charity and our Rotary Club actively searching partners for
+              %strong
+                making good projects.
+          .col-md-3.col-xs-12.cooperation-step
+            %h2
+              II
+            %p
+              We have also big projects, where we can 
+              %strong
+                use the advantages
+              from making international projects and apply for Global grants.
+          .col-md-3.col-xs-12.cooperation-step
+            %h2
+              III
+            %p
+              In our world of changes, it will always be necessary to 
+              %strong
+                help each other
+              and as a Rotarian, we have an obligation to do this.
+          .col-md-3.col-xs-12.cooperation-step
+            %h2
+              IV
+            %p.last
+              You will 
+              %strong
+                always be able 
+              to find a member of our club that is ready to hear about your idea, so feel free to 
+              %strong
+                contact us 
+              and let’s have a look at the opportunities.
+        .row.cooperation-ending
+          .col-xs-10.col-xs-offset-1
+            %h4.ending
+              In this section we’ll publish our projects, and it will be possible to read detailed about our projects and the impact on the society around them.
+    .projects-container
+      .row
+        .col-md-4.col-xs-12.project-container
+          %h3
+            {{ "PROJECTS.new" | translate }}
+            %span.projects-icon.new-project
+          .project-item{"ng-repeat" => "projects in projects.new_projects"}
+            %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
+              %p
+                {{ projects.title}}
 
-    .col-md-4.col-xs-12.project-container
-      %h3
-        {{ "PROJECTS.running" | translate }}
-        %span.projects-icon
-      .project-item{"ng-repeat" => "projects in projects.running_projects"}
-        %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
-          %p
-            {{ projects.title}}
+        .col-md-4.col-xs-12.project-container
+          %h3
+            {{ "PROJECTS.running" | translate }}
+            %span.projects-icon.running-project
+          .project-item{"ng-repeat" => "projects in projects.running_projects"}
+            %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
+              %p
+                {{ projects.title}}
 
-    .col-md-4.col-xs-12.project-container
-      %h3
-        {{ "PROJECTS.ended" | translate }}
-        %span.projects-icon
-      .project-item{"ng-repeat" => "projects in projects.completed_projects"}
-        %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
-          %p
-            {{ projects.title}}
-    .clear
-
-  %br/
-  %br/
-  .col-sm-8.col-sm-offset-2.col-xs-10.col-xs-offset-1.cooperation
-    %h1
-      {{ "PROJECTS.cooperation" | translate }}
-    .text-container
-      %p
-        Rotary Club Lviv-Centre supports, every year, a number of local and international projects.
-      %p
-        When you are a
-        %strong
-          part of the Rotary Community
-        You are committed to support charity and our Rotary Club actively searching partners for
-        %strong
-          making good projects,
-        and also bigger projects, where we can use the advantages from making international projects and apply for Global grants.
-      %p
-        In our world of changes, it will always be necessary to help each other and as a Rotarian, we have an obligation to do this.
-      %p
-        You will 
-        %strong
-        always be able 
-      to find a member of our club that is ready to hear about your idea, so feel free to 
-      %strong
-        contact us 
-      and let’s have a look at the opportunities.
-      %p
-        In this section we’ll publish our projects, and it will be possible to read detailed about our projects and the impact on the society around them.
-      %hr/
-
-
+        .col-md-4.col-xs-12.project-container
+          %h3
+            {{ "PROJECTS.ended" | translate }}
+            %span.projects-icon.finished-project
+          .project-item{"ng-repeat" => "projects in projects.completed_projects"}
+            %a.text-container{"ng-href" => "#/projects/{{ projects.id }}"}
+              %p
+                {{ projects.title}}
 
 %a.fadeout{"ng-href" => "#/"}
   .close-btn

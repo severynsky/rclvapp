@@ -7,7 +7,8 @@ rclvapp.controller('projectsListContr', ['$scope', '$http', 'getProjects', funct
         $scope.projects = getProjects.query();
         window.projects = getProjects.query();
     };
-
+    
+    // $(document.body).css("background", "url(images/projects-1.jpg)");
     loadProjects();
 
 }]);
