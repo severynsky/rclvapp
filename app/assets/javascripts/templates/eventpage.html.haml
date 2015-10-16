@@ -9,6 +9,14 @@
 
 %section.popup
   .resource-container.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+
+    .header
+      %a{"class" => "page-logo", "href" =>  "#/"}
+        %h1.tagline
+          {{ "ROTARY.rotary" | translate }}
+          %img{src: "/images/rotary-logo.png"}
+          {{ "EVENTS.title" | translate }}
+
     .col-sm-8.col-sm-offset-2.event-page
       .map
         %ui-gmap-google-map{"center" => " print.center ", "zoom" => "print.zoom", "options" => "print.options"}

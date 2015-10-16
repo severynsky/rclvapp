@@ -67,7 +67,7 @@
     .users-container
       %h3
         {{ "MEMBERS.regular" | translate }}
-      .user-itemcol-lg-6.col-lg-offset-3{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
+      .user-item.col-lg-6.col-lg-offset-3{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         %p.name
