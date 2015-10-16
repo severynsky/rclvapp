@@ -50,6 +50,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       PROJECTS: {
         title: "Проекти",
+        title_one: "Проект",
         new: "Нові",
         running: "Діючі",
         ended: "Звершені",
@@ -109,6 +110,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       PROJECTS: {
         title: "Projects",
+        title_one: "Project",
         new: "New",
         running: "Running",
         ended: "Completed",
@@ -159,7 +161,7 @@ rclvapp.run(['ezfb', '$rootScope', '$window', '$timeout', function(ezfb, $rootSc
 
     $timeout(function(){
       $(".square").fadeOut();
-    }, 2500);
+    }, 500);
 
     $rootScope.user = {};
     $window.fbAsyncInit = function() {

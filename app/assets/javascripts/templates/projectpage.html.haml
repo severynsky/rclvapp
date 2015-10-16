@@ -1,17 +1,48 @@
+.device-header
+  %a{"class" => "device-header-backbtn", "href" =>  "#/projects"}
+    / %img{src: "/images/close-btn.png"}
+  %a{"class" => "device-header-logo", "href" =>  "#/"}
+    %img{src: "/images/rotary-logo.png"}
+  .title-container
+    %h2
+      {{ "EVENTS.title" | translate }}
 %section.popup
-  .resource-container.col-xs-8.col-xs-offset-2
-    .news-item-page
-      .text-container{"id" => "bind-html-with-trust"}
-        %h3.project-title
-          {{print.title}}
-        %p.intro-text
-          project status:
-          %i
-            {{ print.status }}
-        %hr
-        %p{"ng-bind-html" => "print.description"}
-        .clear
-        %hr
-        %br/
+  .row
+    .resource-container.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
+      .project-item-page
+        .text-container{"id" => "bind-html-with-trust"}
+          .header.white-bg
+            %a{"class" => "page-logo", "href" =>  "#/projects"}
+              %h1.tagline
+                {{ "ROTARY.rotary" | translate }}
+                %img{src: "/images/rotary-logo.png"}
+                {{ "PROJECTS.title_one" | translate }}
+            .project-header
+              .row
+                %h2.project-title.col-xs-10.col-xs-offset-1
+                  {{print.title}}
+              %h4.pull-left
+                status:
+                %strong.orange
+                  {{print.status}}
+              %h4.pull-right
+                rotary ID:
+                %strong.orange
+                  {{print.custom_id}}
+              .clear
+
+          .white-bg
+            .project-text-section
+              .purpose{"ng-show" => "print.purpose"}
+                %h3
+                  Project Purpose and Impact
+                %p{"ng-bind-html" => "print.purpose"}
+                  {{print.purpose}}
+              .description{"ng-show" => "print.description"}
+                %h3
+                  Description
+                %p{"ng-bind-html" => "print.description"}
+                  {{print.description}}
+
 %a.fadeout{"ng-href" => "#/projects"}
   .close-btn

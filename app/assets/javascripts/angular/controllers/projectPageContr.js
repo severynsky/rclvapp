@@ -1,13 +1,15 @@
 rclvapp.controller('projectPageContr', ['$scope', '$http', '$routeParams', 'getProjects', function($scope, $http, $routeParams, getProjects){
     $scope.pageClass = "projectPage";
 
-    projectItem = getProjects.get({id: $routeParams.projectId}, function(){
-        $scope.print = {
-            title: projectItem.title,
-            created_at: projectItem.created_at,
-            description: projectItem.description,
-            status: projectItem.status,
-        };
+    $scope.print = getProjects.get({id: $routeParams.projectId}, function(){
+        // $scope.print = {
+        //     title: projectItem.title,
+        //     created_at: projectItem.created_at,
+        //     description: projectItem.description,
+        //     custom_id: projectItem.custom_id,
+        //     purpose: projectItem.purpose,
+        //     status: projectItem.status,
+        // };
 
     });
 

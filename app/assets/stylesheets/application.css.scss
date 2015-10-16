@@ -1,3 +1,7 @@
+body{
+  color: #34495e;
+}
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "home";
@@ -14,3 +18,8 @@
 @import "users-responsive";
 @import "news-items-responsive";
 @import "about";
+
+
+.inputs label.label{
+  float: none !important;
+}
