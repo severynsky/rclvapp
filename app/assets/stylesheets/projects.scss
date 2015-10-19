@@ -58,7 +58,7 @@
         // padding-right: 4px;
         // padding-left: 4px;
         // margin-left: 2px;
-        background-color: rgba(255,255,255,0.9);
+        background-color: rgba(255,255,255,0.8);
         color: #34495e;
         padding: 15px;
         -webkit-transition: 0.1s ease;
@@ -67,6 +67,7 @@
         -ms-transition: 0.1s ease;
         transition: 0.2s ease;
         cursor: pointer;
+        font-weight: 500;
       }
     }
     .project-item:hover p{
@@ -141,7 +142,7 @@
       h4.ending{
         text-align: center;
         letter-spacing: 0.5px;
-        line-height: 1.1em;
+        line-height: 1.4em;
         font-weight: 400;
       }
       strong{

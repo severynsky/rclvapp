@@ -4,8 +4,41 @@ hr{
 .contactContr{
   .resource-container{
     .contact-container{
-      background-color: rgba(255,255,255,0.8);
-      padding: 15px;
+      margin: 10px 0;
+      padding: 10px 15px;
+      background-color: rgba(255,255,255,0.95);
+      .contact-item{
+        border-bottom: 1px dashed rgba(153, 153, 153, 1);
+        margin: 10px 0;
+        padding: 0 0 10px;
+        img{
+          width: 60px;
+          height: 60px;
+          display: inline-block;
+        }
+        .contact-text{
+          float: right;
+        }
+        p{
+          margin: 4px 5px 0px 15px;
+          color: rgba(103, 103, 103, 1);
+        }
+        p.languages, p.position{
+          text-align: right;
+        }
+        p.name{
+          color: rgba(60, 60, 60, 1);
+          font-weight: 600;
+          font-size: 1.4em;
+          margin-top: 0;
+        }
+        p.position{
+          font-weight: 500;
+          font-size: 1.3em;
+          margin-top: 2px;
+          color: orange;
+        }
+      }
     }
   }
 }
@@ -18,4 +51,20 @@ hr{
   width: 100vw;
   height: 100vh;
   z-index: 99999;
+}
+@media (max-width: 1289px) {
+  .resource-container{
+    .contact-container{
+      .contact-item{
+        .contact-text{
+          p.name{
+            font-size: 1.3em;
+          }
+        }
+        p.position{
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
 }
