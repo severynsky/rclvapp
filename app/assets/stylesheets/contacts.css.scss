@@ -9,8 +9,8 @@ hr{
       background-color: rgba(255,255,255,0.95);
       .contact-item{
         border-bottom: 1px dashed rgba(153, 153, 153, 1);
-        margin: 10px 0;
-        padding: 0 0 10px;
+        margin: 15px 0;
+        padding: 0 0 15px;
         img{
           width: 60px;
           height: 60px;
@@ -23,7 +23,7 @@ hr{
           margin: 4px 5px 0px 15px;
           color: rgba(103, 103, 103, 1);
         }
-        p.languages, p.position{
+        p.languages{
           text-align: right;
         }
         p.name{
@@ -32,12 +32,19 @@ hr{
           font-size: 1.4em;
           margin-top: 0;
         }
-        p.position{
-          font-weight: 500;
-          font-size: 1.3em;
+        p.email{
+          font-size: 1.2em;
           margin-top: 2px;
-          color: orange;
         }
+        p.position{
+          font-size: 1.2em;
+          margin-top: 2px;
+          color: grey;
+        }
+      }
+      .contact-item:last-child{
+        border-bottom:none;
+        padding-bottom: 0;
       }
     }
   }
@@ -62,7 +69,7 @@ hr{
           }
         }
         p.position{
-          font-size: 1.1em;
+          font-size: 1em;
         }
       }
     }
