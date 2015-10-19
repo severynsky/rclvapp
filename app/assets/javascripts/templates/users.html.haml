@@ -72,7 +72,7 @@
           %img(src="{{user.image}}")
         %p.name
           {{user.name}}
-        %div{"class" => "flag {{ user.nationality}}"} 
+        %div{"class" => "flag {{ user.nationality}}"}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
             %a.to-page{"ng-href" => "#/users/{{ user.id }}"}

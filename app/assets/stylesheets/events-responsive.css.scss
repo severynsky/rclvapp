@@ -5,7 +5,7 @@
         p.event-title-text{
           font-size: 1em;
           width: 260px;
-          width: 70%;
+          width: 64%;
         }
       }
     }
@@ -13,6 +13,41 @@
       margin: 3px 7px 0 0px !important;
       border-right: 1px solid #bdc3c7;
       padding-right: 5px;
+    }
+    .text-container{
+      p.widget-time, p.widget-place{
+        float: none !important;
+        margin: 5px 0;
+        padding: 0;
+      }
+    }
+  }
+}
+@media (max-width: 900px) {
+  .events-container{
+    .event-container{
+      .map{
+        h3{
+          font-size: 1.2em;
+          right: 0;
+          bottom: 0;
+          position: relative;
+          max-width: 100%;
+          margin: 0;
+        }
+      }
+    }
+    .event-item{
+      a{
+        p.event-title-text{
+          font-size: 1em;
+          width: 260px;
+          width: 64%;
+        }
+        .event-icon{
+          display: none;
+        }
+      }
     }
   }
 }
