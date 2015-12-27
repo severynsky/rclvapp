@@ -94,7 +94,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       mainpage: {
         title1: 'Rotary Club',
-        title2: 'Lviv-Centre',
+        title2: 'Lviv International',
         rotary: "rotary",
         news: "news",
         projects: "projects",
