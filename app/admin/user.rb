@@ -1,8 +1,8 @@
 ActiveAdmin.register User do
     includes :image
-  permit_params :name, :role, :password, :address, :phone, :email, :full_data, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
+  permit_params :name, :role, :password, :address, :phone, :email, :full_data, :interests, :education, :work, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
 
-  index do 
+  index do
     column "Image" do |image|
       if image.image != nil
         image_tag image.image.picture.url(:small)
@@ -20,7 +20,7 @@ ActiveAdmin.register User do
   menu label: "Users"
 
   form :html => { multipart: true } do |f|
-    
+
     f.inputs "Members" do
       f.input :name, :placeholder => "Engar Allan Poe"
       f.input :role, :as => :select, collection: %w[president committies regular admin]
@@ -40,6 +40,9 @@ ActiveAdmin.register User do
         # img.input :_destroy, label: "Remove image?", as: :radio
         img.input :_destroy, :as=>:boolean, :required => false, :label => 'Remove image'
       end
+      f.input :work, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
+      f.input :education, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
+      f.input :interests, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
       f.input :full_data, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
     end
 

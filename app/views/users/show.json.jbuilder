@@ -5,6 +5,9 @@ json.role @user.role
 json.email @user.email
 json.phone @user.phone
 json.address @user.address
+json.work @user.work
+json.education @user.education
+json.interests @user.interests
 json.full_data @user.full_data
 json.languages @user.languages
 json.nationality @user.nationality
