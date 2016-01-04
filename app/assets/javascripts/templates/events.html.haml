@@ -40,9 +40,11 @@
                     {{ event.time | date: "HH:mm": "+0000" }}
                 %p.widget-place.pull-right
                   %i.fa.fa-map-signs
-                  {{ "EVENTS.place" | translate }}:
+                  -# {{ "EVENTS.place" | translate }}:
+                  every
                   %strong.orange
-                    {{ event.place }}
+                    -# {{ event.place }}
+                    Thursday
                 .clear
 
     .row

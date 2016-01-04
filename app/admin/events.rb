@@ -20,9 +20,9 @@ ActiveAdmin.register Event do
     f.inputs do
       f.input :event_type, :as => :select, collection: ["regular", "field session", "trip", "social event"], :required => true
       f.input :title, :placeholder => "Guests meeting", :required => true
-      f.input :title_ua, :placeholder => "Зустріч гостей", :required => true
-      f.input :address, :placeholder => "Львів, Староєврейська 12"
-      f.input :place, :placeholder => "Готель Жорж"
+      f.input :title_ua, :placeholder => "Short additional info", :required => true
+      f.input :address, :placeholder => "Lviv, Horodotska 44"
+      f.input :place, :placeholder => "Hotel Astoria"
       f.input :description, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'Full'}}
       f.input :meeting_time
       f.input :date, :as => :datepicker, :placeholder => "1970-05-21 as (YYYY-MM-DD)"
