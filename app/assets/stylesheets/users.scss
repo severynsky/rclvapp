@@ -140,10 +140,14 @@
     }
   }
   .user-page-body{
-    padding: 20px;
+    padding: 20px 40px;
     table{
       .label-device{
         display: none;
+      }
+      .row-border{
+        border-top: 1px solid orange;
+        padding: 10px 50px 10px 10px;
       }
       td{
         padding-bottom: 12px;

@@ -29,66 +29,42 @@
       .clear
       .user-page-body
         %table
-          %tr.label-device
-            %td
-              member address:  
           %tr
             %td.table-label
               member address:
             %td
               {{print.address}}
-          %tr.label-device
-            %td
-              date of birth:  
           %tr
             %td.table-label
               date of birth:
             %td
               {{print.date_of_birth}}  
-          %tr.label-device
-            %td
-              member nationality:  
           %tr
             %td.table-label
               member nationality:
             %td
               {{print.nationality}}  
-          %tr.label-device
-            %td
-              language spoken:  
           %tr
             %td.table-label
               language spoken:
             %td
               {{print.languages}}
-          %tr.label-device
-            %td
-              work:  
-          %tr 
+          %tr
             %td.table-label
               work:
-            %td{"ng-bind-html" => "print.work"}
-          %tr.label-device
-            %td
-              education:  
-          %tr 
+            %td.row-border{"ng-bind-html" => "print.work"}
+          %tr
             %td.table-label
               education:
-            %td{"ng-bind-html" => "print.education"}
-          %tr.label-device
-            %td
-              interests:  
-          %tr 
+            %td.row-border{"ng-bind-html" => "print.education"}
+          %tr
             %td.table-label
               interests:
-            %td{"ng-bind-html" => "print.interests"}
-          %tr.label-device
-            %td
-              full information:  
-          %tr 
+            %td.row-border{"ng-bind-html" => "print.interests"}
+          %tr
             %td.table-label
               full information:
-            %td{"ng-bind-html" => "print.full_data"}
+            %td.row-border{"ng-bind-html" => "print.full_data"}
 
 %a.fadeout{"ng-href" => "#/users"}
   .close-btn
