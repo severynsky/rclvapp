@@ -1,20 +1,7 @@
 .changes-field
   %p
-    beta version/testing. Last changes 2015-10-16 12:50
-  / %div{"class" => "fb-like", "data-share" => "true", "data-width" => "450", "data-show-faces" => "true"}
+    beta version/testing. Last changes 2016-01-5 15:30
 .utility-fields
-  -# .fb-field
-    -# %a{"ng-click" => "showFb = !showFb"}
-      -# fb
-    -# #fb-root
-
-    -# %div{"ng-show" => "showFb", "ng-mouseLeave" => "showFb = !showFb", "class"=>"fb-page", "data-href"=>"https://www.facebook.com/RotaryClubLvivCentre", "data-small-header" => "false", "data-adapt-container-width"=>"true", "data-hide-cover" => "false", "data-show-facepile" => "true", "data-show-posts" => "true"}
-
-  .language-field
-    %btn{"ng-click" => "changeLanguage('uk')", "ng-class" =>""}
-      укр
-    %btn{"ng-click" => "changeLanguage('en')", "ng-class" =>""}
-      eng
   .login-field
     %div{"ng-if" => "user_logged_in"}
       %span

@@ -7,20 +7,20 @@
     %h2
       {{ "MEMBERS.title" | translate }}
 
-%section.popup
-  .resource-container.col-sm-8.col-sm-offset-2.col-xs-12.col-xs-offset-0
+%section.popup.container
+  .resource-container.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
 
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
         %h1.tagline
-          {{ "ROTARY.rotary" | translate }}
+          Rotary
           %img{src: "/images/rotary-logo.png"}
-          {{ "MEMBERS.title" | translate }}
+          Members
 
     .users-container{"ng-hide" => "{{ loaded }}"}
       %h3
-        {{ "MEMBERS.president" | translate }}
-      .user-item.col-lg-6.col-lg-offset-3{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
+        President
+      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         %p.name
@@ -43,8 +43,8 @@
       .clear
     .users-container
       %h3
-        {{ "MEMBERS.сommitties" | translate }}
-      .user-item.col-lg-6.col-lg-offset-3{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
+        Board and Committees
+      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         %p.name
@@ -66,8 +66,8 @@
       .clear
     .users-container
       %h3
-        {{ "MEMBERS.regular" | translate }}
-      .user-item.col-lg-6.col-lg-offset-3{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
+        Members
+      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         %p.name

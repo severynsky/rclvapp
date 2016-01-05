@@ -8,18 +8,17 @@
     %h2
       {{ "EVENTS.title" | translate }}
 
-%section.popup
-  .resource-container.col-md-8.col-md-offset-2.col-sm-10.col-sm-offset-1.col-xs-12
-
+%section.popup.container
+  .resource-container.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
     .header
       %a{"class" => "page-logo", "href" =>  "#/"}
         %h1.tagline
-          {{ "ROTARY.rotary" | translate }}
+          Rotary
           %img{src: "/images/rotary-logo.png"}
-          {{ "EVENTS.title" | translate }}
+          Events
 
     .row
-      .col-sm-8.col-sm-offset-2.events-container
+      .events-container
         .event-item.regular-meeting{"ng-repeat" => "event in events.events | regular"}
           .event-container{"ng-show"=>"event"}
             %h2
@@ -48,7 +47,7 @@
                 .clear
 
     .row
-      .col-sm-8.col-sm-offset-2.events-container
+      .events-container
         %h3
           {{ "EVENTS.upcomming" | translate }}
         .event-item{"ng-repeat" => "event in events.events | upComming"}
