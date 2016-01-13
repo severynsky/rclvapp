@@ -22,7 +22,7 @@
         .event-item.regular-meeting{"ng-repeat" => "event in events.events | regular"}
           .event-container{"ng-show"=>"event"}
             %h2
-              {{ "EVENTS.regular" | translate }}
+              Regular meeting
             .event-page.widget
               .map
                 %ui-gmap-google-map{"center" => "{latitude: event.latitude, longitude: event.longitude }", "zoom" => "17", "options" => "options"}
@@ -30,7 +30,8 @@
                 %h3
                   {{event.title}}
                   %br/
-                  {{event.title_ua}}
+                  %span
+                    {{event.title_ua}}
               %a.text-container{"id" => "bind-html-with-trust", "ng-href" => "#/events/{{ event.id }}"}
                 %p.widget-time.pull-left
                   %i.fa.fa-clock-o
