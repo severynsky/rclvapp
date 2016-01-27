@@ -27,12 +27,12 @@ body > div{
       // background-attachment: fixed;
     }
     .all-members{
-      height: 80%;
+      height: 479px;
       background-color: purple;
       width: 100%;
       background-position: left;
       background-size: 100%;
-      background-image: url("/images/rc-people.jpg");
+      background-image: url("/images/international_rotary_pic.jpg");
       background-repeat: no-repeat;
     }
     h1{
@@ -44,6 +44,13 @@ body > div{
       font-size: 3em;
     }
     .our-rotary-container{
+      .logos{
+          margin: 0 auto;
+          width: 80px;
+        img{
+          width: 80px;
+        }
+      }
       #map{
         // width: 156%;
         height: 300px;
@@ -52,6 +59,12 @@ body > div{
       h2{
         color: #2c3e50;
         margin: 20px 0 20px 60px;
+      }
+      h4{
+        color: #2c3e50;
+        text-align: center;
+        font-size: 2em;
+        margin: 35px;
       }
       p{
         margin: 20px 110px;
@@ -134,7 +147,6 @@ body > div{
         left: -100px;
         top: 50px;
       }
-
     }
   }
   a.fadeout{
