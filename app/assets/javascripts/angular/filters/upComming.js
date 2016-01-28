@@ -5,7 +5,7 @@ rclvapp.filter('upComming', ['$filter',  function($filter){
     angular.forEach(input, function(date) {
       var rightNow = new Date();
       var res = rightNow.toISOString().slice(0,10).replace(/-/g,"-");
-      if(date.date > res){
+      if(date.date >= res){
         output.push(date)
       };
     });
