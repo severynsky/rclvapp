@@ -546,3 +546,23 @@ a, a:hover{
 .close-btn{
   background-image: url(/images/close-btn-orange.png) !important;
 }
+
+.madeby{
+  width: 190px;
+  // margin: 80px auto 0;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  opacity: 0.5;
+}
+.madeby img{
+  width: 60px;
+}
+.madeby a{
+  color: rgba(100,100,100,0.8);
+  font-size: 16px;
+}
+.madeby:hover, .madeby:hover a{
+  opacity: 1;
+  color: orange;
+}
