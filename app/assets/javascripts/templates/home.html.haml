@@ -52,9 +52,9 @@
         %a.item.col-sm-7.col-xs-6#about{"ng-href" => "#/about"}
           %p
             {{ "mainpage.about_rotary" | translate }}
-        %a.col-sm-4.col-sm-offset-1.col-xs-6#members{"ng-href" => "#/users"}
-          %p
-            {{ "mainpage.rotary_members" | translate }}
+        / %a.col-sm-4.col-sm-offset-1.col-xs-6#members{"ng-href" => "#/users"}
+          / %p
+            / {{ "mainpage.rotary_members" | translate }}
       %a.item.col-sm-10.col-xs-12#events{"ng-href" => "#/events"}
         %p.header
           {{ "mainpage.events" | translate }}
@@ -66,10 +66,13 @@
               19-20:30, every Thursday
             %p.place
               Leopolis Hotel, Teatralna str 16
-      %a.item.col-sm-7.col-xs-12#contacts{"ng-href" => "#/contact"}
+      %a.col-sm-4.col-sm-offset-1.col-xs-6#members{"ng-href" => "#/users"}
+        %p
+          {{ "mainpage.rotary_members" | translate }}
+      / %a.item.col-sm-7.col-xs-12#contacts{"ng-href" => "#/contact"}
         -# %img{src: "/images/icons/envelope.png"}
-        %h2
-          rotary contacts
+        / %h2
+          / rotary contacts
 
 
 
