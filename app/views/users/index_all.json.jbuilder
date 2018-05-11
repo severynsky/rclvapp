@@ -2,6 +2,8 @@ json.users @users do |user|
   json.id user.id
   json.name user.name
   json.role user.role
+  json.position user.position
+  json.role user.role
   json.address user.address
   json.phone user.phone
   json.email user.email

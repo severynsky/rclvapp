@@ -1,0 +1,1296 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.4.17
+-- Dumped by pg_dump version 9.4.17
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: SCHEMA "public"; Type: COMMENT; Schema: -; Owner: spixahnrjgdehs
+--
+
+COMMENT ON SCHEMA "public" IS 'standard public schema';
+
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS "plpgsql" WITH SCHEMA "pg_catalog";
+
+
+--
+-- Name: EXTENSION "plpgsql"; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION "plpgsql" IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: active_admin_comments; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."active_admin_comments" (
+    "id" integer NOT NULL,
+    "namespace" character varying,
+    "body" "text",
+    "resource_id" character varying NOT NULL,
+    "resource_type" character varying NOT NULL,
+    "author_id" integer,
+    "author_type" character varying,
+    "created_at" timestamp without time zone,
+    "updated_at" timestamp without time zone
+);
+
+
+ALTER TABLE public.active_admin_comments OWNER TO spixahnrjgdehs;
+
+--
+-- Name: active_admin_comments_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."active_admin_comments_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.active_admin_comments_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: active_admin_comments_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."active_admin_comments_id_seq" OWNED BY "public"."active_admin_comments"."id";
+
+
+--
+-- Name: admin_users; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."admin_users" (
+    "id" integer NOT NULL,
+    "email" character varying DEFAULT ''::character varying NOT NULL,
+    "encrypted_password" character varying DEFAULT ''::character varying NOT NULL,
+    "reset_password_token" character varying,
+    "reset_password_sent_at" timestamp without time zone,
+    "remember_created_at" timestamp without time zone,
+    "sign_in_count" integer DEFAULT 0 NOT NULL,
+    "current_sign_in_at" timestamp without time zone,
+    "last_sign_in_at" timestamp without time zone,
+    "current_sign_in_ip" "inet",
+    "last_sign_in_ip" "inet",
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.admin_users OWNER TO spixahnrjgdehs;
+
+--
+-- Name: admin_users_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."admin_users_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.admin_users_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: admin_users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."admin_users_id_seq" OWNED BY "public"."admin_users"."id";
+
+
+--
+-- Name: categories; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."categories" (
+    "id" integer NOT NULL,
+    "title" character varying,
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.categories OWNER TO spixahnrjgdehs;
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."categories_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.categories_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."categories_id_seq" OWNED BY "public"."categories"."id";
+
+
+--
+-- Name: ckeditor_assets; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."ckeditor_assets" (
+    "id" integer NOT NULL,
+    "data_file_name" character varying NOT NULL,
+    "data_content_type" character varying,
+    "data_file_size" integer,
+    "assetable_id" integer,
+    "assetable_type" character varying(30),
+    "type" character varying(30),
+    "width" integer,
+    "height" integer,
+    "created_at" timestamp without time zone,
+    "updated_at" timestamp without time zone
+);
+
+
+ALTER TABLE public.ckeditor_assets OWNER TO spixahnrjgdehs;
+
+--
+-- Name: ckeditor_assets_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."ckeditor_assets_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.ckeditor_assets_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: ckeditor_assets_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."ckeditor_assets_id_seq" OWNED BY "public"."ckeditor_assets"."id";
+
+
+--
+-- Name: events; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."events" (
+    "id" integer NOT NULL,
+    "title" character varying,
+    "date" "date",
+    "description" "text",
+    "address" character varying,
+    "place" character varying,
+    "latitude" double precision,
+    "longitude" double precision,
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL,
+    "meeting_time" time without time zone,
+    "title_ua" character varying,
+    "event_type" character varying
+);
+
+
+ALTER TABLE public.events OWNER TO spixahnrjgdehs;
+
+--
+-- Name: events_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."events_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.events_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: events_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."events_id_seq" OWNED BY "public"."events"."id";
+
+
+--
+-- Name: galleries; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."galleries" (
+    "id" integer NOT NULL,
+    "galleryable_id" integer,
+    "galleryable_type" character varying,
+    "title" character varying,
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL,
+    "news_item_id" integer
+);
+
+
+ALTER TABLE public.galleries OWNER TO spixahnrjgdehs;
+
+--
+-- Name: galleries_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."galleries_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.galleries_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: galleries_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."galleries_id_seq" OWNED BY "public"."galleries"."id";
+
+
+--
+-- Name: images; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."images" (
+    "id" integer NOT NULL,
+    "imageable_id" integer,
+    "imageable_type" character varying,
+    "description" character varying,
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL,
+    "picture_file_name" character varying,
+    "picture_content_type" character varying,
+    "picture_file_size" integer,
+    "picture_updated_at" timestamp without time zone
+);
+
+
+ALTER TABLE public.images OWNER TO spixahnrjgdehs;
+
+--
+-- Name: images_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."images_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.images_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: images_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."images_id_seq" OWNED BY "public"."images"."id";
+
+
+--
+-- Name: members; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."members" (
+    "id" integer NOT NULL,
+    "name" character varying,
+    "role" character varying,
+    "address" character varying,
+    "phone" character varying,
+    "email" character varying,
+    "full_data" "text",
+    "languages" character varying,
+    "nationality" character varying,
+    "date_of_birth" "date",
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.members OWNER TO spixahnrjgdehs;
+
+--
+-- Name: members_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."members_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.members_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: members_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."members_id_seq" OWNED BY "public"."members"."id";
+
+
+--
+-- Name: news_items; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."news_items" (
+    "id" integer NOT NULL,
+    "title" character varying,
+    "intro_text" "text",
+    "body" "text",
+    "category_id" integer,
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL,
+    "gallery_id" integer,
+    "status" character varying,
+    "publish_date" "date",
+    "language" character varying
+);
+
+
+ALTER TABLE public.news_items OWNER TO spixahnrjgdehs;
+
+--
+-- Name: news_items_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."news_items_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.news_items_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: news_items_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."news_items_id_seq" OWNED BY "public"."news_items"."id";
+
+
+--
+-- Name: projects; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."projects" (
+    "id" integer NOT NULL,
+    "title" character varying,
+    "description" "text",
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL,
+    "status" character varying,
+    "purpose" character varying,
+    "custom_id" character varying
+);
+
+
+ALTER TABLE public.projects OWNER TO spixahnrjgdehs;
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."projects_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.projects_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."projects_id_seq" OWNED BY "public"."projects"."id";
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."schema_migrations" (
+    "version" character varying NOT NULL
+);
+
+
+ALTER TABLE public.schema_migrations OWNER TO spixahnrjgdehs;
+
+--
+-- Name: seotools; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."seotools" (
+    "id" integer NOT NULL,
+    "seotoolable_id" integer,
+    "seotoolable_type" character varying,
+    "title" character varying,
+    "description" character varying,
+    "keywords" "text",
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.seotools OWNER TO spixahnrjgdehs;
+
+--
+-- Name: seotools_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."seotools_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.seotools_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: seotools_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."seotools_id_seq" OWNED BY "public"."seotools"."id";
+
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE TABLE "public"."users" (
+    "id" integer NOT NULL,
+    "email" character varying DEFAULT ''::character varying NOT NULL,
+    "encrypted_password" character varying DEFAULT ''::character varying NOT NULL,
+    "reset_password_token" character varying,
+    "reset_password_sent_at" timestamp without time zone,
+    "remember_created_at" timestamp without time zone,
+    "sign_in_count" integer DEFAULT 0 NOT NULL,
+    "current_sign_in_at" timestamp without time zone,
+    "last_sign_in_at" timestamp without time zone,
+    "current_sign_in_ip" "inet",
+    "last_sign_in_ip" "inet",
+    "created_at" timestamp without time zone NOT NULL,
+    "updated_at" timestamp without time zone NOT NULL,
+    "name" character varying,
+    "role" character varying,
+    "address" character varying,
+    "phone" character varying,
+    "full_data" "text",
+    "languages" "text",
+    "nationality" "text",
+    "date_of_birth" "text",
+    "work" "text",
+    "education" "text",
+    "interests" "text"
+);
+
+
+ALTER TABLE public.users OWNER TO spixahnrjgdehs;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE SEQUENCE "public"."users_id_seq"
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO spixahnrjgdehs;
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER SEQUENCE "public"."users_id_seq" OWNED BY "public"."users"."id";
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."active_admin_comments" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."active_admin_comments_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."admin_users" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."admin_users_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."categories" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."categories_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."ckeditor_assets" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."ckeditor_assets_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."events" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."events_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."galleries" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."galleries_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."images" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."images_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."members" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."members_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."news_items" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."news_items_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."projects" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."projects_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."seotools" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."seotools_id_seq"'::"regclass");
+
+
+--
+-- Name: id; Type: DEFAULT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."users" ALTER COLUMN "id" SET DEFAULT "nextval"('"public"."users_id_seq"'::"regclass");
+
+
+--
+-- Data for Name: active_admin_comments; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."active_admin_comments" ("id", "namespace", "body", "resource_id", "resource_type", "author_id", "author_type", "created_at", "updated_at") FROM stdin;
+1	admin	Rotary Club responsible for members development	1	User	1	AdminUser	2015-08-13 09:03:00.482995	2015-08-13 09:03:00.482995
+2	admin	Remember to take extra girls!!!\r\n	4	Event	1	AdminUser	2015-08-14 09:41:07.95018	2015-08-14 09:41:07.95018
+3	admin	Summer vacation from July 15- August 31, 2015\r\n\r\nMeetings are still held, but only on a "free to come" meetings.\r\n	2	Category	1	AdminUser	2015-08-14 09:44:17.332155	2015-08-14 09:44:17.332155
+4	admin	Please all members to attend our first meeting under the new President 2015/16.\r\n\r\nReminding you about our club Dress Code.\r\n\r\nAll the best\r\nAdministration	5	Event	1	AdminUser	2015-08-19 09:58:57.276463	2015-08-19 09:58:57.276463
+\.
+
+
+--
+-- Name: active_admin_comments_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."active_admin_comments_id_seq"', 4, true);
+
+
+--
+-- Data for Name: admin_users; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."admin_users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at") FROM stdin;
+1	admin@admin.com	$2a$10$MXMFJLlGHasgiGUFtNcqoehgeiGMNCwzsm7yxhrwG3TWSFERREvZ6	\N	\N	\N	78	2017-11-27 09:06:40.839164	2017-11-27 09:05:48.165465	194.44.201.130	194.44.201.130	2015-07-15 19:30:53.857472	2017-11-27 09:06:40.845837
+3	yaroslav@mail.lviv.ua	$2a$10$l6.P.O8sTMa3Dq2nvBu6i.bISoEth/8TlQuvLhCLy.ayUcpnpY9CO	\N	\N	\N	7	2016-11-21 10:06:06.863252	2016-04-12 11:31:21.458761	194.44.213.214	194.44.201.130	2016-01-27 11:02:50.976756	2016-11-21 12:06:22.179762
+4	severynr@gmail.com	$2a$10$flbk5ok0NSbuB2tEMRt82es0FdwpZsV2W1mABq/x6GdzijxMJ2ALm	\N	\N	2018-01-09 10:25:52.243511	4	2018-01-09 10:25:52.286116	2017-11-26 11:07:39.797701	194.44.201.130	46.200.9.126	2016-11-21 10:06:34.956259	2018-01-09 10:25:52.313597
+2	lars@vestbjerg.com	$2a$10$/M4Sjl.xPNyGRBkuTUU4YOHnBHfaNaPjRcU/SBJru6O3AUreEM2iO	\N	\N	\N	259	2018-05-01 17:40:13.122969	2018-04-26 12:14:49.466771	178.210.136.28	178.210.149.108	2016-01-20 14:56:38.466603	2018-05-01 17:40:13.12596
+\.
+
+
+--
+-- Name: admin_users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."admin_users_id_seq"', 4, true);
+
+
+--
+-- Data for Name: categories; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."categories" ("id", "title", "created_at", "updated_at") FROM stdin;
+1	Meeting	2015-07-16 07:11:37.305831	2015-07-16 07:11:37.305831
+2	Rotary Club Lviv-Center summer vacation	2015-07-22 06:55:27.372217	2015-08-14 09:43:25.662206
+\.
+
+
+--
+-- Name: categories_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."categories_id_seq"', 2, true);
+
+
+--
+-- Data for Name: ckeditor_assets; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."ckeditor_assets" ("id", "data_file_name", "data_content_type", "data_file_size", "assetable_id", "assetable_type", "type", "width", "height", "created_at", "updated_at") FROM stdin;
+1	11118479_1100977799922553_5366546324585776472_n.jpg	image/jpeg	14547	1	AdminUser	Ckeditor::Picture	480	480	2015-09-10 09:14:45.791651	2015-09-10 09:14:45.791651
+\.
+
+
+--
+-- Name: ckeditor_assets_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."ckeditor_assets_id_seq"', 1, true);
+
+
+--
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."events" ("id", "title", "date", "description", "address", "place", "latitude", "longitude", "created_at", "updated_at", "meeting_time", "title_ua", "event_type") FROM stdin;
+38	Common meeting RC Lviv & Lviv International RC	2016-06-09		Dzherelna street 18, Lviv	Kniazhyj Dim 	49.8471580999999873	24.020566500000001	2016-04-26 10:43:25.330269	2016-04-26 10:43:25.330269	18:55:00	Seoul RI Convention of 2016 year	trip
+61	Lviv International RC meeting, Leopolis Hotel	2016-10-20		Teatralna street 16, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-10-04 06:11:41.782102	2016-10-04 06:11:41.782102	18:55:00	Membershp Development Committee	field session
+30	Lviv International RC meeting, Leopolis Hotel	2016-04-28		16 teatralna street, lviv	Hotel Leopolis	49.8422158999999994	24.0293634000000011	2016-03-21 13:46:32.373727	2016-04-27 13:41:56.525415	18:55:00	Speaker: British Diplomat and Rotarian, Committee presentation	field session
+39	Common meeting RC Lviv-Center	2016-06-02	<p>Meeting at Mac Donalds at 18.30 and drive together</p>\r\n	chonovola, Lviv	Mac Donalds	49.8396830000000008	24.0297170000000015	2016-04-27 13:47:09.954833	2016-04-27 13:47:09.954833	18:30:00	Common project for orphans school with 70 kids	trip
+40	Climbing Hoverla mountain in Ukraine	2016-06-05		Skole, Lviv Region		49.0401779000000033	23.5129161999999994	2016-04-27 13:50:17.11284	2016-04-27 13:51:07.070208	08:00:00	Invitation from Rotarian to raise funding for projects	social event
+56	Lviv International RC meeting, Leopolis Hotel	2016-09-29		teatralna street 16, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-08-31 07:01:44.513615	2016-08-31 07:01:44.513615	18:55:00	Project development	field session
+31	Lviv International RC meeting, Leopolis Hotel	2016-05-19		16 teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-03-21 13:49:49.942101	2016-05-17 14:34:28.462563	18:55:00	Rotaract common meeting, Project activation program. 	trip
+57	Lviv International RC meeting, Leopolis Hotel	2016-10-13		Teatralna street 16, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-09-14 09:35:56.797243	2016-09-14 09:35:56.797243	18:55:00	Traffice police takes part in Rotary project	field session
+44	Lviv International RC meeting. Leopolis Hotel	2016-06-30		16 teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-05-18 09:11:25.820223	2016-05-18 09:11:25.820223	18:55:00	Fund raising. Roksolana Yolych presentation	field session
+52	Lviv International RC meeting, Leopolis Hotel	2016-08-18		16 teatralna street, lviv	leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-08-05 13:44:48.200842	2016-08-08 11:22:43.562821	18:55:00	Regular meeting on Project development 	field session
+42	Lviv International RC meeting. Leopolis Hotel	2016-06-23		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-05-18 08:09:55.577569	2016-06-16 07:02:19.872567	18:55:00	Speech NEFCO, Club rules	field session
+41	Lviv International RC meeting. Leopolis Hotel	2016-06-16		16 teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-05-13 14:14:37.955487	2016-06-16 07:06:28.793049	18:55:00	Soccer: Ukraine - North Ireland	field session
+45	Lviv International RC meeting. Leopolis Hotel	2016-07-07		16, teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-06-16 07:12:39.821869	2016-06-16 07:12:39.821869	18:55:00	Meeting with newly elected District Governor	field session
+46	Lviv International RC meeting. Leopolis Hotel	2016-07-21		16, teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-07-04 09:43:39.525551	2016-07-04 09:43:39.525551	18:55:00	Summer meeting discussing fundraising ideas + make a plan	field session
+47	Lviv International RC meeting. Leopolis Hotel	2016-08-04		16, teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-07-04 09:46:43.04426	2016-07-04 09:46:43.04426	18:55:00	Regular meeting, discussing club rules	field session
+48	Lviv International RC meeting. Leopolis Hotel	2016-08-11		16, teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-07-04 09:49:51.964698	2016-07-04 09:49:51.964698	18:55:00	Regular meeting discussing members development and recognitions	field session
+51	Lviv International RC meeting, out going	2016-08-25		Busk, Ukraine		49.9693585999999996	24.6094605000000008	2016-08-03 15:18:57.457679	2016-08-08 11:23:24.722447	18:00:00	Visiting Galicia green houses >>Confirmed<<	trip
+63	Lviv International RC meeting, Leopolis Hotel	2016-11-03		teatralna street 16, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-10-04 06:15:11.317835	2016-10-04 06:15:11.317835	18:55:00	President report and plan	field session
+58	Lviv International RC - outpoing event	2016-09-24		Slavsk	Alpenhof" Boarding house"	55.0450909999999993	21.6727057000000016	2016-09-14 09:41:24.957637	2016-09-14 09:41:24.957637	09:00:00	Teambuilding and President Ball	social event
+22	Rotary Club Lviv-Centre 15 years anniversary	2016-05-07		Teatranna street 16, lviv	Place to be confirmed	49.8422158999999994	24.0293634000000011	2016-01-29 14:53:20.097145	2016-04-08 09:47:24.853564	17:00:00	On 7 of May we celebrate Rotary Club Lviv-Centre	social event
+60	Lviv International RC Board meeting	2016-09-15		Dzherelna St, 18, L'viv, Lviv Oblast, Ukraine	Knyazhya Dim 	49.8471580999999873	24.020566500000001	2016-09-14 10:12:51.714698	2016-09-14 10:12:51.714698	18:00:00	Knyazhya Dim 	trip
+53	Lviv International RC meeting, Leopolis Hotel	2016-09-01		16, teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-08-08 11:28:19.299722	2016-08-08 11:28:19.299722	18:55:00	PR Committee presentation	field session
+11	Lviv International RC meeting, Citadel Hotel	2016-01-28		79000, Україна, м. Львів, вул. Грабовського 11, Lviv 	Citadel-inn Hotel	49.8333066000000002	24.0240338999999992	2015-12-13 15:20:48.136627	2016-04-12 14:11:54.679031	19:00:00	Presentation Lviv International RC website and how to use it	field session
+49	Lviv International RC meeting, Out going	2016-09-10		Scole, Ukraine	Orphan school	49.0401779000000033	23.5129161999999994	2016-07-04 10:11:27.642051	2016-08-16 09:25:13.920505	10:00:00	Water project in Scole and Rotary weekend	trip
+54	Lviv International RC meeting, Leopolis Hotel	2016-09-08		teatralna 16, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-08-18 10:45:04.56518	2016-08-18 10:45:04.56518	18:55:00	Preparation for Carpathian Rotary trip	field session
+27	Lviv International RC meeting, Roxolana Party Fon	2016-04-20		Soborna Square 14, Lviv	Roxolana Party Fon	49.8385654999999872	24.0342735000000012	2016-02-18 13:17:05.694337	2016-04-18 08:36:00.971643	18:55:00	Charity painting exhibition support childrens heart problems	field session
+55	Lviv International RC meeting, Knyazhya Dim 	2016-09-15		Dzherelna St, 18, L'viv, Lviv Oblast, Ukraine	Knyazhya Dim 	49.8471580999999873	24.020566500000001	2016-08-31 06:53:26.605195	2016-09-14 10:13:53.371457	18:55:00	Project presentation ICC Isreal-Ukraine doctors education	trip
+50	Lviv International RC outgoing event	2016-09-22		Lviv	Lviv Region	49.8396830000000008	24.0297170000000015	2016-07-04 10:14:54.978929	2016-08-31 06:51:39.028729	18:00:00	Visiting member company	trip
+66	Outgoing meeting visiting Medis Laboratory 	2016-11-24		вул. Некрасова, 35, Lviv,	Near Forum	49.8377584999999996	24.052465999999999	2016-10-24 06:05:50.091111	2016-10-28 11:17:11.512165	18:55:00	Visiting Rotarian Andriy Petrukh 	trip
+59	Lviv International RC, Leopolis Hotel	2016-10-06		teatralna street 16, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-09-14 09:44:03.969431	2016-10-04 06:18:48.182898	18:55:00	Rotary Foundation Committee	field session
+65	Lviv International RC meeting, Leopolis Hotel	2016-10-27		16 teatralna street, Lviv 	Leopolis hotel	49.8422158999999994	24.0293634000000011	2016-10-24 05:57:13.238306	2016-10-24 05:57:13.238306	18:55:00	Lviv Traffic Police presentation, John Leenher	field session
+73	New Year party Rotary Clubs Lviv	2017-01-13		Lviv		49.8396830000000008	24.0297170000000015	2016-12-07 14:09:49.643848	2016-12-07 14:09:49.643848	18:55:00	Information will be send later	trip
+43	Lviv International RC meeting, Lviv Brewery	2016-11-17		Lviv	Meet near entrance 	49.8396830000000008	24.0297170000000015	2016-05-18 08:14:14.410156	2016-11-10 12:20:17.112204	17:00:00	>>Confirmed<< -Visiting Lviv Brewery	trip
+85	Meeting with all 7 clubs in Lviv	2017-02-23		Lviv		49.8396830000000008	24.0297170000000015	2017-02-13 11:06:07.739755	2017-02-13 11:06:07.739755	18:55:00	Rotary International Birthday	trip
+62	Lviv International RC meeting, Leopolis Hotel	2016-12-01		Teatralna 16, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-10-04 06:13:33.968245	2016-11-28 13:00:30.826782	18:55:00	CONFIRMED - Turkey/Ukraine ICC signing	field session
+74	Lviv International RC meeting, Leopolis Hotel	2017-01-19		teatralna 16, Lviv	Hotel Leopolis	49.8422158999999994	24.0293634000000011	2016-12-07 14:14:34.060691	2016-12-07 14:14:34.060691	18:55:00	Project starts	field session
+80	Lviv International RC meeting, Leopolis Hotel	2017-03-23		16 Teatralna, Lviv	Hotel Leopolis	49.8422158999999994	24.0293634000000011	2017-01-23 11:10:22.548631	2017-01-23 14:51:33.579701	18:55:00	Markian Malskyy Honorary Consul of Austria	field session
+79	Lviv International RC meeting, Leopolis Hotel	2017-02-25		16 Teatralna, Lviv	Hotel Leopolis	49.8422158999999994	24.0293634000000011	2017-01-16 16:47:51.972871	2017-01-24 15:42:52.697323	14:00:00	Fundraising, Global Grant seminar (approved)	field session
+35	Lviv International RC meeting, Leopolis Hotel	2016-05-05		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-04-08 10:24:27.80833	2016-04-27 13:37:24.015601	18:55:00	Project 4 presentation and fund raising possibilities	field session
+36	Lviv International RC meeting, Leopolis Hotel	2016-05-12		16 teatralna street	Leopolis Hotel	46.6342291000000131	32.6124338999999992	2016-04-08 10:26:48.193256	2016-04-27 13:38:21.246139	18:55:00	Design school presentation and project 2 + 3 activation	field session
+96	Out going meeting (free of choice)	2017-05-04		Lviv	Lviv	49.8396830000000008	24.0297170000000015	2017-04-06 13:55:56.089287	2017-04-06 13:55:56.089287	18:55:00	Visiting Rotary Square 	trip
+32	Lviv International RC President Ball	2016-07-02		Lviv	Lviv	49.8396830000000008	24.0297170000000015	2016-03-28 09:08:33.320013	2016-05-13 14:11:08.876934	18:00:00	Start new President period party with spouses	social event
+92	Plant a tree Rotary project	2017-03-21		Malanioka Street	Lviv	-34.5929253999999986	-58.4303334000000021	2017-03-13 16:07:04.97692	2017-03-16 08:35:27.574352	15:00:00	Malanioka Street (15.00)	trip
+37	Lviv International RC meeting, Leopolis Hotel	2016-01-07		16 teatralna street, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-04-12 14:13:32.372667	2016-04-12 14:13:32.372667	18:55:00	regular meeting place	regular
+67	Lviv International RC meeting, Leopolis Hotel	2016-11-10		16 teatralna, Lviv	Leopolis hotel	49.8422158999999994	24.0293634000000011	2016-10-28 11:19:48.906179	2016-11-01 07:29:34.299988	18:55:00	Projects John Day, Treasurer Taras Ivantsiv	field session
+34	Going to Rotarian company site	2016-05-26		lviv		49.8396830000000008	24.0297170000000015	2016-04-08 10:19:41.38985	2016-04-18 08:30:27.146421	18:00:00	Paul van der Hoven	trip
+68	Protecting the forest event	2016-11-19		virmenska 11 lviv	Armenian Square Old Town in Lviv	49.8431587999999977	24.0312602999999996	2016-11-10 12:52:49.259954	2016-11-10 12:54:33.233903	12:00:00	Plant a tree project - Armenian Square, Lviv	trip
+33	Going to Rotarian company site	2016-04-21	<p>We meet at Mac Donalds at the ring road at Chernovola Street at 18.00</p>\r\n	Kolodentsi, Lviv Oblast, Ukraine	Ambiente Furniture	50.0073348999999965	24.2630945000000011	2016-04-08 10:04:12.001831	2016-04-18 08:49:19.374739	19:00:00	Ambiente Furniture	trip
+83	Lviv International RC meeting, Leopolis Hotel	2017-03-02		16 Teatralna, Lviv	Hotel Leopolis	49.8422158999999994	24.0293634000000011	2017-02-06 15:59:29.896592	2017-03-01 08:16:04.512297	18:55:00	Project on supporting doctors in ATO	field session
+70	Lviv International RC meeting, Leopolis Hotel 	2016-12-15		teatralna 16, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2016-11-15 13:11:05.315646	2016-11-28 12:59:00.344523	18:55:00	Christmas and New Year get together	field session
+69	Lviv International RC meeting, Leopolis Hotel 	2016-12-08		teatralna 16, Lviv	Hotel leopolis	49.8422158999999994	24.0293634000000011	2016-11-15 13:06:58.909341	2016-11-28 12:59:23.129507	18:55:00	Action plan on 3 years goal	field session
+86	Lviv International RC meeting, Leopolis Hotel	2017-03-16		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-03-01 08:04:17.019066	2017-03-16 08:37:39.307452	18:55:00	Presentation: Rotary E-Club, Emergine Europe	field session
+72	Lviv International RC meeting, Leopolis Hotel	2017-01-12		Teatralna 16, lviv	Leopolis hotel	49.8422158999999994	24.0293634000000011	2016-11-28 12:57:06.938366	2016-12-07 14:15:02.286593	18:55:00	Welcome to 2017 - Fundraising start	field session
+75	Lviv International RC meeting, Leopolis Hotel	2017-01-26		16 teatralna, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-01-16 15:56:29.79166	2017-01-16 15:56:29.79166	18:55:00	Rotary Foundation and Fundraising to projects	field session
+77	Lviv International RC meeting, Leopolis Hotel	2017-02-09		16 teatralna, Lviv	Hotel Leopolis	49.8422158999999994	24.0293634000000011	2017-01-16 16:35:17.902637	2017-01-16 16:35:17.902637	18:55:00	Project and planning	field session
+78	Lviv International RC meeting, Armenian Restaurant	2017-02-16		abc		\N	\N	2017-01-16 16:44:34.778929	2017-01-16 16:44:34.778929	18:55:00	Projecting "Plant a tree"	trip
+88	Lviv International RC meeting, Leopolis Hotel 	2017-04-06		16 teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-03-01 08:09:04.31816	2017-04-03 06:30:24.900487	18:55:00	New website presentation	trip
+89	1 year anniversary Lviv International RC	2017-04-01		Skole	Members mountain residence	49.0401779000000033	23.5129161999999994	2017-03-01 08:21:43.585833	2017-03-01 08:21:43.585833	11:00:00	Charity, Pikuiy Mountain with Rotart dinner	trip
+76	Lviv International RC meeting, Leopolis Hotel	2017-02-02		16 Teatralna, lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-01-16 16:00:04.081599	2017-02-01 13:28:33.424043	18:55:00	New Club projects	field session
+81	Health and mental seminar at Leopolis Hotel	2017-02-04		16 Teatralna, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-01-27 11:18:24.826919	2017-02-01 13:29:00.003273	16:00:00	Seminar in health and stress handling (Fundreaising)	field session
+84	Lviv International RC meeting, Leopolis Hotel	2017-03-09		16 Teatralna, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-02-06 16:02:01.723858	2017-02-06 16:02:01.723858	18:55:00	Beauty of woman (Woman's Day)	field session
+91	Lviv International RC meeting, Leopolis Hotel	2017-04-13		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-03-01 15:27:01.692124	2017-03-01 15:27:01.692124	18:55:00	The images of architectural spaces  for chamber ensembles  in the works of the European artists of ХУІ-b.ХХ c	field session
+90	Fundraising Opera	2017-06-16		Lviv	Lviv	49.8396830000000008	24.0297170000000015	2017-03-01 12:36:40.471924	2017-04-06 13:50:38.525232	19:00:00	World famous opera singer Oksana Krovytska	trip
+93	Lviv International RC meeting, Leopolis Hotel	2017-04-20		16 Teatralna, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-03-16 08:06:04.527845	2017-03-16 08:06:04.527845	18:55:00	culture of graphic novels and comics	field session
+94	Lviv International RC meeting, Leopolis Hotel 	2017-04-27		16 Teatralna, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-03-17 10:41:24.178425	2017-04-24 08:25:55.259328	18:55:00	American doctors and ICC Turkey	field session
+87	Regular Rotary meeting at Leopolis Hotel	2017-03-30		Lviv	On the spot	49.8396830000000008	24.0297170000000015	2017-03-01 08:06:25.423565	2017-03-20 09:40:19.338117	18:55:00	Planning weekend trip on 1-2 April	field session
+95	Elderly house project giving over	2017-04-22		Lviv	Elderly House	49.8396830000000008	24.0297170000000015	2017-03-20 09:37:30.18893	2017-04-06 13:52:36.876556	14:00:00	Charity ceremony for elderly house	trip
+97	Lviv International RC meeting at Leopolis Hotel	2017-05-11		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-04-26 10:33:49.665823	2017-04-26 10:33:49.665823	18:55:00	Speaker Serhiy Kiral members of Parliament	field session
+98	Lviv International RC meeting at Leopolis Hotel	2017-05-18		16 teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293634000000011	2017-04-26 10:35:31.411197	2017-04-26 10:35:31.411197	18:55:00	Speaker Lviv Police force John Leenher	field session
+82	District 2232 Conference	2017-05-27		Lviv, Ukraine	Lviv Hotel	49.8396830000000008	24.0297170000000015	2017-02-01 12:03:20.34199	2017-05-23 10:45:33.426114	09:00:00	Representation from Rotary Internation US	trip
+99	Rotary News visiting Lviv International RC projects	2017-05-26		Lviv		49.8396830000000008	24.0297170000000015	2017-05-23 10:47:38.512695	2017-05-23 10:47:38.512695	09:00:00	Lviv Elderly house, Lviv Children hospital	trip
+100	Lviv International RC regular meeting	2017-05-25		16 teatralna street, Lviv		49.8422158999999994	24.0293633	2017-05-23 10:49:12.868756	2017-05-23 10:49:12.868756	18:55:00	District conference discussion, brainstorming Opera charity project	field session
+101	Lviv International RC regular meeting	2017-06-01		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2017-05-23 10:51:49.443704	2017-05-23 10:51:49.443704	18:55:00	Lviv Police and ATO presentation	field session
+102	Lviv International RC regular meeting	2017-06-08		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2017-05-23 10:54:25.184855	2017-05-23 10:54:25.184855	18:55:00	Opera singer Oksana Krovytska	field session
+103	Lviv International RC regular meeting	2017-06-15		16 teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2017-05-23 10:55:45.160364	2017-05-23 10:55:45.160364	18:55:00	Preparation for opera concert	field session
+104	Lviv International RC meeting	2017-06-30		Lviv		49.8396830000000008	24.0297170000000015	2017-05-29 07:21:45.800749	2017-05-29 07:21:45.800749	18:55:00	President Ball	trip
+105	Lviv International RC regular meeting	2017-06-22		lviv		\N	\N	2017-05-29 07:35:24.015569	2017-05-29 07:35:24.015569	18:55:00	Membership survey, signing memorandum	field session
+107	Charity event in Skole for Orphanage, Lviv region.	2017-06-24		Skole, Lviv	Orphans school	49.0401779000000033	23.5129161999999994	2017-06-12 10:43:11.316853	2017-06-12 10:44:02.583671	09:00:00	Making the soccer field for kids	trip
+106	Lviv International RC summer meetings start	2017-07-06		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2017-05-29 07:38:04.336353	2017-07-06 07:08:12.912018	18:55:00	Wheelchairs for Ukraine	field session
+120	RC Lviv International meeting, Leopolis Hotel	2017-09-06		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-08-28 18:35:16.216183	2017-08-28 18:37:09.084921	19:00:00	Extraordinary Meeting with District Governor, Mr. Siargei Filipau	field session
+113	RC Lviv International meeting, Leopolis Hotel	2017-09-15		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-08-03 13:27:33.804167	2017-08-30 13:05:18.325608	18:55:00	Victor Tsaran, Google, Visionary Impaired School Alumni & Leopolis Jazz Festival (ex-Alfa Jazz) Juliana Humetska & Natalia Gorbachevska 	field session
+108	Lviv International RC meeting, Leopolis Hotel	2017-07-13		16 Teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2017-07-06 07:10:13.666058	2017-07-17 12:47:43.806632	18:55:00	Kevin Hilger & Ania Zablotska	field session
+110	Lviv International RC meeting, Leopolis Hotel	2017-07-20		Lviv, Teatralna 16	Leopolis Hotel	49.8422158999999994	24.0293633	2017-07-12 20:00:05.247452	2017-07-17 12:48:55.607093	18:55:00	Tom Delamarter & Dr. Oleh Orlevych	field session
+109	Lviv International RC meeting, Leopolis Hotel	2017-07-27		16, Teatralna, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2017-07-06 07:12:20.099037	2017-07-17 12:51:18.269592	18:55:00	Speaker: Alim Aliyev, Crimea-SOS & Peter Mejer-Rasmussen	field session
+116	RC Lviv International meeting, Leopolis Hotel	2017-10-26		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-08-08 18:23:42.114112	2017-10-23 13:46:06.198316	18:55:00	OSCE Special Monitoring Mission to Ukraine	field session
+111	RC Lviv International meeting, Leopolis Hotel	2017-08-03		Lviv, Teatralna Street, 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-07-17 12:55:17.466837	2017-07-17 12:58:18.197983	18:55:00	Olexa Poburko, Caritas & Swiss Rotary	field session
+121	RC Lviv International meeting, Leopolis Hotel	2017-09-21		Lviv, Teatralna 16	Leopolis Hotel	49.8422158999999994	24.0293633	2017-09-13 11:20:57.326089	2017-09-13 11:20:57.326089	18:55:00	Water that we drink, Volodymyr Stachevsky	field session
+123	RC Lviv International meeting, Leopolis Hotel	2017-10-19		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-09-18 12:41:49.914821	2017-09-18 12:41:49.914821	18:55:00	Leopolis Jazz Festival (ex-Alfa Jazz) Juliana Humetska & Natalia Gorbachevska 	field session
+112	RC Lviv International meeting, Leopolis Hotel	2017-08-17		Lviv, Teatralna 16	Leopolis Hotel	49.8422158999999994	24.0293633	2017-08-03 13:12:20.915379	2017-08-08 18:11:20.861514	18:55:00	Olexiy Husev - Report on Rotary Meeting	field session
+114	RC Lviv International meeting, Leopolis Hotel	2017-08-10		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-08-08 18:13:49.167659	2017-08-08 18:18:08.968361	18:55:00	Honorary Consul of the Netherlands in Western Ukraine, Andriy Hrynchuk	field session
+115	RC Lviv International Turkey Visit	2017-09-27		Didem, Turkey		37.3760939999999877	27.2647289999999991	2017-08-08 18:21:10.686364	2017-08-08 18:21:10.686364	00:00:00	Rotary ICC Ukraine Turkey	trip
+130	RC Lviv International, Leopolis Hotel	2017-12-14		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-10-31 21:33:01.779171	2017-10-31 21:33:01.779171	18:55:00	Strategic Session - Closed Meeting	field session
+117	RC Lviv International Art Visit	2017-09-01		Lviv, Stefanyka 3	L'viv National Art Gallery	49.8370299999999986	24.0255735000000001	2017-08-10 09:13:23.267852	2017-08-10 09:13:23.267852	16:19:00	Danish Art Exhibition	trip
+118	RC Lviv International meeting, Leopolis Hotel	2017-08-24		Lviv, Teatralna 16		49.8422158999999994	24.0293633	2017-08-10 14:06:53.318522	2017-08-10 14:06:53.318522	00:00:00	Ukrainian Independence Day - No meeting:)	
+119	RC Lviv International meeting, Leopolis Hotel	2017-08-31		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-08-28 18:32:28.476484	2017-08-28 18:33:08.187771	19:00:00	Mr. Volodymyr Lys, Head of Department of Child Affairs, Lviv Region	field session
+124	RC Lviv International meeting, Leopolis Hotel	2017-10-05		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-09-18 14:29:06.606672	2017-09-18 14:29:06.606672	18:55:00	Report on Turkey Trip	field session
+126	RC Lviv International meeting, Tapas Pub	2017-10-12		Lviv, Soborna Square 2	Tapas Pub	49.8394844999999975	24.0333834000000017	2017-10-05 20:07:57.857486	2017-10-05 20:07:57.857486	18:55:00	Visit to Yuriy Dzera's Tapas Pub	trip
+128	RC Lviv International, Leopolis Hotel	2018-01-25		Lviv, Teatralna Str. 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-10-29 11:32:16.198847	2018-01-22 21:11:17.91672	18:55:00	Champions of Invictus Games Toronto 2017	field session
+131	RC Lviv International, Leopolis Hotel	2017-11-23		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-10-31 21:37:22.255541	2017-11-21 18:51:25.868004	18:55:00	Meeting with Dr. Olexander Filtz, President of Ukrainian Association of Psychotherapy	field session
+133	RC Lviv International, Leopolis Hotel	2018-02-01		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-10-31 22:11:06.694581	2018-01-22 21:12:24.33017	18:55:00	Truskavets International Youth Camp, August 2018	field session
+132	RC Lviv International  	2017-12-28		Lviv		49.8396830000000008	24.0297170000000015	2017-10-31 22:08:53.158694	2017-10-31 22:13:51.481621	00:00:00	X-mas Break!	social event
+125	RC Lviv International meeting, Leopolis Hotel	2017-11-02		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-09-27 08:36:31.039952	2017-10-31 22:16:05.482334	18:55:00	Rostyslav Paranko on Stoicism, Karen-Marie Kragelund on Organizing fundraising events 	field session
+127	RC Lviv International meeting, Leopolis Hotel	2017-12-07		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-10-05 20:09:36.512422	2017-11-21 18:51:47.54456	18:55:00	Dr. Maryana Voznytsia & Dr. Yarema Voznytsia	field session
+136	RC Lviv International, Leopolis Hotel	2017-11-30	<p>&nbsp;</p>\r\n\r\n<div class="grammarly-disable-indicator">&nbsp;</div>\r\n	Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-11-21 18:54:00.743837	2017-11-21 18:54:00.743837	18:55:00	Paul's Italian baroque night in Palace Potockyi	field session
+135	Visit to Skole Boarding School	2017-12-19		Skole 	Skole Boarding School	49.0401779000000033	23.5129163000000005	2017-11-02 11:33:21.633162	2017-11-02 11:33:21.633162	00:00:00	Rotarian St. Nicholas & his helpers	trip
+129	RC Lviv International, Leopolis Hotel	2017-12-16		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-10-31 21:31:45.441266	2017-11-02 11:37:31.582265	18:00:00	X-mas Party 2017	social event
+134	RC Lviv International, Leopolis Hotel	2017-11-16		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2017-11-02 11:25:58.808527	2017-11-07 15:58:52.000615	18:55:00	ICC Turkey-Ukraine	field session
+122	Rotary Club Lviv International Meeting	2017-11-09		33A Lychakivska Street Lviv, 79008, Ukraine	J&L Lviv Office	49.8410295999999988	24.0425773000000014	2017-09-15 09:57:46.272192	2017-11-07 15:59:25.093288	18:55:00	Visit to J&L Consulting, Peter Mejer-Rasmussen, 3D-Printed Limb	trip
+137	RC Lviv International, Victoria Garden	2018-02-11		Lviv, Kulparkivska 226a	Victoria Garden	49.8018714000000031	23.9801392	2018-01-22 21:14:41.926606	2018-01-22 21:14:41.926606	11:00:00	King Of Cat Kids Charity Fun	social event
+139	RC Lviv International, Holodnyi Mykola	2018-03-31		Lviv, Stryiska St, 352, Ukraine	Holodnyi Mykola	49.7839269999999985	24.0140330999999989	2018-01-22 21:18:06.784134	2018-03-12 10:31:08.639072	18:00:00	RCLI's 2nd Anniversary	social event
+140	RC Lviv International, Leopolis Hotel	2018-04-05		16, teatralna street, Lviv	Leopolis Hotel	49.8422158999999994	24.0293633	2018-01-24 14:05:22.458881	2018-01-24 14:05:22.458881	18:55:00	Rotary Club Aarup visit (sponsor RC)	field session
+142	RC Lviv International, Leopolis Hotel	2018-02-15		Lviv, Teatralna 16	Hotel Leopolis	\N	\N	2018-01-30 17:00:28.215149	2018-01-30 17:00:28.215149	18:55:00	Olexander Hubar, Lviv Psychiatric Hospital	field session
+143	RC Lviv International, Leopolis Hotel	2018-02-22		Lviv, Teatralna 16	Hotel Leopolis	\N	\N	2018-02-01 09:44:00.209276	2018-02-01 09:44:00.209276	18:55:00	Rock legend Vlad Debriansky	field session
+141	RC Lviv International, Leopolis Hotel	2018-03-01		Lviv, Teatralna 16	Hotel Leopolis	49.8422158999999994	24.0293633	2018-01-24 20:53:37.419424	2018-02-05 13:35:42.173787	18:55:00	Kids with Autistic & Down Syndrome in Western Ukraine	field session
+144	RC Lviv International, Malevich Night Club	2018-02-08		Lviv, Chornovola, 2	Malevich Night Club	49.8481931999999972	24.026106200000001	2018-02-05 13:37:08.889169	2018-02-05 13:41:54.899705	18:00:00	Presentation of BMW X3	social event
+138	RC Lviv International, Potocky Palace	2018-03-24		Lviv, Kopernyka Str. 15	Potocki Palace	49.8378930000000011	24.0268520000000017	2018-01-22 21:16:17.810211	2018-02-09 16:44:44.641412	20:00:00	Italian Baroque Night & French Cousine	social event
+146	RC Lviv International, Leopolis Hotel	2018-03-08		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-02-11 19:59:41.11774	2018-02-26 11:39:01.909448	18:55:00	Tetyana Staford, KidSave CP & Director in CEE	field session
+147	RC Lviv International, Leopolis Hotel	2018-03-22		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-02-25 19:46:30.692752	2018-02-26 11:39:25.376765	18:55:00	Rt-n Olga Kurpil "The History of the English Language" & Opera Diva Oksana Kravetska	field session
+158	RC Lviv International, Sika Footwear	2018-06-07		Городницька 50, Львів	Sika Footwear	49.8607034999999996	24.0337595999999998	2018-04-23 06:33:11.268235	2018-04-23 06:44:03.06258	19:00:00	Visit to Sika Footwear	trip
+153	RC Lviv International, Leopolis Hotel	2018-05-24		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-03-24 15:22:15.056761	2018-04-25 16:29:12.206756	19:00:00	Visit of Austrian Delegation	field session
+148	RC Lviv International, Bosco School	2018-03-29		Lviv, Kryvchytska Doroha, 17-A	St. Bosco Center	49.8420527000000035	24.0668816999999997	2018-03-07 22:45:21.324121	2018-03-07 22:47:52.594115	18:00:00	Visit to St. Bosco Center in Lviv	trip
+149	RC Lviv International, Leopolis Hotel	2018-04-12		Lviv, Teatralna 16	Hotel Leopolis	\N	\N	2018-03-07 22:50:27.627267	2018-03-07 22:50:27.627267	18:55:00	Youth Art & Music Festival	field session
+145	RC Lviv International, Medis Lab	2018-03-15		Lviv, Nekrasova 35-B	Medis Lab	49.8421596000000022	24.0293799999999997	2018-02-09 16:40:50.16754	2018-03-08 13:15:46.033566	18:55:00	South Korea Connections by Bong Joon (BJ) Lee	trip
+159	RC Lviv International, Leopolis Hotel	2018-05-10		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-04-25 16:30:20.443332	2018-04-25 16:30:20.443332	18:55:00	Turkish Delegation Visit	field session
+152	RC Lviv International, Zhovkva Visit	2018-05-17		Zhovkva	Zhovkva	\N	\N	2018-03-24 15:17:08.466948	2018-03-24 15:17:08.466948	18:00:00	R-n Yuriy Lipar gives a tour of Zhovkva	trip
+154	RC Lviv International Easter Egg Hunt	2018-04-10		Lviv, Lysenka 31	Ohmadyt	49.8426292999999987	24.0441204999999982	2018-03-29 12:36:19.970124	2018-03-29 12:36:19.970124	09:00:00	Easter Egg Hunt at Ohmadyt Lviv	social event
+155	RC Lviv International, Leopolis Hotel	2018-04-19		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-03-30 14:57:18.340057	2018-03-30 14:57:18.340057	18:55:00	Dr. Yarema Voznytsia, Lviv Chornobyl Hospital	field session
+160	RC Lviv International, Leopolis Hotel	2018-05-31		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-04-26 10:23:53.555405	2018-04-26 10:23:53.555405	18:55:00	Back to the Future - Maxym Voytsehovsky	field session
+151	RC Lviv International, Hotel Astoria	2018-04-26		Lviv, Horodotska 15	Hotel Astoria	49.8435818000000026	24.0240653000000002	2018-03-19 07:02:34.929501	2018-04-22 08:40:34.599694	19:00:00	R-n Lyubomyr Zasadny with Retro Cars Club & Hotel Astoria Story & TvoyeMisto.TV Safe Roads project	trip
+156	RC Lviv International, Wheelchairs for Ukraine	2018-09-06		TBD	TBD	33.0358475999999968	-96.8975171000000017	2018-04-22 09:46:38.915213	2018-04-22 09:46:38.915213	00:00:00	Conference on inclusivity	social event
+157	RC Lviv International,Truskavets	2018-08-04		Truskavets	Truskavets	49.2760303000000022	23.5105575999999985	2018-04-22 10:27:01.289813	2018-04-22 10:27:01.289813	00:00:00	Truskavets International Youth Conference, RYLA	social event
+163	RC Lviv International, Leopolis Hotel	2018-06-21		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-04-26 11:51:39.278148	2018-04-26 11:51:39.278148	18:55:00	Creative Breakthrough of Lviv City, Taras Yurynts	field session
+161	RC Lviv International, Leopolis Hotel	2018-06-14		Lviv, Teatralna 16	Hotel Leopolis	49.8421596000000022	24.0293799999999997	2018-04-26 10:25:08.010191	2018-04-26 11:53:22.450984	18:55:00	Joint Meeting with RC Lviv	field session
+164	RC Lviv International, Sheptytsky Center, UCU	2018-06-28		Центр Шептицького, Стрийська 29, Львів	Sheptytsky Center	49.8179881000000009	24.0226565000000001	2018-04-26 12:16:55.71992	2018-04-26 12:16:55.71992	19:00:00	Visit of Sheptytsky Center - Multimedia Library - UCU	trip
+162	RC Lviv International, Drohobych Mother & Child Center	2018-06-16		Drohobych	Drohobych	49.3580115999999975	23.5123193000000015	2018-04-26 11:31:40.768758	2018-05-01 17:40:39.298827	10:00:00	Building Playground 	social event
+150	RC Lviv International, Oxford Biolabs	2018-05-03		Petrushevycha Square 3, 5th Floor, Lviv, Ukraine	Oxford Biolabs	49.8332762000000002	24.0377776999999995	2018-03-12 10:27:06.092359	2018-05-01 17:47:24.336424	19:00:00	Visit to Oxford Biolabs & International Youth Exchange (Taras Repytskyi)	trip
+\.
+
+
+--
+-- Name: events_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."events_id_seq"', 164, true);
+
+
+--
+-- Data for Name: galleries; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."galleries" ("id", "galleryable_id", "galleryable_type", "title", "created_at", "updated_at", "news_item_id") FROM stdin;
+1	\N	\N	2015-07-04 President Ball	2015-08-19 09:54:20.613402	2015-08-19 09:54:20.613402	\N
+\.
+
+
+--
+-- Name: galleries_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."galleries_id_seq"', 1, true);
+
+
+--
+-- Data for Name: images; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."images" ("id", "imageable_id", "imageable_type", "description", "created_at", "updated_at", "picture_file_name", "picture_content_type", "picture_file_size", "picture_updated_at") FROM stdin;
+1	1	NewsItem	\N	2015-07-16 07:22:29.81562	2015-07-16 07:22:29.81562	10845952_10152540742846818_6739575618083584190_n.jpg	image/jpeg	96626	2015-07-16 07:22:27.900357
+3	2	NewsItem	\N	2015-07-20 11:58:44.375678	2015-07-20 11:58:44.375678	10438451_10152540742981818_8956723415302146642_n.jpg	image/jpeg	44247	2015-07-20 11:58:43.344882
+4	3	NewsItem	\N	2015-07-22 06:55:06.432586	2015-07-22 06:55:06.432586	OKD-JDilYZY.jpg	image/jpeg	86343	2015-07-22 06:55:05.446791
+6	1	Gallery		2015-08-19 09:54:20.620976	2015-08-19 09:54:20.620976	2015-07-04_19.19.14.jpg	image/jpeg	1300210	2015-08-19 09:54:17.981394
+7	4	User	\N	2015-08-19 10:50:47.165539	2015-08-19 10:50:47.165539	Peter_billede.jpg	image/jpeg	4136098	2015-08-19 10:50:43.661768
+12	7	User	\N	2015-10-16 10:37:57.685269	2015-10-16 10:37:57.685269	Thierry_Bosch.jpg	image/jpeg	6649	2015-10-16 10:37:55.156595
+18	12	User	\N	2016-01-08 11:53:22.27479	2016-01-08 11:53:22.27479	11071409_10206130442361533_2977763418600264667_o.jpg	image/jpeg	11619	2016-01-08 11:53:20.730976
+19	13	User	\N	2016-01-09 15:01:43.008847	2016-01-09 15:01:43.008847	1.jpg	image/jpeg	50942	2016-01-09 15:01:41.116917
+20	14	User	\N	2016-01-19 08:51:25.416388	2016-01-19 08:51:25.416388	pic.jpg	image/jpeg	17722	2016-01-19 08:51:24.155027
+21	15	User	\N	2016-01-19 09:32:34.447513	2016-01-19 09:32:34.447513	Malskyy_Markiyan.jpg	image/jpeg	435759	2016-01-19 09:32:30.752075
+22	16	User	\N	2016-01-20 17:15:19.010692	2016-01-20 17:15:19.010692	P1110093.jpg	image/jpeg	1666044	2016-01-20 17:15:14.358897
+23	17	User	\N	2016-01-21 14:15:05.932009	2016-01-21 14:15:05.932009	1.jpg	image/jpeg	206717	2016-01-21 14:15:00.456936
+27	21	User	\N	2016-01-25 14:40:55.607999	2016-01-25 14:40:55.607999	profile_pic.jpg	image/jpeg	6845	2016-01-25 14:40:54.645339
+28	20	User	\N	2016-01-25 15:13:00.869245	2016-01-25 15:13:00.869245	1.jpg	image/jpeg	255431	2016-01-25 15:13:00.410336
+29	22	User	\N	2016-01-29 11:42:58.111132	2016-01-29 11:42:58.111132	image1.jpg	image/jpeg	1467032	2016-01-29 11:42:55.456972
+30	23	User	\N	2016-02-02 07:53:12.947247	2016-02-02 07:53:12.947247	RYM.jpg	image/jpeg	12188	2016-02-02 07:53:12.61578
+32	25	User	\N	2016-02-08 08:57:25.022561	2016-02-08 08:57:25.022561	a.jpg	image/jpeg	112579	2016-02-08 08:57:24.38858
+33	26	User	\N	2016-02-08 11:59:18.415119	2016-02-08 11:59:18.415119	q.png	image/png	223346	2016-02-08 11:59:17.378597
+34	27	User	\N	2016-02-10 06:57:22.32686	2016-02-10 06:57:22.32686	q.jpg	image/jpeg	53880	2016-02-10 06:57:22.043034
+35	28	User	\N	2016-02-10 07:58:20.47763	2016-02-10 07:58:20.47763	IMG_1553.jpg	image/jpeg	2923569	2016-02-10 07:58:18.5772
+36	1	User	\N	2016-02-10 09:20:25.055089	2016-02-10 09:20:25.055089	12304386_519337231572167_220504756232572255_o_-_Copy_-_Copy.jpg	image/jpeg	25209	2016-02-10 09:20:23.767293
+40	31	User	\N	2016-03-25 07:30:05.602987	2016-03-25 07:30:05.602987	2.jpg	image/jpeg	152903	2016-03-25 07:30:05.199116
+41	32	User	\N	2016-04-06 10:28:24.935256	2016-04-06 10:28:24.935256	2012-10-30_Foto_IPDG-org_.jpg	image/jpeg	361586	2016-04-06 10:28:22.292287
+43	34	User	\N	2016-05-11 16:02:15.814598	2016-05-11 16:02:15.814598	IMG_0567.jpg	image/jpeg	431598	2016-05-11 16:02:12.352003
+44	35	User	\N	2016-05-18 08:55:09.778918	2016-05-18 08:55:09.778918	2016-05-12_21.24.41.jpg	image/jpeg	1096362	2016-05-18 08:55:08.679327
+45	36	User	\N	2016-05-26 11:13:01.835491	2016-05-26 11:13:01.835491	2.jpg	image/jpeg	296226	2016-05-26 11:13:01.275715
+46	37	User	\N	2016-09-21 09:37:55.582088	2016-09-21 09:37:55.582088	1.jpg	image/jpeg	36964	2016-09-21 09:37:55.251372
+47	38	User	\N	2016-09-21 11:49:04.574553	2016-09-21 11:49:04.574553	1.png	image/png	471889	2016-09-21 11:49:03.132451
+48	24	User	\N	2016-10-24 17:00:14.215215	2016-10-24 17:00:14.215215	2015-07-06_21.23.38.jpg	image/jpeg	19793	2016-10-24 17:00:13.272605
+49	33	User	\N	2016-10-24 17:01:14.716828	2016-10-24 17:01:14.716828	1.jpg	image/jpeg	23772	2016-10-24 17:01:14.145537
+50	19	User	\N	2016-10-24 17:02:18.86511	2016-10-24 17:02:18.86511	14700808_1213702995358956_3419003869593974170_o.jpg	image/jpeg	21811	2016-10-24 17:02:15.939553
+51	39	User	\N	2016-11-14 09:45:13.765151	2016-11-14 09:45:13.765151	1.jpg	image/jpeg	680353	2016-11-14 09:45:10.236852
+52	40	User	\N	2016-11-17 12:50:46.974251	2016-11-17 12:50:46.974251	1.jpg	image/jpeg	124571	2016-11-17 12:50:46.372874
+55	43	User	\N	2016-12-20 15:00:23.272217	2016-12-20 15:00:23.272217	official_photo.jpg	image/jpeg	1093077	2016-12-20 15:00:21.240629
+56	44	User	\N	2017-02-23 09:37:23.85111	2017-02-23 09:37:23.85111	Olexiy3.jpg	image/jpeg	13815	2017-02-23 09:37:23.359481
+60	45	User	\N	2017-03-03 14:07:57.416611	2017-03-03 14:07:57.416611	yuriy.jpg	image/jpeg	65831	2017-03-03 14:07:56.284347
+61	46	User	\N	2017-04-10 16:24:08.547057	2017-04-10 16:24:08.547057	01.jpg	image/jpeg	130598	2017-04-10 16:24:08.179487
+62	47	User	\N	2017-04-14 13:26:17.291566	2017-04-14 13:26:17.291566	1.jpg	image/jpeg	69208	2017-04-14 13:26:16.927448
+63	48	User	\N	2017-04-24 08:34:50.024817	2017-04-24 08:34:50.024817	8ZZ_Last.png	image/png	3511269	2017-04-24 08:34:47.641234
+64	49	User	\N	2017-04-24 08:49:59.414967	2017-04-24 08:49:59.414967	12.jpg	image/jpeg	712471	2017-04-24 08:49:58.290963
+65	50	User	\N	2017-05-23 14:03:36.769801	2017-05-23 14:03:36.769801	1.jpg	image/jpeg	43639	2017-05-23 14:03:35.247389
+66	51	User	\N	2017-06-09 09:32:31.104151	2017-06-09 09:32:31.104151	1.jpg	image/jpeg	31201	2017-06-09 09:32:30.675548
+67	52	User	\N	2017-06-22 08:27:53.835078	2017-06-22 08:27:53.835078	1.jpg	image/jpeg	26703	2017-06-22 08:27:52.607615
+69	53	User	\N	2017-06-26 16:27:33.778918	2017-06-26 16:27:33.778918	1_-_Copy.jpg	image/jpeg	32091	2017-06-26 16:27:32.485271
+70	54	User	\N	2017-07-31 18:00:28.974629	2017-07-31 18:00:28.974629	17.jpg	image/jpeg	2439690	2017-07-31 18:00:26.853941
+72	55	User	\N	2017-11-20 13:59:20.839151	2017-11-20 13:59:20.839151	Photo.jpg	image/jpeg	44282	2017-11-20 13:59:20.236617
+73	56	User	\N	2017-11-21 10:59:01.433643	2017-11-21 10:59:01.433643	1.png	image/png	82142	2017-11-21 10:59:00.328515
+74	57	User	\N	2018-01-15 21:21:56.541812	2018-01-15 21:21:56.541812	10696234_767135493346942_5569858922732062162_n.jpg	image/jpeg	33998	2018-01-15 21:21:53.885828
+75	58	User	\N	2018-01-15 21:29:20.828669	2018-01-15 21:29:20.828669	businessfoto.jpg	image/jpeg	62990	2018-01-15 21:29:17.940771
+\.
+
+
+--
+-- Name: images_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."images_id_seq"', 75, true);
+
+
+--
+-- Data for Name: members; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."members" ("id", "name", "role", "address", "phone", "email", "full_data", "languages", "nationality", "date_of_birth", "created_at", "updated_at") FROM stdin;
+\.
+
+
+--
+-- Name: members_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."members_id_seq"', 1, false);
+
+
+--
+-- Data for Name: news_items; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."news_items" ("id", "title", "intro_text", "body", "category_id", "created_at", "updated_at", "gallery_id", "status", "publish_date", "language") FROM stdin;
+1	Модуль «Комунікація для керівників»	Львівська бізнес-школа УКУ запрошує управлінців на модуль «Комунікація для керівників», який відбудеться рамках програми «Менеджмент для лідерів»	<p style="margin: 0px 0px 24px; padding: 0px; border: 0px; font-family: Arial, Tahoma, Helvetica, sans-serif; font-stretch: inherit; line-height: 24px; font-size: 14px; vertical-align: baseline; color: rgb(102, 102, 102); text-align: justify;">За два з половиною навчальні дні учасники розглянуть наступні теми:<br />\r\n-Управління стосунками із власником та внутрішня комунікація<br />\r\n-Персональний бренд та репутація<br />\r\n-Ведення переговорів</p>\r\n\r\n<p style="margin: 0px 0px 24px; padding: 0px; border: 0px; font-family: Arial, Tahoma, Helvetica, sans-serif; font-stretch: inherit; line-height: 24px; font-size: 14px; vertical-align: baseline; color: rgb(102, 102, 102); text-align: justify;">Програма розрахована на менеджерів компаній, які мають амбіції, високий потенціал та бажання професійного росту і розвитку в своїх організаціях. Учасники також матимуть непересічну нагоду отримати цінні бізнес-контакти та розширити власний світогляд у середовищі Львівської бізнес-школи УКУ.</p>\r\n	1	2015-07-16 07:22:29.800164	2015-07-20 11:56:41.639308	\N	publish	2015-06-30	ukr
+2	YOLO occupy try-hard fixie Pinterest Helvetica	YOLO occupy try-hard fixie Pinterest Helvetica normcore, mixtape Pitchfork scenester lo-fi mumblecore.\r\n	<p>Meggings paleo beard salvia squid. Heirloom mustache banjo ennui slow-carb paleo meggings, organic cornhole stumptown health goth fixie street art. Narwhal vegan slow-carb cardigan wayfarers. Raw denim quinoa dreamcatcher put a bird on it, vinyl 90&#39;s pop-up Marfa next level gastropub cred post-ironic. Synth Echo Park Neutra keffiyeh, distillery plaid small batch vinyl lumbersexual Tumblr wayfarers mixtape cronut Brooklyn Portland. Crucifix paleo farm-to-table Godard, bitters post-ironic cray asymmetrical bespoke banjo keytar banh mi kale chips. YOLO occupy try-hard fixie Pinterest Helvetica normcore, mixtape Pitchfork scenester lo-fi mumblecore.</p>\r\n\r\n<p>Viral typewriter trust fund, retro art party listicle hashtag vegan Kickstarter Echo Park pork belly. Narwhal banjo PBR 90&#39;s, biodiesel you probably haven&#39;t heard of them asymmetrical quinoa health goth sartorial squid pug. Kogi leggings Marfa 90&#39;s DIY. Hella umami jean shorts, gentrify butcher tote bag deep v sartorial swag letterpress post-ironic. Biodiesel crucifix flexitarian, readymade paleo normcore health goth selvage DIY. Cred kogi messenger bag, whatever Kickstarter street art readymade pop-up Helvetica quinoa cornhole keytar Intelligentsia. Tote bag YOLO Truffaut artisan.</p>\r\n	1	2015-07-20 11:58:44.368391	2015-07-20 11:58:44.368391	\N	publish	2015-07-20	eng
+3	Meeting greeting new President 2015/2016	The first meeting after summer holiday when the new acting President Oresta present her strategy for the coming period.	<p>All members may come up with ideas and meeting places suggestions for the new period. It is important that we have members involvement from all angles. We need new projects, new co/investors for projects and that is why members involvement is very important.</p>\r\n	1	2015-07-22 06:55:06.425697	2015-09-10 09:26:26.78995	\N	publish	2015-09-01	eng
+\.
+
+
+--
+-- Name: news_items_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."news_items_id_seq"', 3, true);
+
+
+--
+-- Data for Name: projects; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."projects" ("id", "title", "description", "created_at", "updated_at", "status", "purpose", "custom_id") FROM stdin;
+6	Supporting Rotaract projects	<p>Lviv International Rotary Club collected 1500 UAH for Christmas&nbsp;to support a Rotaract&nbsp;project.</p>\r\n\r\n<p>In general Rotaract is supported by all Rotary clubs in the region to creat projects helping the local society.</p>\r\n\r\n<p>..........................................................................................................................................................................</p>\r\n\r\n<p>..........................................................................................................................................................................</p>\r\n	2016-05-05 11:12:43.370648	2017-11-13 12:31:49.868291	completed	<p>Lviv International Rotary Club collected 1500 UAH for christmas&nbsp;to support a Rotaract&nbsp;project.</p>\r\n\r\n<p>In general Rotaract is supported by all Rotary clubs in the region to creat projects helping the local society.</p>\r\n\r\n<p>..........................................................................................................................................................................</p>\r\n\r\n<p>..........................................................................................................................................................................</p>\r\n	
+4	Early diagnosis of congenital heart defects in children in Lviv 	<p>Lviv Regional Children&rsquo;s Hospital OCHMATDYT is the oldest children&rsquo;s hospital in the West region of Ukraine, which was founded in 1927.</p>\r\n\r\n<p>The Hospital is a multipurpose specialized clinic, which provides round-the-clock service for the children of Lviv and the neighboring regions of Ukraine in 20 different specialties and conducts consultation services in the other hospitals of the Region.</p>\r\n\r\n<p>The Hospital also serves as a clinical base of the Danylo Halytskyy Lviv National Medical University, Institute of the Hereditary Pathology and Lviv Medical College.</p>\r\n\r\n<p>Nearly 65&nbsp;000 children receive medical assistance on the basis of the Hospital and Consultative polyclinic annually, and nearly 5000 of them, are being consulted by the specialists from the mobile consultative doctors group. Nearly 190 medical doctors work in the hospital and polyclinic, and accounts nearly 420 beds.</p>\r\n\r\n<p>Main regional children cardiologist Kurilyak O.B. works on the basis of the pediatric department and provides ultrasound consultation for the children of the Lviv Region in the hospital polyclinics. The Ultrasound machine with continuous Doppler localizes in the polyclinic, which is nearly 500 meters away from the main Hospital building. The need of transportation of the patient either from ICU or other departments to another building creates inconveniences as for the medical personnel and for the patient.</p>\r\n\r\n<p>Portable ultrasound machine with continuous doppler is crucial in order to provide the proper and timely diagnosis for children with congenital heart defects, children with surgically corrected congenital heart defects and children, who are in ICU and cannot be transported to the USD-room.</p>\r\n\r\n<p><strong>LVIV INTERNATIONAL ROTARY CLUB</strong></p>\r\n\r\n<p>Status:</p>\r\n\r\n<p>10.06.16 Send letter to Rotary clubs in Denmark requesting support on special transportable&nbsp;heart equipment for kids</p>\r\n\r\n<p>Project money fundraise completed on 01.11.2017!! Project realizing is running to be completed soonest.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	2016-03-03 09:28:49.397508	2017-11-13 12:33:53.340722	running	<p>Congenital heart defects are one of the leading causes of newly born children mortality. Due to the incredible progress in pediatric cardiac surgery, most of the defects, which used to be critical and inevitably led to death, are well corrected now and these children survive and enter into adulthood. However, when it comes to critical congenital heart defects the life prognosis depends solely on the proper and timely diagnosis, which is a decision-making point for the terms of the surgical repair of the defect.</p>\r\n\r\n<p>Time is one of the main decisive factors of saving the life of the newborn. Therefore, it is crucial for the doctors of the mobile brigade to be able to arrive to the perinatal center in order to diagnose the defect as soon as possible and organize everything needed for the transportation of the patient to the Kyiv Children&rsquo;s Cardiology center, were the most complicated cardiac surgeries are being performed.&nbsp;</p>\r\n\r\n<p>The purpose of the project is to acquire a modern portable ultrasound machine with continuous doppler. The impact will be in making accurate diagnosis of child congenital heart defects and being able to make immediate surgery related actions. This will allow a medical brigade to move out to the patient instead of accepting the child only at a fixed location in the hospital.&nbsp;&nbsp; &nbsp;&nbsp;</p>\r\n	
+5	Supporting Slaviansk society	<p>Lviv International Rotary Club collected money to support Slaviansk citizen after invation from Russian seperatists.</p>\r\n\r\n<p>Myroslav Gavlivlyk present 3200 UAH to Slaviansk Rotary Club to give support for some citizen.</p>\r\n\r\n<p>We are thinking of you in this hard time...</p>\r\n	2016-05-05 11:01:00.231742	2017-11-13 12:32:05.004441	completed	<p>Lviv International Rotary Club collected money to support Slaviansk citizen after invation from Russian seperatists.</p>\r\n\r\n<p>Myroslav Gavlivlyk present 3200 UAH to Slaviansk Rotary Club to give support for some citizen.</p>\r\n\r\n<p>We are thinking of you in this hard time...</p>\r\n	
+2	Waste turned into active projects	<p>This project shall help financing elderly homes and handicapped&nbsp;institutions&nbsp;with needs of equipments. All what is made from the waste will be sold on Rotary auktions and in city life for Ukrainian mark days. All income will be giving for the elderly or handicapped institutions who have made it to support the living standard of the people.</p>\r\n\r\n<p>Designers will be involved and the best design will be celebrated by Lviv International Rotary Club on a special cermony to promote the work of the winning designer.</p>\r\n\r\n<p><strong>LVIV INTERNATIONAL ROTARY CLUB</strong></p>\r\n\r\n<p>Status:</p>\r\n\r\n<p>17.05.16 Project evaluation of using waste from members companies to give for volounteer designers to show possibilities what to do.</p>\r\n\r\n<p>26.05.16 Materials giving to designers to reate selable items in Lviv for different time of the year</p>\r\n\r\n<p>04.06.16 Short presentation presented to the Elderly house people to be developed</p>\r\n\r\n<p>&nbsp;</p>\r\n	2016-01-27 13:47:17.167195	2017-11-13 12:35:46.458118	running	<p>Companies waste&nbsp;are valuable for&nbsp;Lviv International&nbsp;Rotary Club&nbsp;innovative projects that can activate elderly and handicapped.</p>\r\n\r\n<p>Waste can be turned into a new design, a new innovating idea from other people who can see the idea in it.</p>\r\n\r\n<p>Rotary are into many projects supporting elderly and handicapped people, to make their day interesting and fun.</p>\r\n\r\n<p>&nbsp;</p>\r\n	
+10	Lviv International Rotary Club and Lviv-Centre Rotary Club had a common event supporting the Orphans school in Bryukhovychi 20 km North West from Lviv.	<p><span class="fbPhotoCaptionText">Lviv International Rotary Club and Lviv-Centre Rotary Club had a common event supporting the Orphans school in Bryukhovychi 20 km North West from Lviv.<br />\r\n<br />\r\nLviv-Center RC (Lviv International RC mother club) has made a project in the school sports hall by installing ventilation for healthier inner climate for the children during their sports activities.<br />\r\n<br />\r\nOn the same visit both clubs cleaned the whole surrounding area for trees and other trash to free the nearby lake. Hidden in the tall grass and bushes, we found a statue of a lady as seen on one of the photos.<br />\r\n<br />\r\nThere were brainstormed about 2 new developing projects for the school.<br />\r\n1. leveling up the water in the lake by replacing the old broken dam to a new and more functional dam can level up the water by 50-70 cm and the lake can be cleaned out to a certain level. Project will be presented and calculated by Rotarian. Project can be done for very small investment or maybe nothing at all because of using own workforce.<br />\r\n2. project on painting the school fa&ccedil;ade in children&#39;s modern collars to attract attention.<br />\r\n<br />\r\nLviv International RC presented the school children a computer to start learning such technologies.</span><br />\r\n&nbsp;</p>\r\n	2016-06-03 12:18:15.406566	2017-11-13 12:30:30.072924	completed	<p><span class="fbPhotoCaptionText">Lviv International Rotary Club and Lviv-Centre Rotary Club had a common event supporting the Orphans school in Bryukhovychi 20 km North West from Lviv.<br />\r\n<br />\r\nLviv-Center RC (Lviv International RC mother club) has made a project in the school sports hall by installing ventilation for healthier inner climate for the children during their sports activities.<br />\r\n<br />\r\nOn the same visit both clubs cleaned the whole surrounding area for trees and other trash to free the nearby lake. Hidden in the tall grass and bushes, we found a statue of a lady as seen on one of the photos.<br />\r\n<br />\r\nThere were brainstormed about 2 new developing projects for the school.<br />\r\n1. leveling up the water in the lake by replacing the old broken dam to a new and more functional dam can level up the water by 50-70 cm and the lake can be cleaned out to a certain level. Project will be presented and calculated by Rotarian. Project can be done for very small investment or maybe nothing at all because of using own workforce.<br />\r\n2. project on painting the school fa&ccedil;ade in children&#39;s modern collars to attract attention.<br />\r\n<br />\r\nLviv International RC presented the school children a computer to start learning such technologies.</span><br />\r\n&nbsp;</p>\r\n	
+9	Charity for Economic Cybernetic Olympic in Lviv	<p>Lviv International RC collected money to support the winner of the competition on Economic Cybernetic Olympic.</p>\r\n\r\n<p>Colleced 920 UAH to present at the event.</p>\r\n	2016-05-25 13:25:24.988187	2017-11-13 12:30:46.191376	completed		
+8	Supporting Rotaract projects	<p>On May 19 Lviv International RC and Rotaract had a common meeting to support each others projects.</p>\r\n\r\n<p>Lviv International RC collected 3000 UAH from members to support Rotaract projects.</p>\r\n	2016-05-25 13:20:07.677014	2017-11-13 12:31:08.807603	completed		
+7	Supporting our junior organization Rotaract on helping Lviv International Rotary Club for Charter Celebration	<p>Lviv International Rotary Club gave Rotaract Lviv a present of 5000 UAH for helping on the event of the Charter Celebration of Lviv International Rotary Club.</p>\r\n\r\n<p>Furthermore there were giving 3750 UAH of free tickets for Rotaract to participate the event.</p>\r\n\r\n<p>.................................................................................................................................................</p>\r\n	2016-05-05 11:17:54.710047	2017-11-13 12:31:25.804829	completed	<p>Lviv International Rotary Club gave Rotaract Lviv a present of 5000 UAH for helping on the event of the Charter Celebration of Lviv International Rotary Club.</p>\r\n\r\n<p>Furthermore there were giving 3750 UAH of free tickets for Rotaract to participate the event.</p>\r\n\r\n<p>.................................................................................................................................................</p>\r\n	
+12	Plant a tree "Common Rotary Projects in Lviv"	<p>Lviv International Rotary Club have donated <strong>5.000 UAH </strong>to the common <strong>Rotary project &quot;Plant a tree&quot; </strong>in Lviv society.</p>\r\n\r\n<p>Our Rotarian<strong> Peter Mejer-Rasmussen </strong>made the <strong>fundraising </strong>and in total collected <strong>18.000 UAH </strong>to support the project.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Well done Peter and thank your very much for your contribution!</p>\r\n	2016-10-13 07:55:32.363885	2017-11-13 12:29:35.478017	completed	<p>Lviv International Rotary Club have donated <strong>5.000 UAH </strong>to the common <strong>Rotary project &quot;Plant a tree&quot;</strong> in Lviv society.</p>\r\n\r\n<p>Our <strong>Rotarian Peter Mejer-Rasmussen </strong>made the <strong>fundraising</strong> and in total collected <strong>18.000 UAH </strong>to support the project.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Well done Peter and thank your very much for your contribution!</p>\r\n	
+15	Orphanage sports facilities	<p style="margin: 0in 0in 10pt;"><span lang="EN" style="color: rgb(51, 51, 51); line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN;">Project on renovating the outdoor sports facilities connected to the school.</span></p>\r\n	2016-10-24 06:52:08.563661	2017-11-13 12:28:50.067518	completed	<p style="margin: 0in 0in 10pt;"><span lang="EN" style="color: rgb(51, 51, 51); line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN;">Project on renovating the outdoor sports facilities connected to the school.</span></p>\r\n	
+13	Clean water project for Orphanage in Skole (Common Rotary project between RC Lviv International and RC Lviv)	<p>First stage of the <strong>&quot;Clean water&quot; project </strong>was performed in 2008 by RC Lviv, with Mr. Lars Vestbjerg heading this project. Rotary Club Vedb&aelig;k was the sponsor club financing it. in 2008 the financing was about <strong>10.000$</strong>.</p>\r\n\r\n<p>In 2016 Lviv International took part ownership of that project supporting the sustainablity of the project.</p>\r\n\r\n<p>Both clubs have in <strong>2016 renovated the whole water cleaning system </strong>for <strong>10.000 UAH </strong>share between both clubs.</p>\r\n\r\n<p>&nbsp;</p>\r\n	2016-10-13 12:36:27.706746	2017-11-13 12:29:13.399304	completed	<p>First stage of the <strong>&quot;Clean water&quot; project </strong>was performed in 2008 by RC Lviv, with Mr. Lars Vestbjerg heading this project. Rotary Club Vedb&aelig;k was the sponsor club financing it. in 2008 the financing was about <strong>10.000$.</strong></p>\r\n\r\n<p>In 2016 Lviv International took part ownership of that project supporting the sustainablity of the project.</p>\r\n\r\n<p>Both clubs have in <strong>2016 renovated the whole water cleaning system </strong>for <strong>10.000 UAH </strong>share between both clubs.</p>\r\n	
+11	Clean water projects for kinder gardens close to the trash collecting point.	<p>Lviv city house-hold&nbsp;trash is collected just outside Lviv city only a few km North from Lviv in huge mountains.</p>\r\n\r\n<p>Because of lack of airing the layer of trash, it become rotten and smelly. The bad liquid is penetrating to ground water making it un drinkable with danger for illness of people.</p>\r\n\r\n<p>Rotary decide to help the situation contacting specialiest that can evaluate what is necessary to get warter cleaned.</p>\r\n\r\n<p><strong>LVIV INTERNATIONAL ROTARY CLUB</strong></p>\r\n\r\n<p>Status:</p>\r\n\r\n<p>Project highligted in media under the signing of memorandum with lviv City mayor</p>\r\n	2016-07-04 11:49:17.423247	2017-11-13 12:30:09.354726	new	<p>Rotary helping preventing&nbsp;water deseases</p>\r\n	
+3	Helping Elderly house in Lviv.	<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">The House for Elderly in Lviv city&nbsp;is a public institution under the supervision of the Regional Authorities built in 1950s. The state support for the house of elderly is extremely&nbsp;limited and does not meet basic needs. People spend their lives in miserable conditions.&nbsp;This social institution operates at almost full capacity -&nbsp;it hosts&nbsp;320 patients with 78 people who are&nbsp;immovable due to the severe illnesses. Typical diseases are heavy forms of cerebral palsy, dementia and multiple sclerosis, conditions after stroke, paralysis and&nbsp;diabetes.&nbsp;There are 18 patients per one nurse (!) for daily care, including those who cannot move. </span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">&nbsp;</span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">There are urgent </span></span><span class="size" style="font-size: 10pt;">needs in the institution:</span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-installing an elevator&nbsp;<b>in the 5 storied building </b>for the transportation of those who have problems of moving and especially those who cannot move at all outside the building. </span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-installing&nbsp;<b>h</b></span></span><b><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">and rails</span></span></b><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;"> in toilet rooms and bathrooms</span></span><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">. 80 </span></span><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">sets of handrails are needed.</span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-installing a<b> ramp at the entrance</b>to lift up those who have problems with moving up </span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-installing&nbsp;more <b>TV sets</b>. Currently there are only 5 TV sets for 320 people. 60 TV sets are needed.&nbsp;It is the only entertainment for old people in this institution.</span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-purchasing improved <b>used or new mechanical beds </b>(80 beds), especially those with the bed lifters for immovable patients. This will help nurses to provide more care to patients. </span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-various <b>hygiene items, clothing and medication</b></span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-repairs in the building</span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="colour" style="color: black;"><span class="size" style="font-size: 10pt;">-involving rehabilitation specialists and physiatrists </span></span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;">&nbsp;</p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><strong><font color="#000000" size="2">LVIV INTERNATIONAL ROTARY CLUB</font></strong></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;">&nbsp;</p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><font color="#000000" size="2">Status:</font></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><font color="#000000" size="2">10.05.16 Visited the elderly house to identify help opportunities</font></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><font color="#000000" size="2">04.06.16 Made a BBQ day for the elderly, made the clean area work, started painting hand rails, did project evaluation on ventilation and ceiling in kitchen.</font></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><font color="#000000" size="2">10.06.16 Send letter to several rotary clubs in Denmark for support of beds and industrian washing facilities</font></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><font color="#000000" size="2">10.06.16 Member in Poland and Germany met with Rotary clubs and other helping institutions to support equipments</font></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><font color="#000000" size="2">April 2017 48 fully equiped hospital beds arrived and is installed!! Thank you Rotary Clubs of Odense in Denmark!</font></p>\r\n	2016-02-04 13:26:58.707251	2017-11-13 12:35:29.413884	completed	<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">The population in Lviv region is 2.5 million inhabitants out of which 700 thousand are pensioners, including 200 thousand pensioners in the city of Lviv itself. There is ONLY ONE (!) state house for elderly in Lviv city for 350 people. This house was built in 1950s and remains in a very poor condition. </span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">&nbsp;</span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">There are mostly families who take care of elderly and ill people in Ukraine. The external ways of taking care of elders is just starting in Ukraine. When a family decides to do so, it has basically one option at present which is to put an elderly person in the state-run elderly house.</span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">&nbsp;</span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">It is expected that the proposed project of improving living conditions in the public elderly house in Lviv city will spur the attention to the problem with elderly care in Ukraine. This in turn might lead to the increased interest of starting private houses for elderly in Ukraine. This will create more options for families to provide a civilized European style care for elderly. </span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">&nbsp;</span></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin: 0cm 0cm 0pt; line-height: normal;"><span class="size" style="font-size: 10pt;">Presently there is a lot to do in both public and private sector of the elderly care houses. There is a lack of houses for elderly in Ukraine. Nationwide, there are only 300 (!) state-run such homes for elderly, which is way too little for Ukraine as a country with 45 million people. There are millions of abandoned and lonely old people in Ukraine without support of families, especially women. It is known that there are whole villages where only retired women are living. The elderly care market has very <span>big potential </span>to grow in Ukraine</span><span class="size" style="font-size: 10pt;">.</span></p>\r\n	
+1	Rotary saving childrens life in Ukraine 	<p>Statistic shows that many children are crippled and killed in traffic accidents in Ukraine due to poor visibility, lack of lights on the cars and they can not reflect walking on the roads. In rural areas there are not sidewalks,&nbsp;people are walking on the roads and especially there, many accident happens.</p>\r\n\r\n<p>Lviv International Rotary Club is helping children to be visible in traffic by giving kids up to 10 year in schools equipment to be seen in traffic.</p>\r\n\r\n<p>We are in cooperation with local schools and universities and volounteer that want to help distribution of equipment.</p>\r\n\r\n<p>First phase is finish supporting Lviv region with 6000 refleces to schools in the region.</p>\r\n\r\n<p>Spend money is 25000 UAH.</p>\r\n\r\n<p>Fundraising is 20000 UAH by selling 2000&nbsp;reflectes from the order.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>LVIV INTERNATIONAL ROTARY CLUB</strong></p>\r\n\r\n<p>Status:</p>\r\n\r\n<p>30.06.16 By the end of first half year 2016&nbsp;we have handed out more than 2000 reflexes the schools in lviv and region</p>\r\n\r\n<p>13.10.16 Lviv International RC making cooperation with Traffic Police to support this project. Police will hand out the reflictors to schools together with Rotary.</p>\r\n\r\n<p>&nbsp;</p>\r\n	2015-12-12 11:32:10.447644	2017-11-13 12:36:07.090958	running	<p>Lviv International Rotary Club is running a project that saves life of children in trafic. When accidents happens it is mostly because car drivers cannot see the child and this is what&nbsp;Rotary are changing by giving reflective hangers to put on childrens school bags to make them visible. It is a pilot project running in Lviv Region and with a visible result the project will be&nbsp;implemented to other regions of Ukraine.</p>\r\n\r\n<p>We have started the project with 6000 reflective hangers which will be giving out to schools children in February and March 2016.&nbsp;&nbsp;</p>\r\n\r\n<p>To reach a visible result and have success, we need to have other Rotary clubs and/or other investors supporting this project. A small amount of money can help a huge amount of children.</p>\r\n\r\n<p>With low capital we can make a huge difference and by time the project will be self financed and continuing at the national level. Perhaps even copied to a worldwide project.</p>\r\n\r\n<p>Please give us a hand and help the children of Ukraine!!</p>\r\n	8173h23
+\.
+
+
+--
+-- Name: projects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."projects_id_seq"', 15, true);
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."schema_migrations" ("version") FROM stdin;
+20150624102530
+20150624104452
+20150624150429
+20150624152320
+20150625073440
+20150625074041
+20150625074045
+20150626100656
+20150629115135
+20150629115713
+20150702083903
+20150703074223
+20150706130945
+20150707114704
+20150709110919
+20150713082334
+20150714143218
+20150720111936
+20150722074847
+20150929115347
+20151012175657
+20151015140753
+20151227095607
+\.
+
+
+--
+-- Data for Name: seotools; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."seotools" ("id", "seotoolable_id", "seotoolable_type", "title", "description", "keywords", "created_at", "updated_at") FROM stdin;
+2	1	NewsItem				2015-07-20 11:56:41.643052	2015-07-20 11:56:41.643052
+3	2	NewsItem				2015-07-20 11:58:44.938111	2015-07-20 11:58:44.938111
+51	15	Project				2017-11-13 12:28:50.074225	2017-11-13 12:28:50.074225
+52	13	Project				2017-11-13 12:29:13.406706	2017-11-13 12:29:13.406706
+53	12	Project				2017-11-13 12:29:35.481238	2017-11-13 12:29:35.481238
+54	11	Project				2017-11-13 12:30:09.357444	2017-11-13 12:30:09.357444
+55	10	Project				2017-11-13 12:30:30.085292	2017-11-13 12:30:30.085292
+56	9	Project				2017-11-13 12:30:46.208703	2017-11-13 12:30:46.208703
+57	8	Project				2017-11-13 12:31:08.810284	2017-11-13 12:31:08.810284
+58	7	Project				2017-11-13 12:31:25.829117	2017-11-13 12:31:25.829117
+59	6	Project				2017-11-13 12:31:49.877156	2017-11-13 12:31:49.877156
+60	5	Project				2017-11-13 12:32:05.007513	2017-11-13 12:32:05.007513
+61	4	Project				2017-11-13 12:33:53.344317	2017-11-13 12:33:53.344317
+62	3	Project				2017-11-13 12:35:29.46609	2017-11-13 12:35:29.46609
+63	2	Project				2017-11-13 12:35:46.460446	2017-11-13 12:35:46.460446
+64	1	Project				2017-11-13 12:36:07.092819	2017-11-13 12:36:07.092819
+\.
+
+
+--
+-- Name: seotools_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."seotools_id_seq"', 64, true);
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: spixahnrjgdehs
+--
+
+COPY "public"."users" ("id", "email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "created_at", "updated_at", "name", "role", "address", "phone", "full_data", "languages", "nationality", "date_of_birth", "work", "education", "interests") FROM stdin;
+46	roxana7700@gmail.com	$2a$10$qgh9IjJZRk3tGtv/OTtLq.CboOuF6y0Hu1zIv8O.Bt4zR5OnD2XnW	\N	\N	\N	0	\N	\N	\N	\N	2017-04-10 16:24:08.5437	2017-04-10 16:24:08.5437	Oksana Petrukh	regular	47 Kulisha st., app 1a, 79018 Lviv, Ukraine	+380 967 497 810		Ukraininan, English, Russian	Ukrainian	1990-10-27			
+2	severynr@gmail.com	$2a$10$IY39UYPIoYWzFLeFZzrl2.nFCe/Soo8ENzQCMPjNc/8Ery8WOqQOi	\N	\N	\N	57	2018-04-19 07:40:03.340115	2018-03-13 17:55:41.869168	93.75.253.24	91.200.113.222	2015-07-16 07:46:38.111767	2018-04-19 07:40:03.350685	Severyn	admin							\N	\N	\N
+7	thierry.triadou@gmail.com	$2a$10$tEHNYdsAxiov9SB5uWKSDu00tWt7jRZC/FiUV9aELaITdLgbyADu.	\N	\N	\N	0	\N	\N	\N	\N	2015-10-16 10:37:56.392445	2016-01-09 14:35:09.359752	Thierry Triadou 	regular	Pamastrasse 28, 2421 Kittsee, Austria	+380 987 120 978		FRANCE - Fluent, GERMAN - Fluent, ENGLISH - Fluent	French	1975-01-14	<p><strong>Holger Christiansen Production UKRAINE &amp; SLOVAKIA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>\r\n\r\n<p>General Manager</p>\r\n\r\n<p>Remanufacturing engine starters &amp; Generators</p>\r\n\r\n<p>A Bosch Group Company</p>\r\n\r\n<p><a href="http://www.bosch.com/">www.bosch.com</a></p>\r\n		<p>Football</p>\r\n\r\n<p>Merchanic sport</p>\r\n\r\n<p>Running</p>\r\n
+47	akamenetskyy@gmail.com	$2a$10$RS9OVRWtRkH7pjh0zS8E7eciA2tKg5jpNWxHAcvhhvFPWoqDdOxF6	\N	\N	\N	0	\N	\N	\N	\N	2017-04-14 13:26:17.288299	2017-04-14 13:28:31.522801	Andriy Kamenetskyy	regular	8/70 Stepanivny street, 79016 Lviv, Ukraine	+380 964 050 750		Ukrainian (native), English (professional), Russian (professional), Polish (user speaking)	Ukrainian	1984-01-23	<p><strong><span lang="UK" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: UK; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">PJSC &laquo;Credit Agricole Bank&raquo;</font></span></strong></p>\r\n\r\n<p><span lang="UK" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: UK; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Head of MNC Desk Western Ukraine</font></span></p>\r\n\r\n<p><span lang="UK" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: UK; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Providing full scope of banking services to international busines and expatriates in Western Ukraine, MNC Desk is a part of Credit Agricole Bank, 100% subsidiary of Credit Agricole SA (EURONEXT: ACA) 140000 employees, present in 50+ countries worldwide</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000"><a href="https://credit-agricole.ua/">https://credit-agricole.ua/</a> </font></span></p>\r\n	<p><span lang="UK" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: UK; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">MA in International Economic Relations</font></span></p>\r\n	<p><span lang="UK" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: UK; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Marathon running, Football, Fishing</font></span></p>\r\n
+17	berbekav@ukr.net	$2a$10$Gw2SkIMVu7BLea1qZk7YCe1IU7VfIa.BazKM49iwf1UNQOm7Pa3Fq	\N	\N	\N	0	\N	\N	\N	\N	2016-01-21 14:15:05.918711	2016-01-21 14:18:43.521485	Volodymyr Berbeka	regular	S. Velychka 7/2, 79040 Lviv, Ukraine	+380 504 171 215		UKRAINIAN - Professional\r\nRUSSIAN- Professional\r\nENGLISH - Professional\r\nPOLISH - Intermediate	Ukrainian	1959-10-21	<p><strong>Trident Consulting and Investments, Lviv</strong></p>\r\n\r\n<p>CEO</p>\r\n\r\n<p>Consulting services and investment projects.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>\r\n\r\n<p><a href="http://trident.travel/">http://trident.travel</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Lviv Tennis Federation, Lviv</strong></p>\r\n\r\n<p>Head of Federation</p>\r\n\r\n<p><a href="http://www.tennis-lviv.net/">http://www.tennis-lviv.net</a></p>\r\n	<p><strong>Woodworking Technology </strong></p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p><strong>Governance, Public Administration specialist&nbsp; </strong></p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p><strong>Business Administration</strong></p>\r\n\r\n<p>Master Degree</p>\r\n	<p><strong>Tennis </strong></p>\r\n\r\n<p>Tennis Club, Lviv, Ukraine</p>\r\n\r\n<p><strong>Diving </strong></p>\r\n\r\n<p>Diving certificate, Egypt</p>\r\n\r\n<p><strong>Golf </strong></p>\r\n\r\n<p>Gloria Golf Club, Turkey</p>\r\n\r\n<p><strong>Traveling</strong></p>\r\n
+15	markian.malskyy@arzinger.ua	$2a$10$RnW2KUKvhxqTybQuvdJdFe09fAjx65B4/dNqqW20ZDEJ4AYayVa.y	\N	\N	\N	0	\N	\N	\N	\N	2016-01-19 09:32:34.430836	2018-04-17 15:38:23.128139	Markian Malskyy 	regular	Ryleeva str., 12/4, 79007 Lviv, Ukraine	+380 67 700 73 47		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nPOLISH - Professional\r\nEnglish - Professional\r\nGERMAN - Professional\r\nFRENCE - Speaking\r\n	Ukrainian	1984-12-11	<p><strong>ARZINGER LAW FIRM</strong></p>\r\n\r\n<p>Managing Partner</p>\r\n\r\n<p>Legal services</p>\r\n\r\n<p><a href="http://www.arzinger.com.ua">www.arzinger.com.ua</a></p>\r\n	<p><strong>Civil Law and Civil Process, Family Law and International Private Law</strong></p>\r\n\r\n<p>Ph.D</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>International Law and Economics</strong></p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>International Commercial Arbitration</strong></p>\r\n\r\n<p>LL.M.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>International Economics</strong></p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Law</strong></p>\r\n\r\n<p>Master Degree</p>\r\n	<p><strong>Swimming</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Skiing</strong></p>\r\n
+14	oleg.drin@gmail.com	$2a$10$ZB3UrU6FbLwcWch/uwTaFORqOpLrFf8cSD9besiXhc1EIozx9Mq72	\N	\N	\N	0	\N	\N	\N	\N	2016-01-19 08:51:25.40607	2016-01-19 08:51:25.40607	Oleg Drin	regular	Mezhygirska str 28, apt 13, 04071 Kyiv, Ukraine	+380 50 34 17 097		UKRAINIAN - Professional\r\nENGLISH - Professional\r\nRUSSIAN - Professional\r\nPOLISH - User speaking\r\n	Ukrainian	1975-12-29	<p><strong>K.HARTWALL INVEST</strong></p>\r\n\r\n<p>Investment Manager, Ukraine</p>\r\n\r\n<p>Finnish Family office, investing in EU and Ukraine</p>\r\n\r\n<p><a href="http://www.khw-invest.fi/">www.khw-invest.fi</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>EUROPEAN BUSINESS ASSOCIATION</strong></p>\r\n\r\n<p>Board member of Western Ukrainian branch</p>\r\n\r\n<p>Major forum for foreign and local business in Ukraine aimed to protect the interests of foreign and domestic investors, promoting business, providing member-companies with full-scale comprehensive information about what is going on in the country and its regulatory environment</p>\r\n\r\n<p><a href="http://www.internations.org/">www.eba.com.ua</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>HT PROJECT MANAGEMENT</strong></p>\r\n\r\n<p>Managing Partner</p>\r\n\r\n<p>Management consulting, project management, entry strategies to Ukraine development and implementation. Offices in Estonia and Ukraine</p>\r\n\r\n<p><a href="http://www.htpm.eu/">www.htpm.eu</a></p>\r\n	<p><strong>Mathematics</strong>, Chernivtsi State University, Ukraine</p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p><strong>Law</strong>, Chernivtsi State University, Ukraine</p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p><strong>MBA</strong>, Kingston Business School, UK</p>\r\n\r\n<p>MBA</p>\r\n	<p><strong>SKIING</strong></p>\r\n\r\n<p>Experienced level</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>WINDSURFING</strong></p>\r\n\r\n<p>Beginner level</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>FITNESS, SAUNA, CARDIO</strong></p>\r\n\r\n<p>Health &amp; strength level</p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Podolskiy Club, Kiev</font></span></p>\r\n
+13	tclarey@arborseed.com	$2a$10$qXq.nfniI4MuKH8gq9m30eoJJI3KNhmpefC3os.weQsoDOxYGdynu	\N	\N	\N	1	2016-04-13 10:03:55.128625	2016-04-13 10:03:55.128625	195.184.82.204	195.184.82.204	2016-01-09 15:01:42.572603	2016-04-13 10:03:55.131139	Anthony Richard Clarey	regular	ul. Magnolii 2 m3, 05-509 Jozefoslaw, Poland	+48 601 951 300, +380 976 333 947 (when in UA)		ENGLISH - Fluent\r\nPOLISH - Fluent\r\nFRENCE - Intermediate	Usa	1964-27-03	<p><strong>Arbor Seed Consulting&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>\r\n\r\n<p><strong>President</strong></p>\r\n\r\n<p>Arbor Seed is an IT consulting company that focuses on outsourced application development services for Western customers using engineering talent in Poland and Ukraine.</p>\r\n\r\n<p><a href="http://www.arborseed.com">www.arborseed.com</a></p>\r\n		<p>Guitar, for fun..</p>\r\n\r\n<p>Skiing</p>\r\n\r\n<p>Swimming</p>\r\n\r\n<p>Biking</p>\r\n\r\n<p>Running</p>\r\n\r\n<p>Scuba diving</p>\r\n
+49	y-lipar@ukr.net	$2a$10$2QJjPCjVDSPNT3qnc2fk3OvcWUU656e4w.fgxGnCy09KGgqJKeXZC	\N	\N	\N	0	\N	\N	\N	\N	2017-04-24 08:49:59.412286	2017-04-24 08:52:57.779097	Yuriy Lipar	regular	Zelena 6, Zhovkva, Lviv Region, Ukraine	+380 673 700 147		English, Polish, Czech, Russian,Ukrainian	Ukrainian	1972-07-18	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Sto ; &ldquo;Fasad&rdquo;</font></span></strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">General Manager</font></span></p>\r\n\r\n<p><a href="http://www.sto-fasad.com.ua/">www.sto-fasad.com.ua</a></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Architect</font></span></strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Uzhogorod National University </font></span></p>\r\n\r\n<p>&nbsp;</p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Building</font></span></strong></p>\r\n
+12	halytskyy@basquare.com	$2a$10$wmezH5IveQc.6YQsXy5b1unkEpttzJrdhFzvvdU5JZw/zhaIzUqtO	\N	\N	\N	0	\N	\N	\N	\N	2016-01-08 11:53:21.65849	2016-08-03 15:27:21.425915	Yaroslav Halytskyy	regular	Soborna square 2, 1, 79008 Lviv, Ukraine	+380 676 750 600		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nPOLISH - Professional\r\nENGLISH - Speaking	Ukrainian	1967-06-09	<p><strong>ARCHITECT YAROSLAV HALYTSKYY</strong></p>\r\n\r\n<p>Founder</p>\r\n\r\n<p>Architecture development</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>MAGMA TELECOM LTD., UKRAINE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>\r\n\r\n<p>General manager and Founder<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>\r\n\r\n<p>IT-consulting</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>DOZVIL.LVIV.UA UKRAINE</strong></p>\r\n\r\n<p>President and Co-founder</p>\r\n\r\n<p>NGO business community, Support &amp; Advocaci for Internal Investment in Ukraine</p>\r\n\r\n<p><a href="http://dozvil.lviv.ua/">http://dozvil.lviv.ua</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BASQUARE, POLAND</strong></p>\r\n\r\n<p>Executive Director and Co-owner</p>\r\n\r\n<p>Software development company</p>\r\n\r\n<p><a href="http://basquare.com/">http://basquare.com</a></p>\r\n	<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US;"><font color="#000000">Institute of Architecture,</font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US;"><font color="#000000">Magister degree Architect</font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><a href="http://lp.edu.ua/en/iarch"><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US;"><font color="#0000ff">http://lp.edu.ua/en/iarch</font></span></a><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US;"><font color="#000000"> </font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;">&nbsp;</p>\r\n\r\n<p><font color="#000000"><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Public Management</span></font></p>\r\n\r\n<p><font color="#000000"><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;">Magister degree MPA&nbsp;</span></font></p>\r\n\r\n<p><span style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: DA; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><a href="http://www.academy.gov.ua/"><span lang="EN-US" style="line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US;"><font color="#0000ff">http://www.academy.gov.ua/</font></span></a></span><span lang="EN-US" style="color: rgb(127, 133, 146); line-height: 115%; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"> </span></p>\r\n	<p><strong>Master plan of Lviv City to 2025</strong></p>\r\n\r\n<p>Support &amp; Advocaci, Member NUUA / NATIONAL UNION OF UKRAINIAN ARCHITECTS</p>\r\n\r\n<p>NUUA, Kiev</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Sport activity</strong></p>\r\n\r\n<p>Swimming, Fitness</p>\r\n\r\n<p>Sport Club &quot;Eurosport&quot; Lviv</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Business Traveling</strong></p>\r\n\r\n<p>Friends, Lviv, UA</p>\r\n
+19	andrewpetrukh@gmail.com	$2a$10$/uT7cKNfd5zLx93yMQfmm.DLSD3FLPESDWuiTwNwQe8O6Bra8q7ZK	\N	\N	\N	1	2016-09-26 16:25:26.61772	2016-09-26 16:25:26.61772	185.46.221.11	185.46.221.11	2016-01-23 17:32:30.844663	2018-04-17 15:37:28.555009	Andriy Petrukh - Secretary	committies	Kulisha st. 47 ap. 1a, 79019 Lviv, Ukraine	+380 676 706 628 		UKRAIIAN - Professional\r\nRUSSIAN - Professional\r\nENGLISH - Speaking\r\nGERMAN - Speaking\r\nPOLISH - User speaking	Ukrainian	1955-09-03	<p><strong>Diagnostic Centre &quot;Medis&quot;, Lviv</strong></p>\r\n\r\n<p>Doctor, President and CEO</p>\r\n	<p style="margin: 0in 0in 10pt;"><strong><font color="#000000" face="Calibri" size="3">Lviv National Medical University</font></strong></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><font color="#000000" face="Calibri" size="3">Master Degree and PH.D.</font></p>\r\n	<p><strong>Skiing (Experienced level)</strong></p>\r\n\r\n<p>Ukraine and Europe</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Photo and Video</strong></p>\r\n
+50	ti@banke-electromotive.com	$2a$10$y71lX5E46KeAQ9CQRvnuNOowh4t4fewsYHf1bO9nKU7lylSEPAJii	\N	\N	\N	0	\N	\N	\N	\N	2017-05-23 14:03:36.761939	2017-05-23 14:03:36.761939	Taras Iatsiushka 	regular	92, Sagaidachnoho street, 82100 Drohobych, Ukraine	+380 677 955 620		Ukrainian, English, Polish, Russian 	Ukrainian	1981-06-23			
+21	tom@oxbiolabs.com	$2a$10$yKs1sn/DKhmMDm9l0Wxj5uavaILq0e9kwzglnpeL9jA2yu.3wZk/W	\N	\N	\N	18	2018-04-21 08:23:49.818106	2017-12-07 13:31:01.152535	80.138.86.110	194.44.236.73	2016-01-25 14:40:55.59421	2018-04-21 08:23:49.820869	Thomas Whitfield 	regular	Tomashivskogo 8, 79005 Lviv, Ukraine	+380 734 168 506 		GERMAN - Professional\r\nENGLISH - Professional\r\nROMANIAN - Beginner\r\nRUSSIAN - Beginner\r\n\r\n	German	1981-11-30	<p><strong>OXFORD BIOLABS</strong>&nbsp;</p>\r\n\r\n<p>CEO</p>\r\n\r\n<p>R&amp;D/E-commerce of food supplements &amp; cosmetics</p>\r\n\r\n<p><a href="http://www.oxbiolabs.com/">www.oxbiolabs.com</a></p>\r\n\r\n<p><a href="http://www.trx2.com/">www.trx2.com</a> (treatments for hair loss)</p>\r\n\r\n<p>&nbsp;</p>\r\n	<p><strong>University of Oxford, Biochemistry</strong></p>\r\n\r\n<p>DPhil (PhD</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Bavarian Elite Academy, Management</strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Participation</font></span></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>University of Regensburg, Biochemistry</strong></p>\r\n\r\n<p>Bachelor (equivalent)</p>\r\n\r\n<p>&nbsp;</p>\r\n	<p><strong>Sauna (happy to join)</strong></p>\r\n\r\n<p>Lviv</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Fishing</strong></p>\r\n\r\n<p>Lviv Area</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Alternative Investments, real estate</strong></p>\r\n\r\n<p>Everywhere</p>\r\n
+20	mvoytsekhovsky@kpmg.ua	$2a$10$1EvcW./0dqHyzNFamZbvDu1ri./F6gABdkkkwqSZsnVaOMzR95UZ2	\N	\N	\N	2	2016-02-12 08:28:56.704926	2016-01-25 14:56:24.270457	194.186.62.146	194.44.123.114	2016-01-23 18:15:17.534411	2016-02-12 08:28:56.710349	Maksym Voytsekhovsky	regular	Arkasa, 14/7, 79053 Lviv, Ukraine	+380 504 141 858		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nENGLISH - Professional\r\nPOLISH - User speaking\r\nFRENCH - Intermediate\r\n	Ukrainian	1978-09-04	<p><strong>KPMG Ukraine</strong></p>\r\n\r\n<p>Head of Lviv Office</p>\r\n\r\n<p>International audit and consulting company.</p>\r\n\r\n<p><a href="http://www.kpmg.ua/">www.kpmg.ua</a></p>\r\n	<p><strong>Law</strong></p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p><strong>Accounting and audit</strong></p>\r\n\r\n<p>Master Degree</p>\r\n	<p><strong>History</strong></p>\r\n\r\n<p><strong>Publishing books for children</strong></p>\r\n\r\n<p><strong>Tennis </strong></p>\r\n\r\n<p>Eurosport Lviv</p>\r\n\r\n<p><strong>Swimming</strong></p>\r\n\r\n<p>Sport Life Lviv</p>\r\n
+22	mariannadolihnya@gmail.com	$2a$10$HC3GDubVNoi6bIBW7.Lqt.jpcoP.mgylReEVPwZ5ufEb9fLTmgZT2	\N	\N	\N	0	\N	\N	\N	\N	2016-01-29 11:42:58.101861	2016-01-29 11:50:23.292663	Maryana Dolishnya	regular	Melnyka 16a/6, 79044 Lviv, Ukraine	+380 676 732 805		UKRAINIAN - Fluent\r\nRUSSIAN - Fluent\r\nENGLISH - Fluent\r\nTURKISH - Fluent\r\nPOLISH - Speaking level\r\nSPANISH-Speaking level\r\nFRENCE- Comunnicating level\r\n	Ukrainian	1983-04-07	<p><strong>Luxury fashion buisness</strong></p>\r\n\r\n<p>Director at Easterfashiontrading LTD HK</p>\r\n\r\n<p>Director of agency : providing exlusive fashion servises ( photography, styling, events organazation in Asia)</p>\r\n\r\n<p><a href="http://www.Create78.com">http://www.Create78.com</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	<p style="margin: 0in 0in 10pt;"><strong><span lang="EN-GB" style="color: black; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-GB;"><font size="3">Lviv Banking University </font></span></strong></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-GB" style="color: black; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-GB;"><font size="3">Master degree in Economics</font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;">&nbsp;</p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><strong><span lang="EN-GB" style="color: black; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-GB;"><font size="3">Berlin buisness school- MBA</font></span></strong></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-GB" style="color: black; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-GB;"><font size="3">Phd in Economics(venture buisness)</font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;">&nbsp;</p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-GB" style="color: black; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-GB;"><font size="3"><strong>Marangoni institute - Fashion buisness </strong></font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-GB" style="color: black; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-GB;"><font size="3">Certificate</font></span></p>\r\n	<p><strong>Sport ( jogging,aerobics,swimming...)</strong></p>\r\n\r\n<p><strong>Travelling </strong></p>\r\n\r\n<p><strong>Photography( fashion and street style)</strong></p>\r\n\r\n<p><strong>Writing (poems, books)</strong></p>\r\n\r\n<p><strong>Fashion</strong></p>\r\n\r\n<p><strong>Reading</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n
+23	ry@keelsolution.com	$2a$10$eoio5.7TEygtSBOgYjGuGuKfUMgw8Z942X/Zzv8gluWJp6lcDEclu	\N	\N	\N	0	\N	\N	\N	\N	2016-02-02 07:46:30.57091	2016-02-02 07:53:12.94338	Roman Yaremko	regular	K. Levytskogo st. 55A, 79017 Lviv, Ukraine	+380 671 609 755		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nENGLISH - Professional\r\nPOLISH- User speaking\r\n	Ukrainian	1966-05-18	<p><strong>Keel Solution, LVIV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>\r\n\r\n<p>General Manager<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </strong></p>\r\n\r\n<p>Asset Data Management Services for Energy Sector</p>\r\n\r\n<p>www.keelsolution.com&nbsp;</p>\r\n	<p><strong>Lviv University, &ldquo;Lvivska Polytechnica&rdquo;, Mechanical Engineering, Lviv UA</strong></p>\r\n\r\n<p>Master Degree</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>UFT, ON Canada, Mechanical Engineering</strong></p>\r\n\r\n<p>Bachelor degree</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>OEE and Operation Management, COOP ON, Canada</strong></p>\r\n\r\n<p>Diploma</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Other professional courses, NA and Europe</strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US; mso-fareast-font-family: Calibri; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Diplomas ta Certificates</font></span></p>\r\n	<p><strong>Alpine Skiing </strong></p>\r\n\r\n<p>International/certified ski instructor&nbsp; ON, Canada&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>FITNESS, Jogging</strong></p>\r\n\r\n<p>Health level</p>\r\n\r\n<p>Indoor &amp; outdoor, Lviv, UA</p>\r\n
+24	tarivn@gmail.com	$2a$10$HD.QmVyV4CU.iG.yV1cOO.b8g3wMj2GTUzxP8vjFTymFQh2oar5cS	\N	\N	\N	0	\N	\N	\N	\N	2016-02-03 07:23:44.5016	2018-04-17 15:36:53.988515	Taras Ivantsiv - Treasurer	committies	Heroiv Maydany 12, 8, 79012 Lviv, Ukraine	+380 676 761 574		UKRAINIAN - Fluent\r\nRUSSIAN - Fluent \r\nENGLISH - Fluent\r\nPOLISH - Fluent\r\n	Ukrainian	1974-08-24	<p><strong>SC &ldquo;NG Metal Ukraine&rdquo;</strong></p>\r\n\r\n<p>Director</p>\r\n\r\n<p>Manufacturing metal components for a variety of industries</p>\r\n\r\n<p><a href="http://www.ngmetal.com.ua/">http://www.ngmetal.com.ua/</a></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Economic &amp; Engineer department</font></span></strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Master Degree</font></span></p>\r\n	<p><strong>Badminton</strong></p>\r\n\r\n<p><strong>Ski</strong></p>\r\n
+48	rbilyk@me.com	$2a$10$WlqSc6P9gs825P7T0gu0OuMvnIbkNMbGE5OvgmtGcZZtDd2oCioVO	\N	\N	\N	6	2017-06-06 07:06:08.487298	2017-05-26 10:45:59.496432	194.44.122.214	194.44.122.214	2017-04-24 08:34:50.020867	2017-06-06 07:06:08.489743	Roman Bilyk	regular	Balabana str. 25/10, 79000 Lviv, Ukraine	+380 503 170 220		Ukrainian, Russian, English	Ukrainian	1974-02-20	<p><strong>Nexia DK</strong></p>\r\n\r\n<p>Managing Partner</p>\r\n\r\n<p><strong>Nexia DK</strong> unites about 100 specialists in various fields. Nexia DK is a team of like-minded persons, consisting of experts with extensive experience in specific fields and young promising specialists that is actually the future of our company. The basis of our HR policy is involvement of highly skilled specialists and enabling new talents to realize themselves.</p>\r\n\r\n<p><strong>Nexia DK</strong> is a member of the world network of independent auditing and consulting companies NEXIA International. It enables us to use the experience of professionals from all over the world.</p>\r\n\r\n<p><a href="http://www.dk.ua">www.dk.ua</a></p>\r\n	<p><strong>Master drgree Economic</strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Ukrainian State Forestry University</font></span></p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Football</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-ansi-language: EN-US; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-theme-font: minor-bidi; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">History</font></span></p>\r\n
+25	olkobilko@gmail.com	$2a$10$DZ8IbgGm80WG/ZrrW5IQ3.uiq5bgLDkRX.7JJJBzw8l1cY6fHl5A.	\N	\N	\N	0	\N	\N	\N	\N	2016-02-08 08:57:25.014186	2016-02-08 10:08:55.196031	Olga Stefanivna Kurpil	regular	Choubinskoho, 31a, 79020 Lviv, Ukraine	+380 676 978 858		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nPOLISH-  Professional\r\nENGLISH – Professional \r\nFRENCE - intermediate\r\n	Ukrainian	1959-06-13	<h4 style="font-style: italic;"><strong>English Philology Department</strong></h4>\r\n\r\n<h4>Associate Professor, PhD</h4>\r\n	<h4><strong>English Philology and Linguistics&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;</h4>\r\n\r\n<h4>Associate Professor</h4>\r\n\r\n<h3>&nbsp;</h3>\r\n\r\n<h4><strong>English Philology and Linguistics&nbsp;&nbsp;&nbsp;&nbsp; </strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>\r\n\r\n<h4>PhD</h4>\r\n\r\n<h4>&nbsp;</h4>\r\n\r\n<h4><strong>English Language and Literature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></h4>\r\n\r\n<h4>Master Degree</h4>\r\n	<h4><strong>Skiing</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>\r\n\r\n<h4>Freelance</h4>\r\n\r\n<h4>&nbsp;</h4>\r\n\r\n<h4><strong>Hiking&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>\r\n\r\n<h4>Freelance</h4>\r\n\r\n<h4>&nbsp;</h4>\r\n\r\n<h4><strong>Swimming&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h4>\r\n\r\n<h4>SCA swimming pool</h4>\r\n\r\n<h4>Health level</h4>\r\n
+56	oksana.beshlei@gmail.com	$2a$10$oawIlHC6oJpo9l4FYwMJJO2WHFOERyhoUUVKYOx6MXhZdkZtnXyqa	\N	\N	\N	0	\N	\N	\N	\N	2017-11-21 10:59:01.428713	2017-11-21 11:00:46.780278	Oksana Beshlei	regular	Grinchenka Street 6b/88, 79037 Lviv, Ukraine	+380 984 773 452		English, Ukrainian, Russian	Ukrainian	1989-12-16	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Atelier &ndash; Oksana Beshlei</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">General Director - </font></span><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Fashion Designer - Couturier</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Individual custom orders </font></span></p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Lviv National Academy of Art</font></span></p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Read books about psychology,sport( running in the park), yoga, meditation.</font></span></p>\r\n
+57	dmytro.tkachenko@credit-agricole.ua	$2a$10$aMlHx0slETa7MXuZFUM6OefPdYwtvkxxHPl7EwMsO1tGh9hIsNbJ.	\N	\N	\N	0	\N	\N	\N	\N	2018-01-15 21:21:56.492513	2018-01-15 21:23:02.243236	Dmytro Tkachenko	regular	Kn. Olgi 5/5l, Lviv, 79005, Ukraine	+380503176056		Ukrainian - native\r\nEnglish - medium	Ukrainian	1973-06-05	<p>Credit Agricole Bank (Ukraine)</p>\r\n	<p>Lvivska Politechnika</p>\r\n	<p>Music, book reading &amp; mountain hiking</p>\r\n
+28	victor.kocherhan@gmail.com	$2a$10$tIgm4A7G2Al9nwP0/taRrOYzkv18UFUhK1iCvxJqm6d4epuZVF8FK	\N	\N	\N	0	\N	\N	\N	\N	2016-02-10 07:58:20.47302	2016-02-10 08:06:01.817854	Victor Kocherhan	regular	Lysenycka street 13, 40, 79032 Lviv, Ukraine	+380 970 630 522		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nENGLISH - Professional \r\nGERMAN - Professional Speaking\r\nPOLISH - Professional Speaking	Ukrainian	1984-05-09	<p><strong><span><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-fareast-language: KO; mso-bidi-language: AR-SA; mso-font-kerning: 1.0pt;"><font color="#000000" face="Calibri">Entertainer Magician</font></span></span></strong></p>\r\n\r\n<p><span><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-fareast-language: KO; mso-bidi-language: AR-SA; mso-font-kerning: 1.0pt;"><font color="#000000" face="Calibri">Self-employed</font></span></span></p>\r\n	<p style="margin: 0in 0in 0pt;"><strong><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Law college</font></span></strong></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Stryi&nbsp;, Ukraine</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">&nbsp;</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><strong><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">English language</font></span></strong></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span lang="EN-US" style="font-size: 11pt; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Bedford college </font></span></p>\r\n	<p style="margin: 0in 0in 0pt;">&nbsp;</p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span lang="EN-US" style="font-size: 11pt; font-weight: normal; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Gym (</font></span><span style="font-size: 11pt; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Eisedora, </font></span><span lang="EN-US" style="font-size: 11pt; font-weight: normal; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Lviv)</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span lang="EN-US" style="font-size: 11pt; font-weight: normal; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Salsa dance (</font></span><span style="font-size: 11pt; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Lviv)</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span lang="EN-US" style="font-size: 11pt; font-weight: normal; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Travel</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span style="font-size: 11pt; font-weight: normal; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Mountain tourism</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span style="font-size: 11pt; font-weight: normal; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Magic book collector</font></span></p>\r\n\r\n<p style="margin: 0in 0in 0pt;"><span style="font-size: 11pt; font-weight: normal; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri"><span lang="EN-US" style="font-size: 11pt; font-weight: normal; mso-ansi-language: EN-US; mso-hansi-font-family: &quot;Times New Roman&quot;;"><font color="#000000" face="Calibri">Self development</font></span></font></span></p>\r\n
+55	ivanyshyn.mt@gmail.com	$2a$10$40S3y.oi0ILfUdY5jxgn4eW.zAK5ogOW5VIPAok4e8Doj04v30LuO	\N	\N	\N	1	2017-11-22 13:28:00.91769	2017-11-22 13:28:00.91769	213.174.16.18	213.174.16.18	2017-11-20 13:42:23.334891	2017-11-22 13:28:00.92022	Maksym Ivanyshyn	regular	Shevchenko str. 418, app. 49, 79069 Lviv, Ukraine	+380 932 444 348		Ukrainian – C2 (native), English – C1 (advanced), Polish – A2 (elementary), German – A1 (beginner), Russian – C2 (native)	Ukrainian	1989-08-11	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Amigo Partners</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Co-Founder &amp; CEO</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Legal and Project Management Firm</font></span></p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Higher education at Ivan Franko National University of Lviv / specialization &ndash; law</font></span></p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Football (Mini-Football), Fitness, Dancing, Travelling</font></span></p>\r\n
+51	henrik_pedersen@me.com	$2a$10$sdwslPbY.iD63BEpt4peDepai.uMfOS/WG.t1msGNlCi6QJ5b2QtK	\N	\N	\N	0	\N	\N	\N	\N	2017-06-09 09:32:31.100228	2018-04-17 15:33:10.147917	Henrik Pedersen - Fundraising Chair	committies	Fedkovycha St. 7, Lviv Ukraine	+380 930 393 387  		Danish, English, German, Norwegian	Danish	1971-09-20			
+31	v.khoma@yahoo.ca	$2a$10$5qaO7kG6gSFYMTam4X4mbOTpp.BovWBaMnoCfQcwpUezrd6u53CLO	\N	\N	\N	0	\N	\N	\N	\N	2016-03-24 11:13:31.188901	2016-03-25 07:31:36.605697	Vladimir Khoma	regular	Kociubynskoho St. 13/2, 79005 Lviv, Ukraine	+380 964 871 515		UKRAINIAN - Fluent\r\nRUSSIAN - Fluent\r\nENGLISH - Fluent\r\nGERMAN - Fluent\r\nPOLISH - Upper level	Ukrainian	1953-07-09	<p><strong>Power Group Sp. z o. o.</strong></p>\r\n\r\n<p>Owner</p>\r\n\r\n<p>Producing energy drinks</p>\r\n		<p><strong>Jazz</strong></p>\r\n\r\n<p><strong>Tennis</strong></p>\r\n\r\n<p><strong>Martial Art</strong></p>\r\n\r\n<p><strong>Boxing</strong></p>\r\n
+52	liubov.korchagina@yahoo.com	$2a$10$D6O/JHmMPRt4U2f.xqMW3eURsrEVcDm4.646cle7mGoE6hZlfsU3S	\N	\N	\N	0	\N	\N	\N	\N	2017-06-22 08:27:53.831335	2017-06-22 08:27:53.831335	Liubov Korchagina	regular	7 C, Stavova Str., 79019 Lviv, Ukraine	+380 964 964 272		Ukrainain, Russian, English, German	Ukrainian	1981-05-03			
+39	marta.pidhirsky@gmail.com	$2a$10$kTaD2gAoUkaxAK/t6Nb7GOhoNrfXIBjAyegpAFrPCBK0ZmS8q2ov2	\N	\N	\N	1	2016-12-10 10:26:37.592204	2016-12-10 10:26:37.592204	194.44.220.6	194.44.220.6	2016-11-14 09:45:13.753024	2016-12-10 10:26:37.598455	Marta Pidhirsky	regular	K. Levytskoho 25a kv 12, 79005 Lviv, Ukraine	+380 981 316 388		English - NATIVE\r\nUkrainian - NATIVE	Canada	1959-05-27	<p dir="ltr" id="docs-internal-guid-4429b0cf-623c-cea1-34ee-3e70106152c5" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 7.5pt;"><b style="font-weight: normal;"><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; background-color: transparent;">Company name &nbsp;BU&amp;A </span></b></p>\r\n\r\n<p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 7.5pt;"><b style="font-weight: normal;"><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;">BU&amp;A is a boutique consulting firm providing organizational effectiveness solutions to international and local businesses operating in Ukraine. Our organizational consultants and trainers have helped numerous international companies operating in Ukraine achieve world class management and professional expertise through our uniquely tailored organizational effectiveness and development programs.</span></b></p>\r\n\r\n<p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 7.5pt;"><b style="font-weight: normal;"><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;">Position: Founding Partner</span></b></p>\r\n\r\n<p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 7.5pt;"><b style="font-weight: normal;"><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;">Website:</span><a href="http://buaconsult.blogspot.com/p/english.html" style="text-decoration: none;"><span style="color: rgb(17, 85, 204); font-family: &quot;Helvetica Neue&quot;; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: underline; vertical-align: baseline; background-color: transparent;">http://buaconsult.blogspot.com/p/english.html</span></a><span style="color: rgb(51, 51, 51); font-family: &quot;Helvetica Neue&quot;; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;"> </span></b></p>\r\n\r\n<p>&nbsp;</p>\r\n	<p dir="ltr" id="docs-internal-guid-4429b0cf-623d-1260-a5c1-12182323af11" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><b style="font-weight: normal;"><span style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;">University of Toronto, Rotman School of Management</span></b></p>\r\n\r\n<p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><b style="font-weight: normal;"><span style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;">Level: MBA</span></b></p>\r\n\r\n<p>&nbsp;</p>\r\n	<p dir="ltr" id="docs-internal-guid-4429b0cf-623d-5659-3c78-18dcfdda41c0" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><b style="font-weight: normal;"><span style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 14.66px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; vertical-align: baseline; background-color: transparent;">Interest: Nature trails hiking, reading, scrabble</span></b></p>\r\n\r\n<p dir="ltr" style="line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt;"><b style="font-weight: normal;"><span style="color: rgb(51, 51, 51); font-family: Calibri; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 700; text-decoration: none; vertical-align: baseline; background-color: transparent;">Rotary Club Lviv International, Ukraine</span></b></p>\r\n\r\n<p>&nbsp;</p>\r\n
+33	dr.pvdhoeven@gmail.com	$2a$10$rWhWNmb8H7YLM4KLIyJ1p.0Mo1ys4kXnLr5GKMxCZFUez6kXkGSMi	\N	\N	\N	7	2017-12-26 19:01:14.824589	2017-12-16 16:22:17.273112	93.77.153.186	93.77.153.186	2016-04-07 11:03:50.631913	2018-04-17 15:34:45.843687	Paul van der Hoeven - RF Vice Chair	committies	Koniskho 4a/8, 79010 Lviv, Ukraine	+380 952 056 581		DUTCH - Professional\r\nFRENCE - Professional\r\nGERMAN - Professional\r\nENGLISH - Professional	Belgian	1953-02-23	<p><span lang="EN-US" style="color: rgb(51, 51, 51); line-height: 115%; font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><strong>Wood-Houses-Art (div of TCM)</strong></span></p>\r\n\r\n<p>We make wooden houses inspired by XVII and XVIII&deg; historical buildings</p>\r\n\r\n<p>Founder &amp; manager</p>\r\n\r\n<p><a href="http://www.whapro.lviv.ua">www.whapro.lviv.ua</a>&nbsp;&nbsp;and <a href="http://www.tsm.lviv.ua">www.tsm.lviv.ua</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Responsible for LVM Laboratorium for Holland</p>\r\n\r\n<p>Is a member of Amedes . group&nbsp; (Amedes.com)</p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Applied economics &amp; Master in business administration </font></span></strong></p>\r\n\r\n<p><em><font color="#000000" face="Calibri">Master Degree</font></em></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Art </font></span></strong></p>\r\n\r\n<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Flying</font></span></strong></p>\r\n\r\n<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Sculpture</font></span></strong></p>\r\n\r\n<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Woodworking cabinet making</font></span></strong></p>\r\n
+32	myroslavgavryliv@gmail.com	$2a$10$xbeVMEG/mwn9C47sxniEkucYqOZ7ERqX9lhtBoBT9B8xdtABoQ09K	\N	\N	\N	1	2016-04-06 12:45:32.090008	2016-04-06 12:45:32.090008	91.124.11.139	91.124.11.139	2016-04-06 10:28:24.921596	2016-04-06 12:45:32.092489	Myroslav Gavryliv                                  (HONORARY MEMBER)	regular	74-a Tarnavsoho str., ap.11, 79017 Lviv, Ukraine	+380 503 172 280		UKRAINIAN - professional\r\nRUSSIAN - professional\r\nENGLISH - professional\r\nPOSILH - user speaking	Ukrainian	1958-06-03	<p><strong>Company name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SRME Prologue Ltd.</strong></p>\r\n\r\n<p>Short description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Industrial surfactants applications</p>\r\n\r\n<p>Position&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; deputy director,&nbsp;Co-owner</p>\r\n	<p><strong>Civil engineering, Masters Business Administration</strong></p>\r\n\r\n<p>&nbsp;</p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US; mso-fareast-font-family: Calibri; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Green tourism</font></span></p>\r\n
+35	john.day.ua@gmail.com	$2a$10$gJBr.8vGjwyAABJh97jXbeIqk.DtbrdrbvUo5oKlJKmmcy4kCU6kO	\N	\N	\N	1	2017-03-12 11:32:26.049828	2017-03-12 11:32:26.049828	46.219.21.22	46.219.21.22	2016-05-18 08:55:09.7703	2017-03-12 11:32:26.055245	John Richard Day	regular	Choubinsky st 31A, Lviv, Ukraine	+380 682 116 012		ENGLISH - Professional\r\nFRENCH - Professional\r\nUKRAINIAN - Beginner	English	1944-01-25	<p><strong>Lecturer for the International Relation Faculty of Ivan Franko University of Lviv.</strong></p>\r\n\r\n<p>Cultural Attach&eacute;, Consultant</p>\r\n\r\n<p>Former Director British Council</p>\r\n	<p><strong>M.A. Economics at Cambridge University</strong></p>\r\n	<p>Art</p>\r\n\r\n<p>Music</p>\r\n\r\n<p>Literature</p>\r\n\r\n<p>Books</p>\r\n\r\n<p>Theatre&#39;Mountains</p>\r\n
+53	nataliawowk@gmail.com	$2a$10$P7EViqIu1itLevOgl5FxEOAN1k.Er0mzkpM4ei1RGzOGSkoENKpYK	\N	\N	\N	0	\N	\N	\N	\N	2017-06-26 16:24:52.785276	2017-06-26 16:27:33.773418	Nataliya Vovk	regular	Medova pechera str. 69/78, 79038 Lviv, Ukraine	+380 671 538 709		English, Polish, Russian, Ukranian	Ukrainian	1982-09-05			
+36	tobias.jaeckel@gmail.com	$2a$10$rV/5.QfPqpmAvZ8Ztd/z7.G1GDhaAy3T5s.un6hSRBjSaK.1vwuFO	\N	\N	\N	0	\N	\N	\N	\N	2016-05-26 11:11:03.887342	2016-05-26 11:15:07.259927	Tobias Jaeckel	regular	No fixed address yet	+380 509 369 572		GERMAN - Professional\r\nENGLISH - Professional\r\nJAPANESE - Beginner	German	1978-05-21	<p><strong>GemShelf</strong></p>\r\n\r\n<p><span class="colour" style="color: rgb(51, 51, 51);"><span class="size" style="font-size: 11pt;">GemShelf is the company behind Shelf, a SaaS product that makes it easy to manage all your content across the cloud. Currently, most teams and groups use a hacked-together mix of Dropbox, Google Drive, email, and project management software to manage all their information flows. This causes critical knowledge to get lost and buried. With Shelf, important content is centralized in one, easy-to-search place. Shelf integrates with the platforms companies already use (Drive, Dropbox, etc) and is priced at a fraction of other solutions on the market.</span></span></p>\r\n\r\n<p><span class="colour" style="color: rgb(51, 51, 51);"><span class="size" style="font-size: 11pt;">Position: Founder and CTO</span></span></p>\r\n\r\n<p><span class="colour" style="color: rgb(51, 51, 51);"><span class="size" style="font-size: 11pt;">Website: <a href="http://shelf.io/" target="_blank"><font color="#0000ee">http://shelf.io</font></a></span></span></p>\r\n	<p class="oneComWebmail-MsoNormal" style="margin-bottom: 0pt;"><strong>International Business Administration</strong></p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin-bottom: 0pt;">Focus: Global Management&nbsp;and International Marketing</p>\r\n\r\n<p class="oneComWebmail-MsoNormal" style="margin-bottom: 0pt;">German Diploma</p>\r\n	<p>Photography</p>\r\n\r\n<p>Surfing</p>\r\n
+34	volodymyr.bryn@gmail.com	$2a$10$2vBhvjWwa2/ybpQQTDg/YuJYwNhTqY25ulOVZLGldXFDClhLUX3Y.	\N	\N	\N	1	2017-01-19 17:04:52.423502	2017-01-19 17:04:52.423502	185.46.221.11	185.46.221.11	2016-05-11 16:02:15.793912	2017-01-19 17:04:52.425702	Volodymyr Bryn	regular	Ivana Mykolaychuka str. 22/83, 79059 Lviv, Ukraine	+380 985 954 028		UKRAINIAN - Professional\r\nPOLISH - Professional\r\nRUSSIAN - Professional\r\nENGLISH - Professional	Ukrainian	1983-10-02	<p><strong>Company, Bryn Volodymyr Yaroslavovych</strong></p>\r\n\r\n<p>Owner</p>\r\n\r\n<p>Elevator Factory</p>\r\n\r\n<p><a href="http://www.vashlift.com.ua">www.vashlift.com.ua</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Company, Amway </strong></p>\r\n\r\n<p>Business Developer</p>\r\n\r\n<p>Internet-store selling products</p>\r\n\r\n<p><a href="http://www.amway.ua/user/bryn_v">www.amway.ua/user/bryn_v</a></p>\r\n\r\n<p>&nbsp;</p>\r\n	<p><strong>NFTU National Forest Tech University</strong></p>\r\n\r\n<p>Bachelor</p>\r\n\r\n<p><a href="http://www.nltu.edu.ua">www.nltu.edu.ua</a></p>\r\n	<p><strong>Sport</strong></p>\r\n\r\n<p>Aikido</p>\r\n\r\n<p>Cars</p>\r\n\r\n<p>Travel</p>\r\n
+4	petermr@danlat.nu	$2a$10$tdiEFdK0U6Z6AFYv5.ga6OWOdb0fIsHfmJySs3jWyk.6sDsS9nJcy	\N	\N	\N	24	2018-01-18 14:35:27.435503	2018-01-18 13:59:15.837456	195.72.145.111	195.72.145.111	2015-08-19 10:50:47.158009	2018-04-17 15:40:01.23377	Peter Meyer-Rasmussen - Project Chair	committies	Ivana Bohuna 4, 11, 79013 Lviv, Ukraine	+380 67 67 33 152		DANISH - Professional,\r\nENGLISH - Professional,\r\nGERMAN - Professional,\r\nLATVIAN - Professional,\r\nUKRAINIAN - User speaking\r\n	Danish	1972-04-15	<p style="line-height: 27.73px;"><strong>AMARDICO 120 UKRAINE LLC, SAMBIR</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Manufacturing plug valves for the oil- &amp; gas industry</p>\r\n\r\n<p style="line-height: 27.73px;">Technial Director</p>\r\n\r\n<p style="line-height: 27.73px;"><a href="http://www.bch.dk/">www.bch.dk</a>&nbsp;</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>INTERNATIONS.ORG</strong></p>\r\n\r\n<p style="line-height: 27.73px;">NGO helping foreigners to settle down, socially and business, locally for L&rsquo;viv.</p>\r\n\r\n<p style="line-height: 27.73px;">Vice President</p>\r\n\r\n<p style="line-height: 27.73px;"><a href="http://www.internations.org/">www.internations.org</a></p>\r\n\r\n<p style="line-height: 27.73px;"><strong>DANLAT.NU SIA</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Giving education and consultation for SME&rsquo;s in the eastern parts of EU.</p>\r\n\r\n<p style="line-height: 27.73px;"><a href="http://www.danlat.nu/">www.danlat.nu</a>&nbsp;</p>\r\n	<p><strong>MACHINICAL ENGINEERING</strong></p>\r\n\r\n<p>Speclialized in Operations techniques</p>\r\n\r\n<p>Specialized in Machine construction</p>\r\n	<p style="line-height: 27.73px;"><strong>LECTURER IN BUSINESS ADMINISTRATION</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Making lectures and workshops in medium and advanced level.</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>SALSA DANCING</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Experienced level</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>FITNESS, SAUNA, CARDIO</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Healt &amp; strength level</p>\r\n\r\n<p style="line-height: 27.73px;">Sports Life, Lviv</p>\r\n\r\n<p><strong>METAL DETECTING</strong></p>\r\n\r\n<p>Ukraine</p>\r\n
+54	igor.luzhanskiy@neadevis.com	$2a$10$3sa6yisuexqgAHxG4qSQRem2rw2VH1GDXnvwO2DKR6hr2Q8fYVgiO	\N	\N	\N	0	\N	\N	\N	\N	2017-07-31 18:00:28.969899	2017-07-31 18:00:28.969899	Igor Luzhanskiy	regular	Konovaltsya 85b apr 3 Lviv, Ukraine 	+380 96 44 88 0 46		Russian, Ukrainian, English, Hebrew	Ukrainian	1983-04-26			
+27	dalibor.pap@gmail.com	$2a$10$Ljm1SgxQ9Izyg7rF8AALoeMVHSAccYyE2jhe7xocqOufOAYRCniR2	\N	\N	\N	11	2016-08-03 09:50:13.852315	2016-07-02 21:11:40.320804	194.44.123.220	109.121.31.221	2016-02-10 06:57:22.321318	2018-04-17 15:35:44.140836	Dalibor Pap - PR Vice Chair	committies	Vul. Vernadskoho 42/83, 79000 Lviv, Ukraine	+380 983 725 898		UKRAINIAN - Professional \r\nSERBIAN - Professional \r\nCROATIAN - Professional \r\nENGLISH - Professional \r\nHUNGARIAN - Professional \r\nGERMAN - Speaking\r\nRUSSIAN - User speaking\r\nSLOVENIAN - User speaking\r\n\r\n	Hungarian	1982-12-24	<p><strong>Crux &ndash; Web solutions</strong></p>\r\n\r\n<p>Art Director</p>\r\n\r\n<p>Outsource Development Company</p>\r\n\r\n<p>cruks.eu</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>The MOO &amp; MOO</strong></p>\r\n\r\n<p>CEO and Founder</p>\r\n\r\n<p>Web, Development and Branding Agency</p>\r\n\r\n<p>moo-moo.eu</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>DP Media &ndash; Group</strong></p>\r\n\r\n<p>Managing Director</p>\r\n\r\n<p>Group of Web development and Outsource Agencies</p>\r\n\r\n<p>dpmedia-group.com</p>\r\n	<p><strong>VTS &ndash; Subotica / Serbia</strong></p>\r\n\r\n<p>Information Technology &ndash; IT</p>\r\n\r\n<p>Bachelor Degree</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>STS &ldquo;Mihajlo Pupin&rdquo; &ndash; KULA / Serbia</strong></p>\r\n\r\n<p>Electrical Engineering Technologies</p>\r\n\r\n<p>Bachelor Degree</p>\r\n	<p><strong>Fitness, Sauna, Cardio (Sport Life, Lviv, Ukraine)</strong></p>\r\n\r\n<p>Health level</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Swimming (Delfin, Lviv, Ukraine)</strong></p>\r\n\r\n<p>Health level</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Shooting Club (<span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; mso-ascii-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi;"><font color="#000000">Celeritas, Budapest, Hungary)</font></span></strong></p>\r\n\r\n<p>Shooting from all different kind of weapons</p>\r\n
+26	jjoerima@indiana.edu	$2a$10$WBq/rU.3Sj2FBcGrdwMrH.rVZh5tOwOpC39TlhcIwCWn14YfHCYDG	\N	\N	\N	2	2016-02-14 10:46:38.779818	2016-02-08 14:18:43.740373	213.130.18.83	93.183.200.35	2016-02-08 11:59:18.408163	2018-04-17 15:36:21.395555	James Frederick Joeriman - PR Chair	committies	Chervonoyi Kalyny 72, Apt. 65, 79000 Lviv Ukraine	+380 966 085 620		\r\nENGLISH - Professional\r\nRUSSIAN . Professional\r\nUKRAINIAN - Professional\r\nPOLISH - Beginner\r\nFRENCE - Beginner	Usa	1979-12-19	<p><strong>ABC ENGLISH </strong></p>\r\n\r\n<p>Director/LSP</p>\r\n\r\n<p>English school and language services provider offering translation, interpretation, website localization, voiceover, and related services to clients throughout Europe</p>\r\n\r\n<p><a href="http://www.abcenglish-lviv.com/">www.abcenglish-lviv.com</a></p>\r\n\r\n<p><a href="http://www.proz.com/profile/1064990">http://www.proz.com/profile/1064990</a></p>\r\n	<p><strong>M.A. (Russian &amp; Eastern European Area Studies) / M.P.A (Masters in Public Administration)</strong></p>\r\n\r\n<p>Russian &amp; Eastern European Institute / School of Public and Environmental Affairs, Indiana University Bloomington</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Certificate of Proficiency in Ukrainian</strong></p>\r\n\r\n<p>Ivan Franko University, Lviv</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Certificate of Completion</strong></p>\r\n\r\n<p>Moscow State University</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>BA (Russian Studies) / BS (Psychology)</strong></p>\r\n\r\n<p>University of Florida</p>\r\n	<p><strong>Weightlifting (Sport Life, Sykhiv in Lviv)</strong></p>\r\n\r\n<p>Experienced (always looking for gym buddies !)</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Other:</strong></p>\r\n\r\n<p>Ballet, travelling, outdoor activities (skiing, hiking, trail running, camping), languages, modern art, Czech literature and cinema, cooking</p>\r\n
+58	a.hrynchuk@gmail.com	$2a$10$CHh.BHBFp8CRYhSz1RBgb.LS9reyIlAmCLvtlXj8JYAHYOZ2w.wVS	\N	\N	\N	0	\N	\N	\N	\N	2018-01-15 21:29:20.822936	2018-04-17 15:41:57.350338	Andriy Hrynchuk	regular	79000, Lviv, Ukraine, Lviv-Rudno, Shevchenko str. 62A	+38 067 916 49 95		Ukrainian - native\r\nRussian - fluent\r\nEnglish - fluent	Ukrainian	1983-01-15	<p><span id="docs-internal-guid-3f8f7a73-fbb7-b183-eaca-9f90dd74e2d2"><span style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 10pt; font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal;">Hrynchuk and Partners Law Firm</span></span></p>\r\n\r\n<p><span id="docs-internal-guid-3f8f7a73-fbb7-e89b-dc5a-ebad933ffe58"><span style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 10pt; font-weight: 700; vertical-align: baseline; white-space: pre-wrap; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal;">Honorary Consul of the Netherlands in Lviv</span></span></p>\r\n	<p>Lviv State Ivan Franko University</p>\r\n	<p>Law lectures at UCU</p>\r\n\r\n<p><span id="docs-internal-guid-3f8f7a73-fbb9-31ee-abea-f523cc9460fb"><span style="color: rgb(0, 0, 0); font-family: Calibri; font-size: 10pt; vertical-align: baseline; white-space: pre-wrap; background-color: transparent; font-variant-numeric: normal; font-variant-east-asian: normal;">Readings on history, diplomacy, policy-making, evolution of humankind</span></span></p>\r\n
+37	natalie.kaspruk.savka@gmail.com	$2a$10$ntyotdZeVWdtE/IWlSdJqOx0QHdmzJlHO.HPSycJKSG1CHAXwIsiG	\N	\N	\N	0	\N	\N	\N	\N	2016-09-21 09:37:55.577	2016-09-21 09:44:55.161813	Natalie Kaspruk-Savka	regular	Efremova 49 aprt 3, 79000 Lviv, Ukraine	+380 505 872 604		UKRAINIAN-professional, POLISH-User speaking, ENGLISH-User speaking, RUSSIAN- professional, GERMAN-User speaking	Ukrainian	1971-05-11	<p><span lang="EN-US" style="color: rgb(51, 51, 51); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US;"><strong>Lviv Franko University</strong></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">&nbsp;Art Painter</font></span></p>\r\n\r\n<p><span lang="EN-US" style="color: rgb(51, 51, 51); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US;">Position Associate professor</span></p>\r\n\r\n<p><span lang="EN-US" style="color: rgb(51, 51, 51); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US;">Website </span><a href="http://old.lnu.edu.ua/faculty/ekonom/Statistics/"><span lang="EN-US" style="font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US;"><font color="#0000ff">http://old.lnu.edu.ua/faculty/ekonom/Statistics/</font></span></a></p>\r\n	<p><strong><span lang="EN-US" style="color: rgb(51, 51, 51); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ansi-language: EN-US;">Lviv Franko University</span></strong></p>\r\n\r\n<p><em><font face="Helvetica">Economic</font></em></p>\r\n	<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Painting</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Swimming</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Skiing</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Cycling</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA;"><font color="#000000">Art</font></span></p>\r\n
+38	mikelhonders@live.nl	$2a$10$/LvSngOvev0q1sUx0ewnDe92ofI3KH0RWnaFC2bEvzOJILif0AmNy	\N	\N	\N	9	2017-01-24 10:08:05.058876	2016-11-27 12:29:36.7464	87.236.1.164	88.119.29.121	2016-09-21 11:49:04.566551	2017-01-24 10:08:05.062226	Mikel Honders	regular	Sichovykh Striltsiv 2, 75000 Lviv	+380 669 207 520		Dutch (native), \r\nEnglish (professional proficiency) \r\nGerman (Limited working proficiency)\r\n	Netherlander	1989-05-20	<p><strong><em>Commercial Director</em></strong></p>\r\n\r\n<p><strong>Galicia Greenery</strong></p>\r\n\r\n<p>Galicia Greenery LLC is a greenhouse company based in Busk, West-Ukraine, we produce vegetables for the Ukrainian market. It is fully owned by Galicia Greenery Holding BV.</p>\r\n\r\n<p>Our goal is to produce and sell healthy and safe products throughout the year directly to local and international retail chains and restaurants based in Ukraine.</p>\r\n\r\n<p><a href="http://www.galiciagreenery.com/">www.galiciagreenery.com</a></p>\r\n	<p style="margin: 0in 0in 10pt;"><strong><span lang="EN-US" style="color: rgb(20, 18, 21); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-ansi-language: EN-US;"><font size="3">Business Administration and agribusiness (bachelor)</font></span></strong></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="color: rgb(20, 18, 21); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-ansi-language: EN-US;"><font size="3">HAS University of Applied Sciences </font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="color: rgb(20, 18, 21); font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-ansi-language: EN-US;"><font size="3">Specialized in Marketing and Sales</font></span></p>\r\n	<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US;"><font color="#000000" size="3">Fitness</font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US;"><font color="#000000" size="3">Outdoor sports </font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US;"><font color="#000000" size="3">Healthy food and life</font></span></p>\r\n\r\n<p style="margin: 0in 0in 10pt;"><span lang="EN-US" style="font-family: &quot;Helvetica&quot;,&quot;sans-serif&quot;; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US;"><font color="#000000" size="3">International businesses </font></span></p>\r\n
+16	ds@citadelcapital.com.ua	$2a$10$fDlrf0EA4e7quGK7qHiEq.UF.FljRdHJWIt0uaY4UpQwcRqZEMHY6	\N	\N	\N	14	2017-07-31 18:01:27.213046	2017-07-13 15:36:25.784702	185.46.221.11	185.46.221.11	2016-01-20 17:15:18.151545	2017-07-31 18:01:27.216377	Dmytro Symovonyk	president	Vasylkyvskoho street 1 Apt. 9, 79018 Lviv, Ukraine	+380 503 153 408		UKRAINIAN - Professional\r\nRUSSIAN - Professional\r\nENGLISH - Professional\r\nGERMAN - Speaking\r\n	Ukrainian	1975-07-26	<p><strong>CITADEL CAPITAL</strong></p>\r\n\r\n<p>Managing Director</p>\r\n\r\n<p><a href="http://www.citadelcapital.com.ua/">www.citadelcapital.com.ua</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>PRIVATE ENTREPRENEUR</strong></p>\r\n\r\n<p>Management Consultant</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Adviser to Member of Ukrainian Parliament </strong></p>\r\n\r\n<p>Advisor</p>\r\n	<p><strong>International Economic Relations</strong></p>\r\n\r\n<p>Specialist Degree</p>\r\n\r\n<p><a href="http://www.lnu.edu.ua/"><font color="#0066cc">www.lnu.edu.ua</font></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Loras College</strong><strong>, Dubuque, Iowa, USA</strong></p>\r\n\r\n<p>Certificate</p>\r\n\r\n<p><a href="http://www.loras.edu/"><font color="#0066cc">www.loras.edu</font></a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Vienna International Economic University Summer School</strong><strong>, Vienna, Austria </strong></p>\r\n\r\n<p>Certificate</p>\r\n\r\n<p><a href="http://www.wu.ac.at/">http://www.wu.ac.at/</a></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>University of Saarland, Saarbruecken, Germany </strong></p>\r\n\r\n<p>Certificate</p>\r\n\r\n<p><a href="http://www.uni-saarland.de/en">www.uni-<strong>saarland</strong>.de/en</a></p>\r\n	<p><strong>AIESEC Alumni</strong></p>\r\n\r\n<p>Lviv</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>FITNESS, SAUNA</strong></p>\r\n\r\n<p>Sport Life Lviv</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Visiting Lecturer on Strategic Management and Start-up Financing</strong></p>\r\n\r\n<p>LVBS at&nbsp; Ukrainian Catholic Univesity and L&rsquo;viv Institute of Management</p>\r\n
+1	lars@vestbjerg.com	$2a$10$krHU6IvbVlG7bAGSn.Lwtuh0g96NhWMob7CuoS32A7yF8odhfjDTK	\N	\N	\N	74	2018-01-18 13:53:02.441639	2017-10-05 15:29:39.283978	194.44.220.6	185.46.221.11	2015-07-16 07:25:24.273309	2018-04-17 15:40:46.260952	Lars Vestbjerg - Executive Director	committies	Bogdana Lepkoho 14, 3, 79007 Lviv, Ukraine	+380 67 67 46 866	<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n	DANISH\r\nENGLISH \r\nGERMAN - Intermediate\r\nUKRAINIAN - Intermediate\r\n	Danish	1967-01-31	<p style="line-height: 27.73px;"><em><strong>Currect work:</strong></em></p>\r\n\r\n<p style="line-height: 27.73px;"><strong>SIKA FOOTWEAR A/S, LVIV&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Manufacturing working footwear for all kind of industries</p>\r\n\r\n<p style="line-height: 27.73px;">General Manager</p>\r\n\r\n<p style="line-height: 27.73px;"><a href="http://www.sika.com.ua/"><font color="#0066cc">www.sika.com.ua</font></a>&nbsp;</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>DANISH BUSINESS ASSOCIATION, WESTERN UKRAINE</strong></p>\r\n\r\n<p style="line-height: 27.73px;">NGO business organization protecting Danish Investment in Ukraine.</p>\r\n\r\n<p style="line-height: 27.73px;">President</p>\r\n\r\n<p style="line-height: 27.73px;"><a href="http://www.dba-ukraine.com/"><font color="#0066cc">www.dba-ukraine.com</font></a></p>\r\n\r\n<p style="line-height: 27.73px;"><strong>DANISH INVESTMENT FUND, UKRAINE</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Governmental equity fund financing Danish Investments in Ukraine. Owned by the Danish Government</p>\r\n\r\n<p style="line-height: 27.73px;">Senior Inventment Advisor</p>\r\n\r\n<p style="line-height: 27.73px;"><a href="http://www.ifu.dk/"><font color="#0066cc">www.ifu.dk</font></a></p>\r\n\r\n<p style="line-height: 27.73px;"><strong>VESTBJERG INVEST ApS, DENMARK</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Property investment and stock investment</p>\r\n\r\n<p style="line-height: 27.73px;">CEO and Owner</p>\r\n	<p style="line-height: 27.73px;"><strong>BUSINESS AND PRIVATE INSURANCE LAW</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Bachelor degree</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>ORGANIZATION AND PSYCHOLOGY</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Bachelor degree</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>ENTERPRISE ECONOMY AND ADMINISTRATION</strong></p>\r\n\r\n<p>Bachelor degree</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>​</p>\r\n	<p style="line-height: 27.73px;"><strong>LOYAL TEE GOLF CLUB MEMBER, </strong></p>\r\n\r\n<p style="line-height: 27.73px;">Played golf since 1994, have handicap 22,0 and playing on medium level.</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>BRIDGE PLAYER (advanced level)</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Struer Bridge Club, Denmark, want to play in Lviv too</p>\r\n\r\n<p style="line-height: 27.73px;"><strong><em><font color="#ff0000">Can anyone of my Rotarian friends play Bridge? I use Goren system since 1986 and have played since!!</font></em></strong></p>\r\n\r\n<p style="line-height: 27.73px;"><strong>FITNESS, SAUNA, CARDIO (health level)</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Sport Life, Lviv</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>BADMINTON (advanced level), </strong></p>\r\n\r\n<p style="line-height: 27.73px;">Universtity Sports School, Lviv</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>SQUASH (advanced level)</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Sport Life, Lviv</p>\r\n\r\n<p style="line-height: 27.73px;"><strong>CIGAR TASTING</strong></p>\r\n\r\n<p style="line-height: 27.73px;">Club and Social</p>\r\n
+40	4vovik@gmail.com	$2a$10$cl1H1Y/7yZn64N3xfN7qUuUX8hIarFMTTw0yTYVKrFsO1b/ecCOxe	\N	\N	\N	3	2017-12-28 10:21:26.603944	2016-11-28 14:14:43.013709	91.124.34.225	91.124.46.98	2016-11-17 12:46:14.064175	2017-12-28 10:21:26.606695	Volodymyr Chaplyha	regular	1/3 Glynky str., 79012, Lviv, Ukraine	+380 509 556 559		Ukrainian - Native, \r\nRussian - Professional, \r\nEnglish – Advanced, \r\nPolish – Advanced.	Ukrainian	1986-05-28	<p><strong>Lviv Educational-scientific Institute of the Banking University </strong></p>\r\n\r\n<p>Position - Senior Lecturer/Researcher</p>\r\n\r\n<p>Website - http://www.libs.ubs.edu.ua/</p>\r\n	<p><strong>Lviv Institute of Banking the University of Banking of the National Bank of Ukraine.</strong></p>\r\n\r\n<p>Lviv National University of Internal Affairs.</p>\r\n	<p><strong>Interest &ndash; Education.</strong></p>\r\n\r\n<p>Skiing, Traveling, Playing sports, Reading books, Teaching.</p>\r\n
+43	t0673132800@gmail.com	$2a$10$gDDSXIiOfy3mAYvkNnH.B.Qc9aUfODhdmS/JhG5.JgyZmz84QjdaK	\N	\N	\N	0	\N	\N	\N	\N	2016-12-20 14:58:09.988094	2018-04-17 15:39:15.296918	Andrii Mazurak - Vice Treasurer	committies	Yuri Lipa street 45/86, 79020 Lviv, Ukraine	+380 673 132 800		Ukrainian - PROFESSIONAL\r\nRussian - PROFESSIONAL\r\nPolish - Spoken\r\nEnglish - Pre-Intermediate	Ukrainian	1980-08-27	<p><strong>Chudo Ostriv Ltd</strong></p>\r\n\r\n<p>National Network of children&#39;s supermarkets &quot;Chudo Ostriv&quot;</p>\r\n\r\n<p>Director branch in West Ukraine</p>\r\n\r\n<p><a href="http://www.chudo-ostriv.com.ua">www.chudo-ostriv.com.ua</a></p>\r\n	<p><strong>Business Community School, Lviv, &nbsp;MBA Executive Management</strong></p>\r\n\r\n<p>09.2014 &ndash; 11.2016</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Ternopil Academy of National Economy</strong></p>\r\n\r\n<p>Specialty - Finance</p>\r\n\r\n<p>01.1997 - 07.2002</p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-fareast-font-family: Calibri; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-bidi-font-family: Calibri;"><font color="#000000">Sports, long walks, reading books about business and management</font></span></strong></p>\r\n
+44	olexiy.gusev@gmail.com	$2a$10$fQ6V9MpG10beqz7K8qPel.YOTmaBH4QTJMLWjzjr/ZXuK2YAn8UZO	\N	\N	\N	2	2017-10-12 13:37:44.925673	2017-03-30 00:48:39.394454	185.46.222.65	178.212.98.11	2017-02-23 09:37:23.840715	2017-10-12 13:37:44.928284	Oleksii Gusev	regular	Baltiyska street 31, app 17, Lviv, Ukraine	+380 504 960 115		UKRAINIAN, ENGLISH, RUSSIAN	Ukrainian	1985-06-17	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-no-proof: yes; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-bidi-language: AR-SA;"><font color="#000000">Group of Companies INFLOT Cruise &amp; Ferry Ukraine</font></span></strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-no-proof: yes; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-bidi-language: AR-SA;"><font color="#000000">Deputy Director, Sales &amp; Marketing</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-no-proof: yes; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-bidi-language: AR-SA;"><font color="#000000">Cruise Tour Operator</font></span></p>\r\n\r\n<p><a href="http://www.inflotcruises.com/">www.inflotcruises.com</a></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-no-proof: yes; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-bidi-language: AR-SA;"><font color="#000000">Crimean Univercity of Humanities / theory of education, foreign languages department</font></span></strong></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-no-proof: yes; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-bidi-language: AR-SA;"><font color="#000000">Travelling, table tennis, chess, good films</font></span></strong></p>\r\n
+45	y.dzera@proconsult.lviv.net	$2a$10$.Z5JJfT7IzoBoS/1boxzmuxSq7fqHgF0K8yyoYvNiYYkg8X0GnZ6m	\N	\N	\N	0	\N	\N	\N	\N	2017-03-03 13:50:22.246341	2017-03-03 14:10:34.476355	Yuriy Dzera	regular	Olesya street 25d, 12, Lviv, Ukraine	+380 503 153 272		UKRAINIAN - ENGLISH - SPANISH - RUSSIAN	Ukrainian	1976-11-24	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">PROconsult</font></span></strong></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Project Manager</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Wide range of consulting services</font></span></p>\r\n\r\n<p><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000"><a href="http://www.proconsult.com.ua">www.proconsult.com.ua</a> </font></span></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Lviv State University I.Franko, faculty of International economic relations</font></span></strong></p>\r\n	<p><strong><span lang="EN-US" style="line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;; font-size: 10pt; mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: DA; mso-bidi-language: AR-SA; mso-no-proof: yes;"><font color="#000000">Books, reading, cooking, squash, skiing, gym</font></span></strong></p>\r\n
+\.
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: spixahnrjgdehs
+--
+
+SELECT pg_catalog.setval('"public"."users_id_seq"', 58, true);
+
+
+--
+-- Name: active_admin_comments_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."active_admin_comments"
+    ADD CONSTRAINT "active_admin_comments_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: admin_users_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."admin_users"
+    ADD CONSTRAINT "admin_users_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: categories_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."categories"
+    ADD CONSTRAINT "categories_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: ckeditor_assets_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."ckeditor_assets"
+    ADD CONSTRAINT "ckeditor_assets_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: events_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."events"
+    ADD CONSTRAINT "events_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: galleries_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."galleries"
+    ADD CONSTRAINT "galleries_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: images_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."images"
+    ADD CONSTRAINT "images_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: members_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."members"
+    ADD CONSTRAINT "members_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: news_items_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."news_items"
+    ADD CONSTRAINT "news_items_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: projects_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."projects"
+    ADD CONSTRAINT "projects_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: seotools_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."seotools"
+    ADD CONSTRAINT "seotools_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: spixahnrjgdehs
+--
+
+ALTER TABLE ONLY "public"."users"
+    ADD CONSTRAINT "users_pkey" PRIMARY KEY ("id");
+
+
+--
+-- Name: idx_ckeditor_assetable; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE INDEX "idx_ckeditor_assetable" ON "public"."ckeditor_assets" USING "btree" ("assetable_type", "assetable_id");
+
+
+--
+-- Name: idx_ckeditor_assetable_type; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE INDEX "idx_ckeditor_assetable_type" ON "public"."ckeditor_assets" USING "btree" ("assetable_type", "type", "assetable_id");
+
+
+--
+-- Name: index_active_admin_comments_on_author_type_and_author_id; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE INDEX "index_active_admin_comments_on_author_type_and_author_id" ON "public"."active_admin_comments" USING "btree" ("author_type", "author_id");
+
+
+--
+-- Name: index_active_admin_comments_on_namespace; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE INDEX "index_active_admin_comments_on_namespace" ON "public"."active_admin_comments" USING "btree" ("namespace");
+
+
+--
+-- Name: index_active_admin_comments_on_resource_type_and_resource_id; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE INDEX "index_active_admin_comments_on_resource_type_and_resource_id" ON "public"."active_admin_comments" USING "btree" ("resource_type", "resource_id");
+
+
+--
+-- Name: index_admin_users_on_email; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE UNIQUE INDEX "index_admin_users_on_email" ON "public"."admin_users" USING "btree" ("email");
+
+
+--
+-- Name: index_admin_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "public"."admin_users" USING "btree" ("reset_password_token");
+
+
+--
+-- Name: index_users_on_email; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE UNIQUE INDEX "index_users_on_email" ON "public"."users" USING "btree" ("email");
+
+
+--
+-- Name: index_users_on_reset_password_token; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "public"."users" USING "btree" ("reset_password_token");
+
+
+--
+-- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: spixahnrjgdehs
+--
+
+CREATE UNIQUE INDEX "unique_schema_migrations" ON "public"."schema_migrations" USING "btree" ("version");
+
+
+--
+-- PostgreSQL database dump complete
+--
+

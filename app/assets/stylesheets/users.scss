@@ -33,11 +33,19 @@
     }
     p.name{
       color: #545454;
-      letter-spacing: 1px;
+      letter-spacing: 0.2px;
       font-size: 1.1em;
       padding: 20px 0 0 0px;
       // float: left;
       // width: 12rem;
+      margin-bottom: 0px; 
+    }
+    p.position {
+      color: #808080;
+      letter-spacing: 0.2px;
+      padding-left: 26px;
+      font-size: 14px;
+      text-transform: uppercase;
     }
     .btn-container{
       float: right;

@@ -25,6 +25,8 @@
           %img(src="{{user.image}}")
         %p.name
           {{user.name}}
+        %p.position
+          {{user.position}}
         %div{"class" => "flag {{ user.nationality}}"}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
@@ -49,6 +51,8 @@
           %img(src="{{user.image}}")
         %p.name
           {{user.name}}
+        %p.position
+          {{user.position}}
         %div{"class" => "flag {{ user.nationality}}"} 
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
@@ -72,6 +76,8 @@
           %img(src="{{user.image}}")
         %p.name
           {{user.name}}
+        %p.position
+          {{user.position}}
         %div{"class" => "flag {{ user.nationality}}"}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container

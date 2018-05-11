@@ -17,11 +17,17 @@
           .user-page-logo
             %img{src: "/images/rotary-logo.png"}  
           %h2.name
-            {{print.name}}
+            %span
+              {{print.name}}
             .flag-container
               %div{"class" => "flag {{print.nationality}}"} 
           %h4
             {{print.role}}
+          %h4
+            %span  
+              position: 
+            %span
+              {{print.position}}
           %h4
             {{print.email}}
           %h4

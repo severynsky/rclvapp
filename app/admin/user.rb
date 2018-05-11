@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
     includes :image
-  permit_params :name, :role, :password, :address, :phone, :email, :full_data, :interests, :education, :work, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
+  permit_params :name, :role, :position, :title, :password, :address, :phone, :email, :full_data, :interests, :education, :work, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
 
   index do
     column "Image" do |image|
@@ -24,6 +24,8 @@ ActiveAdmin.register User do
     f.inputs "Members" do
       f.input :name, :placeholder => "Engar Allan Poe"
       f.input :role, :as => :select, collection: %w[president committies regular admin]
+      f.input :position, as: :string, :placeholder => "member position"
+      # f.input :title, as: :string, :placeholder => "member title"
       f.input :email, :placeholder => "somedomain@some.com"
       f.input :password
       # f.input :password_confirmation

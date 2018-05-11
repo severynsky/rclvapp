@@ -12,6 +12,8 @@ rclvapp.controller('userPageContr', ['$scope', '$http', '$routeParams', 'getUser
             phone: user.phone,
             address: user.address,
             education: user.education,
+            position: user.position,
+            title: user.title,
             work: user.work,
             interests: user.interests,
             full_data: user.full_data,
