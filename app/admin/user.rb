@@ -1,6 +1,6 @@
 ActiveAdmin.register User do
     includes :image
-  permit_params :name, :role, :position, :title, :password, :address, :phone, :email, :full_data, :interests, :education, :work, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
+  permit_params :name, :role, :position, :title, :bizMail, :password, :address, :phone, :email, :full_data, :interests, :education, :work, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
 
   index do
     column "Image" do |image|
@@ -27,6 +27,7 @@ ActiveAdmin.register User do
       f.input :position, as: :string, :placeholder => "member position"
       # f.input :title, as: :string, :placeholder => "member title"
       f.input :email, :placeholder => "somedomain@some.com"
+      f.input :bizMail, as: :string, :placeholder => "name@rc-domain.com"
       f.input :password
       # f.input :password_confirmation
       f.input :phone, :placeholder => "+3 (8) 099 99 99"

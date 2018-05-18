@@ -23,10 +23,13 @@
       .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
-        %p.name
-          {{user.name}}
-        %p.position
-          {{user.position}}
+        .top-mgmt
+          %p.name
+            {{user.name}}
+          %p.position
+            {{user.position}}
+          %a.email{"ng-href" => "mailto:{{ user.bizMail}}"}
+            {{ user.bizMail }}
         %div{"class" => "flag {{ user.nationality}}"}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
@@ -49,10 +52,13 @@
       .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
-        %p.name
-          {{user.name}}
-        %p.position
-          {{user.position}}
+        .top-mgmt
+          %p.name
+            {{user.name}}
+          %p.position
+            {{user.position}}
+          %a.email{"ng-href" => "mailto:{{ user.bizMail}}"}
+            {{ user.bizMail }}
         %div{"class" => "flag {{ user.nationality}}"} 
         %div{ "ng-if" => "user_logged_in"}
           .btn-container

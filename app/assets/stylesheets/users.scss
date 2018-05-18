@@ -31,6 +31,19 @@
         width: auto;
       } 
     }
+    .top-mgmt {
+      p.name {
+        padding-top: 10px;
+      }
+      p.position {
+        margin-bottom: 0;
+      }
+      a.email {
+        margin-top: -10px;
+        font-size: 14px;
+        color: grey;
+      }
+    }
     p.name{
       color: #545454;
       letter-spacing: 0.2px;

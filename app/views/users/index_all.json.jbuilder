@@ -3,10 +3,10 @@ json.users @users do |user|
   json.name user.name
   json.role user.role
   json.position user.position
-  json.role user.role
   json.address user.address
   json.phone user.phone
   json.email user.email
+  json.bizMail user.bizMail
   json.full_data user.full_data
   json.languages user.languages
   json.nationality user.nationality

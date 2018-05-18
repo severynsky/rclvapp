@@ -8,6 +8,7 @@ rclvapp.controller('userPageContr', ['$scope', '$http', '$routeParams', 'getUser
             name: user.name,
             role: user.role,
             email: user.email,
+            bizMail: user.bizMail,
             image: user.image,
             phone: user.phone,
             address: user.address,
