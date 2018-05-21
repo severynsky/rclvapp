@@ -28,7 +28,7 @@
             {{user.name}}
           %p.position
             {{user.position}}
-          %a.email{"ng-href" => "mailto:{{ user.bizMail}}"}
+          %p.email
             {{ user.bizMail }}
         %div{"class" => "flag {{ user.nationality}}"}
         %div{ "ng-if" => "user_logged_in"}
@@ -57,7 +57,7 @@
             {{user.name}}
           %p.position
             {{user.position}}
-          %a.email{"ng-href" => "mailto:{{ user.bizMail}}"}
+          %p.email
             {{ user.bizMail }}
         %div{"class" => "flag {{ user.nationality}}"} 
         %div{ "ng-if" => "user_logged_in"}
@@ -80,10 +80,13 @@
       .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
-        %p.name
-          {{user.name}}
-        %p.position
+        .top-mgmt
+          %p.name
+            {{user.name}}
+          %p.position
           {{user.position}}
+          %p.email
+            {{ user.bizMail }}
         %div{"class" => "flag {{ user.nationality}}"}
         %div{ "ng-if" => "user_logged_in"}
           .btn-container
