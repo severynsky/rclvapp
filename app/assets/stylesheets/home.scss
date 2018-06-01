@@ -155,6 +155,9 @@ a, a:hover{
   // display: block;
   margin: 0 !important;
 }
+.logo-sm {
+  display: none;
+}
 .tagline{
   // font-family: 'Droid Serif', serif;;
   text-align: center;
@@ -191,7 +194,7 @@ a, a:hover{
 .left{
   // width: 50%;
   float: left;
-  margin-left: -900px;
+  margin-left: -50px;
 }
 .right, .left{
   padding: 0;
@@ -315,6 +318,7 @@ a, a:hover{
   width: 190px;
   position: relative;
   background-image: url(/images/people-normal.png);
+  background-repeat: no-repeat;
   background-size: 190px;
   -webkit-transition: 0.15s ease;
   -moz-transition: 0.15s ease;

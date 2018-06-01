@@ -1,4 +1,4 @@
-.utility-fields
+.utility-fields.hide-sm
   .login-field
     %div{"ng-if" => "user_logged_in"}
       %span
@@ -22,7 +22,7 @@
         .clear
     .clear
 
-%div.logo
+%div.logo.hide-sm
   %h3.tagline
     Lviv International
     %img{src: "/images/rotary-logo.png", href: '#/'}
@@ -32,6 +32,10 @@
 
 %section.container
   %div.col-md-8.col-md-offset-2#scene
+    %div.logo-sm.show-sm
+      %img{src: "/images/rotary-logo.png", href: '#/'}
+      %h3.tagline
+        Lviv International Rotary Club
     %div.left.col-md-6.col-xs-12
       %a.item.col-md-7.col-xs-12#news{"ng-href" => "https://www.facebook.com/LvivInternationalRC", "target" => "_blank"}
         %span
@@ -63,7 +67,7 @@
               19-20:30, every Thursday
             %p.place
               Leopolis Hotel, Teatralna str 16
-      %a.col-sm-4.col-sm-offset-1.col-xs-6#members{"ng-href" => "#/users"}
+      %a.item.col-sm-4.col-sm-offset-1.col-xs-6#members{"ng-href" => "#/users"}
         %p
           {{ "mainpage.rotary_members" | translate }}
 
