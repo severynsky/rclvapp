@@ -17,7 +17,7 @@
     .our-rotary-container
       %br/
       %h2
-        introduction
+        Introduction
       %hr/
       %p
         %b
@@ -48,9 +48,9 @@
         .text.pull-left
           %h3
             I learned to Give not because I have many, but because I know exactly How it feels to have Nothing
-        .img-container.pull-right
+        .img-container.pull-right.hide-sm
           %img{:src => "/images/rotary-logo.png", :alt => ""}/
-        .clear
+      .clear
       %p
         Lviv International Rotary Club is a club created from 
         %b
@@ -90,10 +90,11 @@
           Lviv International Rotary Club.
       %br/
   .clearfix
-  %h1
-    Lviv International RC Members
-  %hr/
-  .all-members
+  .hide-sm
+    %h1
+      Lviv International RC Members
+    %hr/
+    .all-members
   .clearfix
   %hr/
   .resource-container.col-sm-8.col-sm-offset-2
@@ -167,6 +168,7 @@
       %br/
       .logos
         %img{src: "/images/rotary-logo.png", href: '#/'}
+      %br/
 
 %a.fadeout{"ng-href" => "#/"}
   .close-btn

@@ -80,6 +80,13 @@
     // background-image: none;
     background-color: #5D2D6E;
     height: 100%;
+    .device-header .title-container {
+      h2 {
+        font-size: 22px;
+        margin-top: 15px;
+      }
+    }
+
     .utility-fields {
       width: calc(100vw - 10px);
       .login-field .login-container .login-form {
@@ -143,7 +150,6 @@
       margin: 0 0 40px;
       // float: none;
     }
-      margin-top: 1rem;
       padding: 0;
       .content{
         width: 100vw;
@@ -235,7 +241,54 @@
         }
       }
     }
+    .aboutOurRotary {
+      .popup {
+        h1 {
+          font-size: 26px;
+        }
+        .lviv-intro {
+          height: 50vh;
+        }
+        .tagline {
+          letter-spacing: 0px;
+          font-size: 18px;
+          img {
+            width: 30px;
+          }
+        }
+        .resource-container {
+          margin-top: 0px;
+        }
+        .our-rotary-container {
+          h2 {
+            margin: initial;
+            font-size: 20px;
+          }
+          p {
+            margin: 20px 0;
+            font-size: 16px;
+          }
+          quotes {
+            .text {
+              width: 100%;
+              h3 {
+                font-size: 20px;
+              }
+              h3::before {
+                left: -70px;
+                top: 30px;
+                color: black;
+              }
+            }
+          }
+          a.user-button {
+            margin: 10px auto 30px;
+          }
+        }
+      }
+    }    
   }
+
 
   .device-header{
     display: block;
@@ -255,9 +308,9 @@
       background-color: orange;
       border-radius: 50%;
       background-image: url(/images/back.png);
-      background-size: 18px;
+      background-size: 15px;
       background-repeat: no-repeat;
-      background-position: 9px 8px;
+      background-position: 11px 10px;
       img{
         margin: 5px 0 0 5px;
         width: 40px;
@@ -280,6 +333,9 @@
       img{
         margin: 5px 0 0 5px;
         width: 40px;
+        // margin: 5px 0 0 -25px;
+        // width: 75px;
+        // opacity: 0.2;
       }
     }
     .title-container{
