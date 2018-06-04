@@ -80,6 +80,24 @@
     // background-image: none;
     background-color: #5D2D6E;
     height: 100%;
+    .utility-fields {
+      width: calc(100vw - 10px);
+      .login-field .login-container .login-form {
+        width: 250px;
+        background-color: rgba(240, 240, 240, 0.96);
+        left: 50%;
+        width: 250px;
+        top: 15vh;
+        background-color: rgba(240, 240, 240, 0.96);
+        margin-left: -125px;
+        input[type="submit"] {
+          width: 250px;
+          padding: 10px 20px;
+          background-color: #f1c40f;
+          color: white;
+        }
+      }
+    }
     .logo-sm {
       display: block;
       img {
@@ -108,7 +126,8 @@
       }
     }
     #scene{
-      margin-top: 10px
+      margin-top: 10px;
+      height: 100vh;
     }
     .left{
       margin: 0;
@@ -121,7 +140,7 @@
     .right{
       display: block;
       width: 100%;
-      margin: 0 0;
+      margin: 0 0 40px;
       // float: none;
     }
       margin-top: 1rem;
@@ -177,6 +196,9 @@
       background-position: center;
       background-color: white;
     }
+    #photos:hover {
+      background-image: url(/images/people-normal.png);
+    }
     #about {
       background-color: #93251B;
       color: white;
@@ -203,10 +225,12 @@
         .event-body {
           p {
             font-size: 26px;
+            margin-top: 10px;
           }
           p.title {
             font-weight: 600;
             letter-spacing: 1.2px;
+            margin-top: 30px;
           }
         }
       }
@@ -302,7 +326,6 @@
         .event-body {
           p {
             font-size: 18px;
-            margin-top: 30px;
           }
           p.title {
             font-weight: 500;

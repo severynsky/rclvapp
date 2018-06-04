@@ -1,7 +1,7 @@
-.utility-fields.hide-sm
+.utility-fields
   .login-field
     %div{"ng-if" => "user_logged_in"}
-      %span
+      %span.hide-sm
         {{ "buttons.greeting" | translate }}, {{ user.email}}
       %a{"ng-click" => "logout()"}
         {{ "buttons.logout" | translate }}
