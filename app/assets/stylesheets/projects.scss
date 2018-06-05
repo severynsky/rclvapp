@@ -1,6 +1,8 @@
 .projectsList{
   background: url("/images/projects-1.jpg");
-  height: 100vh;
+  height: initial;
+  background-size: cover;
+  background-position: center;
   .popup{
     .header{
       h1{
@@ -23,6 +25,9 @@
   .project-container{
     // border-right: 1px solid #95a5a6;
     margin-top: 20px;
+    @media (max-width: 820px) {
+      margin-top: 10px;
+    }
     h3{
       color: #FFF;
       padding: 5px;
@@ -68,6 +73,9 @@
         transition: 0.2s ease;
         cursor: pointer;
         font-weight: 500;
+        @media (max-width: 820px) {
+          background-color: rgba(255,255,255,0.95);
+        }
       }
     }
     .project-item:hover p{
@@ -103,6 +111,9 @@
       color: #FFF;
       .cooperation-step{
         opacity: 0.8;
+        @media (max-width: 820px) {
+          opacity: 1;
+        }
       }
       .cooperation-step:hover{
         opacity: 1;
@@ -125,7 +136,10 @@
       h2{
         font-family: "Droid";
         text-align: center;
-        margin-top: 2vh;
+        margin-top: 20px;
+        @media (max-width: 820px) {
+          margin-top: 0px;
+        }
         border-bottom: 1px solid rgba(255,255,255,0);
       }
       p{
@@ -211,8 +225,7 @@
     }
   }
 .projects-container{
-  padding-bottom: 5vh;
-  margin-bottom: 5vh;
+  margin-bottom: 50px;
 }
 .project-container:hover{
   // background-color: rgba(255,255,255,0.3);

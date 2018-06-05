@@ -198,7 +198,7 @@
       }
     }
     #photos{
-      background-size: 390px;
+      background-size: 220px;
       background-position: center;
       background-color: white;
     }
@@ -209,11 +209,11 @@
       background-color: #93251B;
       color: white;
       p {
-        bottom: -3px;
-        right: -3px;
+        top: 34px;
+        right: 1px;
         line-height: 64px;
-        font-size: 1.5em;
-        text-align: right;
+        font-size: 48px;
+        text-align: center;
       }
     }
     #members{
@@ -227,6 +227,7 @@
       .events {
         p {
           font-size: 26px;
+          margin: 0;
         }
         .event-body {
           p {
@@ -236,7 +237,7 @@
           p.title {
             font-weight: 600;
             letter-spacing: 1.2px;
-            margin-top: 30px;
+            margin-top: 0px;
           }
         }
       }
@@ -348,12 +349,15 @@
     }
   }
   .popup{
-    width: 94%;
-    left: 3%;
-    margin-top: 40px
+    // width: 94%;
+    // left: 3%;
+    // margin-top: 40px
   }
   .page-logo, .fadeout, .header{
     display: none;
+  }
+  .cooperation {
+    padding: 10px 0px;
   }
 }
 
@@ -367,16 +371,15 @@
       background-size: 160px;
     }
     #about p {
-      bottom: 42px;
-      right: 0;
+      top: 40px;
+      right: -3px;
       line-height: 44px;
-      font-size: 40px;
-      text-align: center;
+      font-size: 34px;
     }
     #events {
       .events {
         p {
-          font-size: 14px;
+          font-size: 17px;
           margin-top: 10px;
         }
         .event-body {
@@ -386,6 +389,7 @@
           p.title {
             font-weight: 500;
             letter-spacing: 0.2px;
+            margin-top: 20px;
           }
         }
       }
