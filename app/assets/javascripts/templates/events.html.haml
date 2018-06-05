@@ -17,7 +17,7 @@
           %img{src: "/images/rotary-logo.png"}
           Events
 
-    .row
+    %div
       .events-container
         .event-item.regular-meeting{"ng-repeat" => "event in events.events | regular"}
           .event-container{"ng-show"=>"event"}
@@ -47,7 +47,7 @@
                     Thursday
                 .clear
 
-    .row
+    %div
       .events-container
         %h3
           {{ "EVENTS.upcomming" | translate }}
