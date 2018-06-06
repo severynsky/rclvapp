@@ -23,7 +23,7 @@ rclvapp.controller('usersListContr', ['$scope', '$http', 'Auth', 'getAllUsers', 
     loadUsers();
 
     // debugger;
-    // if(users != undefined){
+    // if(users.users){
     //   $scope.loaded == true;
     //   console.log('true')
     //   $(".square").fadeOut()

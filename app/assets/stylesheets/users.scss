@@ -26,6 +26,9 @@
     .image{
       float: left;
       margin-right: 10px;
+      height: 80px;
+      width: 80px;
+      background-color: #ffa51e;
       img{
         height: 80px; 
         width: auto;
@@ -43,6 +46,18 @@
         font-size: 14px;
         color: grey;
         font-style: italic;
+        // padding-left: 26px;
+        @media (max-width: 820px) {
+          width: 60%;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    p {
+      @media (max-width: 820px) {
+        width: 100%; 
       }
     }
     p.name{
@@ -65,6 +80,9 @@
       top: 0;
       position: absolute;
       right: -40px;
+      @media (max-width: 820px) {
+        right: 0px;
+      }
       .to-page{
         height: 40px;
         width: 40px;
@@ -125,6 +143,9 @@
     transform:         rotate(-90deg);
     left: -5px;
     top: 15px;
+    @media (max-width: 820px) {
+      display: none;
+    }
   }
   .flag{
     width: 60px;
