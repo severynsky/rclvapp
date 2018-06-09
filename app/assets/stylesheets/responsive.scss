@@ -38,6 +38,9 @@
     height: 160px;
     background-size: 160px;
   }
+  #photos:hover {
+    background-size: 160px;
+  }
   #about{
     // width: 175px;
     height: 145px;
@@ -52,8 +55,8 @@
   }
 }    
   .popup{
-    // width: 80%;
-    // left: 10%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
   .device-header{
     display: none;
@@ -88,21 +91,7 @@
     }
 
     .utility-fields {
-      width: calc(100vw - 10px);
       .login-field .login-container .login-form {
-        width: 250px;
-        background-color: rgba(240, 240, 240, 0.96);
-        left: 50%;
-        width: 250px;
-        top: 15vh;
-        background-color: rgba(240, 240, 240, 0.96);
-        margin-left: -125px;
-        input[type="submit"] {
-          width: 250px;
-          padding: 10px 20px;
-          background-color: #f1c40f;
-          color: white;
-        }
       }
     }
     .logo-sm {

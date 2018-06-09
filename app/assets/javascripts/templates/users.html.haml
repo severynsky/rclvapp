@@ -17,9 +17,14 @@
           %img{src: "/images/rotary-logo.png"}
           Members
 
-    .users-container{"ng-hide" => "{{ loaded }}"}
+    .loading-overlay{"ng-if" => "loadingData"}
+      .users-container
+        %h3
+          Loading Rotary Members..
+    .users-container{"ng-if" => "dataLoaded"}
       %h3
         President
+      %p{"ng-show" => "errorMessage"}
       .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
@@ -46,7 +51,7 @@
 
         .clear
       .clear
-    .users-container
+    .users-container{"ng-if" => "dataLoaded"}
       %h3
         Board and Committees
       .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
@@ -74,7 +79,7 @@
                   {{user.address}}
         .clear
       .clear
-    .users-container
+    .users-container{"ng-if" => "dataLoaded"}
       %h3
         Members
       .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}

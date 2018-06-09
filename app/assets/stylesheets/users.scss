@@ -157,10 +157,18 @@
 .user-page{
   // padding: 20px;
   background-color: #ecf0f1;
+  h4 {
+    span {
+      
+    }
+  }
   .user-page-header{
     .user-image-container{
       float: left;
       margin: 0 10px 10px 0;
+      height: 300px;
+      width: 300px;
+      background-color: orange;
     }
     .user-text-container{
       .user-page-logo{
@@ -183,6 +191,9 @@
   }
   .user-page-body{
     padding: 20px 40px;
+    @media (max-width: 820px) {
+      padding: 20px 12px;
+    }
     table{
       .label-device{
         display: none;

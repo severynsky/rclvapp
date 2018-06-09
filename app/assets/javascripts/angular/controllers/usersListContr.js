@@ -2,37 +2,30 @@
 
 rclvapp.controller('usersListContr', ['$scope', '$http', 'Auth', 'getAllUsers', 'getUsers', '$timeout', function($scope, $http, Auth, getAllUsers, getUsers, $timeout){
     $scope.pageClass = "usersList";
+    $scope.loadingData = true;
+    $scope.dataLoaded = false;
 
-    Auth.currentUser().then(function(user) {
+    var handleData = function(source) {
+      source.$promise.then(function (result) {
+        $scope.loadingData = false;
+        $scope.dataLoaded = true;
+        $scope.users = result;
+      });
+    }
 
-      var loadAllUsers = function(){
+    Auth.currentUser()
+      .then(function(user) {
         $scope.users = getAllUsers.query();
-      };
-      loadAllUsers();
-    }, function(error){
-        var loadUsers = function(){
+        handleData($scope.users);
+      }, function(error){
+        $scope.errorMessage = error.data.error;
         $scope.users = getUsers.query();
-      };
-      loadUsers();
-    });
+        handleData($scope.users);
+      });
 
-    var loadUsers = function(){
-      $scope.users = getUsers.query();
-      window.users = getUsers.query();
-    };
-    loadUsers();
 
-    // debugger;
-    // if(users.users){
-    //   $scope.loaded == true;
-    //   console.log('true')
-    //   $(".square").fadeOut()
+    // $scope.toggleInfo = function(){
+    //   debugger;
     // };
-
-
-
-    $scope.toggleInfo = function(){
-      debugger;
-    };
 
 }]);

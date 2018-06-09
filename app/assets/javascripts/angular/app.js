@@ -161,7 +161,7 @@ rclvapp.run(['ezfb', '$rootScope', '$window', '$timeout', function(ezfb, $rootSc
 
     $timeout(function(){
       $(".square").fadeOut();
-    }, 500);
+    }, 1500);
 
     $rootScope.user = {};
     $window.fbAsyncInit = function() {

@@ -7,6 +7,7 @@ rclvapp.controller('homeContr', ['$scope', 'Auth', '$timeout', '$route', '$trans
     angular.element(document).ready(
       $initialFunction()
     );
+    // debugger;
 
     $scope.$storage = $localStorage;
 
