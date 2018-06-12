@@ -410,12 +410,31 @@ a, a:hover{
   height: 140px;
   width: 140px;
   margin: 4px 0 0 0;
-  background-image: url(/images/icons/business-cards-database.png);
+  // background-image: url(/images/icons/business-cards-database.png);
+  background-image: none;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50px;
   position: relative;
   padding: 0;
+  color: purple;
+  h2 {
+    position: absolute;
+    bottom: -2px;
+    font-weight: 600;
+    text-align: right;
+    @media (max-width: 1370px) {
+      margin-top: 36px;
+      font-size: 26px;
+      margin: 0;
+    }
+    @media (max-width: 820px) {
+      margin-top: 48px;
+      position: relative;
+      text-align: center;
+      display: block;
+    }
+  }
 }
 #members p{
   background-color: white;

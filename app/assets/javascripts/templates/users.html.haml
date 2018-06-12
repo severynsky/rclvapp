@@ -25,7 +25,7 @@
       %h3
         President
       %p{"ng-show" => "errorMessage"}
-      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'president'} "}
+      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in userList.users | filter: {role: 'president'} "}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         .top-mgmt
@@ -54,7 +54,7 @@
     .users-container{"ng-if" => "dataLoaded"}
       %h3
         Board and Committees
-      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
+      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in userList.users | filter: {role: 'committies'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         .top-mgmt
@@ -82,7 +82,7 @@
     .users-container{"ng-if" => "dataLoaded"}
       %h3
         Members
-      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in users.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
+      .user-item.col-md-10.col-md-offset-1.col-xs-12{"ng-repeat" => "user in userList.users | filter: {role: 'regular'} ", "ng-click" => "showDetails = ! showDetails"}
         .image{"ng-href" => "#/users/{{ user.id }}"}
           %img(src="{{user.image}}")
         .top-mgmt
