@@ -36,7 +36,7 @@ a, a:hover{
   -moz-transition: 0.15s;
   -o-transition: 0.15s;
   transition: 0.15s;
-  z-index: 999;
+  z-index: 2;
   @media (max-width: 820px) {
     width: calc(100vw - 10px);
   }
@@ -107,7 +107,13 @@ a, a:hover{
     a:hover{
       opacity: 1;
     }
-
+    .give-btn {
+      a {
+        background-color: orange;
+        color: white;
+        border: 1px solid orange;
+      }
+    }
     .login-container{
       .login-form{
         position: absolute;

@@ -9,6 +9,9 @@
     %div{"ng-if" => "!user_logged_in", "class" => "login-container"}
       %a{"ng-click" => "showLogin = !showLogin"}
         {{ "buttons.login" | translate }}
+    %div.give-btn
+      %a{"ng-href" => "#/give"}
+        give
       .login-overlay{"ng-show" => "showLogin"}
         %form.login-form{"ng-submit" => "login(email, password)"}
           %p
