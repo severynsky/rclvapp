@@ -1,0 +1,96 @@
+.device-header
+  %a{"class" => "device-header-backbtn", "href" =>  "#/"}
+    / %img{src: "/images/close-btn.png"}
+  .title-container
+    %a{"class" => "device-header-logo", "href" =>  "#/"}
+      %img{src: "/images/rotary-logo.png"}
+    %h2
+      Give
+%section.popup{"ng-inig" => "init()"}
+  .give-intro
+  %div.logo
+    %h3.tagline
+      GIVE
+      / %img{src: "/images/rotary-logo.png", href: '#/'}
+  .resource-container.col-sm-8.col-sm-offset-2
+    .our-rotary-container
+      %br/
+      %h2
+        Dear Friend of Rotary!
+      %hr/
+      %p
+        %b
+          It is a great pleasure for Us to present You to Our club!
+      %p
+        When you are deciding to support Rotary projects through Rotary Club Lviv International, you are giving funding directly to projects under Rotary International values and focus areas. 
+      %p
+        Your full funding goes direct into projects without any administrative costs.
+      %p  
+        %b
+          Rotary 6 focus areas:
+      .img-container.give-6-areas
+        %img{:src => "/images/focus-areas.jpg", :alt => "rotary 6 areas"}/
+      %p
+        %strong
+          When transfer your contribution* - please state the following in the transfer:
+      %ol.give-credentials
+        %li
+          Name and Surname
+        %li
+          Write "Charity payment"
+      %br/
+      %p.t-right.t-italic.t-small
+        *If you would like the funding to go to a 
+        %strong
+          certain group of the 6 focus area,
+        please contact us by email: 
+        %a.t-center.t-orange{"href" => "mailto:president@lviv-international.com"}
+          president@lviv-international.com
+      %hr/
+      .bank-account-info
+        %h3
+          Bank Account Information:
+        %br/
+        .row
+          .col-md-4.col-sm-4.col-xs-12
+            %p
+              %strong
+                Rotary Club Lviv International
+            %p  
+              Bank account 2600680687978
+            %p  
+              %strong
+                Bank:
+              PJSC JSB "Lviv", Lviv, Ukraine
+            %p  
+              %strong
+                SWIFT: 
+              LVIVUA2X
+          .col-md-4.col-sm-4.col-xs-12
+            %p
+              %strong
+                Beneficiary:
+              RC Lviv International
+              79008, Lviv, Ploscha Soborna, House 2, apt. 1-b
+          .col-md-4.col-sm-4.col-xs-12
+            %p
+              %strong
+                Intermediary bank:
+              Raiffeisen Bank Internationa AG, Vienna, Austria
+            %p
+              %strong
+                SWIFT: 
+              RZBAATWW
+            %p  
+              %strong
+                Account number:
+              00055078273
+
+      %br/
+      %br/
+      .logos
+        %img{src: "/images/rotary-logo.png", href: '#/'}
+      %br/
+  
+%a.fadeout{"ng-href" => "#/"}
+  .close-btn

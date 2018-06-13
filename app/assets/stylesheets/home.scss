@@ -418,6 +418,7 @@ a, a:hover{
   position: relative;
   padding: 0;
   color: purple;
+  transition: 0.2s;
   h2 {
     position: absolute;
     bottom: -2px;
@@ -435,6 +436,9 @@ a, a:hover{
       display: block;
     }
   }
+}
+#members:hover h2 {
+  color: orange;
 }
 #members p{
   background-color: white;

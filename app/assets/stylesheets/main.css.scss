@@ -21,6 +21,22 @@ body {
   background-repeat: no-repeat;
   overflow: hidden;
 }
+.t-center {
+  text-align: center;
+}
+.t-right {
+  text-align: right;
+}
+.t-orange {
+  color: orange;
+}
+.t-italic {
+  font-style: italic;
+}
+.t-small {
+  font-size: 14px !important;
+  margin: initial;
+}
 .popup{
   // position: absolute;
   // background-color: rgba(40, 40, 40, 0.01);

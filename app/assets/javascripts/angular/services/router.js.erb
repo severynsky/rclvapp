@@ -52,6 +52,10 @@ rclvapp.config(['$routeProvider', '$locationProvider', '$httpProvider',
         templateUrl: "<%=asset_path 'templates/about.html' %>",
         controller: 'aboutContr'
     }).
+    when('/give', {
+        templateUrl: "<%=asset_path 'templates/give.html' %>",
+        controller: 'aboutContr'
+    }).
     otherwise({
         redirectTo: '#/'
     });
