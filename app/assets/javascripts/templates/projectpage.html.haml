@@ -32,6 +32,8 @@
 
         .white-bg
           .project-text-section
+            .project-image
+              %img(src="{{print.image}}")
             .purpose{"ng-show" => "print.purpose"}
               %h3
                 Project Purpose and Impact

@@ -12,9 +12,9 @@ Rails.application.configure do
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
-      :bucket => 'rclvivcentertest',
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :bucket => 'rclvivcenter1',
+      :access_key_id => 'AKIAJN5QLUADWES37UAA',
+      :secret_access_key => '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'
     }
   }
 

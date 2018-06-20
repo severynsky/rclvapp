@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-    includes :image
+  includes :image
   permit_params :name, :role, :position, :title, :bizMail, :password, :address, :phone, :email, :full_data, :interests, :education, :work, :languages, :nationality, :date_of_birth, image_attributes:[:picture, :is_main, :_destroy, :id]
 
   index do

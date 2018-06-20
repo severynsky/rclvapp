@@ -194,7 +194,7 @@
         display: block !important;
       }
       
-      .project-header{
+      .project-header {
         .project-title{
           margin-top: 0;
           color: #34495e;
@@ -202,6 +202,11 @@
         }
       }
       .project-text-section{
+        .project-image {
+          img {
+            width: 100%;
+          }
+        }
         ul{
           list-style-type: none;
         }

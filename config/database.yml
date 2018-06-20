@@ -5,11 +5,11 @@ default: &default
 
 development:
   <<: *default
-  # database: rclvapp_development
-  host: ec2-54-83-205-164.compute-1.amazonaws.com
-  database: d6db2fqrjbosuv
-  username: spixahnrjgdehs
-  password: Yw00TD1e34JkpXRnRmXys2q0LX
+  database: rclvapp_development
+  # host: ec2-54-83-205-164.compute-1.amazonaws.com
+  # database: d6db2fqrjbosuv
+  # username: spixahnrjgdehs
+  # password: Yw00TD1e34JkpXRnRmXys2q0LX
 
 
 test:

@@ -12,5 +12,6 @@ rclvapp.controller('projectPageContr', ['$scope', '$http', '$routeParams', 'getP
         // };
 
     });
+    console.log('print: ', $scope.print);
 
 }]);
