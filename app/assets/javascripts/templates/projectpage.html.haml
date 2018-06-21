@@ -11,12 +11,16 @@
     .project-item-page
       .text-container{"id" => "bind-html-with-trust"}
         .header.white-bg
-          %a{"class" => "page-logo", "href" =>  "#/projects"}
+          %a{"class" => "page-logo hidden", "href" =>  "#/projects"}
             %h1.tagline
               {{ "ROTARY.rotary" | translate }}
               %img{src: "/images/rotary-logo.png"}
               {{ "PROJECTS.title_one" | translate }}
           .project-header
+            .project-title-image
+              %img(src="{{print.image}}")
+            / %hr/
+            / %br/
             .row
               %h2.project-title.col-xs-10.col-xs-offset-1
                 {{print.title}}
@@ -32,8 +36,6 @@
 
         .white-bg
           .project-text-section
-            .project-image
-              %img(src="{{print.image}}")
             .purpose{"ng-show" => "print.purpose"}
               %h3
                 Project Purpose and Impact
@@ -44,6 +46,14 @@
                 Description
               %p{"ng-bind-html" => "print.description"}
                 {{print.description}}
+            / %div{"ng-photoswipe" => "", "slides" => "print.pictures", "slide-selector" => ".my-awesome-thumbnail", "open" => "isOpen", "on-close" => "onGalleryClose()"}
+            .image-gallery
+              .pictures{"ng-repeat" => "picture in print.pictures"}
+                %img(src="{{picture.src}}")
+
+     
+     
+     
 
 %a.fadeout{"ng-href" => "#/projects"}
   .close-btn

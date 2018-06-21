@@ -8,7 +8,8 @@ rclvapp = angular.module('rclvapp', [
   'uiGmapgoogle-maps',
   'pascalprecht.translate',
   'ezfb',
-  'ngStorage'
+  'ngStorage',
+  'ngPhotoswipe'
 ]);
 
 rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvider', 'ezfbProvider',

@@ -10,8 +10,8 @@ rclvapp.controller('projectPageContr', ['$scope', '$http', '$routeParams', 'getP
         //     purpose: projectItem.purpose,
         //     status: projectItem.status,
         // };
+        console.log('print: ', $scope.print.pictures);
 
     });
-    console.log('print: ', $scope.print);
 
 }]);

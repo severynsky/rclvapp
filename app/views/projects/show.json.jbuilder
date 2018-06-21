@@ -10,7 +10,9 @@ if @project.image
 end
 if @project.pictures
 	json.pictures @project.pictures do |pic|
-		json.image pic.picture.url
+		json.src pic.picture.url
+		json.w 500
+		json.h 400
 	end
 end
 if @project.seotool

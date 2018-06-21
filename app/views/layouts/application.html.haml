@@ -26,6 +26,11 @@
         = content_tag :div, msg, class: 'alert alert-info'
       = yield
     .clear
+    / %script{:type => "text/javascript",
+    /     :src => "./assets/lib/angular-photoswipe.min.js"}
+    / %script{:type => "text/javascript",
+    /     :src => "./assets/lib/photoswipe-ui-default.min.js"}
+    / %link{:rel => :stylesheet, :type => :"text/css", :href => "./assets/lib/photoswipe.css"}
 / .madeby
 /   %a{href: "http://www.nestcolors.com", target: "_blank"}
 /     proudly made by
