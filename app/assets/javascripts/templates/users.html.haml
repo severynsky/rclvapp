@@ -42,11 +42,11 @@
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %img{:src => "/images/icons/triangle_hover.png"}
-                %p
+                %p.phone-no
                   {{user.phone}}
-                %p
+                %a.user-mail{"href" => "mailto:{{user.email}}"}
                   {{user.email}}
-                %p
+                %p.user-address
                   {{user.address}}
 
         .clear
@@ -71,11 +71,11 @@
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %img{:src => "/images/icons/triangle_hover.png"}
-                %p
+                %p.phone-no
                   {{user.phone}}
-                %p
+                %a.user-mail{"href" => "mailto:{{user.email}}"}
                   {{user.email}}
-                %p
+                %p.user-address
                   {{user.address}}
         .clear
       .clear
@@ -99,11 +99,11 @@
             .to-popup{"ng-click" => "showDetails = ! showDetails"}
               .hide-container{"ng-show" => "showDetails"}
                 %img{:src => "/images/icons/triangle_hover.png"}
-                %p
+                %p.phone-no
                   {{user.phone}}
-                %p
+                %a.user-mail{"href" => "mailto:{{user.email}}"}
                   {{user.email}}
-                %p
+                %p.user-address
                   {{user.address}}
         .clear
       .clear

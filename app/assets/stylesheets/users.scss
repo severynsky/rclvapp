@@ -105,12 +105,24 @@
           position: absolute;
           height: 150px;
           width: 280px;
-          background-color: rgba(240,240,240,0.9);
+          background-color: rgba(240,240,240,1);
           top: 100px;
           z-index: 999;
           padding: 10px;
           right: 0;
           border: 1px solid orange;
+          box-shadow: 0px 3px 6px rgba(0,0,0,0.4);
+          .phone-no {
+            font-weight: 600;
+          }
+          .user-mail {
+            text-decoration: underline !important;
+          }
+          .user-address {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+          }
           img{
             transform: rotate(180deg);
             position: absolute;
@@ -143,7 +155,7 @@
     transform:         rotate(-90deg);
     left: -5px;
     top: 15px;
-    @media (max-width: 820px) {
+    @media (max-width: 440px) {
       display: none;
     }
   }
@@ -253,7 +265,7 @@
   background: url(/images/icons/flags.png) -360px -60px;
 }
 .Czech{
-  background: url(/images/icons/flags.png) -60px -60px;
+  background: url(/images/icons/flags.png) -60px -90px;
 }
 .Slovakia{
   background: url(/images/icons/flags.png) -420px -300px;
@@ -327,10 +339,10 @@
 .Swiss{
   background: url(/images/icons/flags.png) -180px -330px;
 }
-.Swede{
+.Sweden{
   background: url(/images/icons/flags.png) -120px -330px;
 }
-.Spaniard{
+.Spanish{
   background: url(/images/icons/flags.png) 180px -300px;
 }
 .Slovenian{
