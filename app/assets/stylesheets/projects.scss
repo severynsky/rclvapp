@@ -241,6 +241,14 @@
             border-bottom: 1px solid #bdc3c7;
           }
         }
+        .image-gallery {
+          .pictures {
+            margin: 5px 0 !important;
+          }
+          img {
+            width: 100%;
+          }
+        }
       }
     }
   }

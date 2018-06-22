@@ -46,10 +46,10 @@
                 Description
               %p{"ng-bind-html" => "print.description"}
                 {{print.description}}
-            / %div{"ng-photoswipe" => "", "slides" => "print.pictures", "slide-selector" => ".my-awesome-thumbnail", "open" => "isOpen", "on-close" => "onGalleryClose()"}
+            / %div{"ng-photoswipe" => "print.pictures", "slides" => "print.pictures", "slide-selector" => ".pictures > li > img", "open" => "isOpen", "on-close" => "onGalleryClose()"}
             .image-gallery
               .pictures{"ng-repeat" => "picture in print.pictures"}
-                %img(src="{{picture.src}}")
+                %img{"ng-src" => "{{picture.src}}"}
 
      
      

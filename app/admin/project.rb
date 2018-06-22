@@ -37,7 +37,6 @@ ActiveAdmin.register Project do
         img.input :picture, :as => :file, :hint => img.object.picture.present? \
           ? image_tag(img.object.picture.url(:small))
           : content_tag(:span, "no cover page yet")
-        img.input :description
       end  
     end
     f.inputs "Seo tool", for: [:seotool, f.object.seotool || Seotool.new] do |seo|

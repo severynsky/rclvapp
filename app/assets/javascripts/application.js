@@ -20,7 +20,6 @@
 //= require angular-google-maps
 //= require_tree ./angular
 //= require_tree ./angular/controllers
-//= require ./lib/angular-photoswipe.min.js
 //= require_tree .
 
 
