@@ -22,7 +22,7 @@
             / %hr/
             / %br/
             .row
-              %h2.project-title.col-xs-10.col-xs-offset-1
+              %h2.project-title.col-sm-12.col-sm-offset-0.col-xs-10.col-xs-offset-1
                 {{print.title}}
             %h4.pull-left
               status:
@@ -47,7 +47,10 @@
               %p{"ng-bind-html" => "print.description"}
                 {{print.description}}
             / %div{"ng-photoswipe" => "print.pictures", "slides" => "print.pictures", "slide-selector" => ".pictures > li > img", "open" => "isOpen", "on-close" => "onGalleryClose()"}
-            .image-gallery
+            .image-gallery{"ng-if" => "print.pictures.length > 0"}
+              %h2
+                Photo gallery
+              %hr/
               .pictures{"ng-repeat" => "picture in print.pictures"}
                 %img{"ng-src" => "{{picture.src}}"}
 
