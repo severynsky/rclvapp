@@ -51,7 +51,7 @@ rclvapp.config([ '$httpProvider', 'uiGmapGoogleMapApiProvider', '$translateProvi
       },
       PROJECTS: {
         title: "Проекти",
-        title_one: "Проект",
+        title_one: "Проект",  
         new: "Нові",
         running: "Діючі",
         ended: "Звершені",
