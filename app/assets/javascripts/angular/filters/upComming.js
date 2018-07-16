@@ -1,4 +1,4 @@
-rclvapp.filter('upComming', ['$filter',  function($filter){
+rclvapp.filter('upComing', ['$filter',  function($filter){
   return function(input){
     var output = [];
 

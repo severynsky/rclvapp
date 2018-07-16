@@ -50,8 +50,8 @@
     %div
       .events-container
         %h3
-          {{ "EVENTS.upcomming" | translate }}
-        .event-item{"ng-repeat" => "event in events.events | upComming"}
+          {{ "EVENTS.upcoming" | translate }}
+        .event-item{"ng-repeat" => "event in events.events | upComing"}
           %a{"ng-href" => "#/events/{{ event.id }}", "class" => "text-container"}
             %p{"class" => "event-icon {{ event.event_type }} pull-left"}
             %p.pull-left.event-title-text
